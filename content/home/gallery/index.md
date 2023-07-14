@@ -8,5 +8,3 @@ weight = 66  # Order that this section will appear.
 title = "Gallery"
 subtitle = "I have done many projects, here is some featured image"
 +++
-
-{{< gallery >}}

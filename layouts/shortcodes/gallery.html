@@ -1,0 +1,13 @@
+<div class="gallery">
+  {{ with .Page.Params.gallery_item }}
+    {{ range . }}
+      {{ if eq .album "gallery" }}
+        <div class="gallery-item">
+          <img src="{{ .image }}" alt="{{ .caption }}">
+          <div class="caption">{{ .caption }}</div>
+        </div>
+      {{ end }}
+    {{ end }}
+  {{ end }}
+</div>
+

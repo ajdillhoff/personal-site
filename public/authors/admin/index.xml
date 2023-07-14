@@ -107,131 +107,69 @@
 &lt;h2 id=&#34;color-themes&#34;&gt;Color Themes&lt;/h2&gt;
 &lt;p&gt;academia comes with &lt;strong&gt;day (light) and night (dark) mode&lt;/strong&gt; built-in. Click the sun/moon icon in the top right of the &lt;a href=&#34;https://academia-demo.netlify.com/&#34;&gt;Demo&lt;/a&gt; to see it in action!&lt;/p&gt;
 &lt;p&gt;Choose a stunning color and font theme for your site. Themes are fully customizable and include:&lt;/p&gt;
-
-
-
-
-
-
-
-
-  
-  
-
-
 &lt;div class=&#34;gallery&#34;&gt;
-
-  
-  
-  
   
     
-    
-    
-    
-    
       
-        
-      
-    
-  &lt;a data-fancybox=&#34;gallery-gallery&#34; href=&#34;https://gethugothemes.com/academia/site/academia/site/post/snail/gallery/theme-1950s.png&#34; data-caption=&#34;1950s&#34;&gt;
-  &lt;img src=&#34;https://gethugothemes.com/academia/site/academia/site/post/snail/gallery/theme-1950s_huaf5482f8cea0c5a703a328640e3b7509_21614_0x190_resize_lanczos_3.png&#34; alt=&#34;&#34;&gt;
-  &lt;/a&gt;
-  
-    
-    
-    
-    
-    
-      
-        
+        &lt;div class=&#34;gallery-item&#34;&gt;
+          &lt;img src=&#34;theme-default.png&#34; alt=&#34;Default&#34;&gt;
+          &lt;div class=&#34;caption&#34;&gt;Default&lt;/div&gt;
+        &lt;/div&gt;
       
     
-  &lt;a data-fancybox=&#34;gallery-gallery&#34; href=&#34;https://gethugothemes.com/academia/site/academia/site/post/snail/gallery/theme-apogee.png&#34; data-caption=&#34;Apogee&#34;&gt;
-  &lt;img src=&#34;https://gethugothemes.com/academia/site/academia/site/post/snail/gallery/theme-apogee_hu4b45d99db97150df01464c393bfd17d4_24119_0x190_resize_lanczos_3.png&#34; alt=&#34;&#34;&gt;
-  &lt;/a&gt;
-  
-    
-    
-    
-    
-    
       
-        
+        &lt;div class=&#34;gallery-item&#34;&gt;
+          &lt;img src=&#34;theme-ocean.png&#34; alt=&#34;Ocean&#34;&gt;
+          &lt;div class=&#34;caption&#34;&gt;Ocean&lt;/div&gt;
+        &lt;/div&gt;
       
     
-  &lt;a data-fancybox=&#34;gallery-gallery&#34; href=&#34;https://gethugothemes.com/academia/site/academia/site/post/snail/gallery/theme-coffee-playfair.png&#34; data-caption=&#34;Coffee theme with Playfair font&#34;&gt;
-  &lt;img src=&#34;https://gethugothemes.com/academia/site/academia/site/post/snail/gallery/theme-coffee-playfair_hu446a8f670cc5622adcc77b97ba95f6c5_22462_0x190_resize_lanczos_3.png&#34; alt=&#34;&#34;&gt;
-  &lt;/a&gt;
-  
-    
-    
-    
-    
-    
       
-        
+        &lt;div class=&#34;gallery-item&#34;&gt;
+          &lt;img src=&#34;theme-forest.png&#34; alt=&#34;Forest&#34;&gt;
+          &lt;div class=&#34;caption&#34;&gt;Forest&lt;/div&gt;
+        &lt;/div&gt;
       
     
-  &lt;a data-fancybox=&#34;gallery-gallery&#34; href=&#34;https://gethugothemes.com/academia/site/academia/site/post/snail/gallery/theme-dark.png&#34; data-caption=&#34;Dark&#34;&gt;
-  &lt;img src=&#34;https://gethugothemes.com/academia/site/academia/site/post/snail/gallery/theme-dark_hu1e8601ecc47f58eada7743fdcd709d3d_21456_0x190_resize_lanczos_3.png&#34; alt=&#34;&#34;&gt;
-  &lt;/a&gt;
-  
-    
-    
-    
-    
-    
       
-        
+        &lt;div class=&#34;gallery-item&#34;&gt;
+          &lt;img src=&#34;theme-dark.png&#34; alt=&#34;Dark&#34;&gt;
+          &lt;div class=&#34;caption&#34;&gt;Dark&lt;/div&gt;
+        &lt;/div&gt;
       
     
-  &lt;a data-fancybox=&#34;gallery-gallery&#34; href=&#34;https://gethugothemes.com/academia/site/academia/site/post/snail/gallery/theme-default.png&#34; data-caption=&#34;Default&#34;&gt;
-  &lt;img src=&#34;https://gethugothemes.com/academia/site/academia/site/post/snail/gallery/theme-default_huba6228b7bdf30e2f03f12ea91b2cba0d_21751_0x190_resize_lanczos_3.png&#34; alt=&#34;&#34;&gt;
-  &lt;/a&gt;
-  
-    
-    
-    
-    
-    
       
-        
+        &lt;div class=&#34;gallery-item&#34;&gt;
+          &lt;img src=&#34;theme-apogee.png&#34; alt=&#34;Apogee&#34;&gt;
+          &lt;div class=&#34;caption&#34;&gt;Apogee&lt;/div&gt;
+        &lt;/div&gt;
       
     
-  &lt;a data-fancybox=&#34;gallery-gallery&#34; href=&#34;https://gethugothemes.com/academia/site/academia/site/post/snail/gallery/theme-forest.png&#34; data-caption=&#34;Forest&#34;&gt;
-  &lt;img src=&#34;https://gethugothemes.com/academia/site/academia/site/post/snail/gallery/theme-forest_hu4f093a1c683134431456584193ea41ee_21797_0x190_resize_lanczos_3.png&#34; alt=&#34;&#34;&gt;
-  &lt;/a&gt;
-  
-    
-    
-    
-    
-    
       
-        
+        &lt;div class=&#34;gallery-item&#34;&gt;
+          &lt;img src=&#34;theme-1950s.png&#34; alt=&#34;1950s&#34;&gt;
+          &lt;div class=&#34;caption&#34;&gt;1950s&lt;/div&gt;
+        &lt;/div&gt;
       
     
-  &lt;a data-fancybox=&#34;gallery-gallery&#34; href=&#34;https://gethugothemes.com/academia/site/academia/site/post/snail/gallery/theme-ocean.png&#34; data-caption=&#34;Ocean&#34;&gt;
-  &lt;img src=&#34;https://gethugothemes.com/academia/site/academia/site/post/snail/gallery/theme-ocean_hu14831ccafc2219f30a7a096fa7617e01_21760_0x190_resize_lanczos_3.png&#34; alt=&#34;&#34;&gt;
-  &lt;/a&gt;
-  
-    
-    
-    
-    
-    
       
-        
+        &lt;div class=&#34;gallery-item&#34;&gt;
+          &lt;img src=&#34;theme-coffee-playfair.png&#34; alt=&#34;Coffee theme with Playfair font&#34;&gt;
+          &lt;div class=&#34;caption&#34;&gt;Coffee theme with Playfair font&lt;/div&gt;
+        &lt;/div&gt;
       
     
-  &lt;a data-fancybox=&#34;gallery-gallery&#34; href=&#34;https://gethugothemes.com/academia/site/academia/site/post/snail/gallery/theme-strawberry.png&#34; data-caption=&#34;Strawberry&#34;&gt;
-  &lt;img src=&#34;https://gethugothemes.com/academia/site/academia/site/post/snail/gallery/theme-strawberry_hu36b0b347fcca08bd39e2df22dcedbdfb_39532_0x190_resize_lanczos_3.png&#34; alt=&#34;&#34;&gt;
-  &lt;/a&gt;
-  
-
+      
+        &lt;div class=&#34;gallery-item&#34;&gt;
+          &lt;img src=&#34;theme-strawberry.png&#34; alt=&#34;Strawberry&#34;&gt;
+          &lt;div class=&#34;caption&#34;&gt;Strawberry&lt;/div&gt;
+        &lt;/div&gt;
+      
+    
   
 &lt;/div&gt;
+
+
 &lt;h2 id=&#34;ecosystem&#34;&gt;Ecosystem&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;&lt;a href=&#34;https://github.com/sourcethemes/academia-admin&#34;&gt;academia Admin&lt;/a&gt;:&lt;/strong&gt; An admin tool to import publications from BibTeX or import assets for an offline site&lt;/li&gt;
@@ -301,131 +239,69 @@
 &lt;h2 id=&#34;color-themes&#34;&gt;Color Themes&lt;/h2&gt;
 &lt;p&gt;academia comes with &lt;strong&gt;day (light) and night (dark) mode&lt;/strong&gt; built-in. Click the sun/moon icon in the top right of the &lt;a href=&#34;https://academia-demo.netlify.com/&#34;&gt;Demo&lt;/a&gt; to see it in action!&lt;/p&gt;
 &lt;p&gt;Choose a stunning color and font theme for your site. Themes are fully customizable and include:&lt;/p&gt;
-
-
-
-
-
-
-
-
-  
-  
-
-
 &lt;div class=&#34;gallery&#34;&gt;
-
-  
-  
-  
   
     
-    
-    
-    
-    
       
-        
-      
-    
-  &lt;a data-fancybox=&#34;gallery-gallery&#34; href=&#34;https://gethugothemes.com/academia/site/academia/site/post/getting-started/gallery/theme-1950s.png&#34; data-caption=&#34;1950s&#34;&gt;
-  &lt;img src=&#34;https://gethugothemes.com/academia/site/academia/site/post/getting-started/gallery/theme-1950s_huaf5482f8cea0c5a703a328640e3b7509_21614_0x190_resize_lanczos_3.png&#34; alt=&#34;&#34;&gt;
-  &lt;/a&gt;
-  
-    
-    
-    
-    
-    
-      
-        
+        &lt;div class=&#34;gallery-item&#34;&gt;
+          &lt;img src=&#34;theme-default.png&#34; alt=&#34;Default&#34;&gt;
+          &lt;div class=&#34;caption&#34;&gt;Default&lt;/div&gt;
+        &lt;/div&gt;
       
     
-  &lt;a data-fancybox=&#34;gallery-gallery&#34; href=&#34;https://gethugothemes.com/academia/site/academia/site/post/getting-started/gallery/theme-apogee.png&#34; data-caption=&#34;Apogee&#34;&gt;
-  &lt;img src=&#34;https://gethugothemes.com/academia/site/academia/site/post/getting-started/gallery/theme-apogee_hu4b45d99db97150df01464c393bfd17d4_24119_0x190_resize_lanczos_3.png&#34; alt=&#34;&#34;&gt;
-  &lt;/a&gt;
-  
-    
-    
-    
-    
-    
       
-        
+        &lt;div class=&#34;gallery-item&#34;&gt;
+          &lt;img src=&#34;theme-ocean.png&#34; alt=&#34;Ocean&#34;&gt;
+          &lt;div class=&#34;caption&#34;&gt;Ocean&lt;/div&gt;
+        &lt;/div&gt;
       
     
-  &lt;a data-fancybox=&#34;gallery-gallery&#34; href=&#34;https://gethugothemes.com/academia/site/academia/site/post/getting-started/gallery/theme-coffee-playfair.png&#34; data-caption=&#34;Coffee theme with Playfair font&#34;&gt;
-  &lt;img src=&#34;https://gethugothemes.com/academia/site/academia/site/post/getting-started/gallery/theme-coffee-playfair_hu446a8f670cc5622adcc77b97ba95f6c5_22462_0x190_resize_lanczos_3.png&#34; alt=&#34;&#34;&gt;
-  &lt;/a&gt;
-  
-    
-    
-    
-    
-    
       
-        
+        &lt;div class=&#34;gallery-item&#34;&gt;
+          &lt;img src=&#34;theme-forest.png&#34; alt=&#34;Forest&#34;&gt;
+          &lt;div class=&#34;caption&#34;&gt;Forest&lt;/div&gt;
+        &lt;/div&gt;
       
     
-  &lt;a data-fancybox=&#34;gallery-gallery&#34; href=&#34;https://gethugothemes.com/academia/site/academia/site/post/getting-started/gallery/theme-dark.png&#34; data-caption=&#34;Dark&#34;&gt;
-  &lt;img src=&#34;https://gethugothemes.com/academia/site/academia/site/post/getting-started/gallery/theme-dark_hu1e8601ecc47f58eada7743fdcd709d3d_21456_0x190_resize_lanczos_3.png&#34; alt=&#34;&#34;&gt;
-  &lt;/a&gt;
-  
-    
-    
-    
-    
-    
       
-        
+        &lt;div class=&#34;gallery-item&#34;&gt;
+          &lt;img src=&#34;theme-dark.png&#34; alt=&#34;Dark&#34;&gt;
+          &lt;div class=&#34;caption&#34;&gt;Dark&lt;/div&gt;
+        &lt;/div&gt;
       
     
-  &lt;a data-fancybox=&#34;gallery-gallery&#34; href=&#34;https://gethugothemes.com/academia/site/academia/site/post/getting-started/gallery/theme-default.png&#34; data-caption=&#34;Default&#34;&gt;
-  &lt;img src=&#34;https://gethugothemes.com/academia/site/academia/site/post/getting-started/gallery/theme-default_huba6228b7bdf30e2f03f12ea91b2cba0d_21751_0x190_resize_lanczos_3.png&#34; alt=&#34;&#34;&gt;
-  &lt;/a&gt;
-  
-    
-    
-    
-    
-    
       
-        
+        &lt;div class=&#34;gallery-item&#34;&gt;
+          &lt;img src=&#34;theme-apogee.png&#34; alt=&#34;Apogee&#34;&gt;
+          &lt;div class=&#34;caption&#34;&gt;Apogee&lt;/div&gt;
+        &lt;/div&gt;
       
     
-  &lt;a data-fancybox=&#34;gallery-gallery&#34; href=&#34;https://gethugothemes.com/academia/site/academia/site/post/getting-started/gallery/theme-forest.png&#34; data-caption=&#34;Forest&#34;&gt;
-  &lt;img src=&#34;https://gethugothemes.com/academia/site/academia/site/post/getting-started/gallery/theme-forest_hu4f093a1c683134431456584193ea41ee_21797_0x190_resize_lanczos_3.png&#34; alt=&#34;&#34;&gt;
-  &lt;/a&gt;
-  
-    
-    
-    
-    
-    
       
-        
+        &lt;div class=&#34;gallery-item&#34;&gt;
+          &lt;img src=&#34;theme-1950s.png&#34; alt=&#34;1950s&#34;&gt;
+          &lt;div class=&#34;caption&#34;&gt;1950s&lt;/div&gt;
+        &lt;/div&gt;
       
     
-  &lt;a data-fancybox=&#34;gallery-gallery&#34; href=&#34;https://gethugothemes.com/academia/site/academia/site/post/getting-started/gallery/theme-ocean.png&#34; data-caption=&#34;Ocean&#34;&gt;
-  &lt;img src=&#34;https://gethugothemes.com/academia/site/academia/site/post/getting-started/gallery/theme-ocean_hu14831ccafc2219f30a7a096fa7617e01_21760_0x190_resize_lanczos_3.png&#34; alt=&#34;&#34;&gt;
-  &lt;/a&gt;
-  
-    
-    
-    
-    
-    
       
-        
+        &lt;div class=&#34;gallery-item&#34;&gt;
+          &lt;img src=&#34;theme-coffee-playfair.png&#34; alt=&#34;Coffee theme with Playfair font&#34;&gt;
+          &lt;div class=&#34;caption&#34;&gt;Coffee theme with Playfair font&lt;/div&gt;
+        &lt;/div&gt;
       
     
-  &lt;a data-fancybox=&#34;gallery-gallery&#34; href=&#34;https://gethugothemes.com/academia/site/academia/site/post/getting-started/gallery/theme-strawberry.png&#34; data-caption=&#34;Strawberry&#34;&gt;
-  &lt;img src=&#34;https://gethugothemes.com/academia/site/academia/site/post/getting-started/gallery/theme-strawberry_hu36b0b347fcca08bd39e2df22dcedbdfb_39532_0x190_resize_lanczos_3.png&#34; alt=&#34;&#34;&gt;
-  &lt;/a&gt;
-  
-
+      
+        &lt;div class=&#34;gallery-item&#34;&gt;
+          &lt;img src=&#34;theme-strawberry.png&#34; alt=&#34;Strawberry&#34;&gt;
+          &lt;div class=&#34;caption&#34;&gt;Strawberry&lt;/div&gt;
+        &lt;/div&gt;
+      
+    
   
 &lt;/div&gt;
+
+
 &lt;h2 id=&#34;ecosystem&#34;&gt;Ecosystem&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;&lt;a href=&#34;https://github.com/sourcethemes/academia-admin&#34;&gt;academia Admin&lt;/a&gt;:&lt;/strong&gt; An admin tool to import publications from BibTeX or import assets for an offline site&lt;/li&gt;
