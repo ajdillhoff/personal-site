@@ -1,3 +1,4 @@
-baseURL = 'https://example.org/'
+baseURL = 'https://ajdillhoff.github.io/'
 languageCode = 'en-us'
-title = 'My New Hugo Site'
+title = 'Alex Dillhoff'
+publishDir = "../ajdillhoff.github.io/"
