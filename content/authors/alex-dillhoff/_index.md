@@ -1,7 +1,7 @@
 ---
 # Display name
 name: Alex Dillhoff
-avatar_image: "user-full.png"
+avatar_image: "alex-headshot.jpeg"
 # Username (this should match the folder name)
 authors:
 - admin
@@ -14,35 +14,32 @@ btn:
 superuser: true
 
 # Role/position
-role: Professor of Artificial Intelligence
+role: Senior Lecturer
 
 # Organizations/Affiliations
 organizations:
-- name: Stanford University
-  url: ""
+- name: The University of Texas at Arlington
+  url: "https://cse.uta.edu"
 
 # Short bio (displayed in user profile at end of posts)
-bio: My research interests include distributed robotics, mobile computing and programmable matter.
+bio: \"If we understood the world, we would realize that there is a logic of harmony underlying its manifold apparent dissonances.\" - Jean Sibelius
 
 # Should the user's education and interests be displayed?
-display_education: false
+display_education: true
 
 interests:
+- Computer Vision
+- Machine Learning
 - Artificial Intelligence
-- Computational Linguistics
-- Information Retrieval
 
 education:
   courses:
-  - course: PhD in Artificial Intelligence
-    institution: Stanford University
-    year: 2012
-  - course: MEng in Artificial Intelligence
-    institution: Massachusetts Institute of Technology
-    year: 2009
-  - course: BSc in Artificial Intelligence
-    institution: Massachusetts Institute of Technology
-    year: 2008
+  - course: PhD in Computer Science
+    institution: The University of Texas at Arlington
+    year: 2020
+  - course: BSc in Computer Science
+    institution: The University of Texas at Arlington
+    year: 2014
 
 # Social/academia Networking
 # For available icons, see: https://sourcethemes.com/academic/docs/widgets/#icons
@@ -52,15 +49,12 @@ social:
 - icon: envelope
   icon_pack: fas
   link: '#contact'  # For a direct email link, use "mailto:test@example.org".
-- icon: twitter
-  icon_pack: fab
-  link: https://twitter.com/GeorgeCushen
 - icon: google-scholar
   icon_pack: ai
-  link: https://scholar.google.co.uk/citations?user=sIwtMXoAAAAJ
+  link: https://scholar.google.co.uk/citations?user=UlLhCtkAAAAJ
 - icon: github
   icon_pack: fab
-  link: https://github.com/gcushen
+  link: https://github.com/ajdillhoff
 # Link to a PDF of your resume/CV from the About widget.
 # To enable, copy your resume/CV to `static/files/cv.pdf` and uncomment the lines below.  
 # - icon: cv
@@ -77,8 +71,4 @@ user_groups:
 - Visitors
 ---
 
-Nelson Bighetti is a professor of artificial intelligence at the Stanford AI Lab. His research interests include distributed robotics, mobile computing and programmable matter. He leads the Robotic Neurobiology group, which develops self-reconfiguring robots, systems of self-organizing robots, and mobile sensor networks.
-
-![reviews](../../img/certifacates.jpg)
-
-It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum. The point of using Lorem Ipsum. distracted by the readable content of a page.
+I love building things and helping others build things they are passionate about. I also love distilling complex topics, clearing the path towards knowledge.
