@@ -1,0 +1,24 @@
+{{- define "main" -}}
+
+{{ partial "page_header.html" . }}
+
+<div class="universal-wrapper">
+
+  {{ with .Content }}
+  <div class="article-style" itemprop="articleBody">{{ . }}</div>
+  {{ end }}
+
+  {{ $paginator := .Paginate (.Data.Pages.ByTitle) }}
+  <div class="row">
+  {{ range $paginator.Pages }}
+    <div class="col-lg-4 col-md-6 mb-4">
+      {{ partial "li_note" . }}
+    </div>
+  {{ end }}
+  </div>
+  {{ partial "pagination" . }}
+
+</div>
+
+{{- end -}}
+

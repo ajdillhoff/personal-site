@@ -4,6 +4,7 @@ authors = ["Alex Dillhoff"]
 date = 2022-02-22T00:00:00-06:00
 draft = false
 lastmod = 2023-07-15
+tags = ["machine learning", "graphical models"]
 +++
 
 <div class="ox-hugo-toc toc">

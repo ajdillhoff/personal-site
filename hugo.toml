@@ -1,4 +1,4 @@
 baseURL = 'https://ajdillhoff.github.io/'
 languageCode = 'en-us'
 title = 'Alex Dillhoff'
-publishDir = "../ajdillhoff.github.io/"
+publishDir = "/home/alex/dev/ajdillhoff.github.io/"

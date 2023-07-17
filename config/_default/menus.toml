@@ -15,7 +15,7 @@
 
 [[main]]
   name = "Brain Dump"
-  url = "posts/"
+  url = "notes/"
   weight = 30
 
 #[[main]]

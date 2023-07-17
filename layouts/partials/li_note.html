@@ -1,0 +1,17 @@
+{{ $item := . }}
+
+{{ $microdata_type := "CreativeWork" }}
+
+<div class="card-simple" itemscope itemtype="http://schema.org/{{$microdata_type}}">
+    <div class="card-body">
+    <h3 class="article-title mb-1 mt-0" itemprop="name">
+      <a href="{{ $item.RelPermalink }}" itemprop="url">{{ $item.Title }}</a>
+    </h3>
+    {{ partial "page_metadata" (dict "page" $item "is_list" 1) }}
+    <div class="article-style" itemprop="articleBody">
+      {{ range .Params.tags }}
+      <span class="badge badge-primary">{{ . }}</span>
+      {{ end }}
+    </div>
+  </div>
+</div>
