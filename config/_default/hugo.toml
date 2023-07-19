@@ -91,3 +91,6 @@ target = '$1'
   [caches.assets]
     dir = ":resourceDir/_gen"
     maxAge = "720h"
+
+[markup.goldmark.renderer]
+unsafe=true
