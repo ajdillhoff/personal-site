@@ -1,6 +1,6 @@
 +++
 title = "Linear Discriminant Analysis"
-author = ["Alex Dillhoff"]
+authors = ["Alex Dillhoff"]
 date = 2022-01-22T00:00:00-06:00
 draft = false
 +++

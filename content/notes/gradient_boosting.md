@@ -52,6 +52,8 @@ draft = false
 
         {{< figure src="/ox-hugo/2023-07-18_19-43-31_screenshot.png" caption="<span class=\"figure-number\">Figure 1: </span>Original generic algorithm from (<a href=\"#citeproc_bib_item_1\">Friedman 2001</a>)." >}}
 
+        Check out a basic implementation in Python [here](<https://github.com/ajdillhoff/CSE6363/blob/main/boosting/intro_to_gradient_boosting.ipynb>).
+
 ## References
 
 <style>.csl-entry{text-indent: -1.5em; margin-left: 1.5em;}</style><div class="csl-bib-body">

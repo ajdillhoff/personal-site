@@ -1,7 +1,8 @@
 +++
 title = "Neural Networks"
-author = ["Alex Dillhoff"]
+authors = ["Alex Dillhoff"]
 date = 2022-01-22T00:00:00-06:00
+tags = ["machine learning"]
 draft = false
 +++
 
