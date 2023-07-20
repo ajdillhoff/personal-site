@@ -1,0 +1,27 @@
+{{ $path := printf "data/%s.json" (.Get "path") }}
+{{ $fileContent := readFile $path }}
+{{ $jsonData := transform.Unmarshal $fileContent }}
+<table>
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Topic</th>
+      <th>Materials</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{ range $jsonData }}
+      <tr>
+        <td>{{ .date }}</td>
+        <td>{{ .topic }}</td>
+        <td>
+          <ul>
+            {{ range .materials }}
+              <li><a href="{{ .url }}">{{ .title }}</a></li>
+            {{ end }}
+          </ul>
+        </td>
+      </tr>
+    {{ end }}
+  </tbody>
+</table>
