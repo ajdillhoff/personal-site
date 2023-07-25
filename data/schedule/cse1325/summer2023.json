@@ -139,5 +139,33 @@
                 "url": "/teaching/cse1325/lectures/gui_programming.pdf"
             }
         ]
+    },
+    {
+        "date": "July 25",
+        "topic": "Multithreading, Lambda Functions",
+        "materials": [
+            {
+                "title": "Multithreading",
+                "url": "/teaching/cse1325/lectures/multithreading.pdf"
+            },
+            {
+                "title": "Lambdas",
+                "url": "/teaching/cse1325/lectures/lambdas.pdf"
+            }
+        ]
+    },
+    {
+        "date": "July 27",
+        "topic": "Introduction to C++, Classes in C++",
+        "materials": [
+            {
+                "title": "C++ Basics",
+                "url": "/teaching/cse1325/lectures/cpp_basics.pdf"
+            },
+            {
+                "title": "C++ Classes",
+                "url": "/teaching/cse1325/lectures/cpp_classes.pdf"
+            }
+        ]
     }
 ]

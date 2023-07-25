@@ -35,7 +35,7 @@ The **Markov** in Hidden Markov Models addresses this complexity. The **Markov A
 
 The **hidden** qualifier comes from the fact that the data we wish to model was generated from some underlying process that is not directly observable. A classic example for HMMs uses the weather. Imagine you had a log which had the number of water bottles a person had drank per day over the entire year. To make the problem slightly more difficult, the log entries were not associated with a date. It is reasonable to say that the amount of water a person drinks is influenced by how hot or cold it is on a particular day. So, the **hidden state** in this case is the weather: hot or cold. We can model this with an HMM by establishing that the amount of water (**observed state**) is conditioned on the weather (**hidden state**). Figure **TODO** shows this HMM graphically.
 
-**TODO: Figure of HMM**
+{{< figure src="/ox-hugo/2023-07-20_19-12-54_screenshot.png" caption="<span class=\"figure-number\">Figure 1: </span>An HMM with 4 states and 2 observation symbols \\(y\_1\\) or \\(y\_2\\)." >}}
 
 Formally, a Hidden Markov Model is defined by
 
@@ -143,6 +143,124 @@ p(z\_t = i, z\_{t+1} = j|\mathbf{x}\_{1:T}).
 
 
 ### Forwards-Backwards Algorithm {#forwards-backwards-algorithm}
+
+Computing joint distribution can be very computationally expensive. Fortunately for us, the Markov assumption along with operations on graphs open the door to a dynamic programming approach named the Forward-Backward algorithm.
+
+The Forwards-Backwards Algorithm, also known as the [Baum-Welch algorithm](<https://en.wikipedia.org/wiki/Baum%E2%80%93Welch_algorithm>), provides an effective solution to computing the joint described above. In fact, there are many useful distributions that can be computed with this algorithm such as the **filtering** and **smoothing** tasks.
+
+
+#### Forward Probability {#forward-probability}
+
+The forward probability, often denoted as \\(\alpha\\), represents the probability of ending up at a particular hidden state \\(i\\) at time \\(t\\) having seen the observations up to that time:
+
+\\[
+\alpha\_t(i) = p(z\_t = i, \mathbf{x}\_{1:t} | \lambda).
+\\]
+
+This value is computed recursively starting from \\(t=1\\) and going forwards to \\(t=T\\).
+
+**Initialization**
+
+For \\(t=1\\), we calculate:
+
+\\[
+\alpha\_1(i) = \pi\_i b\_i(x\_1),\quad 1 \leq i \leq N,
+\\]
+
+where \\(\pi\_i\\) is the initial probability of state \\(i\\) and \\(b\_i(x\_1)\\) is the emission probability of the first observation \\(x\_1\\) given that we are in state \\(i\\).
+
+**Recursion**
+
+After that, we calculate the remaining \\(\alpha\_t(i)\\) as follows:
+
+\\[
+\alpha\_{t+1}(j) = b\_j(x\_{t+1}) \sum\_{i=1}^{N} \alpha\_{t}(i)a\_{ij},
+\\]
+
+where \\(N\\) is the number of hidden states, and \\(a\_{ij}\\) is the transition probability from state \\(i\\) to state \\(j\\).
+
+
+#### Backward Probability {#backward-probability}
+
+The backward probability, denoted as \\(\beta\\), gives the probability of observing the remaining observations from time \\(t+1\\) to \\(T\\) given that we are in state \\(i\\) at time \\(t\\):
+
+\\[
+\beta\_t(i) = p(\mathbf{x}\_{t+1:T} | z\_t = i, \lambda).
+\\]
+
+Again, this is calculated recursively but this time starting from \\(t=T\\) and going backwards to \\(t=1\\).
+
+**Initialization**
+
+For \\(t=T\\), we initialize:
+
+\\[
+\beta\_T(i) = 1, \forall i.
+\\]
+
+**Recursion**
+
+Then we calculate the remaining \\(\beta\_t(i)\\) as:
+
+\\[
+\beta\_{t}(i) = \sum\_{j=1}^{N} a\_{ij}b\_j(x\_{t+1})\beta\_{t+1}(j).
+\\]
+
+
+#### Calculating the Sufficient Statistics {#calculating-the-sufficient-statistics}
+
+With these two sets of probabilities, we can calculate the two required sufficient statistics as follows:
+
+1.  The expected number of transitions from \\(i\\) to \\(j\\):
+
+\\[
+\frac{\sum\_{t=1}^{T-1} \alpha\_t(i) a\_{ij} b\_j(x\_{t+1}) \beta\_{t+1}(j)}{P(X|\lambda)}
+\\]
+
+1.  The expected number of times we are transitioning from \\(i\\) to any other state:
+
+\\[
+\frac{\sum\_{t=1}^{T-1} \alpha\_t(i) \beta\_t(i)}{P(X|\lambda)}
+\\]
+
+Where \\(P(X|\lambda)\\) is the total probability of the observations, calculated as:
+
+\\[
+P(X|\lambda) = \sum\_{i=1}^{N} \alpha\_T(i)
+\\]
+
+
+#### How does this give us \\(p(z\_t = i, z\_{t+1} = j|\mathbf{x}\_{1:T})\\)? {#how-does-this-give-us-p--z-t-i-z-t-plus-1-j-mathbf-x-1-t}
+
+To understand how the variables of the Forwards-Backwards algorithm relate to the original probabilities, we can express the term \\(p(z\_t = i, z\_{t+1} = j|\mathbf{x}\_{1:T})\\) in terms of the original probability distributions in the HMM:
+
+-   \\(\pi\_i\\) - the probability of starting in state \\(i\\),
+-   \\(a\_{ij}\\) - the probability of transitioning from state \\(i\\) to state \\(j\\),
+-   \\(b\_j(x\_t)\\) - the probability that state \\(j\\) will emit observation \\(x\_t\\).
+
+The joint probability \\(p(z\_t = i, z\_{t+1} = j, \mathbf{x}\_{1:T})\\) would represent the probability of being in state \\(i\\) at time \\(t\\), moving to state \\(j\\) at time \\(t+1\\), and observing the sequence of emissions \\(\mathbf{x}\_{1:T}\\). This can be factored as follows due to the Markov property:
+
+\\[
+p(z\_t = i, z\_{t+1} = j, \mathbf{x}\_{1:T}) = p(\mathbf{x}\_{1:t}, z\_t = i)p(z\_{t+1} = j| z\_t = i)p(\mathbf{x}\_{t+1:T} | z\_{t+1} = j, \mathbf{x}\_{1:t}).
+\\]
+
+Using our definitions of \\(\alpha\\) and \\(\beta\\), we can rewrite this in terms of our HMM quantities:
+
+\\[
+p(z\_t = i, z\_{t+1} = j, \mathbf{x}\_{1:T}) = \alpha\_t(i)a\_{ij}b\_j(x\_{t+1})\beta\_{t+1}(j).
+\\]
+
+Here, \\(\alpha\_t(i)\\) represents \\(p(\mathbf{x}\_{1:t}, z\_t = i)\\), the joint probability of the observations until time \\(t\\) and being in state \\(i\\) at time \\(t\\), and \\(\beta\_{t+1}(j)\\) represents \\(p(\mathbf{x}\_{t+1:T} | z\_{t+1} = j)\\), the probability of the observations from time \\(t+1\\) to \\(T\\) given we're in state \\(j\\) at time \\(t+1\\).
+
+Then, to obtain \\(p(z\_t = i, z\_{t+1} = j|\mathbf{x}\_{1:T})\\), we divide by \\(p(\mathbf{x}\_{1:T})\\) to normalize the probabilities, which is the sum over all states of \\(\alpha\_T(i)\\), or equivalently, the sum over all states of \\(\beta\_1(i)\pi\_i b\_i(x\_1)\\).
+
+This gives us:
+
+\\[
+p(z\_t = i, z\_{t+1} = j|\mathbf{x}\_{1:T}) = \frac{\alpha\_t(i)a\_{ij}b\_j(x\_{t+1})\beta\_{t+1}(j)}{\sum\_{i=1}^{N}\alpha\_T(i)}.
+\\]
+
+This is the same expression as before, but broken down in terms of the original HMM quantities and the forward and backward variables. This can also be explained through graph properties and operations. See [Sargur Srihari's excellent lecture slides](<https://cedar.buffalo.edu/~srihari/CSE574/Chap13/13.2.2-ForwardBackward.pdf>) for more details.
 
 
 ## Implementation in Python {#implementation-in-python}
