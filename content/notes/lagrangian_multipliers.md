@@ -2,6 +2,7 @@
 title = "Lagrangian Multipliers"
 authors = ["Alex Dillhoff"]
 date = 2022-02-05T00:00:00-06:00
+tags = ["optimization"]
 draft = false
 +++
 

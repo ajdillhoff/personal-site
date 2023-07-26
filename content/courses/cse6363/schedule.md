@@ -32,4 +32,6 @@ This schedule is tentative and may change.
 | July 12 | Decision Trees                                                                   | [Decision Trees](/notes/decision_trees)                                                                            |   |
 | July 17 | HMM Example, DT Example, Boosting                                                | [Boosting](/notes/boosting)                                                                                        |   |
 | July 19 | Gradient Boosting, Principal Component Analysis                                  | [Gradient Boosting](/notes/gradient_boosting), [Principal Component Analysis](/notes/principal_component_analysis) |   |
+| July 24 | Deep Learning, Convolutional Neural Networks, Sequential Models                  | [Deep Learning](/notes/deep_learning), [CNNs](/notes/convolutional_neural_networks)                                |   |
+| July 26 | Transformers, Markov Decision Processes                                          | [Transformers](/notes/transformers), [Markov Decision Processes](/notes/markov_decision_processes)                 |   |
 
