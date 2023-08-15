@@ -1,0 +1,16 @@
+[
+    {
+        "date": "Week 1",
+        "topic": "Course Introduction, CSE 1310 Review",
+        "materials": [
+            {
+                "title": "Introduction",
+                "url": "/teaching/cse1320/lectures/intro.pdf"
+            },
+            {
+                "title": "Introduction to C",
+                "url": "/teaching/cse1320/lectures/intro_to_c.pdf"
+            }
+        ]
+    }
+]

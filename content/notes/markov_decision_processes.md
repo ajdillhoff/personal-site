@@ -15,6 +15,7 @@ tags = ["reinforcement learning"]
 - [Policies and Values](#policies-and-values)
 - [Bellman Equations](#bellman-equations)
 - [Optimality](#optimality)
+- [Optimizing the Policy](#optimizing-the-policy)
 
 </div>
 <!--endtoc-->
@@ -171,4 +172,21 @@ Similarly, the optimal action-value function selects the best possible action fr
 
 \\[
 q\_{\*}(s) = r(s, a) + \gamma \sum\_{s'} p(s'|s, a) \max\_{a} q\_{\*}(s', a').
+\\]
+
+
+## Optimizing the Policy {#optimizing-the-policy}
+
+For smaller problems with reasonably small state and action spaces, we can use Dynamic Programming to compute the optimal policy. These methods quickly become intractable as the complexity of our problem increases. As is common in machine learning, we would resort to approximation methods for complex spaces.
+
+> "In fact, all of these methods can be viewed as attempts to achieve much the same effect as DP, only with less computation and without assuming a perfect model of the environment."
+>
+> -- Richard S. Sutton and Andrew G. Barto, Reinforcement Learning: An Introduction
+
+Imagine if you had a set policy that dictated the actions you would take from work to home. In this example, assume the policy is not an optimal policy. One day, you decide to take a left at a particular intersection rather than going forward. After that, you follow your policy as described. If this decision ultimately resulted in you arriving home sooner, you would probably update your policy to always take that left. This intuition describes a result of the **policy improvement theorem**.
+
+Let \\(\pi\\) and \\(\pi'\\) be two deterministic policies where
+
+\\[
+q\_{\pi}(s, \pi'(s)) \geq v\_{\pi}(s),\quad \forall s.
 \\]

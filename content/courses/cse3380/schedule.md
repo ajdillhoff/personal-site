@@ -6,7 +6,7 @@ type: docs
 date: "2023-08-15T00:00:00+01:00"
 draft: false
 menu:
-  cse6363:
+  cse3380:
     parent: Home
     weight: 1
 
@@ -16,4 +16,4 @@ weight: 1
 
 This schedule is tentative and may change.
 
-{{< json-table path="schedule/cse6363/fall2023" >}}
+{{< json-table path="schedule/cse3380/fall2023" >}}

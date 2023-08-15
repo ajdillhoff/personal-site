@@ -16,9 +16,9 @@ type: docs  # Do not modify.
 # - name: Declare this menu item as a parent with ID `name`.
 # - weight: Position of link in menu.
 menu:
-  cse1310:
-    name: Home
-    weight: 1
+    cse1310:
+        name: Home
+        weight: 1
 ---
 
 This is the course page for CSE1310 - Introduction to Computers & Programming in Summer 2023. Here you'll find slides and other helpful resources. All assignments and announcements will be posted on Canvas.
