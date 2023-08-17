@@ -1,0 +1,42 @@
+[
+    {
+        "date": "August 21",
+        "topic": "Course Introduction",
+        "materials": []
+    },
+    {
+        "date": "August 23",
+        "topic": "Introduction to Python",
+        "materials": []
+    },
+    {
+        "date": "August 25",
+        "topic": "Conditional Execution, Quiz 1",
+        "materials": []
+    },
+    {
+        "date": "August 28",
+        "topic": "Functions, Lists",
+        "materials": []
+    },
+    {
+        "date": "August 30",
+        "topic": "Iterations, Comprehensions",
+        "materials": []
+    },
+    {
+        "date": "September 1",
+        "topic": "File I/O",
+        "materials": []
+    },
+    {
+        "date": "September 6",
+        "topic": "Additional Packages, Exam 1 Review",
+        "materials": []
+    },
+    {
+        "date": "September 8",
+        "topic": "Exam 1",
+        "materials": []
+    }
+]
