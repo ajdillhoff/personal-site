@@ -2,7 +2,12 @@
     {
         "date": "August 21",
         "topic": "Course Introduction",
-        "materials": []
+        "materials": [
+            {
+                "title": "Introduction",
+                "url": "/teaching/dasc5300/lectures/course_introduction.pdf"
+            }
+        ]
     },
     {
         "date": "August 23",
