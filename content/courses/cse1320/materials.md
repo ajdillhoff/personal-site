@@ -21,7 +21,8 @@ weight: 2
 
 ## Resources
 
-- [Submitting Assignments using GitHub](/articles/submitting_assignments_using_github/)
+- [Submitting Assignments using GitHub](/notes/submitting_assignments_using_github/)
+- [Using GCC with MinGW](https://code.visualstudio.com/docs/cpp/config-mingw)
 - [CSE 13xx SharePoint](https://mavsuta.sharepoint.com/sites/cse13xx)
 - [C/C++ Reference](https://en.cppreference.com/w/)
 - [The Linux Command Line](http://linuxcommand.org/tlcl.php)

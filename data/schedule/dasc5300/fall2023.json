@@ -15,22 +15,27 @@
     },
     {
         "date": "August 23",
-        "topic": "Conditional Execution, Quiz 1",
-        "materials": []
+        "topic": "Control Flow, Quiz 1",
+        "materials": [
+            {
+                "title": "Control Flow",
+                "url": "/notes/control_flow_in_python"
+            }
+        ]
     },
     {
         "date": "August 28",
-        "topic": "Git, Functions",
+        "topic": "Git, Comprehensions",
         "materials": []
     },
     {
         "date": "August 30",
-        "topic": "Lists, Iterations",
+        "topic": "Functions, File I/O, Regular Expressions",
         "materials": []
     },
     {
         "date": "September 6",
-        "topic": "Comprehensions, File I/O, Quiz 2",
+        "topic": "OOP in Python, Quiz 2",
         "materials": []
     },
     {

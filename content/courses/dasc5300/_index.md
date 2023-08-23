@@ -31,5 +31,9 @@ This is the course page for DASC 5300 - Foundations of Computing in Fall 2023. H
 
 **All office hours are conducted via Teams by default.** Please contact me for an appointment if you wish to meet in person.
 
-- MoWeFri 12PM - 1PM
-- TuTh 11AM - 12PM
+- Alex Dillhoff
+    - MoWeFri 12PM - 1PM
+    - TuTh 11AM - 12PM
+
+- Keshav Bansal
+    - TuTh 4:30PM - 6:30PM (via Teams)
