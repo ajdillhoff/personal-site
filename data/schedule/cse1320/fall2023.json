@@ -10,6 +10,10 @@
             {
                 "title": "Introduction to C",
                 "url": "/teaching/cse1320/lectures/intro_to_c.pdf"
+            },
+            {
+                "title": "Number Systems",
+                "url": "/teaching/cse1320/lectures/number_systems.pdf"
             }
         ]
     }
