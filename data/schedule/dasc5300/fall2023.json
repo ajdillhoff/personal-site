@@ -26,7 +26,16 @@
     {
         "date": "August 28",
         "topic": "Git, Comprehensions",
-        "materials": []
+        "materials": [
+            {
+                "title": "Introduction to Git",
+                "url": "/notes/introduction_to_git"
+            },
+            {
+                "title": "Comprehensions",
+                "url": "/notes/list_comprehensions"
+            }
+        ]
     },
     {
         "date": "August 30",
