@@ -25,22 +25,23 @@
     },
     {
         "date": "August 28",
-        "topic": "Git, Comprehensions",
+        "topic": "Git",
         "materials": [
             {
                 "title": "Introduction to Git",
                 "url": "/notes/introduction_to_git"
-            },
-            {
-                "title": "Comprehensions",
-                "url": "/notes/list_comprehensions"
             }
         ]
     },
     {
         "date": "August 30",
-        "topic": "Functions, File I/O, Regular Expressions",
-        "materials": []
+        "topic": "Comprehensions, Functions, File I/O",
+        "materials": [
+            {
+                "title": "Comprehensions",
+                "url": "/notes/list_comprehensions"
+            }
+        ]
     },
     {
         "date": "September 6",

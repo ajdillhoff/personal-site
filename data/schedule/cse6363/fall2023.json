@@ -19,8 +19,38 @@
         "topic": "Supervised Learning",
         "materials": [
             {
+                "title": "Linear Regression",
+                "url": "/notes/linear_regression"
+            }
+        ]
+    },
+    {
+        "date": "August 28",
+        "topic": "Supervised Learning",
+        "materials": [
+            {
                 "title": "Logistic Regression",
                 "url": "/notes/logistic_regression"
+            }
+        ]
+    },
+    {
+        "date": "August 30",
+        "topic": "Python Review, Probability Theory",
+        "materials": [
+            {
+                "title": "Probability Theory",
+                "url": "/notes/probability_theory"
+            }
+        ]
+    },
+    {
+        "date": "September 1",
+        "topic": "Linear Discriminant Analysis",
+        "materials": [
+            {
+                "title": "Linear Discriminant Analysis",
+                "url": "/notes/linear_discriminant_analysis"
             }
         ]
     }

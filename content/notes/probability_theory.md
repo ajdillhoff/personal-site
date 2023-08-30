@@ -3,6 +3,7 @@ title = "Probability Theory"
 authors = ["Alex Dillhoff"]
 date = 2022-01-22T00:00:00-06:00
 draft = false
+lastmod = 2023-08-29
 +++
 
 <div class="ox-hugo-toc toc">
@@ -16,7 +17,7 @@ draft = false
 - [Rules of Probability](#rules-of-probability)
 - [Random Variables](#random-variables)
 - [Continuous Variables](#continuous-variables)
-- [Expectation, Variance, and Covariance](#expectation-variance-and-covariance)
+- [Moments of a Distribution](#moments-of-a-distribution)
 
 </div>
 <!--endtoc-->
@@ -256,7 +257,9 @@ p(x) = \int p(x, y)dy.
 \end{equation\*}
 
 
-## Expectation, Variance, and Covariance {#expectation-variance-and-covariance}
+## Moments of a Distribution {#moments-of-a-distribution}
+
+A **moment** of a function describes a quantitative measurement related to its graph. With respect to probability densities, the $k$th moment of \\(p(x)\\) is defined as \\(\mathbb{E}[x^k]\\). The first moment is the **mean** of the distribution, the second moment is the **variance**, and the third moment is the **skewness**.
 
 Three extremely important statistics for any probability distribution are the average, variance, and covariance.
 
@@ -316,3 +319,23 @@ The **covariance** of two random variables \\(x\\) and \\(y\\) provides a measur
 {{< figure src="/ox-hugo/2022-01-25_18-14-22_screenshot.png" caption="<span class=\"figure-number\">Figure 5: </span>Plot of 2D data with approximately 0 covariance. Source: Wikipedia" >}}
 
 {{< figure src="/ox-hugo/2022-01-25_18-14-45_screenshot.png" caption="<span class=\"figure-number\">Figure 6: </span>Plot of data with positive covariance. Source: Wikipedia" >}}
+
+
+### Correlation {#correlation}
+
+The **correlation** between two random variables \\(x\\) and \\(y\\) relates to their covariance, but it is normalized to lie between -1 and 1.
+
+\begin{equation\*}
+\text{corr}[\mathbf{x},\mathbf{y}] = \frac{\text{cov}[\mathbf{x},\mathbf{y}]}{\sqrt{\text{var}[\mathbf{x}]\text{var}[\mathbf{y}]}}
+\end{equation\*}
+
+The correlation between two variables will equal 1 if there is a linear relationship between them. We can then view the correlation as providing a measurement of linearity.
+
+{{< figure src="/ox-hugo/2023-08-29_23-01-02_screenshot.png" caption="<span class=\"figure-number\">Figure 7: </span>Sets of points with their correlation coefficients. Source: Wikipedia" >}}
+
+
+### Limitations of Moments {#limitations-of-moments}
+
+Summary statistics can be useful but do not tell the whole story of your data. When possible, it is always better to visualize the data. An example of this is the **Anscombosaurus**, derived from the Anscombe's quartet. The quartet consists of four datasets that have nearly identical summary statistics but are visually distinct. A modern version, called the Datasaurus Dozen, consists of 12 datasets that have the same summary statistics but are visually distinct.
+
+{{< figure src="/ox-hugo/2023-08-29_21-15-04_screenshot.png" caption="<span class=\"figure-number\">Figure 8: </span>Datasaurus Dozen (source: [Same Stats, Different Graphs: Generating Datasets with Varied Appearance and Identical Statistics through Simulated Annealing](https://www.autodeskresearch.com/publications/samestats))" >}}

@@ -16,5 +16,23 @@
                 "url": "/teaching/cse1320/lectures/number_systems.pdf"
             }
         ]
+    },
+    {
+        "date": "Week 2",
+        "topic": "CSE 1310 Review",
+        "materials": [
+            {
+                "title": "Arrays",
+                "url": "/teaching/cse1320/lectures/arrays.pdf"
+            },
+            {
+                "title": "Loops",
+                "url": "/teaching/cse1320/lectures/loops.pdf"
+            },
+            {
+                "title": "File I/O",
+                "url": "/teaching/cse1320/lectures/file_io.pdf"
+            }
+        ]
     }
 ]
