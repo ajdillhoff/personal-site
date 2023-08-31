@@ -3,6 +3,7 @@ title = "Linear Discriminant Analysis"
 authors = ["Alex Dillhoff"]
 date = 2022-01-22T00:00:00-06:00
 draft = false
+lastmod = 2023-08-31
 +++
 
 <div class="ox-hugo-toc toc">
@@ -12,6 +13,7 @@ draft = false
 - [Introduction](#introduction)
 - [Gaussian Class Conditional Densities](#gaussian-class-conditional-densities)
 - [Maximum Likelihood Estimation](#maximum-likelihood-estimation)
+- [Quadratic Descriminant Analysis](#quadratic-descriminant-analysis)
 - [Example](#example)
 
 </div>
@@ -208,6 +210,28 @@ The Gaussian parameters can be calculated as discussed during the probability re
 ### The Decision Boundary {#the-decision-boundary}
 
 The decision boundary between two classes can be visualized at the point when \\(p(C\_k|\mathbf{x};\theta) = 0.5\\).
+
+
+## Quadratic Descriminant Analysis {#quadratic-descriminant-analysis}
+
+Linear Discriminant Analysis is a special case of Quadratic Discriminant Analysis (QDA) where the covariance matrices are shared across all classes. Assuming each class conditional density is Gaussian, the posterior probability is given by
+
+\begin{equation\*}
+p(C\_k|\mathbf{x};\theta) \propto \pi\_k\mathcal{N}(\mathbf{x}|\mathbf{\mu}\_k,\Sigma\_k).
+\end{equation\*}
+
+Taking the log of this function yields
+
+\begin{equation\*}
+\ln p(C\_k|\mathbf{x};\theta) = \ln \pi\_k - \frac{1}{2}\ln |\Sigma\_k| - \frac{1}{2}(\mathbf{x} - \mathbf{\mu}\_k)^T \Sigma\_k^{-1}(\mathbf{x} - \mathbf{\mu}\_k) + c.
+\end{equation\*}
+
+With LDA, the term \\(\frac{1}{2}\ln |\Sigma\_k|\\) is constant across all classes, so we treat it as another constant. Since QDA considers a different covariance matrix for each class, we must keep this term in the equation.
+
+
+### Quadratic Decision Boundary {#quadratic-decision-boundary}
+
+In the more general case of QDA, the decision boundary is quadratic, leading to a quadratic discriminant function. As shown above, the posterior probability function for LDA is linear in \\(\mathbf{x}\\), which leads to a linear discriminant function.
 
 
 ## Example {#example}
