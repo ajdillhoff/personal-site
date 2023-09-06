@@ -46,11 +46,35 @@
     },
     {
         "date": "September 1",
-        "topic": "Linear Discriminant Analysis",
+        "topic": "Linear Discriminant Analysis, Regularization",
         "materials": [
             {
                 "title": "Linear Discriminant Analysis",
                 "url": "/notes/linear_discriminant_analysis"
+            },
+            {
+                "title": "Regularization",
+                "url": "/notes/regularization"
+            }
+        ]
+    },
+    {
+        "date": "September 6",
+        "topic": "Naive Bayes Classifiers",
+        "materials": [
+            {
+                "title": "Naive Bayes Classifiers",
+                "url": "/notes/naive_bayes"
+            }
+        ]
+    },
+    {
+        "date": "September 8",
+        "topic": "Kernels",
+        "materials": [
+            {
+                "title": "Kernels",
+                "url": "/notes/kernels"
             }
         ]
     }

@@ -29,7 +29,7 @@ To motivate naive Bayes classifiers, let's look at slightly more complex data. T
 
 We will use the naive Bayes classifier to make an image classification model which predicts the class of digit given a new image. Each image will be represented by a vector \\(\mathbf{x} \in \mathbb{R}^{784}\\). Modeling \\(p(\mathbf{x}|C\_k)\\) with a multinomial distribution would require \\(10^{784} - 1\\) parameters since there are 10 classes and 784 features.
 
-{{< figure src="Introduction/2022-02-01_18-47-49_screenshot.png" caption="<span class=\"figure-number\">Figure 1: </span>Samples of the MNIST training dataset." >}}
+{{< figure src="/ox-hugo/2022-02-01_18-47-49_screenshot.png" caption="<span class=\"figure-number\">Figure 1: </span>Samples of the MNIST training dataset." >}}
 
 With the naive assumption that the features are independent conditioned on the class, the number model parameters becomes \\(10 \times 784\\).
 

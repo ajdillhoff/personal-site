@@ -46,7 +46,16 @@
     {
         "date": "September 6",
         "topic": "OOP in Python, Quiz 2",
-        "materials": []
+        "materials": [
+            {
+                "title": "Object-Oriented Programming in Python",
+                "url": "/notes/oop"
+            },
+            {
+                "title": "Example: Data Loaders in Python",
+                "url": "/notes/dataloader"
+            }
+        ]
     },
     {
         "date": "September 11",

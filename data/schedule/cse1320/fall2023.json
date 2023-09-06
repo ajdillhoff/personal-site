@@ -34,5 +34,19 @@
                 "url": "/teaching/cse1320/lectures/file_io.pdf"
             }
         ]
+    },
+    {
+        "date": "Week 3",
+        "topic": "Pointers and Structs",
+        "materials": [
+            {
+                "title": "Structs",
+                "url": "/teaching/cse1320/lectures/struct.pdf"
+            },
+            {
+                "title": "Pointers",
+                "url": "/teaching/cse1320/lectures/pointers.pdf"
+            }
+        ]
     }
 ]
