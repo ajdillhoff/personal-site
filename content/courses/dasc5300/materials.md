@@ -27,3 +27,8 @@ weight: 2
 - [Python Programming Language](https://www.python.org/)
 - [Anaconda](https://www.anaconda.com/products/individual)
 - [SQL](https://www.w3schools.com/sql/)
+
+## Programming Practice
+
+- [exercism.io](https://exercism.io/)
+- [leetcode.com](https://leetcode.com/)
