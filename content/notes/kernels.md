@@ -4,6 +4,7 @@ authors = ["Alex Dillhoff"]
 date = 2022-01-22T00:00:00-06:00
 tags = ["machine learning"]
 draft = false
+lastmod = 2023-09-07
 +++
 
 <div class="ox-hugo-toc toc">
@@ -14,6 +15,7 @@ draft = false
 - [Dual Representation](#dual-representation)
 - [Relating Back to the Original Formulation](#relating-back-to-the-original-formulation)
 - [Types of Kernels](#types-of-kernels)
+- [Constructing Kernels](#constructing-kernels)
 
 </div>
 <!--endtoc-->
@@ -44,6 +46,8 @@ k(\mathbf{x}, \mathbf{x}') = \phi(\mathbf{x})^T \phi(\mathbf{x}'),
 where \\(\phi\\) is some function which transforms the input to a feature space.
 
 Methods that require part or all of the training data to make prediction will benefit from using kernel representations, especially when using high dimensional data. Instead of transforming the data into a high dimensional space which may be computationally intractable, a measure of similarity via the _inner product_ is used. The inner product is not the projection into some space. Instead, it represents the outcome of that projection.
+
+If the input vector takes on the form of scalar products, it can be represented as a kernel function.
 
 
 ## Dual Representation {#dual-representation}
@@ -254,3 +258,36 @@ k(\mathbf{x}, \mathbf{x}') = \frac{\mathbf{x}^T \mathbf{x}'}{\\|\mathbf{x}\\|\_2
 Documents that are **orthogonal**, in the sense that the resulting cosine similarity is 0, are dissimilar.
 The similarity increases as the score approaches 1.
 There are several issues with this approach which are addressed by using the term frequence-inverse document frequency (TF-IDF) score.
+
+
+## Constructing Kernels {#constructing-kernels}
+
+A valid kernel function must satisfy the following conditions:
+
+1.  Symmetry: \\(k(\mathbf{x}, \mathbf{x}') = k(\mathbf{x}', \mathbf{x})\\)
+2.  Positive semi-definite: \\(k(\mathbf{x}, \mathbf{x}') \geq 0\\)
+
+If the feature space can be represented as a dot product, then it will satisfy the first condition by definition. The second condition can be shown by constructing a Gram matrix \\(\mathbf{K}\\) and showing that it is positive semi-definite. A matrix \\(\mathbf{K}\\) is positive semi-definite if and only if \\(\mathbf{v}^T\mathbf{K}\mathbf{v} \geq 0\\) for all \\(\mathbf{v} \in \mathbb{R}^n\\).
+
+
+### Direct Construction of a Kernel {#direct-construction-of-a-kernel}
+
+In this approach, we define a feature space \\(\phi(\mathbf{x})\\) and then compute the kernel function as
+
+\\[
+k(\mathbf{x}, \mathbf{x}') = \phi(\mathbf{x})^T \phi(\mathbf{x}').
+\\]
+
+This is the approach used in the example from above. In that example, we used the kernel function \\(k(\mathbf{x}, \mathbf{x}') = (\mathbf{x}^T\mathbf{x}')^2\\). For our 2D input, the feature space is \\(\phi(\mathbf{x}) = (x\_1^2, x\_2^2, \sqrt{2}x\_1x\_2)\\). It is easy to see that the kernel function is the dot product of the feature space, and its kernel matrix is positive semi-definite.
+
+
+### Construction from other valid kernels {#construction-from-other-valid-kernels}
+
+As a more convenient approach, it is possible to construct complex kernels from known kernels. Given valid kernels \\(k\_1(\mathbf{x}, \mathbf{x}')\\) and \\(k\_2(\mathbf{x}, \mathbf{x}')\\), we can construct a new kernel \\(k(\mathbf{x}, \mathbf{x}')\\) using the following operations:
+
+1.  \\(k(\mathbf{x}, \mathbf{x}') = ck\_1(\mathbf{x}, \mathbf{x}')\\) for \\(c > 0\\)
+2.  \\(k(\mathbf{x}, \mathbf{x}') = f(\mathbf{x})k\_1(\mathbf{x}, \mathbf{x}')f(\mathbf{x}')\\) for \\(f(\mathbf{x})\\)
+3.  \\(k(\mathbf{x}, \mathbf{x}') = k\_1(\mathbf{x}, \mathbf{x}') + k\_2(\mathbf{x}, \mathbf{x}')\\)
+4.  \\(k(\mathbf{x}, \mathbf{x}') = k\_1(\mathbf{x}, \mathbf{x}')k\_2(\mathbf{x}, \mathbf{x}')\\)
+5.  \\(k(\mathbf{x}, \mathbf{x}') = \exp(k\_1(\mathbf{x}, \mathbf{x}'))\\)
+6.  \\(k(\mathbf{x}, \mathbf{x}') = \tanh(k\_1(\mathbf{x}, \mathbf{x}'))\\)
