@@ -21,10 +21,20 @@
     },
     {
         "date": "Week 3",
-        "topic": "Matrix Inverse, Block Matrices, Determinants, and Vector Spaces",
+        "topic": "Matrix Inverse, Block Matrices, and Determinants",
         "materials": [
             {
-                "title": "2.4, 3.1, 3.2, 4.1",
+                "title": "2.4, 3.1, 3.2",
+                "url": ""
+            }
+        ]
+    },
+    {
+        "date": "Week 4",
+        "topic": "Determinants, Vector Spaces, and Linear Independence",
+        "materials": [
+            {
+                "title": "3.2, 4.1, 4.2, 4.3",
                 "url": ""
             }
         ]

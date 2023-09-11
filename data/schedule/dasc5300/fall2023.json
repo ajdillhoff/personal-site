@@ -59,11 +59,29 @@
     },
     {
         "date": "September 11",
-        "topic": "Additional Packages, Exam 1 Review",
-        "materials": []
+        "topic": "Additional Packages",
+        "materials": [
+            {
+                "title": "NumPy: Basics",
+                "url": "/notes/numpy_basics"
+            },
+            {
+                "title": "NumPy: Shape Manipulation",
+                "url": "/notes/numpy_shape_manipulation"
+            },
+            {
+                "title": "NumPy: Copies and Views",
+                "url": "/notes/numpy_copies_and_views"
+            }
+        ]
     },
     {
         "date": "September 13",
+        "topic": "Exam 1 Review",
+        "materials": []
+    },
+    {
+        "date": "September 18",
         "topic": "Exam 1",
         "materials": []
     }

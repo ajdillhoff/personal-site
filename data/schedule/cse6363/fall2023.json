@@ -77,5 +77,35 @@
                 "url": "/notes/kernels"
             }
         ]
+    },
+    {
+        "date": "September 11",
+        "topic": "Support Vector Machines",
+        "materials": [
+            {
+                "title": "Support Vector Machines",
+                "url": "/notes/support_vector_machine"
+            }
+        ]
+    },
+    {
+        "date": "September 13",
+        "topic": "Support Vector Machines",
+        "materials": [
+            {
+                "title": "Support Vector Machines",
+                "url": "/notes/support_vector_machine"
+            }
+        ]
+    },
+    {
+        "date": "September 15",
+        "topic": "Sequential Minimal Optimization",
+        "materials": [
+            {
+                "title": "Sequential Minimal Optimization",
+                "url": "/notes/sequential_minimal_optimization"
+            }
+        ]
     }
 ]
