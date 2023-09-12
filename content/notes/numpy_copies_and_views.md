@@ -6,7 +6,7 @@ draft = false
 tags = ["python"]
 +++
 
-<a target="_blank" href="https://colab.research.google.com/github/ajdillhoff/python-examples/blob/main/numpy_quickstart/numpy_copies_and_views.ipynb">
+<a target="_blank" href="https://colab.research.google.com/github/ajdillhoff/python-examples/blob/main/numpy_quickstart/copies_and_views.ipynb">
   <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
 </a>
 

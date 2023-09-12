@@ -78,7 +78,12 @@
     {
         "date": "September 13",
         "topic": "Exam 1 Review",
-        "materials": []
+        "materials": [
+            {
+                "title": "Python Review Questions",
+                "url": "/notes/python_exam_review"
+            }
+        ]
     },
     {
         "date": "September 18",
