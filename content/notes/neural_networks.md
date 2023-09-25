@@ -50,7 +50,7 @@ Thus, any neural network can be simply formulated as
 f(\mathbf{x};W).
 \\]
 
-{{< figure src="Introduction/2022-02-12_18-08-25_screenshot.png" caption="<span class=\"figure-number\">Figure 1: </span>General neural network diagram." >}}
+{{< figure src="/ox-hugo/2022-02-12_18-08-25_screenshot.png" caption="<span class=\"figure-number\">Figure 1: </span>General neural network diagram." >}}
 
 A neural network is in part defined by its **layers**, the number of **nodes** in each layer, the choice of **activation function**, and the choice of **loss function**.
 

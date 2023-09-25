@@ -25,8 +25,8 @@ This is the course page for CSE 3380 - Linear Algebra in Fall 2023. Here you'll 
 
 ## Teaching Assistants
 
-- Section 001: Roman Strukov (rxs6055 (at) mavs (dot) uta (dot) edu)
-- Section 002: Yanjun Lyu (yxl9168 (at) mavs (dot) uta (dot) edu)
+- Section 001: Yanjun Lyu (yxl9168 (at) mavs (dot) uta (dot) edu)
+- Section 002: Roman Strukov (rxs6055 (at) mavs (dot) uta (dot) edu)
 
 ## Office Hours
 

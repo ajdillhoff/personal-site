@@ -107,5 +107,65 @@
                 "url": "/notes/sequential_minimal_optimization"
             }
         ]
+    },
+    {
+        "date": "September 18",
+        "topic": "Perceptrons",
+        "materials": [
+            {
+                "title": "Perceptron",
+                "url": "/notes/perceptron"
+            }
+        ]
+    },
+    {
+        "date": "September 20",
+        "topic": "Artificial Neural Networks",
+        "materials": [
+            {
+                "title": "Artificial Neural Networks",
+                "url": "/notes/neural_networks"
+            }
+        ]
+    },
+    {
+        "date": "September 22",
+        "topic": "Backpropagation",
+        "materials": [
+            {
+                "title": "Artificial Neural Networks",
+                "url": "/notes/neural_networks"
+            }
+        ]
+    },
+    {
+        "date": "September 25",
+        "topic": "Bias-Variance Tradeoff, Model Selection, and Cross-Validation",
+        "materials": [
+            {
+                "title": "Bias-Variance Tradeoff",
+                "url": "/notes/bias_and_variance"
+            }
+        ]
+    },
+    {
+        "date": "September 27",
+        "topic": "Hidden Markov Models",
+        "materials": [
+            {
+                "title": "Hidden Markov Models",
+                "url": "/notes/hidden_markov_models"
+            }
+        ]
+    },
+    {
+        "date": "September 29",
+        "topic": "Hidden Markov Models",
+        "materials": [
+            {
+                "title": "Hidden Markov Models",
+                "url": "/notes/hidden_markov_models"
+            }
+        ]
     }
 ]

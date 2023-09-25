@@ -89,5 +89,30 @@
         "date": "September 18",
         "topic": "Exam 1",
         "materials": []
+    },
+    {
+        "date": "September 20",
+        "topic": "CANCELLED",
+        "materials": []
+    },
+    {
+        "date": "September 25",
+        "topic": "Introduction to Algorithms",
+        "materials": [
+            {
+                "title": "Introduction to Algorithms",
+                "url": "/notes/introduction_to_complexity_analysis"
+            }
+        ]
+    },
+    {
+        "date": "September 27",
+        "topic": "Complexity Analysis, Quiz 3",
+        "materials": [
+            {
+                "title": "Complexity Analysis",
+                "url": "/notes/introduction_to_complexity_analysis"
+            }
+        ]
     }
 ]
