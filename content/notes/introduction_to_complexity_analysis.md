@@ -1,5 +1,5 @@
 +++
-title = "Introduction to Complexity Analysis"
+title = "Introduction to Algorithms"
 authors = ["Alex Dillhoff"]
 date = 2023-09-19T00:00:00-05:00
 tags = ["computer science", "algorithms"]
@@ -11,7 +11,12 @@ draft = false
 <div class="heading">Table of Contents</div>
 
 - [Introduction to Algorithms](#introduction-to-algorithms)
-- [Complexity Analysis](#complexity-analysis)
+- [Insertion Sort](#insertion-sort)
+- [Example: Sorting Numbers](#example-sorting-numbers)
+- [Worst-Case Analysis](#worst-case-analysis)
+- [Best-Case Analysis](#best-case-analysis)
+- [Rate of Growth](#rate-of-growth)
+- [Example: Analysis of Selection Sort](#example-analysis-of-selection-sort)
 
 </div>
 <!--endtoc-->
@@ -29,7 +34,7 @@ We begin our algorithmic journey by studying a simple sorting algorithm, inserti
 This example follows the one given in Chapter 2 of Cormen et al. (2009).
 
 
-### Insertion Sort {#insertion-sort}
+## Insertion Sort {#insertion-sort}
 
 Insertion sort is defined as
 
@@ -45,12 +50,12 @@ def insertion_sort(A):
 ```
 
 
-### Example: Sorting Numbers {#example-sorting-numbers}
+## Example: Sorting Numbers {#example-sorting-numbers}
 
 TODO: Add a step-by-step example of sorting a list of numbers.
 
 
-### Worst-Case Analysis {#worst-case-analysis}
+## Worst-Case Analysis {#worst-case-analysis}
 
 Given the definition from above, we can compute \\(T(n)\\), the running time of the algorithm on an input of size \\(n\\). To do this, we need to sum the products of the cost of each statement and the number of times each statement is executed.
 
@@ -107,7 +112,7 @@ T(n) &= c\_1 n + c\_2 (n-1) + c\_3 (n-1) + c\_4 \left(\frac{n(n-1)}{2} - 1\right
 With the appropriate choice of constants, we can express this as a quadratic function \\(an^2 + bn + c\\).
 
 
-### Best-Case Analysis {#best-case-analysis}
+## Best-Case Analysis {#best-case-analysis}
 
 The best-case runtime for insertion sort is when the input is already sorted. In this case, the `while` check is executed only once per iteration of the `for` loop. That is, \\(t\_i = 1\\) for every iteration of the `for` loop. Therefore, the best-case runtime is given as
 
@@ -119,12 +124,12 @@ T(n) &= c\_1 n + c\_2 (n-1) + c\_3 (n-1) + c\_4 (n-1) + c\_7 (n-1) \\\\
 Let \\(a = c\_1 + c\_2 + c\_3 + c\_4 + c\_7\\) and $b = -(c_2 + c_3 + c_4 + c_7)$Then the best-case runtime is given as \\(an + b\\), a linear function of \\(n\\).
 
 
-### Rate of Growth {#rate-of-growth}
+## Rate of Growth {#rate-of-growth}
 
 We can simplify how we express the runtime of both these cases by considering only the highest-order term. Consider the worst-case, \\(T(n) = an^2 + bn + c\\). As \\(n\\) grows, the term \\(an^2\\) will dominate the runtime, rendering the others insignificant by comparison. This simplification is typically expressed using \\(\Theta\\) notation. For the worst-case, we say that \\(T(n) = \Theta(n^2)\\). It is a compact way of stating that the runtime is proportional to \\(n^2\\) for large values of \\(n\\).
 
 
-### Example: Analysis of Selection Sort {#example-analysis-of-selection-sort}
+## Example: Analysis of Selection Sort {#example-analysis-of-selection-sort}
 
 Based on the analysis above, let's check our understanding and see if we can characterize the runtime of another sorting algorithm, selection sort. Selection sort is defined as
 
@@ -143,7 +148,7 @@ The first statement `for i in range(0, len(A) - 1)` will be evaluated \\(n\\) ti
 The inner `for` loop will be checked \\(n-i\\) times for each iteration of the outer `for` loop. The cost of the condition check is \\(c\_3\\). The cost of the statements inside the `for` loop are \\(c\_4\\) and \\(c\_5\\). The `if` check is evaluated for every iteration of the inner loop, but the statements inside the `if` are only executed when the condition is true. We can denote this as \\(t\_i\\), the number of times the `if` condition is true for each iteration of the inner `for` loop. The cost of the inner loop is given as
 
 \begin{align}
-c\_3 \sum\_{i=0}^{n-1} (n-i) + c\_4 \sum\_{i=0}^{n-1} (n-i-1) + c\_5 \sum\_{i=0}^{n-1} t\_i\\\\
+c\_3 \sum\_{i=1}^{n-1} (n-i) + c\_4 \sum\_{i=0}^{n-1} (n-i-1) + c\_5 \sum\_{i=0}^{n-1} t\_i\\\\
 \end{align}
 
 Combining this with the cost of the outer `for` loop, we get
@@ -151,40 +156,6 @@ Combining this with the cost of the outer `for` loop, we get
 \begin{align}
 T(n) &= c\_1 n + c\_2 (n-1) + c\_6 (n-1) + c\_3 \sum\_{i=0}^{n-1} (n-i) + c\_4 \sum\_{i=0}^{n-1} (n-i-1) + c\_5 \sum\_{i=0}^{n-1} t\_i\\\\
 \end{align}
-
-
-## Complexity Analysis {#complexity-analysis}
-
-
-### Introduction {#introduction}
-
--   What is complexity analysis and why is it important?
--   Types of complexity: Time complexity and Space complexity.
--   Revisit insertion sort example.
-
-
-### Big O Notation {#big-o-notation}
-
--   Definition and significance.
--   Common Big O types: \\(O(1)\\), \\(O(\log n)\\), \\(O(n)\\), \\(O(n \log n)\\), \\(O(n^2)\\), etc.
--   Examples of algorithms and their Big O.
-
-
-### Big Omega Notation {#big-omega-notation}
-
--   Definition and significance.
--   Examples of algorithms and their Big Omega.
-
-There are certainly examples of input sequences of size \\(n\\) for which an algorithm like insertion sort will run in \\(O(n)\\) time. However, there are also plenty of sequences that will cause it to run in \\(O(n^2)\\) time. If we are evaluating a lower bound on the runtime, we would have to go with \\(\Omega(n^2)\\) since every input runs _at least as fast_ as the worst-case.
-
-
-### Big Theta Notation {#big-theta-notation}
-
-
-### Analyzing Complexity {#analyzing-complexity}
-
--   Worst-case, average-case, and best-case scenarios.
--   Techniques for analyzing complexity.
 
 ## References
 
