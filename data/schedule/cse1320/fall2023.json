@@ -81,5 +81,19 @@
         "date": "Week 6",
         "topic": "Exam 1",
         "materials": []
+    },
+    {
+        "date": "Week 7",
+        "topic": "Data Structures, Continued",
+        "materials": [
+            {
+                "title": "Binary Search Trees",
+                "url": "/teaching/cse1320/lectures/binary_trees.pdf"
+            },
+            {
+                "title": "Hash Maps",
+                "url": "/teaching/cse1320/lectures/hash_maps.pdf"
+            }
+        ]
     }
 ]

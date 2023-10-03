@@ -53,5 +53,15 @@
                 "url": ""
             }
         ]
+    },
+    {
+        "date": "Week 7",
+        "topic": "Computer Graphics, Python Crash Course",
+        "materials": [
+            {
+                "title": "2.7",
+                "url": ""
+            }
+        ]
     }
 ]

@@ -167,5 +167,25 @@
                 "url": "/notes/hidden_markov_models"
             }
         ]
+    },
+    {
+        "date": "October 4",
+        "topic": "Hidden Markov Models",
+        "materials": [
+            {
+                "title": "Hidden Markov Models",
+                "url": "/notes/hidden_markov_models"
+            }
+        ]
+    },
+    {
+        "date": "October 6",
+        "topic": "Decision Trees",
+        "materials": [
+            {
+                "title": "Decision Trees",
+                "url": "/notes/decision_trees"
+            }
+        ]
     }
 ]

@@ -114,5 +114,25 @@
                 "url": "/notes/complexity_analysis"
             }
         ]
+    },
+    {
+        "date": "October 2",
+        "topic": "Introduction to Data Structures",
+        "materials": [
+            {
+                "title": "Introduction to Data Structures",
+                "url": "/notes/introduction_to_data_structures"
+            }
+        ]
+    },
+    {
+        "date": "October 4",
+        "topic": "Stacks, Queues, and Linked Lists",
+        "materials": [
+            {
+                "title": "Stacks and Queues",
+                "url": "/notes/introduction_to_data_structures"
+            }
+        ]
     }
 ]
