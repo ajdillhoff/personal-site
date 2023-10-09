@@ -95,5 +95,19 @@
                 "url": "/teaching/cse1320/lectures/hash_maps.pdf"
             }
         ]
+    },
+    {
+        "date": "Week 8",
+        "topic": "Makefiles and Macros",
+        "materials": [
+            {
+                "title": "Makefiles",
+                "url": "/teaching/cse1320/lectures/make.pdf"
+            },
+            {
+                "title": "Macros",
+                "url": "/teaching/cse1320/lectures/macros.pdf"
+            }
+        ]
     }
 ]
