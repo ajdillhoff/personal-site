@@ -134,5 +134,25 @@
                 "url": "/notes/introduction_to_data_structures"
             }
         ]
+    },
+    {
+        "date": "October 9",
+        "topic": "Hash Maps",
+        "materials": [
+            {
+                "title": "Hash Maps",
+                "url": "/teaching/dasc5300/lectures/hash_maps.pdf"
+            }
+        ]
+    },
+    {
+        "date": "October 11",
+        "topic": "Binary Search Trees",
+        "materials": [
+            {
+                "title": "Binary Search Trees",
+                "url": "/notes/binary_search_trees"
+            }
+        ]
     }
 ]

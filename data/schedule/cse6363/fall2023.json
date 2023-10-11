@@ -187,5 +187,30 @@
                 "url": "/notes/decision_trees"
             }
         ]
+    },
+    {
+        "date": "October 9",
+        "topic": "Decision Trees",
+        "materials": [
+            {
+                "title": "Decision Trees",
+                "url": "/notes/decision_trees"
+            }
+        ]
+    },
+    {
+        "date": "October 11",
+        "topic": "Clustering",
+        "materials": []
+    },
+    {
+        "date": "October 13",
+        "topic": "Principal Component Analysis",
+        "materials": [
+            {
+                "title": "Principal Component Analysis",
+                "url": "/notes/principal_component_analysis"
+            }
+        ]
     }
 ]
