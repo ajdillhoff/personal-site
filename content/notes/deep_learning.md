@@ -4,54 +4,32 @@ authors = ["Alex Dillhoff"]
 date = 2022-03-29T00:00:00-05:00
 tags = ["deep learning"]
 draft = false
+lastmod = 2023-10-22
 +++
 
 <div class="ox-hugo-toc toc">
 
 <div class="heading">Table of Contents</div>
 
-- [Syllabi](#syllabi)
-- [Questions](#questions)
 - [Introduction](#introduction)
 - [What makes a model deep?](#what-makes-a-model-deep)
 - [Deep Networks](#deep-networks)
+- [Deep vs. Shallow Networks](#deep-vs-dot-shallow-networks)
+- [High Dimensional Structured Data](#high-dimensional-structured-data)
 - [Activation Functions](#activation-functions)
 - [Loss Functions](#loss-functions)
 - [A Typical Training Pipeline](#a-typical-training-pipeline)
-- [Bias/Variance Tradeoff](#bias-variance-tradeoff)
-- [Regularization](#regularization)
-- [Optimization Algorithms](#optimization-algorithms)
 
 </div>
 <!--endtoc-->
 
 
 
-## Syllabi {#syllabi}
-
--   <https://cs230.stanford.edu/syllabus/>
-
-
-## Questions {#questions}
-
--   Does backprop give the same result when combining the weights and bias versus separating?
-
-
 ## Introduction {#introduction}
 
--   What is deep learning?
--   What problems is it used for?
--   Basic neural nets vs "deep" nets
--   Structuring a project
--   CNNs
--   Sequence models
--   Geometric Deep Learning
--   Representation of a model in code (vectorization)
+Deep learning is a term that you've probably heard of a million times by now in different contexts. It is an umbrella term that encompasses techniques for computer vision, bioinformatics, natural language processing, and much more. It almost always involves a neural network of some kind that was trained on a large corpus of data.
 
-Deep learning has been employed in many fields from visual recognition to medical diagnosis.
-Its continued success is impossible to ignore.
-As more and more companies pivot to utilize deep learning in some capacity, it is paramount that any machine learning practitioner or research be well versed in moden practices and frameworks.
-This section will provide a broad overview of deep learning with examples using [PyTorch](https://pytorch.org).
+The existence of the word "deep" implies a contrast to "shallow" learning. Some definition define a deep network as an artificial neural network with more than 1 layer. Another definition is that a deep model will include a hierarchy of features that are learned from the data. These features are learned as part of the optimization process as opposed to being manually engineered as is required in other machine learning techniques.
 
 If you are not yet familiar with [neural networks]({{< relref "neural_networks.md" >}}), follow the link to learn about their basics as they are the foundation of deep learning systems.
 
@@ -64,13 +42,12 @@ There will also be a focus on best practices for organizing a machine learning p
 
 We begin by comparing _shallow_ networks with _deep_ networks.
 What defines a deep network? Is it as simple as crossing a threshold into \\(n\\) layers?
-As evidenced by <&zeilerVisualizingUnderstandingConvolutional2013>, deeper networks allow for a more robust hierarchy of image features.
+As evidenced by (<a href="#citeproc_bib_item_3">Zeiler and Fergus 2013</a>) deeper networks allow for a more robust hierarchy of image features.
 
-There is work by <&montufarNumberLinearRegions2014> which suggests that shallow networks require an exponential amount of nodes as compared to deeper networks.
+There is work by (<a href="#citeproc_bib_item_1">Montúfar et al. 2014</a>) which suggests that shallow networks require an exponential amount of nodes as compared to deeper networks.
 Additionally, there are many individual results which suggest that deeper networks provide better task generalization.
 
-As we will later see when studying Convolutional Neural Networks, the optimization of such deep networks produces features that maximize the performance of a task.
-That is, our network is not only optimizing the performance of task, but it produces features from the data.
+As we will later see when studying Convolutional Neural Networks, the optimization of such deep networks produces features that maximize the performance of a task. That is, the network is not only optimizing the overall performance of task, but it produces features from the data that may be useful in other contexts.
 This is particularly useful for transfer learning, where large pre-trained models can be used as starting points for novel tasks.
 The benefit being that a complete retraining of the model is not necessary.
 
@@ -138,6 +115,20 @@ To summarize, every layer with trainable parameters will compute
 The term \\(\frac{d\mathbf{a}^{(l+1)}}{d\mathbf{z}^{(l)}}\\) is the gradient that is propagated from layer \\(l+1\\).
 
 
+## Deep vs. Shallow Networks {#deep-vs-dot-shallow-networks}
+
+As mentioned above, a shallow network can approximate any continuous function to arbitrary precision. If a deep network can represent the composition of two shallow networks, then it can also approximate any continuous function to arbitrary precision. Then why are deep networks better than shallow networks when both can approximate any function? There are a few compelling reasons as to why, starting with the **capacity** of the network and the number of linear regions it can represent per parameter.
+
+As discussed in _Understanding Deep Learning_ (<a href="#citeproc_bib_item_2">Prince 2023</a>), a shallow network with 1 input, 1 output, and \\(D > 2\\) hidden units can create up to \\(D + 1\\) linear regions using \\(3D+1\\) parameters. The \\(3D + 1\\) comes from the fact that the hidden layer requires \\(D\\) parameters for the weights with an extra \\(D\\) parameters for the bias terms. To convert from the hidden layer to the output layer, there are \\(D\\) parameters for the weights and 1 parameter for the bias term. The figure below shows the maximum number of linear regions as a function of the number of parameters for networks that map one input to one output.
+
+{{< figure src="/ox-hugo/2023-10-22_21-30-14_screenshot.png" caption="<span class=\"figure-number\">Figure 1: </span>Maximum number of linear regions as a function of the number of parameters for networks that map one input to one output (<a href=\"#citeproc_bib_item_2\">Prince 2023</a>)." >}}
+
+
+## High Dimensional Structured Data {#high-dimensional-structured-data}
+
+For high dimensional structured data, such as images, deep networks are able to learn a hierarchy of features that are useful for the task at hand while requiring a significantly smaller number of parameters than a shallow network. Consider a \\(100\times100\\) image used as input to a shallow network with 1 hidden layer. This would require \\(10,001\\) parameters to represent the weights and biases. If we instead use a deep network with with convolutional layers, we can use significantly fewer parameters. We will see this more closely when we study [Convolutional Neural Networks]({{< relref "convolutional_neural_networks.md" >}}).
+
+
 ## Activation Functions {#activation-functions}
 
 
@@ -155,10 +146,18 @@ The term \\(\frac{d\mathbf{a}^{(l+1)}}{d\mathbf{z}^{(l)}}\\) is the gradient tha
 \sigma(\mathbf{x})(1 - \sigma(\mathbf{x}))
 \\]
 
-{{< figure src="/ox-hugo/2022-03-31_10-04-44_screenshot.png" caption="<span class=\"figure-number\">Figure 1: </span>Sigmoid non-linearity (Wikipedia)" >}}
+{{< figure src="/ox-hugo/2022-03-31_10-04-44_screenshot.png" caption="<span class=\"figure-number\">Figure 2: </span>Sigmoid non-linearity (Wikipedia)" >}}
 
 
 ## Loss Functions {#loss-functions}
+
+Loss functions are used to evaluate the performance of a model. In the context of gradient descent, their gradient with respect to the model parameters is used to update the parameters. Loss functions can be constructed using maximum likelihood estimation over a probability distribution or by using a distance metric between the model output and the ground truth. The table below from (<a href="#citeproc_bib_item_2">Prince 2023</a>) shows some common loss functions and their use cases.
+
+| Data Type                         | Domain             | Distribution      | Use                       |
+|-----------------------------------|--------------------|-------------------|---------------------------|
+| Univariate, continuous, unbounded | \\(\mathbb{R}\\)   | univariate normal | Regression                |
+| Univariate, discrete, binary      | \\(\\{0, 1\\}\\)   | Bernoulli         | Binary Classification     |
+| Univariate, discrete, bounded     | \\(\\{0, 1\\}^K\\) | Multinoulli       | Multiclass Classification |
 
 
 ## A Typical Training Pipeline {#a-typical-training-pipeline}
@@ -190,21 +189,10 @@ We can do this in PyTorch using `torch.utils.data.random_split`.
 train_dataset, val_dataset = torch.utils.data.random_split(dataset, [train_size, val_size])
 ```
 
+## References
 
-## Bias/Variance Tradeoff {#bias-variance-tradeoff}
-
-Ideally, we want a model that generalizes well to unseen data.
-Being able to evaluate how well our model performs is, in many ways, more important than the model itself.
-A model that shows good generalization performance will have low bias and low variance.
-Bonus points are awarded if the model remains simple.
-
-During training, we can detect a model that is overfitting the data by also monitoring its performance on a separate validation set.
-If the validation loss diverges from the training loss, the model is beginning to overfit.
-
-{{< figure src="/ox-hugo/2022-03-31_22-38-54_screenshot.png" caption="<span class=\"figure-number\">Figure 2: </span>Higher complexity on the dataset leads to higher variance and lower bias." >}}
-
-
-## Regularization {#regularization}
-
-
-## Optimization Algorithms {#optimization-algorithms}
+<style>.csl-entry{text-indent: -1.5em; margin-left: 1.5em;}</style><div class="csl-bib-body">
+  <div class="csl-entry"><a id="citeproc_bib_item_1"></a>Montúfar, Guido, Razvan Pascanu, Kyunghyun Cho, and Yoshua Bengio. 2014. “On the Number of Linear Regions of Deep Neural Networks.” <i>Arxiv:1402.1869 [Cs, Stat]</i>, June. <a href="http://arxiv.org/abs/1402.1869">http://arxiv.org/abs/1402.1869</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_2"></a>Prince, Simon J.D. 2023. <i>Understanding Deep Learning</i>. MIT Press. <a href="https://udlbook.github.io/udlbook/">https://udlbook.github.io/udlbook/</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_3"></a>Zeiler, Matthew D., and Rob Fergus. 2013. “Visualizing and Understanding Convolutional Networks.” <i>Arxiv:1311.2901 [Cs]</i>, November. <a href="http://arxiv.org/abs/1311.2901">http://arxiv.org/abs/1311.2901</a>.</div>
+</div>
