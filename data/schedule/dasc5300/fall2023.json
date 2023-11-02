@@ -137,7 +137,7 @@
     },
     {
         "date": "October 9",
-        "topic": "Hash Maps",
+        "topic": "Hash Maps, Quiz 3",
         "materials": [
             {
                 "title": "Hash Maps",
@@ -152,6 +152,66 @@
             {
                 "title": "Binary Search Trees",
                 "url": "/notes/binary_search_trees"
+            }
+        ]
+    },
+    {
+        "date": "October 16",
+        "topic": "Red-Black Trees",
+        "materials": [
+            {
+                "title": "Red-Black Trees",
+                "url": "/notes/red_black_trees"
+            }
+        ]
+    },
+    {
+        "date": "October 18",
+        "topic": "Introduction to Graphs",
+        "materials": [
+            {
+                "title": "Intro. to Graphs",
+                "url": "/notes/introduction_to_graph_theory"
+            }
+        ]
+    },
+    {
+        "date": "October 23",
+        "topic": "Minimum Spanning Trees, Quiz 4",
+        "materials": [
+            {
+                "title": "Minimum Spanning Trees",
+                "url": "/notes/minimum_spanning_trees"
+            }
+        ]
+    },
+    {
+        "date": "October 25",
+        "topic": "Single-Source Shortest Paths",
+        "materials": [
+            {
+                "title": "Single-Source Shortest Paths",
+                "url": "/notes/single_source_shortest_paths"
+            }
+        ]
+    },
+    {
+        "date": "October 30",
+        "topic": "Introduction to Databases",
+        "materials": [
+            {
+                "title": "Introduction to Databases",
+                "url": "/notes/introduction_to_databases"
+            }
+        ]
+    },
+    {
+        "date": "November 1",
+        "topic": "Structured Query Language",
+        "materials": [
+            {
+                "title": "Structured Query Language",
+                "url": "/notes/structured_query_language"
             }
         ]
     }
