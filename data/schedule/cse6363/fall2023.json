@@ -212,5 +212,155 @@
                 "url": "/notes/principal_component_analysis"
             }
         ]
+    },
+    {
+        "date": "October 16",
+        "topic": "Principal Component Analysis",
+        "materials": [
+            {
+                "title": "Principal Component Analysis",
+                "url": "/notes/principal_component_analysis"
+            }
+        ]
+    },
+    {
+        "date": "October 18",
+        "topic": "Boosting",
+        "materials": [
+            {
+                "title": "Boosting",
+                "url": "/notes/boosting"
+            }
+        ]
+    },
+    {
+        "date": "October 20",
+        "topic": "Boosting",
+        "materials": [
+            {
+                "title": "Boosting",
+                "url": "/notes/boosting"
+            }
+        ]
+    },
+    {
+        "date": "October 23",
+        "topic": "Introduction to Deep Learning",
+        "materials": [
+            {
+                "title": "Deep Learning",
+                "url": "/notes/deep_learning"
+            }
+        ]
+    },
+    {
+        "date": "October 25",
+        "topic": "Convolutional Neural Networks",
+        "materials": [
+            {
+                "title": "Convolutional Neural Networks",
+                "url": "/notes/convolutional_neural_networks"
+            }
+        ]
+    },
+    {
+        "date": "October 27",
+        "topic": "Convolutional Neural Networks",
+        "materials": [
+            {
+                "title": "Convolutional Neural Networks",
+                "url": "/notes/convolutional_neural_networks"
+            }
+        ]
+    },
+    {
+        "date": "October 30",
+        "topic": "Optimization for Deep Learning",
+        "materials": [
+            {
+                "title": "Optimization for Deep Learning",
+                "url": "/notes/optimization_for_deep_learning"
+            }
+        ]
+    },
+    {
+        "date": "November 1",
+        "topic": "Recurrent Neural Networks",
+        "materials": [
+            {
+                "title": "Recurrent Neural Networks",
+                "url": "/notes/recurrent_neural_networks"
+            }
+        ]
+    },
+    {
+        "date": "November 3",
+        "topic": "Transformers",
+        "materials": [
+            {
+                "title": "Transformers",
+                "url": "/notes/transformers"
+            }
+        ]
+    },
+    {
+        "date": "November 6",
+        "topic": "Markov Decision Processes",
+        "materials": [
+            {
+                "title": "Markov Decision Processes",
+                "url": "/notes/markov_decision_processes"
+            }
+        ]
+    },
+    {
+        "date": "November 8",
+        "topic": "Markov Decision Processes",
+        "materials": [
+            {
+                "title": "Markov Decision Processes",
+                "url": "/notes/markov_decision_processes"
+            }
+        ]
+    },
+    {
+        "date": "November 10",
+        "topic": "Reinforcement Learning",
+        "materials": [
+            {
+                "title": "Reinforcement Learning",
+                "url": "/notes/reinforcement_learning"
+            }
+        ]
+    },
+    {
+        "date": "November 13",
+        "topic": "Policy Gradient Methods",
+        "materials": [
+            {
+                "title": "Policy Gradient Methods",
+                "url": "/notes/policy_gradient_methods"
+            }
+        ]
+    },
+    {
+        "date": "November 15",
+        "topic": "Natural Language Processing",
+        "materials": [
+            {
+                "title": "Natural Language Processing",
+                "url": "/notes/natural_language_processing"
+            }
+        ]
+    },
+    {
+        "date": "November 17",
+        "topic": "Recent History of LLMs",
+        "materials": []
+    },
+    {
+        "date": "November 20",
+        "topic": "CANCELLED",
+        "materials": []
     }
 ]

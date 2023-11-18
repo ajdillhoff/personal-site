@@ -214,5 +214,35 @@
                 "url": "/notes/structured_query_language"
             }
         ]
+    },
+    {
+        "date": "November 6",
+        "topic": "Exam 2 Review",
+        "materials": []
+    },
+    {
+        "date": "November 8",
+        "topic": "Exam 2",
+        "materials": []
+    },
+    {
+        "date": "November 13",
+        "topic": "Advanced SQL",
+        "materials": [
+            {
+                "title": "Structured Query Language",
+                "url": "/notes/structured_query_language"
+            }
+        ]
+    },
+    {
+        "date": "November 15",
+        "topic": "Distributed Databases",
+        "materials": [
+            {
+                "title": "Distributed Databases",
+                "url": "/notes/distributed_databases"
+            }
+        ]
     }
 ]
