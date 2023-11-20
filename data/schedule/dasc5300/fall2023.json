@@ -244,5 +244,15 @@
                 "url": "/notes/distributed_databases"
             }
         ]
+    },
+    {
+        "date": "November 20",
+        "topic": "NOSQL, Quiz 5",
+        "materials": [
+            {
+                "title": "NOSQL",
+                "url": "/notes/nosql"
+            }
+        ]
     }
 ]
