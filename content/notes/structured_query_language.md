@@ -17,6 +17,13 @@ draft = false
 - [Constraints](#constraints)
 - [Retrieving Data](#retrieving-data)
 - [Modifying Data](#modifying-data)
+- [Nested Queries](#nested-queries)
+- [Joined Tables](#joined-tables)
+- [Aggregate Functions](#aggregate-functions)
+- [Grouping](#grouping)
+- [`WITH` Clause](#with-clause)
+- [Modifying Tables](#modifying-tables)
+- [Summary](#summary)
 
 </div>
 <!--endtoc-->
@@ -332,6 +339,249 @@ TRUNCATE TABLE Users;
 ```
 
 When deleting tuples from a database, it's important to consider any foreign key constraints that the table may have. If we delete a tuple from a table that is referenced by a foreign key constraint, we may end up with orphaned tuples. For example, if we delete a user from the `Users` table, we may end up with a character that has no user. We can avoid this by adding a `CASCADE` constraint to the `DELETE` statement. This will delete all tuples that reference the tuple we are deleting.
+
+
+## Nested Queries {#nested-queries}
+
+Nested queries allow us to make more complex queries on subsets of data returned from an original query. A nested query can be placed in any of the `SELECT`, `FROM`, or `WHERE` clauses. The query that uses the results of the nested query is called the **outer query**.
+
+What if we wanted a list of users who had at least 1 character whose class was the least represented class across all characters? We could first make a query to identify which class is the least represented before using that to find the users who have a character with that class.
+
+```sql
+SELECT  username
+FROM    Users
+WHERE   user_id IN (SELECT user_id
+                    FROM Characters
+                    WHERE class_id = (SELECT class_id
+                                      FROM Characters
+                                      GROUP BY class_id
+                                      ORDER BY COUNT(*) ASC
+                                      LIMIT 1));
+```
+
+The innert-most query returns the `class_id` of the least represented class by counting the number of characters in each class and ordering them in ascending order. The middle query returns the `user_id` of all characters whose class is the least represented class. The outer query returns the `username` of all users who have a character with the least represented class.
+
+Pay attention to the second `WHERE` clause that uses the `=` operator instead of `IN`. This is because the nested query returns a single value and single tuple. If we used the `IN` operator, we would get an error since MySQL does not support the `LIMIT` and `IN/ALL/ANY/SOME` operators together.
+
+
+### Correlated Nested Queries {#correlated-nested-queries}
+
+Some nested queries would have to execute for each tuple in the outer query. Consider the following query which returns the name and ID of all Human characters.
+
+```sql
+SELECT  C.id, C.name
+FROM    Characters as C
+WHERE   C.race_id IN (SELECT R.id
+                      FROM Races as R
+                      WHERE R.name = 'Human');
+```
+
+This query is an example of a **correlated nested query** since the inner query is dependent on the outer query. The inner query must be executed for each tuple in the outer query. This can be inefficient if the outer query returns a large number of tuples.
+
+Since this query uses only an `IN` operator, we can rewrite it as a single block query.
+
+```sql
+SELECT  C.id, C.name
+FROM    Characters as C, Races as R
+WHERE   C.race_id = R.id AND R.name = 'Human';
+```
+
+Let's revisit an earlier query to introduce the `EXISTS` operator. If we want to query the user names and IDs of all users who have an elf character, we can use the following query.
+
+```sql
+SELECT  U.id, U.username
+FROM    Users as U
+WHERE   EXISTS (SELECT *
+                FROM   Characters as C, Races as R
+                WHERE  C.user_id = U.id AND C.race_id = R.id
+                       AND R.name = 'Elf');
+```
+
+We can also use the `NOT EXISTS` operator to find the users who do not have an elf character. This works opposite to the `EXISTS` operator.
+
+
+## Joined Tables {#joined-tables}
+
+Joined tables are the result of a query that combines rows from two or more tables. The syntax itself may be easier to understand as compared to the nested queries written above. The following query returns the names of all users who have a `Human` character.
+
+```sql
+SELECT U.username, C.name
+FROM   (Users as U JOIN Characters as C ON U.user_id = C.user_id), Races as R
+WHERE  C.race_id = R.id AND R.name = 'Human';
+```
+
+Here, the `JOIN` function is used to combine both tables on the condition that the `user_id` of the `Users` table is equal to the `user_id` of the `Characters` table. The `WHERE` clause is used to filter the results to only those that have a `Human` character.
+
+This type of join is also referred to as an **inner join** since it only returns rows that satisfy the join condition. There are several other types of joins that we can use to combine tables. If we wanted to return the same information along with all of the users who do not have a `Human` character, we can use a **left outer join**.
+
+```sql
+SELECT U.username, C.name
+FROM   (Users as U LEFT OUTER JOIN
+        (Characters as C JOIN Races as R ON C.race_id = R.id AND R.name = 'Human')
+        ON U.user_id = C.user_id);
+```
+
+
+## Aggregate Functions {#aggregate-functions}
+
+Aggregate functions are used to perform calculations on a set of values and return a single value. The following table shows the most common aggregate functions supported by SQL.
+
+| Function | Description                                                 |
+|----------|-------------------------------------------------------------|
+| AVG()    | Returns the average value of a numeric column.              |
+| COUNT()  | Returns the number of rows that match a specified criteria. |
+| MAX()    | Returns the maximum value of a column.                      |
+| MIN()    | Returns the minimum value of a column.                      |
+| SUM()    | Returns the sum of all values in a column.                  |
+
+These can be used in the `SELECT` clause. The following query returns the average level of all characters.
+
+```sql
+SELECT AVG(level)
+FROM   Characters;
+```
+
+These statistics can be used with more complex queries. The following query returns the name of the user with the highest level character.
+
+```sql
+SELECT U.username
+FROM   Users as U, Characters as C
+WHERE  U.user_id = C.user_id AND C.level = (SELECT MAX(level)
+                                            FROM Characters);
+```
+
+In the next example, the query returns the tuple of the highest level Human character.
+
+```sql
+SELECT  C.*
+FROM    (Characters as C JOIN Races as R ON C.race_id = R.id AND R.name = 'Human')
+WHERE   C.level = (SELECT MAX(level)
+                   FROM Characters);
+```
+
+
+## Grouping {#grouping}
+
+As we just saw, aggregate functions permit some preliminary data analysis. We can take this further using **grouping**. For example, we calculated above the average level of all characters. What if we wanted to compute the average level of each class? We can use the `GROUP BY` clause to group the tuples by class.
+
+```sql
+SELECT   C.class_id, AVG(C.level)
+FROM     Characters as C
+GROUP BY C.class_id;
+```
+
+In the next example, we will run a similar query except we will also include the number of distinct users who have a character of that class.
+
+```sql
+SELECT   C.class_id, AVG(C.level), COUNT(DISTINCT C.user_id)
+FROM     Characters as C
+GROUP BY C.class_id;
+```
+
+
+## `WITH` Clause {#with-clause}
+
+Let's say we wanted to get the actual class name along with the users that had a character with the least represented class. We can use a nested query in the `FROM` clause to get the class name.
+
+```sql
+SELECT  username, Classes.name
+FROM    Users, Classes
+WHERE   user_id IN (SELECT user_id
+                    FROM Characters
+                    WHERE class_id = (SELECT class_id
+                                      FROM Characters
+                                      GROUP BY class_id
+                                      ORDER BY COUNT(*) ASC
+                                      LIMIT 1))
+        AND Classes.id = (SELECT class_id
+                          FROM Characters
+                          GROUP BY class_id
+                          ORDER BY COUNT(*) ASC
+                          LIMIT 1);
+```
+
+This query might immediately come across as inefficient since we are making the same query multiple times. If you agree, your intuition would be right. We can use the `WITH` clause to make this query more efficient.
+
+```sql
+WITH LeastUsedClass AS (
+    SELECT class_id
+    FROM Characters
+    GROUP BY class_id
+    ORDER BY COUNT(*) ASC
+    LIMIT 1
+)
+SELECT U.username, C.name
+FROM Users U
+JOIN Characters CH ON U.user_id = CH.user_id
+JOIN Classes C ON C.id = CH.class_id
+WHERE CH.class_id = (SELECT class_id FROM LeastUsedClass);
+```
+
+
+## Modifying Tables {#modifying-tables}
+
+Modifying databases used in production is inevitable. Typically, you will modify an offline test version before deploying it, but the process is the same. The `ALTER TABLE` command is used to modify tables. The following table shows the most common modifications that can be made to a table.
+
+| Command | Description                        |
+|---------|------------------------------------|
+| ADD     | Adds a new column to the table.    |
+| DROP    | Deletes a column from the table.   |
+| MODIFY  | Changes the data type of a column. |
+| RENAME  | Changes the name of a column.      |
+
+When we originally created the `Users` table, we did not specify a `NOT NULL` constraint for the `username` attribute. We can add this constraint with the following command.
+
+```sql
+ALTER TABLE Users
+MODIFY username VARCHAR(50) NOT NULL;
+```
+
+Another mistake that was made was with the name of the ID column. We can rename this column with the following command.
+
+```sql
+ALTER TABLE Users
+RENAME COLUMN user_id TO id;
+```
+
+
+### Scenario: Updating Foreign Keys {#scenario-updating-foreign-keys}
+
+Let's say we want to delete anything related to a user if that user is deleted from the `Users` table. That means all characters and inventories associated with those characters should be deleted. Currently, attempting to delete a user will fail with the following error:
+
+```bash
+SQL Error [1451] [23000]: Cannot delete or update a parent row: a foreign key constraint fails (`rpg`.`Inventory`, CONSTRAINT `Iventory_ibfk_1` FOREIGN KEY (`character_id`) REFERENCES `Characters` (`id`))
+```
+
+It looks like the foreign key also has a typo. Let's recreate this foreign key so that it will delete all characters and inventories associated with a user. First we drop the current key.
+
+```sql
+ALTER TABLE Inventory
+DROP FOREIGN KEY Iventory_ibfk_1;
+```
+
+Then we add a new one.
+
+```sql
+ALTER TABLE Inventory
+ADD CONSTRAINT Inventory_ibfk_1
+FOREIGN KEY (character_id) REFERENCES Characters(id) ON DELETE CASCADE;
+```
+
+
+## Summary {#summary}
+
+A typical SQL query consists of a `SELECT` clause, a `FROM` clause, and a `WHERE` clause. The `SELECT` clause specifies the attributes to be returned. The `FROM` clause specifies the tables to be queried. The `WHERE` clause specifies the conditions that must be satisfied for a tuple to be returned.
+
+As we saw in the examples above, there are up to 6 clauses that can be used in a query. The following table shows the clauses that can be used in a query and the order in which they must appear.
+
+| Clause   | Description                                                                 |
+|----------|-----------------------------------------------------------------------------|
+| SELECT   | Specifies the attributes to be returned.                                    |
+| FROM     | Specifies the tables to be queried.                                         |
+| WHERE    | Specifies the conditions that must be satisfied for a tuple to be returned. |
+| GROUP BY | Groups the tuples by a specified attribute.                                 |
+| HAVING   | Specifies the conditions that must be satisfied for a group to be returned. |
+| ORDER BY | Specifies the order in which the tuples are returned.                       |
 
 ## References
 
