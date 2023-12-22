@@ -16,7 +16,7 @@ type: docs  # Do not modify.
 # - name: Declare this menu item as a parent with ID `name`.
 # - weight: Position of link in menu.
 menu:
-  dasc5300:
+  dasc5300-fall2023:
     name: Home
     weight: 1
 ---

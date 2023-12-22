@@ -1,0 +1,12 @@
+[
+    {
+        "date": "January 17",
+        "topic": "Course Introduction",
+        "materials": [
+            {
+                "title": "Intro. to GPGPU Programming",
+                "url": "/notes/introduction_to_gpgpu_programming"
+            }
+        ]
+    }
+]

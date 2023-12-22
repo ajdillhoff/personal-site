@@ -264,7 +264,7 @@ With our database defined, we can use it to make **queries** about the records t
 
 A **transaction** is a set of operations that are performed on a database. Transactions are typically used to ensure that the database is in a consistent state. For example, if we want to transfer money from one account to another, we need to make sure that the money is removed from one account and added to the other. If we fail to do this, we could end up with money that is neither in the original account nor the destination account. Transactions allow us to perform these operations in a way that guarantees that the database is in a consistent state.
 
-A DBMS must ensure transactional properties such as **isolation**, which ensures that each transaction executes in isolation from others, and **atomicity**, which ensures that either all operations in a transaction are executed or none are.
+A DBMS must ensure transactional properties such as **isolation**, which ensure that each transaction executes in isolation from others, and **atomicity**, which ensures that either all operations in a transaction are executed or none are.
 
 
 ### DBMS Languages {#dbms-languages}

@@ -5,12 +5,12 @@ toc: true
 type: docs
 date: "2023-07-19T00:00:00+01:00"
 draft: false
+
 menu:
-  archive:
-    summer2023:
-        cse6363:
-            name: Home
-            weight: 2
+    cse6363-summer2023:
+        name: "Course Materials"
+        weight: 2
+        parent: "CSE 6363"
 
 # Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
 weight: 2

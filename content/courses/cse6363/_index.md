@@ -16,20 +16,20 @@ type: docs  # Do not modify.
 # - name: Declare this menu item as a parent with ID `name`.
 # - weight: Position of link in menu.
 menu:
-  cse6363:
-    name: Home
-    weight: 1
+    cse6363:
+        name: "CSE 6363"
+        weight: 1
 ---
 
-This is the course page for CSE 6363 - Machine Learning in Fall 2023. Here you'll find class notes and other helpful resources. All assignments and announcements will be posted on Canvas.
+This is the course page for CSE 6363 - Machine Learning in Spring 2024. Here you'll find class notes and other helpful resources. All assignments and announcements will be posted on Canvas.
 
 ## Teaching Assistants
 
-- Greeshma Jayanth (gxj4507 (at) mavs (dot) uta (dot) edu)
+- Section 006: Greeshma Jayanth (gxj4507 (at) mavs (dot) uta (dot) edu)
+- Section 101: Arshia Ilaty (axi7094 (at) mavs (dot) uta (dot) edu)
 
 ## Office Hours
 
 **All office hours are conducted via Teams by default.** Please contact me for an appointment if you wish to meet in person.
 
-- MoWeFri 12PM - 1PM
-- TuTh 11AM - 12PM
+TBD

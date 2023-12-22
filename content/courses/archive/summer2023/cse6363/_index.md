@@ -5,7 +5,7 @@ summary: Graduate-level machine learning topics covering the foundations up to m
 weight: 2
 
 # Page metadata.
-title: CSE 6363 - Machine Learning
+title: CSE 6363 - Machine Learning (Summer 2023)
 date: "2023-07-19T00:00:00Z"
 lastmod: "2023-07-19T00:00:00Z"
 draft: false  # Is this a draft? true/false
@@ -16,11 +16,9 @@ type: docs  # Do not modify.
 # - name: Declare this menu item as a parent with ID `name`.
 # - weight: Position of link in menu.
 menu:
-  archive:
-    summer2023:
-        cse6363:
-            name: Home
-            weight: 1
+    cse6363-summer2023:
+        name: "CSE 6363"
+        weight: 1
 ---
 
 This is the course page for CSE 6363 - Machine Learning in Summer 2023. Here you'll find class notes and other helpful resources. All assignments and announcements will be posted on Canvas.

@@ -3,10 +3,10 @@ title: Schedule
 linktitle: Schedule
 toc: false
 type: docs
-date: "2023-08-17T00:00:00+01:00"
+date: "2023-08-15T00:00:00+01:00"
 draft: false
 menu:
-  dasc5300:
+  cse1320-fall2023:
     parent: Home
     weight: 1
 
@@ -16,4 +16,4 @@ weight: 1
 
 This schedule is tentative and may change.
 
-{{< json-table path="schedule/dasc5300/fall2023" >}}
+{{< json-table path="schedule/cse1320/fall2023" >}}

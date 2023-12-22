@@ -1,11 +1,11 @@
 ---
 # Course title, summary, and position.
-linktitle: CSE 1320 - Intermediate Programming
-summary: Advanced programming concepts in C paired with introductory data structures and algorithms.
+linktitle: CSE 6363 - Machine Learning
+summary: Graduate-level machine learning topics covering the foundations up to modern publications.
 weight: 2
 
 # Page metadata.
-title: CSE 1320 - Intermediate Programming
+title: CSE 6363 - Machine Learning
 date: "2023-08-15T00:00:00Z"
 lastmod: "2023-08-15T00:00:00Z"
 draft: false  # Is this a draft? true/false
@@ -16,17 +16,16 @@ type: docs  # Do not modify.
 # - name: Declare this menu item as a parent with ID `name`.
 # - weight: Position of link in menu.
 menu:
-  cse1320:
-    name: Home
-    weight: 1
+    cse6363-fall2023:
+        name: "CSE 6363"
+        weight: 1
 ---
 
-This is the course page for CSE 1320 - Intermediate Programming in Fall 2023. Here you'll find class notes and other helpful resources. All assignments and announcements will be posted on Canvas.
+This is the course page for CSE 6363 - Machine Learning in Fall 2023. Here you'll find class notes and other helpful resources. All assignments and announcements will be posted on Canvas.
 
 ## Teaching Assistants
 
-- Section 001: Sama Nikanfar (sxn8789 (at) mavs (dot) uta (dot) edu)
-- Section 006: Rishabh Mediratta (rxm5684 (at) mavs (dot) uta (dot) edu)
+- Greeshma Jayanth (gxj4507 (at) mavs (dot) uta (dot) edu)
 
 ## Office Hours
 

@@ -16,20 +16,21 @@ type: docs  # Do not modify.
 # - name: Declare this menu item as a parent with ID `name`.
 # - weight: Position of link in menu.
 menu:
-    cse3380:
-        name: "CSE 3380"
+    cse3380-fall2023:
+        name: Home
         weight: 1
 ---
 
-This is the course page for CSE 3380 - Linear Algebra in Spring 2024. Here you'll find class notes and other helpful resources. All assignments and announcements will be posted on Canvas.
+This is the course page for CSE 3380 - Linear Algebra in Fall 2023. Here you'll find class notes and other helpful resources. All assignments and announcements will be posted on Canvas.
 
 ## Teaching Assistants
 
-- Section 001: Xulin Chen (xxc6289 (at) mavs (dot) uta (dot) edu)
-- Section 002: Rishabh Mediratta (rxm5684 (at) mavs (dot) uta (dot) edu)
+- Section 001: Yanjun Lyu (yxl9168 (at) mavs (dot) uta (dot) edu)
+- Section 002: Roman Strukov (rxs6055 (at) mavs (dot) uta (dot) edu)
 
 ## Office Hours
 
 **All office hours are conducted via Teams by default.** Please contact me for an appointment if you wish to meet in person.
 
-TBD
+- MoWeFri 12PM - 1PM
+- TuTh 11AM - 12PM
