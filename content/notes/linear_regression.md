@@ -2,6 +2,7 @@
 title = "Linear Regression"
 authors = ["Alex Dillhoff"]
 date = 2022-01-12T00:00:00-06:00
+tags = ["machine learning"]
 draft = false
 +++
 
@@ -164,6 +165,10 @@ We can see that maximizing \\(p(\mathbf{Y}|\mathbf{X}, \mathbf{w}, \sigma)\\) is
 
 You may have studied the normal equations when you took Linear Algebra. The normal equations are motivated by finding approximate solutions to \\(A\mathbf{x} = \mathbf{b}\\). Most of the earlier part of linear algebra courses focus on finding exact solutions by solving systems of equations using Gaussian elimination (row reduction). Approximate solutions can be found by projecting the observed data points \\(\mathbf{b}\\) onto the column space of \\(A\\) and solving \\(A \mathbf{x} = \hat{\mathbf{b}}\\), where \\(\hat{\mathbf{b}} = \text{proj}\_{\text{Col} A}\mathbf{b}\\). Then, \\(\mathbf{b} - \hat{\mathbf{b}}\\) represents a vector orthogonal to \\(\text{Col}A\\).
 
+It is helpful to keep in mind what \\(A\\), \\(\mathbf{x}\\), and \\(\mathbf{b}\\) represent. \\(A\\) and \\(\mathbf{b}\\) are the input and output values. If we were trying to predict home prices based on size, each row of \\(A\\) would represent the size of a different house. In \\(\mathbf{b}\\) we would record the corresponding prices. We are trying to solve for \\(\mathbf{x}\\), which is a vector that relates the input to the output.
+
+{{< figure src="/ox-hugo/2024-01-15_20-40-39_screenshot.png" caption="<span class=\"figure-number\">Figure 2: </span>The plane represents every linear combination of the columns of A." >}}
+
 Since each column vector of \\(A\\) is orthogonal to \\(\mathbf{b} - \hat{\mathbf{b}}\\), the dot product between them should be 0. Rewriting this, we get
 
 \begin{aligned}
@@ -278,7 +283,7 @@ Not every dataset can be modeled using a simple line.
 Data can be exponential or logarithmic in nature.
 We may also look to use [splines](https://en.wikipedia.org/wiki/Spline_(mathematics)) to model more complex data.
 
-{{< figure src="/ox-hugo/2022-06-01_17-08-27_screenshot.png" caption="<span class=\"figure-number\">Figure 2: </span>Data generated from a nonlinear function with added noise." >}}
+{{< figure src="/ox-hugo/2022-06-01_17-08-27_screenshot.png" caption="<span class=\"figure-number\">Figure 3: </span>Data generated from a nonlinear function with added noise." >}}
 
 The dataset above was generated from the function as seen in red.
 Using a simple linear model (blue) does not fit the data well.
@@ -290,14 +295,14 @@ It is trivial to determine that the shape of the data follows a cubic function.
 One solution would be to raise each input to the power of 3.
 This results in the function (blue) below.
 
-{{< figure src="/ox-hugo/2022-06-01_17-30-20_screenshot.png" caption="<span class=\"figure-number\">Figure 3: </span>Solution from raising each input to the power of 3." >}}
+{{< figure src="/ox-hugo/2022-06-01_17-30-20_screenshot.png" caption="<span class=\"figure-number\">Figure 4: </span>Solution from raising each input to the power of 3." >}}
 
 To fit this data, we need to add more features to our input.
 Along with the original \\(x\_i\\) features, we will also add \\(x\_i^2\\) and \\(x\_i^3\\).
 Our data is then 3 dimensional.
 The figure below shows the least squares fit using the modified data (blue).
 
-{{< figure src="/ox-hugo/2022-06-01_17-38-57_screenshot.png" caption="<span class=\"figure-number\">Figure 4: </span>Least squares fit using a polynomial model (blue)." >}}
+{{< figure src="/ox-hugo/2022-06-01_17-38-57_screenshot.png" caption="<span class=\"figure-number\">Figure 5: </span>Least squares fit using a polynomial model (blue)." >}}
 
 A demo of this can be found [here](https://github.com/ajdillhoff/CSE6363/blob/main/linear_regression/Linear%20Regression.ipynb).
 
@@ -319,4 +324,4 @@ h(\mathbf{x};\mathbf{w}) = \sum\_{j=1}^{m} w\_j\phi\_j(\mathbf{x})
 Common basis functions are the sigmoid, Gaussian, or exponential function.
 If we choose the \\(\sin\\) function as a basis function, we can more closely fit our dataset using the least squares approach.
 
-{{< figure src="/ox-hugo/2022-06-01_18-46-08_screenshot.png" caption="<span class=\"figure-number\">Figure 5: </span>A linear basis function model using the sin function as the choice of basis." >}}
+{{< figure src="/ox-hugo/2022-06-01_18-46-08_screenshot.png" caption="<span class=\"figure-number\">Figure 6: </span>A linear basis function model using the sin function as the choice of basis." >}}

@@ -8,5 +8,90 @@
                 "url": "/notes/introduction_to_gpgpu_programming"
             }
         ]
+    },
+    {
+        "date": "January 19",
+        "topic": "Heterogeneous Data Parallel Computing",
+        "materials": [
+            {
+                "title": "Heterogeneous Data Parallel Computing",
+                "url": "/notes/heterogeneous_data_parallel_computing"
+            }
+        ]
+    },
+    {
+        "date": "January 22",
+        "topic": "Environment Setup Day",
+        "materials": []
+    },
+    {
+        "date": "January 24",
+        "topic": "Multidimensional Grids and Data",
+        "materials": [
+            {
+                "title": "Multidimensional Grids and Data",
+                "url": "/notes/multidimensional_grids_and_data"
+            }
+        ]
+    },
+    {
+        "date": "January 26",
+        "topic": "Multidimensional Grids and Data",
+        "materials": [
+            {
+                "title": "Multidimensional Grids and Data",
+                "url": "/notes/multidimensional_grids_and_data"
+            }
+        ]
+    },
+    {
+        "date": "January 29",
+        "topic": "CUDA Compute Architecture",
+        "materials": [
+            {
+                "title": "CUDA Architecture",
+                "url": "/notes/cuda_architecture"
+            }
+        ]
+    },
+    {
+        "date": "January 31",
+        "topic": "Memory Architecture",
+        "materials": [
+            {
+                "title": "Memory Architecture",
+                "url": "/notes/cuda_memory_architecture"
+            }
+        ]
+    },
+    {
+        "date": "February 2",
+        "topic": "Recitation",
+        "materials": []
+    },
+    {
+        "date": "February 5",
+        "topic": "GPU Optimization Basics",
+        "materials": [
+            {
+                "title": "GPU Performance Basics",
+                "url": "/notes/gpu_performance_basics"
+            }
+        ]
+    },
+    {
+        "date": "February 7",
+        "topic": "Profiling and Benchmarking",
+        "materials": [
+            {
+                "title": "Profiling CUDA Applications",
+                "url": "/notes/profiling_cuda_applications"
+            }
+        ]
+    },
+    {
+        "date": "February 9",
+        "topic": "Recitation",
+        "materials": []
     }
 ]

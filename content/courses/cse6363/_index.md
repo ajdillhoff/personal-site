@@ -30,6 +30,7 @@ This is the course page for CSE 6363 - Machine Learning in Spring 2024. Here you
 
 ## Office Hours
 
-**All office hours are conducted via Teams by default.** Please contact me for an appointment if you wish to meet in person.
-
-TBD
+| Days    | Time       |
+| ------- | ---------- |
+| MoWeFri | 12PM - 1PM |
+| TuTh    | 1PM - 2PM  |

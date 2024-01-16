@@ -3,5 +3,15 @@
         "date": "January 17",
         "topic": "Course Introduction",
         "materials": []
+    },
+    {
+        "date": "January 19",
+        "topic": "Human Vision and Color",
+        "materials": [
+            {
+                "title": "Color",
+                "url": "/notes/color"
+            }
+        ]
     }
 ]
