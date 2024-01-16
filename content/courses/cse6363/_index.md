@@ -26,7 +26,7 @@ This is the course page for CSE 6363 - Machine Learning in Spring 2024. Here you
 ## Teaching Assistants
 
 - Section 006: Greeshma Jayanth (gxj4507 (at) mavs (dot) uta (dot) edu)
-- Section 101: Arshia Ilaty (axi7094 (at) mavs (dot) uta (dot) edu)
+- Section 101: Priyank Gupta (pxg9364 (at) mavs (dot) uta (dot) edu)
 
 ## Office Hours
 
