@@ -13,5 +13,25 @@
                 "url": "/notes/linear_regression"
             }
         ]
+    },
+    {
+        "date": "January 23",
+        "topic": "Logistic Regression",
+        "materials": [
+            {
+                "title": "Logistic Regression",
+                "url": "/notes/logistic_regression"
+            }
+        ]
+    },
+    {
+        "date": "January 25",
+        "topic": "Probability Theory",
+        "materials": [
+            {
+                "title": "Probability Theory",
+                "url": "/notes/probability_theory"
+            }
+        ]
     }
 ]

@@ -88,7 +88,7 @@ void vecAdd(float *x_d, float *y_d, float *z_d, int n) {
 
 This kernel executes on a single thread. The thread index is computed using built-in variables \`blockIdx.x\`, \`blockDim.x\`, and \`threadIdx.x\`. The details of how these variables are defined are not important right now. The main point is that each kernel is executed on a single thread. For a GPU with thousands of individual threads, this kernel will be executed thousands of times in parallel.
 
-The `__global__` keyword placed before the function definition indicates that the function can be called from both the host and teh device, but it is only executed on the device. The table below shows the different keywords used to define functions in CUDA C.
+The `__global__` keyword placed before the function definition indicates that the function can be called from both the host and the device, but it is only executed on the device. The table below shows the different keywords used to define functions in CUDA C.
 
 | Keyword      | Description                                               |
 |--------------|-----------------------------------------------------------|
@@ -172,7 +172,7 @@ The figure above shows a single block of 256 threads. This could be one of many 
 
 Calling the kernel function almost looks like any ordinary function call. The main difference is the inclusion of the `<<<` and `>>>` syntax. These are used to specify the size of the grid and blocks, respectively. In this example, we specified that each block has 256 threads. We can use that specification to dynamically determine the number of blocks based on the input size. The number of blocks is computed as the ceiling of the input size divided by the number of threads per block. This ensures that there are enough blocks to cover the entire input size.
 
-Returning to the kernel function, the thread index is computed using built-in variables \`blockIdx.x\`, \`blockDim.x\`, and \`threadIdx.x\`. These are defined as `struct` variables. Modern GPUs have a 3-dimensional grid, but we only need to worry about the first dimension for now. The thread index is computed as the product of the block index and the number of threads per block plus the thread index within the block. This is a common pattern for computing the thread index.
+Returning to the kernel function, the thread index is computed using built-in variables `blockIdx.x`, `blockDim.x`, and `threadIdx.x`. These are defined as `struct` variables. Modern GPUs have a 3-dimensional grid, but we only need to worry about the first dimension for now. The thread index is computed as the product of the block index and the number of threads per block plus the thread index within the block. This is a common pattern for computing the thread index.
 
 You may have noticed that it is possible to have more threads than there are blocks. As much as possible, you should try and work with powers of 2. This will ensure that the hardware is used as efficiently as possible. You can always request more threads than there are data points and ignore the threads that are not needed. In this example, we check to see if the thread index is less than the input size. If it is, the vector addition operation is performed. Otherwise, the function exits.
 

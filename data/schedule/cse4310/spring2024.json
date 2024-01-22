@@ -13,5 +13,30 @@
                 "url": "/notes/color"
             }
         ]
+    },
+    {
+        "date": "January 22",
+        "topic": "Sampling and Aliasing",
+        "materials": [
+            {
+                "title": "Sampling and Aliasing",
+                "url": "/notes/sampling"
+            }
+        ]
+    },
+    {
+        "date": "January 24",
+        "topic": "Linear Filters",
+        "materials": [
+            {
+                "title": "Linear Filters",
+                "url": "/notes/linear_filters"
+            }
+        ]
+    },
+    {
+        "date": "January 26",
+        "topic": "Python Crash Course",
+        "materials": []
     }
 ]
