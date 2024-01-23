@@ -57,7 +57,18 @@ Consider an \\(n \times m\\) matrix. If the matrix is small enough, we could lau
 
 {{< figure src="/ox-hugo/2024-01-05_15-04-59_screenshot.png" caption="<span class=\"figure-number\">Figure 2: </span>A 2D grid of blocks, each with 16 threads arranged in 2D (source: NVIDIA DLI)." >}}
 
-****Optimal Launch Parameters****
+
+### Notes on Compute Capability {#notes-on-compute-capability}
+
+It is more important to dynamically adjust the grid size so that your program can adapt to varying input sizes. As of CC 9.0, the maximum number of threads a block can have is 1024, this means that a \\(32 \times 32\\) block is the largest we can do for matrix data.
+
+If the input matrix is smaller than \\(32 \times 32\\), then only a single block is needed. The additional threads allocated to that block will be inactive for indices outside the range of our input.
+
+If the input matrix is larger than \\(32 \times 32\\), additional blocks should be added to the grid to accommodate the increased size. It is safe to keep the block size fixed, but the grid size **must** be dynamic.
+
+
+### Optimal Launch Parameters {#optimal-launch-parameters}
+
 Is it better to have fewer blocks that maximize the amount of threads per block? Or is it better to have more blocks with fewer threads per block? The current maximum number of threads per block is 1024. In practice, a maximum block dimension size of 128 or 256 is ideal. This has more to do with the specific problem and the amount of shared memory required. You will explore this question in Lab 1.
 
 
