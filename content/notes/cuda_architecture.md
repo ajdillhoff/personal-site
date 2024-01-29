@@ -67,11 +67,15 @@ Since threads in separate blocks cannot be synchronized, the blocks can be execu
 
 ## Warps {#warps}
 
+{{< figure src="/ox-hugo/2024-01-28_21-03-23_screenshot.png" caption="<span class=\"figure-number\">Figure 2: </span>Warps across several blocks (credit: NVIDIA DLI)." >}}
+
 Streaming Multiprocessors in a CUDA chip execute threads in a group of 32 called **warps**. Since Compute Capability 1.0, the warp size has not changed. When a block is assigned to an SM, it is divided into warps. Given this size, you can easily determine the number of warps assigned to an SM. For example, if you have a block of 256 threads, the SM has 256 / 32 = 8 warps. If the block size is not evenly divisible by the number of warps per SM, the last warp will be padded with inactive threads.
 
-When multi-dimensional thread blocks are assigned to an SM, the threads are linearly mapped in a **row-major** order before being partitioned into warps. For example, a 2D block of 16x16 threads will be mapped to a 1D array of 256 threads. The first 32 threads will be assigned to the first warp, the next 32 to the second warp, and so on.
+When multi-dimensional thread blocks are assigned to an SM, the threads are linearly mapped in a **row-major** order before being partitioned into warps. For example, a 2D block of \\(16 \times 16\\) threads will be mapped to a 1D array of 256 threads. The first 32 threads will be assigned to the first warp, the next 32 to the second warp, and so on.
 
 Warps are executed following the Single-Instruction, Multiple-Data (SIMD) model. There is a single program that runs the same instruction on all threads in the same order. If a thread would have executed a different path based on its input data, it would not be executed with the others. This is called **control divergence** and is explained in the next section.
+
+{{< figure src="/ox-hugo/2024-01-28_21-08-27_screenshot.png" caption="<span class=\"figure-number\">Figure 3: </span>SM layout (source: NVIDIA DLI)" >}}
 
 The advantage of this model is that more physical space can be dedicated to ALUs instead of control logic. In a traditional CPU, each processing core would have its own control logic. The tradeoff is that different cores can execute their own programs at varying points in time.
 
@@ -107,13 +111,13 @@ Under this model, it is ideal for an SM to be assigned more threads than it can 
 
 There is a limit on the number of warps that an SM can support. In general, we want to maximize the throughput of an SM by assigning as many warps as possible. The ratio of warps assigned to the number of warps an SM supports is called **occupancy**. If we understand how the architecture partitions the resources, we can optimize our programs for peak performance. Consider the NVIDIA GH100 GPU, pictured below.
 
-{{< figure src="/ox-hugo/2024-01-11_11-44-01_screenshot.png" caption="<span class=\"figure-number\">Figure 2: </span>GH100 Full GPU with 144 SMs ([NVIDIA](https://resources.nvidia.com/en-us-tensor-core))." >}}
+{{< figure src="/ox-hugo/2024-01-11_11-44-01_screenshot.png" caption="<span class=\"figure-number\">Figure 4: </span>GH100 Full GPU with 144 SMs ([NVIDIA](https://resources.nvidia.com/en-us-tensor-core))." >}}
 
 The H100 architecture shares the same limitations in compute capability as the A100, so this example will follow the book closely (Hwu, Kirk, and El Hajj 2022). The H100 supports 32 threads per warp, 64 warps per SM, 32 blocks per SM, and 2048 threads per SM. Depending on the block size chosen, the number of blocks per SM will differ. For example, a block size of 256 threads means that there are 2048 / 256 = 8 blocks per SM. This block size would maximize occupancy since the architecture supports more than 8 blocks per SM. Also, the number of threads per block is less than the limit of 1024.
 
 What if we chose 32 threads per block? Then there would be 2048 / 32 = 64 blocks per SM. However, the device only supports 32 blocks per SM. With only 32 blocks allocated with 32 threads per block, a total of 1024 threads would be utilized. The occupancy in this case is 1024 / 2048 = 50%.
 
-Historically, NVIDIA provided an excel spreadsheet to compute occpancy. It has since been deprecated in favor of Nsight Compute, a tool that provides more information about the performance of your program. We will cover this tool in a later section.
+Historically, NVIDIA provided an excel spreadsheet to compute occupancy. It has since been deprecated in favor of Nsight Compute, a tool that provides more information about the performance of your program. We will cover this tool in a later section.
 
 
 ### Including Registers {#including-registers}

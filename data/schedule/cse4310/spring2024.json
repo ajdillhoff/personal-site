@@ -38,5 +38,39 @@
         "date": "January 26",
         "topic": "Python Crash Course",
         "materials": []
+    },
+    {
+        "date": "January 29",
+        "topic": "Interest Points",
+        "materials": [
+            {
+                "title": "Interest Points",
+                "url": "/notes/image_features"
+            }
+        ]
+    },
+    {
+        "date": "January 31",
+        "topic": "Image Features",
+        "materials": [
+            {
+                "title": "Image Features",
+                "url": "/notes/image_features"
+            }
+        ]
+    },
+    {
+        "date": "February 2",
+        "topic": "HOG and SIFT",
+        "materials": [
+            {
+                "title": "Histogram of Oriented Gradients",
+                "url": "/notes/histogram_of_oriented_gradients"
+            },
+            {
+                "title": "SIFT Features",
+                "url": "/notes/scale_invariant_feature_transforms"
+            }
+        ]
     }
 ]

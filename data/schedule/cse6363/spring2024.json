@@ -33,5 +33,29 @@
                 "url": "/notes/probability_theory"
             }
         ]
+    },
+    {
+        "date": "January 30",
+        "topic": "Linear Discriminant Analysis",
+        "materials": [
+            {
+                "title": "Linear Discriminant Analysis",
+                "url": "/notes/linear_discriminant_analysis"
+            }
+        ]
+    },
+    {
+        "date": "February 1",
+        "topic": "Naive Bayes Classifier, Kernels",
+        "materials": [
+            {
+                "title": "Naive Bayes",
+                "url": "/notes/naive_bayes"
+            },
+            {
+                "title": "Kernels",
+                "url": "/notes/kernels"
+            }
+        ]
     }
 ]

@@ -93,5 +93,30 @@
         "date": "February 9",
         "topic": "Recitation",
         "materials": []
+    },
+    {
+        "date": "February 12",
+        "topic": "Convolutional Pattern",
+        "materials": [
+            {
+                "title": "GPU Pattern: Convolution",
+                "url": "/notes/gpu_pattern_convolution"
+            }
+        ]
+    },
+    {
+        "date": "February 14",
+        "topic": "Convolutional Pattern",
+        "materials": [
+            {
+                "title": "GPU Pattern: Convolution",
+                "url": "/notes/gpu_pattern_convolution"
+            }
+        ]
+    },
+    {
+        "date": "February 16",
+        "topic": "Recitation",
+        "materials": []
     }
 ]

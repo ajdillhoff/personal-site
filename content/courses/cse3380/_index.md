@@ -32,4 +32,6 @@ This is the course page for CSE 3380 - Linear Algebra in Spring 2024. Here you'l
 
 **All office hours are conducted via Teams by default.** Please contact me for an appointment if you wish to meet in person.
 
-TBD
+### Rishabh Mediratta
+Tu 5:30PM - 8:30PM
+W  4:00PM - 5:00PM
