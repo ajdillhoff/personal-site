@@ -3,7 +3,7 @@ title = "Probability Theory"
 authors = ["Alex Dillhoff"]
 date = 2022-01-22T00:00:00-06:00
 draft = false
-lastmod = 2023-08-29
+lastmod = 2024-01-30
 +++
 
 <div class="ox-hugo-toc toc">
@@ -22,6 +22,7 @@ lastmod = 2023-08-29
 </div>
 <!--endtoc-->
 
+Slides for these notes are available [here.](/teaching/cse6363/lectures/probability.pdf)
 
 
 ## Introduction {#introduction}

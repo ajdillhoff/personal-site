@@ -26,8 +26,12 @@
     },
     {
         "date": "January 25",
-        "topic": "Probability Theory",
+        "topic": "Regularization and Probability Theory",
         "materials": [
+            {
+                "title": "Regularization",
+                "url": "/notes/regularization"
+            },
             {
                 "title": "Probability Theory",
                 "url": "/notes/probability_theory"

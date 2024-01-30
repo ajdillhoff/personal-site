@@ -3,7 +3,7 @@ title = "Linear Discriminant Analysis"
 authors = ["Alex Dillhoff"]
 date = 2022-01-22T00:00:00-06:00
 draft = false
-lastmod = 2023-08-31
+lastmod = 2024-01-30
 +++
 
 <div class="ox-hugo-toc toc">
@@ -12,6 +12,7 @@ lastmod = 2023-08-31
 
 - [Introduction](#introduction)
 - [Gaussian Class Conditional Densities](#gaussian-class-conditional-densities)
+- [Decision Boundaries](#decision-boundaries)
 - [Maximum Likelihood Estimation](#maximum-likelihood-estimation)
 - [Quadratic Descriminant Analysis](#quadratic-descriminant-analysis)
 - [Example](#example)
@@ -19,6 +20,7 @@ lastmod = 2023-08-31
 </div>
 <!--endtoc-->
 
+Slides for these notes can be found [here](/teaching/cse6363/lectures/lda.pdf).
 
 
 ## Introduction {#introduction}
@@ -171,6 +173,51 @@ This lets us express \\(p(C\_k|\mathbf{x};\mathbf{\theta})\\) as the **softmax**
 \\(p(C\_k|\mathbf{x};\mathbf{\theta}) = \frac{\exp(\mathbf{w}\_k^T\mathbf{x}+\mathbf{b}\_k)}{\sum\_{k'}\exp(\mathbf{w}\_{k'}^T\mathbf{x}+\mathbf{b}\_{k'})}\\).
 
 
+## Decision Boundaries {#decision-boundaries}
+
+When using LDA, classifications can be made by choosing the class with the highest posterior probability. Geometrically, this decision boundary has a direct connection to logistic regression. The decision boundary is the set of points where the posterior probability of two classes is equal. This is the set of points where the linear discriminant function is equal to 0. This connection follows the derivation given by Kevin P. Murphy in his book _Probabilistic Machine Learning: An Introduction_ (<a href="#citeproc_bib_item_1">Murphy 2022</a>).
+
+In the previous section, the derivation for the posterior probability of class \\(C\_k\\) was written in the form of the softmax function
+
+\\[
+p(C\_k|\mathbf{x};\mathbf{\theta}) = \frac{\exp(\mathbf{w}\_k^T\mathbf{x}+\mathbf{b}\_k)}{\sum\_{k'}\exp(\mathbf{w}\_{k'}^T\mathbf{x}+\mathbf{b}\_{k'})}.
+\\]
+
+In the binary case, the posterior for class 1 is given by
+
+\begin{align\*}
+p(C\_1|\mathbf{x};\mathbf{\theta}) &= \frac{\exp(\mathbf{w}\_1^T\mathbf{x}+\mathbf{b}\_1)}{\exp(\mathbf{w}\_1^T\mathbf{x}+\mathbf{b}\_1) + \exp(\mathbf{w}\_2^T\mathbf{x}+\mathbf{b}\_2)}\\\\
+&= \frac{1}{1 + \exp((\mathbf{w}\_1 - \mathbf{w}\_2)^T\mathbf{x}+(\mathbf{b}\_1 - \mathbf{b}\_2))}\\\\
+&= \sigma((\mathbf{w}\_1 - \mathbf{w}\_2)^T\mathbf{x}+(\mathbf{b}\_1 - \mathbf{b}\_2)).
+\end{align\*}
+
+Using the previous definition of \\(\mathbf{b}\_k\\), we can rewrite \\(\mathbf{b}\_1 - \mathbf{b}\_2\\) as
+
+\begin{align\*}
+\mathbf{b}\_1 - \mathbf{b}\_2 &= -\frac{1}{2}\mathbf{\mu}\_1^T \mathbf{\Sigma}^{-1}\mathbf{\mu}\_1 + \log \mathbf{\pi}\_1 + \frac{1}{2}\mathbf{\mu}\_2^T \mathbf{\Sigma}^{-1}\mathbf{\mu}\_2 - \log \mathbf{\pi}\_2\\\\
+&= -\frac{1}{2}(\mathbf{\mu}\_1 - \mathbf{\mu}\_2)^T \mathbf{\Sigma}^{-1} (\mathbf{\mu}\_1 + \mathbf{\mu}\_2) + \log \frac{\mathbf{\pi}\_1}{\mathbf{\pi}\_2}\\\\
+\end{align\*}
+
+This can be used to define a new weight vector \\(\mathbf{w}'\\) and a point directly between the two class means \\(\mathbf{x}\_0\\):
+
+\begin{align\*}
+\mathbf{w}' &= \mathbf{\Sigma}^{-1}(\mathbf{\mu}\_1 - \mathbf{\mu}\_2)\\\\
+\mathbf{x}\_0 &= \frac{1}{2}(\mathbf{\mu}\_1 + \mathbf{\mu}\_2) - (\mathbf{\mu}\_1 - \mathbf{\mu}\_2)\frac{\log \frac{\mathbf{\pi}\_1}{\mathbf{\pi}\_2}}{(\mathbf{\mu}\_1 - \mathbf{\mu}\_2)^T \mathbf{\Sigma}^{-1} (\mathbf{\mu}\_1 - \mathbf{\mu}\_2)}.
+\end{align\*}
+
+With these new terms defined, we have that \\(\mathbf{w}'^T\mathbf{x}\_0 = -(\mathbf{b}\_1 - \mathbf{b}\_2)\\) and the posterior probability for class 1 can be written in the form of binary logistic regression:
+
+\begin{equation\*}
+p(C\_1|\mathbf{x};\mathbf{\theta}) = \sigma(\mathbf{w}'^T(\mathbf{x} - \mathbf{x}\_0)).
+\end{equation\*}
+
+The middle point between the two class means \\(\mathbf{x}\_0\\) is the point where the posterior probability of class 1 is 0.5. This is the decision boundary between the two classes. That is, if \\(\mathbf{w}'^T\mathbf{x} > \mathbf{w}'^T\mathbf{x}\_0\\), then the posterior probability of class 1 is greater than \\(0.5\\) and the input vector \\(\mathbf{x}\\) is classified as class 1.
+
+The split between the class priors controls the location of the decision boundary. If the class priors are equal, then the decision boundary is the point directly between the two class means. If the class priors are not equal, then the decision boundary is shifted towards the class with the higher prior. The figure below visualizes this.
+
+{{< figure src="/ox-hugo/2024-01-30_11-23-18_screenshot.png" caption="<span class=\"figure-number\">Figure 1: </span>Decision boundary between two classes (<a href=\"#citeproc_bib_item_1\">Murphy 2022</a>)." >}}
+
+
 ## Maximum Likelihood Estimation {#maximum-likelihood-estimation}
 
 Given our formulation in the previous section, we can estimate the parameters of the model via **maximum likelihood estimation**. Assuming \\(K\\) classes with Gaussian class conditional densities, the likelihood function is
@@ -237,3 +284,9 @@ In the more general case of QDA, the decision boundary is quadratic, leading to 
 ## Example {#example}
 
 See [here](https://github.com/ajdillhoff/CSE6363/blob/main/logistic_regression/lda.ipynb) for an example using scikit-learn.
+
+## References
+
+<style>.csl-entry{text-indent: -1.5em; margin-left: 1.5em;}</style><div class="csl-bib-body">
+  <div class="csl-entry"><a id="citeproc_bib_item_1"></a>Murphy, Kevin P. 2022. <i>Probabilistic Machine Learning: An Introduction</i>. MIT Press.</div>
+</div>

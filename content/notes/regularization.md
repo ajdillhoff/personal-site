@@ -4,6 +4,7 @@ authors = ["Alex Dillhoff"]
 date = 2022-01-22T00:00:00-06:00
 tags = ["machine learning"]
 draft = false
+lastmod = 2024-01-29
 +++
 
 <div class="ox-hugo-toc toc">
@@ -20,6 +21,7 @@ draft = false
 </div>
 <!--endtoc-->
 
+Slides for these notes are available [here.](/teaching/cse6363/lectures/regularization.pdf)
 
 
 ## Introduction {#introduction}
@@ -101,7 +103,7 @@ Rotating, translating, and scaling images are the most common.
 Additionally applying random crops can further augment the dataset.
 
 The original dataset may only include samples of a class that have similar lighting.
-Color jitter is an effective way of including a broader range of hue or brightness and usually leads to a model that is robust to such changes.ZZ
+Color jitter is an effective way of including a broader range of hue or brightness and usually leads to a model that is robust to such changes.
 
 It is important to make sure that the crops still contain enough information to properly classify it.
 Common forms of data augmentation are available through APIs like [torchvision](https://pytorch.org/vision/stable/index.html).

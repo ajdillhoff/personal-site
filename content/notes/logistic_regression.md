@@ -3,6 +3,7 @@ title = "Logistic Regression"
 authors = ["Alex Dillhoff"]
 date = 2022-01-22T00:00:00-06:00
 draft = false
+lastmod = 2024-01-30
 +++
 
 <div class="ox-hugo-toc toc">
@@ -17,6 +18,7 @@ draft = false
 </div>
 <!--endtoc-->
 
+Slides for these notes are available [here.](/teaching/cse6363/lectures/logistic_regression.pdf)
 
 
 ## Introduction {#introduction}
