@@ -4,6 +4,7 @@ authors = ["Alex Dillhoff"]
 date = 2022-01-22T00:00:00-06:00
 tags = ["machine learning"]
 draft = false
+lastmod = 2024-02-01
 +++
 
 <div class="ox-hugo-toc toc">
@@ -21,6 +22,7 @@ draft = false
 </div>
 <!--endtoc-->
 
+Slides for these notes can be found [here.](/teaching/cse6363/lectures/naive_bayes.pdf)
 
 
 ## Introduction {#introduction}

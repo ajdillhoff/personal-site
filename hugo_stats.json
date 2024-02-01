@@ -789,6 +789,7 @@
       "random-variables",
       "rank-deficient-matrices",
       "rate-of-growth",
+      "rbf-maps-to-infinite-dimensional-space",
       "reading-and-writing-binary-files",
       "reading-and-writing-json",
       "reading-and-writing-pickle-files",

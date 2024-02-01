@@ -4,7 +4,7 @@ authors = ["Alex Dillhoff"]
 date = 2022-01-22T00:00:00-06:00
 tags = ["machine learning"]
 draft = false
-lastmod = 2023-09-07
+lastmod = 2024-02-01
 +++
 
 <div class="ox-hugo-toc toc">
@@ -16,10 +16,12 @@ lastmod = 2023-09-07
 - [Relating Back to the Original Formulation](#relating-back-to-the-original-formulation)
 - [Types of Kernels](#types-of-kernels)
 - [Constructing Kernels](#constructing-kernels)
+- [RBF maps to infinite-dimensional space](#rbf-maps-to-infinite-dimensional-space)
 
 </div>
 <!--endtoc-->
 
+Slides for these notes can be found [here.](/teaching/cse6363/lectures/kernels.pdf)
 
 
 ## Introduction {#introduction}
@@ -291,3 +293,28 @@ As a more convenient approach, it is possible to construct complex kernels from 
 4.  \\(k(\mathbf{x}, \mathbf{x}') = k\_1(\mathbf{x}, \mathbf{x}')k\_2(\mathbf{x}, \mathbf{x}')\\)
 5.  \\(k(\mathbf{x}, \mathbf{x}') = \exp(k\_1(\mathbf{x}, \mathbf{x}'))\\)
 6.  \\(k(\mathbf{x}, \mathbf{x}') = \tanh(k\_1(\mathbf{x}, \mathbf{x}'))\\)
+
+
+## RBF maps to infinite-dimensional space {#rbf-maps-to-infinite-dimensional-space}
+
+It can be shown that the RBF kernel maps the input to an infinite-dimensional space. This is a result of the Taylor series expansion of the exponential function. The RBF kernel is defined as
+
+\\[
+k(\mathbf{x}, \mathbf{x}') = \exp\Big(-\frac{\\|\mathbf{x}-\mathbf{x'}\\|^2}{2\sigma^2}\Big).
+\\]
+
+The Taylor series expansion of the exponential function is
+
+\\[
+\exp(x) = \sum\_{n=0}^\infty \frac{x^n}{n!}.
+\\]
+
+Substituting the RBF kernel into the Taylor series expansion yields
+
+\\[
+\exp\Big(-\frac{\\|\mathbf{x}-\mathbf{x'}\\|^2}{2\sigma^2}\Big) = \sum\_{n=0}^\infty \frac{\Big(-\frac{\\|\mathbf{x}-\mathbf{x'}\\|^2}{2\sigma^2}\Big)^n}{n!}.
+\\]
+
+This expansion can be viewed as an infnite sum of polynomial terms. A more formal proof of this result can be found [here.](https://pages.cs.wisc.edu/~matthewb/pages/notes/pdf/svms/RBFKernel.pdf)
+
+The benefit of this result is that it allows us to work in a high-dimensional space without explicitly transforming the input. This is especially useful when the input space is infinite-dimensional, such as with text data. It is also used to compare the similarity of documents without explicitly transforming the input into a high-dimensional space.
