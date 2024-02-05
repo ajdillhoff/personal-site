@@ -30,7 +30,7 @@ This is the course page for CSE 6363 - Machine Learning in Spring 2024. Here you
 
 ## Office Hours
 
-| Days    | Time       |
-| ------- | ---------- |
-| MoWeFri | 12PM - 1PM |
-| TuTh    | 1PM - 2PM  |
+| Days    | Time       | Location |
+| ------- | ---------- | -------- |
+| MoWeFri | 12PM - 1PM | ERB 651  |
+| TuTh    | 1PM - 2PM  | ERB 125  |

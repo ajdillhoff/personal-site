@@ -72,5 +72,30 @@
                 "url": "/notes/scale_invariant_feature_transforms"
             }
         ]
+    },
+    {
+        "date": "February 5",
+        "topic": "Bag of Visual Words and Feature Matching",
+        "materials": [
+            {
+                "title": "Bag of Visual Words",
+                "url": "/notes/bag_of_visual_words"
+            }
+        ]
+    },
+    {
+        "date": "February 7",
+        "topic": "RANSAC",
+        "materials": [
+            {
+                "title": "RANSAC",
+                "url": "/notes/random_sample_concensus"
+            }
+        ]
+    },
+    {
+        "date": "February 9",
+        "topic": "CANCELLED",
+        "materials": []
     }
 ]

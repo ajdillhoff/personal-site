@@ -56,7 +56,7 @@ Therefore, the difference \\(D(I\_{\sigma\_1}, I\_{\sigma\_2})\\) will be higher
 When building SIFT features, the extremum are selected by comparing 3 DoG images.
 These are selected by evaluating each pixel to 26 of its neighbors in the current scale space and neighboring DoG spaces as visualized below.
 
-{{< figure src="/ox-hugo/2022-02-13_18-50-20_screenshot.png" caption="<span class=\"figure-number\">Figure 4: </span>Finding extrema of pixel (i, j) in a neighborhood of 26 values (Lowe 2004)." >}}
+{{< figure src="/ox-hugo/2022-02-13_18-50-20_screenshot.png" caption="<span class=\"figure-number\">Figure 4: </span>Finding extrema of pixel (i, j) in a neighborhood of 26 values (<a href=\"#citeproc_bib_item_2\">Lowe 2004</a>)." >}}
 
 To build the DoG pyramid, the authors propose that images are separated by a constant factor \\(k\\) in scale space.
 Each octave of scale space is divided such that the scalespace doubles every \\(s\\) samples.
@@ -71,7 +71,7 @@ To evaluate this for scale \\(\sigma\_s\\), we need the DoG for scales \\(\sigma
 This would require 4 Gaussians images to compute.
 The figure below represents the stack for \\(s=2\\).
 
-{{< figure src="/ox-hugo/2022-02-10_17-35-51_screenshot.png" caption="<span class=\"figure-number\">Figure 5: </span>DOG figure from Lowe 2004." >}}
+{{< figure src="/ox-hugo/2022-02-10_17-35-51_screenshot.png" caption="<span class=\"figure-number\">Figure 5: </span>DOG figure (<a href=\"#citeproc_bib_item_2\">Lowe 2004</a>)." >}}
 
 **How is the value of \\(s\\) determined?**
 
@@ -83,7 +83,7 @@ In the paper, the authors perform a repeatability test to determine if the keypo
 
 The authors found that using \\(s = 3\\) provided the highest percentage of repeatability in their experiments.
 
-{{< figure src="/ox-hugo/2022-02-13_19-25-02_screenshot.png" caption="<span class=\"figure-number\">Figure 6: </span>Measuring repeatability of keypoint detections versus # of scales sampled per octave (Lowe 2004)." >}}
+{{< figure src="/ox-hugo/2022-02-13_19-25-02_screenshot.png" caption="<span class=\"figure-number\">Figure 6: </span>Measuring repeatability of keypoint detections versus # of scales sampled per octave (<a href=\"#citeproc_bib_item_2\">Lowe 2004</a>)." >}}
 
 
 ## Keypoint Localization {#keypoint-localization}
@@ -91,13 +91,13 @@ The authors found that using \\(s = 3\\) provided the highest percentage of repe
 Given the candidate keypoints selected by picking out local extrema, they pool of responses can further be refined
 by removing points that are sensitive to noise or located along an edge. They borrow the same approach used in the Harris corner detector to select more robust interest points in corners.
 
-{{< figure src="/ox-hugo/2022-02-15_20-36-13_screenshot.png" caption="<span class=\"figure-number\">Figure 7: </span>Refinement of candidate keypoints by filtering those sensitive to noise (c) and those representing ambiguity along edges (d) (Lowe 2004)." >}}
+{{< figure src="/ox-hugo/2022-02-15_20-36-13_screenshot.png" caption="<span class=\"figure-number\">Figure 7: </span>Refinement of candidate keypoints by filtering those sensitive to noise (c) and those representing ambiguity along edges (d) (<a href=\"#citeproc_bib_item_2\">Lowe 2004</a>)." >}}
 
 
 ## Orientation Assignment {#orientation-assignment}
 
 Given a keypoint, an orientation histogram is generated. The authors use 36 bins to cover a 360 degree range for orientations.
-Similar to [Histogram of Oriented Gradients]({{< relref "histogram_of_oriented_gradients.md" >}}), the orientations are weighted by their gradient magnitudes.
+Similar to [Histogram of Oriented Gradients]({{< relref "histogram_of_oriented_gradients.md" >}}), the orientations are weighted by their gradient magnitudes (<a href="#citeproc_bib_item_1">Dalal and Triggs 2005</a>).
 Additionally, a Gaussian-weighted circular patch is applied, centered on the keypoint, to further weight the responses.
 This means that points farther away from the center contribute less to the overall feature vector.
 
@@ -110,10 +110,17 @@ This is a more efficient alternative to rotating the entire image by that orient
 
 ## Descriptor Formation {#descriptor-formation}
 
-{{< figure src="/ox-hugo/2022-02-15_20-22-39_screenshot.png" caption="<span class=\"figure-number\">Figure 8: </span>Keypoint descriptor generation (Lowe 2004)." >}}
+{{< figure src="/ox-hugo/2022-02-15_20-22-39_screenshot.png" caption="<span class=\"figure-number\">Figure 8: </span>Keypoint descriptor generation (<a href=\"#citeproc_bib_item_2\">Lowe 2004</a>)." >}}
 
 In the paper, the authors generate keypoints using a \\(16 \times 16\\) window from which \\(4 \times 4\\) descriptors are generated following the descriptions above.
 Through experimentation, each \\(4 \times 4\\) descriptor uses 8 orientations, resulting in a feature vector \\(\mathbf{x} \in \mathbb{R}^{128}\\).
 
 Different levels of contrast will product edges with higher gradient magnitudes.
 To account for this, the final feature vector is normalized using the \\(L2\\) hysteresis approach used in Harris corner detection.
+
+## References
+
+<style>.csl-entry{text-indent: -1.5em; margin-left: 1.5em;}</style><div class="csl-bib-body">
+  <div class="csl-entry"><a id="citeproc_bib_item_1"></a>Dalal, N., and B. Triggs. 2005. “Histograms of Oriented Gradients for Human Detection.” In <i>2005 IEEE Computer Society Conference on Computer Vision and Pattern Recognition (CVPR’05)</i>, 1:886–93 vol. 1. <a href="https://doi.org/10.1109/CVPR.2005.177">https://doi.org/10.1109/CVPR.2005.177</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_2"></a>Lowe, David G. 2004. “Distinctive Image Features from Scale-Invariant Keypoints.” <i>International Journal of Computer Vision</i> 60 (2): 91–110. <a href="https://doi.org/10.1023/B:VISI.0000029664.99615.94">https://doi.org/10.1023/B:VISI.0000029664.99615.94</a>.</div>
+</div>

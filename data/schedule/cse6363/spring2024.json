@@ -61,5 +61,25 @@
                 "url": "/notes/kernels"
             }
         ]
+    },
+    {
+        "date": "February 6",
+        "topic": "Support Vector Machine",
+        "materials": [
+            {
+                "title": "Support Vector Machine",
+                "url": "/notes/support_vector_machine"
+            }
+        ]
+    },
+    {
+        "date": "February 8",
+        "topic": "Support Vector Machine",
+        "materials": [
+            {
+                "title": "Support Vector Machine",
+                "url": "/notes/support_vector_machine"
+            }
+        ]
     }
 ]

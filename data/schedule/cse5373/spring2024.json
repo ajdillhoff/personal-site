@@ -66,12 +66,22 @@
     },
     {
         "date": "February 2",
-        "topic": "Recitation",
+        "topic": "Tiling and Shared Memory",
+        "materials": [
+            {
+                "title": "Memory Architecture",
+                "url": "/notes/cuda_memory_architecture"
+            }
+        ]
+    },
+    {
+        "date": "February 4",
+        "topic": "Recitation Day",
         "materials": []
     },
     {
-        "date": "February 5",
-        "topic": "GPU Optimization Basics",
+        "date": "February 7",
+        "topic": "GPU Performance Basics",
         "materials": [
             {
                 "title": "GPU Performance Basics",
@@ -80,7 +90,7 @@
         ]
     },
     {
-        "date": "February 7",
+        "date": "February 9",
         "topic": "Profiling and Benchmarking",
         "materials": [
             {
@@ -88,11 +98,6 @@
                 "url": "/notes/profiling_cuda_applications"
             }
         ]
-    },
-    {
-        "date": "February 9",
-        "topic": "Recitation",
-        "materials": []
     },
     {
         "date": "February 12",

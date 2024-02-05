@@ -28,5 +28,20 @@
                 "url": ""
             }
         ]
+    },
+    {
+        "date": "Week 4",
+        "topic": "Vector Spaces and Subspaces",
+        "materials": [
+            {
+                "title": "1.8, 2.8, 4.1, and 4.2",
+                "url": ""
+            }
+        ]
+    },
+    {
+        "date": "Week 5",
+        "topic": "Exam Week (Review and Exam)",
+        "materials": []
     }
 ]

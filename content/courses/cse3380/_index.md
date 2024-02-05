@@ -29,9 +29,13 @@ This is the course page for CSE 3380 - Linear Algebra in Spring 2024. Here you'l
 - Section 002: Rishabh Mediratta (rxm5684 (at) mavs (dot) uta (dot) edu)
 
 ## Office Hours
-
-**All office hours are conducted via Teams by default.** Please contact me for an appointment if you wish to meet in person.
+| Days    | Time       | Location |
+| ------- | ---------- | -------- |
+| MoWeFri | 12PM - 1PM | ERB 651  |
+| TuTh    | 1PM - 2PM  | ERB 125  |
 
 ### Rishabh Mediratta
-Tu 5:30PM - 8:30PM
-W  4:00PM - 5:00PM
+| Days | Time       | 
+| ---- | ---------- | 
+| Tu   | 5:30PM - 8:30PM |
+| We   | 4PM - 5PM  |

@@ -28,7 +28,7 @@ This is the course page for CSE 4310 - Fundamentals of Computer Vision. Here you
 - Section 001: Roman Strukov (rxs6055 (at) mavs (dot) uta (dot) edu)
 
 ## Office Hours
-
-**All office hours are conducted via Teams by default.** Please contact me for an appointment if you wish to meet in person.
-
-TBD
+| Days    | Time       | Location |
+| ------- | ---------- | -------- |
+| MoWeFri | 12PM - 1PM | ERB 651  |
+| TuTh    | 1PM - 2PM  | ERB 125  |
