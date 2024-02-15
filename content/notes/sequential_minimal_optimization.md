@@ -4,6 +4,7 @@ authors = ["Alex Dillhoff"]
 date = 2022-07-04T00:00:00-05:00
 tags = ["machine learning"]
 draft = false
+lastmod = 2024-02-01
 +++
 
 <div class="ox-hugo-toc toc">
@@ -25,7 +26,7 @@ draft = false
 
 **Paper link:** <https://www.microsoft.com/en-us/research/publication/sequential-minimal-optimization-a-fast-algorithm-for-training-support-vector-machines/>
 
-Sequential Minimal Optimization (SMO) is an algorithm to solve the SVM Quadratic Programming (QP) problem efficiently. Developed by John Platt at Microsoft Research, SMO deals with the constraints of the SVM objective by breaking it down into a smaller optimization problem at each step.
+Sequential Minimal Optimization (SMO) is an algorithm to solve the SVM Quadratic Programming (QP) problem efficiently (<a href="#citeproc_bib_item_1">Platt, n.d.</a>). Developed by John Platt at Microsoft Research, SMO deals with the constraints of the SVM objective by breaking it down into a smaller optimization problem at each step.
 
 The two key components of SMO are
 
@@ -232,12 +233,18 @@ There are two components to Sequential Minimal Optimization: the first is how th
 
 ### Choosing the First Lagrangian {#choosing-the-first-lagrangian}
 
-The algorithm first determines which samples in the dataset violate the given KKT conditions.
-Only those violating the conditions are eligible for optimization.
+The algorithm first determines which samples in the dataset violate the given KKT conditions. Only those violating the conditions are eligible for optimization. A solution is found when the following are true for all \\(i\\):
+
+\begin{align\*}
+\alpha\_i = 0 \iff y\_i u\_i \geq 1,\\\\
+0 < \alpha\_i < C \iff y\_i u\_i = 1,\\\\
+\alpha\_i = C \iff y\_i u\_i \leq 1.
+\end{align\*}
+
 Additionally, samples that are not on the bounds are selected (those with \\(\alpha\_i \neq 0\\) and \\(\alpha\_i \neq C\\)).
 This continues through the dataset until no sample violates the KKT constraints within \\(\epsilon\\).
 
-As a last step, SMO searches the entire dataset to look for any bound samples that violate KKT conditions.
+As a last step, SMO searches the entire dataset to look for any bound samples that violate KKT conditions. It is possible that updating a non-bound sample would cause a bound sample to violate the KKT conditions.
 
 
 ### Choosing the Second Lagrangian {#choosing-the-second-lagrangian}
@@ -309,3 +316,9 @@ u = \sum\_{i=1}^N y\_i \alpha\_i K(\mathbf{x}\_i, \mathbf{x}) - b.
 ## Implementation {#implementation}
 
 An implementation of SMO in Python is available at <https://github.com/ajdillhoff/CSE6363/blob/main/svm/smo.ipynb>
+
+## References
+
+<style>.csl-entry{text-indent: -1.5em; margin-left: 1.5em;}</style><div class="csl-bib-body">
+  <div class="csl-entry"><a id="citeproc_bib_item_1"></a>Platt, John C. n.d. “Sequential Minimal Optimization: A Fast Algorithm for Training Support Vector Machines,” 21.</div>
+</div>

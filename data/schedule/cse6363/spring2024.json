@@ -81,5 +81,25 @@
                 "url": "/notes/support_vector_machine"
             }
         ]
+    },
+    {
+        "date": "February 13",
+        "topic": "Perceptrons",
+        "materials": [
+            {
+                "title": "Perceptrons",
+                "url": "/notes/perceptron"
+            }
+        ]
+    },
+    {
+        "date": "February 15",
+        "topic": "Artificial Neural Networks",
+        "materials": [
+            {
+                "title": "Neural Networks",
+                "url": "/notes/neural_networks"
+            }
+        ]
     }
 ]

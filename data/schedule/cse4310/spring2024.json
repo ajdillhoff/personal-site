@@ -97,5 +97,39 @@
         "date": "February 9",
         "topic": "CANCELLED",
         "materials": []
+    },
+    {
+        "date": "February 12",
+        "topic": "Hough Transforms",
+        "materials": [
+            {
+                "title": "Hough Transforms",
+                "url": "/notes/hough_transform"
+            }
+        ]
+    },
+    {
+        "date": "February 14",
+        "topic": "K-Means Clustering",
+        "materials": [
+            {
+                "title": "Slides (Athitsos, External)",
+                "url": "https://athitsos.utasites.cloud/courses/cse4309_fall2023/lectures/17_clustering.pdf"
+            }
+        ]
+    },
+    {
+        "date": "February 16",
+        "topic": "Image Segmentation and Active Contours",
+        "materials": [
+            {
+                "title": "Image Segmentation",
+                "url": "/notes/image_segmentation"
+            },
+            {
+                "title": "Active Contours",
+                "url": "/notes/active_contours"
+            }
+        ]
     }
 ]

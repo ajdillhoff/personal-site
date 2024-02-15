@@ -91,13 +91,8 @@
     },
     {
         "date": "February 9",
-        "topic": "Profiling and Benchmarking",
-        "materials": [
-            {
-                "title": "Profiling CUDA Applications",
-                "url": "/notes/profiling_cuda_applications"
-            }
-        ]
+        "topic": "Recitation",
+        "materials": []
     },
     {
         "date": "February 12",
@@ -111,11 +106,11 @@
     },
     {
         "date": "February 14",
-        "topic": "Convolutional Pattern",
+        "topic": "Profiling and Benchmarking",
         "materials": [
             {
-                "title": "GPU Pattern: Convolution",
-                "url": "/notes/gpu_pattern_convolution"
+                "title": "Profiling CUDA Applications",
+                "url": "/notes/profiling_cuda_applications"
             }
         ]
     },

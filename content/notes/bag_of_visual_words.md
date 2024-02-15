@@ -42,7 +42,21 @@ The next step is to create a histogram of the visual features for each image. Th
 
 ### Adjust Frequency Vectors {#adjust-frequency-vectors}
 
-The feature vectors are then adjusted to account for the frequency of the visual features. This is done by applying a weighting scheme to the feature vectors. The most common weighting scheme is the Term Frequency-Inverse Document Frequency (TF-IDF) weighting. This weighting scheme is used to adjust the frequency of a word in a document based on the frequency of the word in the entire dataset. In terms of the Bag of Visual Words, the frequency of a visual feature in an image is adjusted based on the frequency of the visual feature in the entire dataset.
+The feature vectors are then adjusted to account for the frequency of the visual features. This is done by applying a weighting scheme to them. The most common weighting scheme is called Term Frequency-Inverse Document Frequency (TF-IDF). TF-IDF scheme adjusts the frequency of a word in a document based on the frequency in the entire dataset. It is calculated as follows:
+
+\\[
+\text{TF-IDF}(t, d) = \text{TF}(t, d) \times \text{IDF}(t),
+\\]
+
+where \\(\text{TF}(t, d)\\) is the term frequency of term \\(t\\) in document \\(d\\) and \\(\text{IDF}(t)\\) is the inverse document frequency of term \\(t\\) in the entire dataset.
+
+\\(\text{TF}(t, d)\\) is simply the number of times that visual feature \\(t\\) appears in the image \\(d\\). \\(\text{IDF}(t)\\) is calculated as follows:
+
+\\[
+\text{IDF}(t) = \log\left(\frac{N}{n\_t}\right),
+\\]
+
+where \\(N\\) is the total number of images in the dataset and \\(n\_t\\) is the number of images that contain the visual feature \\(t\\).
 
 
 ### Compare Vectors {#compare-vectors}

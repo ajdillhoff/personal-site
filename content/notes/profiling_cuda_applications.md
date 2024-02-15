@@ -10,25 +10,20 @@ draft = false
 
 <div class="heading">Table of Contents</div>
 
-- [Profiling and Benchmarking](#profiling-and-benchmarking)
 - [Overview of Nsight](#overview-of-nsight)
 - [Getting Started with Nsight](#getting-started-with-nsight)
 - [Case Study: Matrix Multiplication](#case-study-matrix-multiplication)
 - [Tips and Best Practices](#tips-and-best-practices)
+- [OCL Notes](#ocl-notes)
 
 </div>
 <!--endtoc-->
 
 
 
-## Profiling and Benchmarking {#profiling-and-benchmarking}
-
--   Debugging
--   Profiling
--   Benchmarking
-
-
 ## Overview of Nsight {#overview-of-nsight}
+
+NVIDIA NSight Compute is a profiling tool for CUDA kernels. It features an expert system that can help you identify performance bottlenecks in your code. It is essential for methodically optimizing your code. These notes will cover the basics of using Nsight Compute to profile your CUDA applications.
 
 
 ## Getting Started with Nsight {#getting-started-with-nsight}
@@ -117,15 +112,27 @@ This basic report only includes three sections: GPU Speed of Light, Launch Stati
 
 ### GPU Speed of Light {#gpu-speed-of-light}
 
-High level aspects. Shows what your application is doing relative to peak performance.
-Important lines:
+This section displays high level aspects of your kernel. The main metrics report what your application is doing relative to peak performance. Sparing the full details of the documentation, the most important metrics are:
 
--   Duration
--   SM <code>[%]</code>
--   Memory <code>[%]</code>
+-   Duration: The total time spent executing the kernel. This is the most important metric for performance.
+-   SM <code>[%]</code>: The relative throughput of the SMs as compared to the theoretical maximum.
+-   Memory <code>[%]</code>: The relative throughput of the memory as compared to the theoretical maximum.
+
+**Do not get lost in the numbers!**
+
+Remember that this tool is simply reporting facts about your kernel. Take care not to misinterpret the data. In the run from above, the kernel throughput is only 0.85%. There are a number of reasons as to why this number is so low.
+
+-   Latency Issues: The kernel may have to wait for memory operations, resulting in a low throughput.
+-   Workload Characteristics: Your particular kernel may not need to do much work, resulting in a low throughput.
 
 
 ### Launch Statistics {#launch-statistics}
+
+This section shows us the launch configuration that was used for this kernel. In our earlier programs, we may set these manually for testing. Later on, we will want our programs to adapt to changing input sizes, so these statistics will becomes more useful.
+
+More importantly, this shows you the resource usage per block.
+
+If you are profiling an application for which you are not familiar with the code, it is convenient to know the grid and block sizes that were used when launching the kernel.
 
 
 ### Occupancy Analysis {#occupancy-analysis}
@@ -141,3 +148,49 @@ Important lines:
 
 -   Do not confuse high throughput for high performance. Throughput is a measure of how much work is being done, not how fast it is being done.
 -   Using a larger grid size is not always better. More grids introduce more overhead and can lead to lower performance.
+
+
+## OCL Notes {#ocl-notes}
+
+-   Analysis Driven Optimization
+-   Understanding Performance Limiters
+-   Metrics Review
+-   Memory Bound Analysis
+-   Compute Bound Analysis
+
+**Goals**
+Make efficient use of memory subsystem
+Expose enough parallelism to hide latency
+
+
+### Analysis Driven Optimization {#analysis-driven-optimization}
+
+Cyclical process
+
+1.  Profile
+2.  Determine Limiter
+3.  Inspect
+4.  Optimize
+
+Determine if memory or compute bound. If neither, analyze where the latency is coming from.
+
+
+### Metrics {#metrics}
+
+**Latency**
+
+-   sm efficiency
+
+**Memory**
+
+-   dram utilization
+-   L2 utilization
+-   shared utilization
+
+**Compute**
+
+-   DP utilization
+-   SP utilization
+-   HP utilization
+-   TC utilization
+-   Integer

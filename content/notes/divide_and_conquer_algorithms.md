@@ -42,7 +42,7 @@ If the second property doesn't hold, the algorithm is not correct -- it may end 
 
 > "Whenever a recurrence is stated without an explicit base case, we assume that the recurrence is algorithmic." (<a href="#citeproc_bib_item_1">Cormen et al. 2022</a>).
 
-This assumption means that the algorithm is correct and terminates in finite time, so there must be a base case. The base case is less important for analysis than the recursive case.
+This assumption means that the algorithm is correct and terminates in finite time, so there must be a base case. The base case is less important for analysis than the recursive case. For example, your base case might work with 100 elements, and that would still be \\(\Theta(1)\\) because it is a constant.
 
 It is common to break up each subproblem uniformly, but it is not always the best way to do it. For example, an application such as matrix multiplication is typically broken up uniformly since there is no spatial or temporal relationship to consider. Algorithms for image processing, on the other hand, may have input values that are locally correlated, so it may be better to break up the input in a way that preserves this correlation.
 
@@ -170,6 +170,33 @@ Base case is \\(n=1\\) where only a single addition and multiplication are perfo
 
 Each recursive call contributes \\(T(n/2)\\) to the running time. There are 8 recursive calls, so the total running time is \\(8T(n/2) + \Theta(n^2)\\). There is no need to implement a combine step since the matrix is updated in place. The final running time is \\(T(n) = 8T(n/2) + \Theta(1)\\) **for the recursive portion**.
 
+This method easily adapts to parallel processing. The size of each _tile_ can be adjusted to fit the number of processors available. The algorithm can be parallelized by assigning each processor to a subproblem.
+
+We now walk through an example on a \\(4 \times 4\\) matrix. Assume that each \\(A\_{ij}\\) and \\(B\_{ij}\\) is a \\(2 \times 2\\) matrix.
+
+\begin{bmatrix}
+A\_{11} & A\_{12} \\\\
+A\_{21} & A\_{22}
+\end{bmatrix}
+
+\begin{bmatrix}
+B\_{11} & B\_{12} \\\\
+B\_{21} & B\_{22}
+\end{bmatrix}
+
+These matrices are already partitioned. They currently don't meet the base case, so 8 recursive calls are made which compute the following products:
+
+1.  \\(A\_{11}B\_{11}\\)
+2.  \\(A\_{12}B\_{21}\\)
+3.  \\(A\_{11}B\_{12}\\)
+4.  \\(A\_{12}B\_{22}\\)
+5.  \\(A\_{21}B\_{11}\\)
+6.  \\(A\_{22}B\_{21}\\)
+7.  \\(A\_{21}B\_{12}\\)
+8.  \\(A\_{22}B\_{22}\\)
+
+Peeking into the first recursive call, the \\(2 \times 2\\) matrices are partitioned into 4 \\(1 \times 1\\) matrices, or scalars. The base case is reached, and the product is computed. The same process is repeated for the other 7 recursive calls. The final matrix is then formed by adding the products together.
+
 
 ## Example: Convex Hull {#example-convex-hull}
 
@@ -233,7 +260,18 @@ Removing the lines that are not part of the convex hull require the cut and past
 
 ## Example: Median Search {#example-median-search}
 
-Given a set of \\(n\\) numbers, defined \\(rank(X)\\) as the number in the set that are less than or equal to \\(X\\).
+Finding the median value of a set can be performed in linear time without fully sorting the data. The recurrence is based on discarding a constant fraction of the elements at each step.
+
+
+### Algorithm {#algorithm}
+
+1.  ****Divide****: Partition the set into groups of 5 elements. Depending on the size of the set, there may be less than 5 elements in the last set.
+2.  ****Conquer****: Sort each group and find the median of each group. Since the subsets are of constant size, this is done in constant time.
+3.  ****Combine****: Given the median of each group from step 2, find the median of medians. This value will be used as a pivot for the next step.
+4.  ****Partition****: Use the pivot to separate values smaller and larger than the pivot.
+5.  ****Select****: If the given pivot is the true median based on its position in the original set, select it. If not, recursively select the median from the appropriate partition.
+
+Given a set of \\(n\\) numbers, define \\(rank(X)\\) as the number in the set that are less than or equal to \\(X\\).
 
 \\(Select(S, i)\\)
 

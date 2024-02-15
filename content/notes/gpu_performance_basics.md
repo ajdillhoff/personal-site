@@ -37,7 +37,7 @@ Strategies to optimize code for memory coalescing are to rearrange the threads, 
 
 ### Example: Matrix Multiplication {#example-matrix-multiplication}
 
-Consider \\(C = AB\\), where \\(A\\) is in row-major order and \\(B\\) is in column-major order. The naive implementation of this algorithm will have poor memory coalescing. The figure below demonstrates the memory accesses for this scenario. The values required are no consecutive in memory, so the DRAM will have to make multiple bursts to read the data.
+Consider \\(C = AB\\), where \\(A\\) is in row-major order and \\(B\\) is in column-major order. The naive implementation of this algorithm will have poor memory coalescing. The figure below demonstrates the memory accesses for this scenario. The values required are not consecutive in memory, so the DRAM will have to make multiple bursts to read the data.
 
 {{< figure src="/ox-hugo/2024-01-14_20-47-50_screenshot.png" caption="<span class=\"figure-number\">Figure 2: </span>Memory accesses for a matrix in column-major ordering (<a href=\"#citeproc_bib_item_1\">Hwu, Kirk, and El Hajj 2022</a>)." >}}
 
