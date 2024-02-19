@@ -215,7 +215,7 @@ cudaMemcpyToSymbol(kFilter_d, filter_h, (2*FILTER_RADIUS+1)*(2*FILTER_RADIUS+1)*
 
 The line above assumes there is some data on the host in the array \`filter_h\`. This array is copied to the device. A small note on naming convention, [Google's C++](https://google.github.io/styleguide/cppguide.html#Constant_Names) style guide recommends naming constant variables with a `k` prefix. I have adopted this convention here.
 
-At this point, `F_d` is accessible from the kernel as a global variable. There is no need to pass it as an argument. The kernel can be modified to use this constant memory as follows.
+At this point, `kFilter_d` is accessible from the kernel as a global variable. There is no need to pass it as an argument. The kernel can be modified to use this constant memory as follows.
 
 ```cuda
 __global__ void conv2D(float *input, float *output,
@@ -246,7 +246,7 @@ Even with caching, the convolutional kernel still makes many accesses to DRAM. S
 
 {{< figure src="/ox-hugo/2024-01-19_16-35-39_screenshot.png" caption="<span class=\"figure-number\">Figure 6: </span>Left: The input image and its tiling. Middle: the filter. Right: The output image and its tiling." >}}
 
-The parallel solution to this problem will follow the tiled approach used for matrix multiplication. One key different in this case is that the input tile size will be larger than the output tile size. This size different would further be complicated if we left the kernel size as a parameter.
+The parallel solution to this problem will follow the tiled approach used for matrix multiplication. One key difference in this case is that the input tile size will be larger than the output tile size. This size difference would further be complicated if we left the kernel size as a parameter.
 
 Following the design presented by (<a href="#citeproc_bib_item_2">Hwu, Kirk, and El Hajj 2022</a>) in Chapter 7, there are two immediate approaches to this problem based on the tile size. The first is to choose a block size that matches the size of the input tiles. The benefit to this approach is that each thread can load a single input element into shared memory. The drawback is that some of the threads will be disabled when computing the output value since the output tile is smaller. This is a form of control divergence and will result in wasted resources.
 

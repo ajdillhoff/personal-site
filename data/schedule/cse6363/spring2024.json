@@ -101,5 +101,25 @@
                 "url": "/notes/neural_networks"
             }
         ]
+    },
+    {
+        "date": "February 20",
+        "topic": "Artificial Neural Networks",
+        "materials": [
+            {
+                "title": "Neural Networks",
+                "url": "/notes/neural_networks"
+            }
+        ]
+    },
+    {
+        "date": "February 22",
+        "topic": "Bias-Variance Tradeoff, Model Selection, and Cross-Validation",
+        "materials": [
+            {
+                "title": "Bias-Variance Tradeoff",
+                "url": "/notes/bias_and_variance"
+            }
+        ]
     }
 ]

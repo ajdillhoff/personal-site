@@ -294,6 +294,38 @@ If the columns are sorted, it is trivial to find the median of each column.
 
 Half of the groups contribute at least 3 elements greater than \\(X\\), except for the last group. We have one group that contains \\(x\\).
 
+
+### Analysis {#analysis}
+
+Given a set \\(A = \\{a\_1, a\_2, \ldots, a\_n\\}\\), the median search algorithm returns the $k$th smallest element of \\(A\\). We now analyze the runtime of this algorithm.
+
+
+#### Divide {#divide}
+
+In the **divide** step, the set is partitioned into \\(\lceil n/5 \rceil\\) groups of 5 elements each. This is done in linear time.
+
+
+#### Conquer {#conquer}
+
+Each group is sorted using insertion sort or some other algorithm. Even though the search itself may have a higher complexity, the sorting of the groups is \\(\Theta(1)\\) since the groups are of constant size. Collectively across all groups, the sorting is \\(\Theta(n)\\).
+
+
+#### Combine {#combine}
+
+The median of each group is found, introducing a recurrence of \\(T(\lceil n/5 \rceil)\\). Once each median is found, the median of medians is computed.
+
+
+#### Partition {#partition}
+
+As reasoned above, the median of medians is used as a pivot to partition the set into two groups. At least 30% of the elements are greater than the pivot. This leaves a search space of at most \\(7n/10\\). Partitioning is done in linear time.
+
+
+#### Select {#select}
+
+If the pivot is the $k$th smallest element, the algorithm terminates. Otherwise, the algorithm recursively searches the appropriate partition. Comparing the size of the partition to the size of the original set, the recurrence is \\(T(7n/10)\\).
+
+Pseudocode is available [here](https://en.wikipedia.org/wiki/Median_of_medians).
+
 ## References
 
 <style>.csl-entry{text-indent: -1.5em; margin-left: 1.5em;}</style><div class="csl-bib-body">

@@ -2,7 +2,7 @@
 title = "Segmentation via Clustering"
 authors = ["Alex Dillhoff"]
 date = 2022-02-24T00:00:00-06:00
-tags = ["gpgpu"]
+tags = ["computer vision"]
 draft = false
 +++
 
@@ -46,7 +46,7 @@ Feature vectors are assigned to a single cluster. These clusters represent some 
 
 When it comes to clustering methods, there are two main approaches: agglomerative and divisive.
 Simply, one is a bottom-up approach. The other is a top-down approach.
-After briefly introductin agglomerative clustering, we will explore specific implementations of segmentation using k-means clustering as well as segmentation using superpixels <&achantaSLICSuperpixelsCompared2012>.
+After briefly introductin agglomerative clustering, we will explore specific implementations of segmentation using k-means clustering as well as segmentation using superpixels (Achanta et al. 2012).
 
 
 ## Agglomerative Clustering {#agglomerative-clustering}
@@ -72,7 +72,7 @@ By defining the specific goal of segmentation (segment by color, shape, etc.), w
 {{< figure src="/ox-hugo/2022-02-24_16-24-28_screenshot.png" caption="<span class=\"figure-number\">Figure 2: </span>3D-PointCapsNet learns point segmentations on only 1% of the training data (Zhao et al.)." >}}
 
 There are approaches which attempt to segment objects in semi-supervised settings.
-As seen in [Figure 1](#figure--fig1), Zhao et al. propose a part segmentation model for 3D objects which only utilizes 1-5% of the training part labels <&zhao3DPointCapsule2019>.
+As seen in [Figure 1](#figure--fig1), Zhao et al. propose a part segmentation model for 3D objects which only utilizes 1-5% of the training part labels (Zhao et al. 2019).
 
 For example, if we divised an algorithm that would segment an image by color values, it might be able to segment the hand wearing a solid color glove relatively easily.
 If we wanted to segment the hand into its individual joints, we would have to introduce a visual prior such as asking the subject to wear a multicolored glove.
@@ -128,7 +128,7 @@ The standard algorithm is as follows:
 
 ## Simple Linear Iterative Clustering (SLIC) {#simple-linear-iterative-clustering--slic}
 
-Simple Linear Iterative Clustering (SLIC) is widely used algorithm based on K-Means clustering for image segmentation <&achantaSLICSuperpixelsCompared2012>.
+Simple Linear Iterative Clustering (SLIC) is widely used algorithm based on K-Means clustering for image segmentation (Achanta et al. 2012).
 
 As discussed in the original paper, the authors state that SLIC h   as two main advantages over traditional K-Means:
 
@@ -202,7 +202,7 @@ This requires that the functions used in a deep network be differentiable.
 
 {{< figure src="/ox-hugo/2022-03-03_20-47-51_screenshot.png" caption="<span class=\"figure-number\">Figure 9: </span>Superpixels optimized for semantic segmentation (Jampani et al.)" >}}
 
-Superpixel Sampling Networks, proposed by Jampani et al., introduce the first attempt at integrating superpixel extraction methods with deep learning models <&jampaniSuperpixelSamplingNetworks2018>.
+Superpixel Sampling Networks, proposed by Jampani et al., introduce the first attempt at integrating superpixel extraction methods with deep learning models (Jampani et al. 2018).
 In this work, they adapt SLIC as a differentiable layer in a deep network which result in superpixels that are fine-tuned for specific tasks.
 
 {{< figure src="/ox-hugo/2022-03-03_21-45-09_screenshot.png" caption="<span class=\"figure-number\">Figure 10: </span>Model diagram for SSN (Jampani et al.)" >}}
@@ -211,7 +211,7 @@ The train their model on a semantic segmentation task which fine tunes the learn
 
 {{< figure src="/ox-hugo/2022-03-03_21-51-28_screenshot.png" caption="<span class=\"figure-number\">Figure 11: </span>Results on semantic segmentation (Jampani et al.)" >}}
 
-In a more recent work, Yang et al. propose a deep network that directly produces the superpixels as opposed to using a soft K-Means layer <&yangSuperpixelSegmentationFully2020>.
+In a more recent work, Yang et al. propose a deep network that directly produces the superpixels as opposed to using a soft K-Means layer (Yang et al. 2020).
 
 {{< figure src="/ox-hugo/2022-03-03_22-05-40_screenshot.png" caption="<span class=\"figure-number\">Figure 12: </span>Model comparison between Jampani et al. and Yang et al. (Yang et al.)" >}}
 

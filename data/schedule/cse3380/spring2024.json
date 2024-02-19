@@ -43,5 +43,15 @@
         "date": "Week 5",
         "topic": "Exam Week (Review and Exam)",
         "materials": []
+    },
+    {
+        "date": "Week 6",
+        "topic": "Linear Independence, Bases, and Linear Transformations",
+        "materials": [
+            {
+                "title": "1.8, 4.3",
+                "url": ""
+            }
+        ]
     }
 ]
