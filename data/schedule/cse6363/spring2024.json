@@ -104,21 +104,25 @@
     },
     {
         "date": "February 20",
-        "topic": "Artificial Neural Networks",
+        "topic": "ANNs, Bias-Variance Tradeoff, Model Selection, and Cross-Validation",
         "materials": [
             {
                 "title": "Neural Networks",
                 "url": "/notes/neural_networks"
+            },
+            {
+                "title": "Bias-Variance Tradeoff",
+                "url": "/notes/bias_and_variance"
             }
         ]
     },
     {
         "date": "February 22",
-        "topic": "Bias-Variance Tradeoff, Model Selection, and Cross-Validation",
+        "topic": "Decision Trees",
         "materials": [
             {
-                "title": "Bias-Variance Tradeoff",
-                "url": "/notes/bias_and_variance"
+                "title": "Decision Trees",
+                "url": "/notes/decision_trees"
             }
         ]
     }
