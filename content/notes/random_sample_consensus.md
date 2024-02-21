@@ -2,7 +2,7 @@
 title = "RANdom SAmple Consensus"
 authors = ["Alex Dillhoff"]
 date = 2022-02-15T00:00:00-06:00
-tags = ["gpgpu"]
+tags = ["machine learning"]
 draft = false
 +++
 
@@ -23,22 +23,22 @@ draft = false
 Unless our data is perfect, we will not be able to find parameters that fit the data in the presence of outliers.
 Consider fitting the data in the figure below using a least squares method.
 
-{{< figure src="Introduction/2022-02-15_18-04-37_screenshot.png" caption="<span class=\"figure-number\">Figure 1: </span>Points sample along a line with many outliers around it. Source: Wikipedia" >}}
+{{< figure src="/ox-hugo/2024-02-20_19-46-07_screenshot.png" caption="<span class=\"figure-number\">Figure 1: </span>Points sample along a line with many outliers around it. Source: Wikipedia" >}}
 
 If we were to fit a naive least squares model, the outliers would surely produce parameters for a line that does not fit the most amount of data possible.
 
 Consider the figures below. In the first one, a least squares model is fit to points generated from a line.
 With the addition of just a single outlier, the model no longer fits the line.
 
-{{< figure src="Introduction/2022-02-15_18-22-32_screenshot.png" caption="<span class=\"figure-number\">Figure 2: </span>Least squares can easily fit a line with great accuracy." >}}
+{{< figure src="/ox-hugo/2024-02-20_19-46-28_screenshot.png" caption="<span class=\"figure-number\">Figure 2: </span>Least squares can easily fit a line with great accuracy." >}}
 
-{{< figure src="Introduction/2022-02-15_18-21-24_screenshot.png" caption="<span class=\"figure-number\">Figure 3: </span>A single outlier leads to a bad fit for linear regression." >}}
+{{< figure src="/ox-hugo/2024-02-20_19-46-52_screenshot.png" caption="<span class=\"figure-number\">Figure 3: </span>A single outlier leads to a bad fit for linear regression." >}}
 
 Ideally, we want a model that is robust to outliers.
 That is, the model should be fit such that it matches the largest number of samples, or **inliers**.
 One such approach to this problem is **RANdom SAmple Consensus (RANSAC)**.
 
-{{< figure src="Introduction/2022-02-15_18-35-05_screenshot.png" caption="<span class=\"figure-number\">Figure 4: </span>RANSAC fit to most inliers while ignoring the outliers. Source: Wikipedia" >}}
+{{< figure src="/ox-hugo/2024-02-20_19-47-10_screenshot.png" caption="<span class=\"figure-number\">Figure 4: </span>RANSAC fit to most inliers while ignoring the outliers. Source: Wikipedia" >}}
 
 The general process is as follows:
 
@@ -47,7 +47,7 @@ The general process is as follows:
 3.  Measure the error of how well ALL data fits and select the number of inliers with error less than \\(t\\).
 4.  If the error is lower than the previous best error, fit a new model to these inliers.
 
-{{< figure src="Introduction/2022-02-15_18-57-00_screenshot.png" caption="<span class=\"figure-number\">Figure 5: </span>RANSAC fitting random samples and counting the number of inliers. Source: Wikipedia" >}}
+{{< figure src="/ox-hugo/2024-02-20_19-47-30_screenshot.png" caption="<span class=\"figure-number\">Figure 5: </span>RANSAC fitting random samples and counting the number of inliers. Source: Wikipedia" >}}
 
 The algorithm can be found on the [Wikipedia page](https://en.wikipedia.org/wiki/Random_sample_consensus).
 
