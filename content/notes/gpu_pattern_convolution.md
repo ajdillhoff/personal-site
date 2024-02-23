@@ -316,7 +316,7 @@ This ratio increases with the size of the filter.
 
 In the previous example, the size of the input tile compared to the output tile means that there were some threads that did not contribute to the output computation. These are the threads managing the lightly shaded cells in the figure above. We will refer to these as _halo cells_.
 
-This implementation is going to take advantage of the caching behavior in the chip itself. Values that have been recently used are more likely to already be in L2 cache. The full kernel is given below.
+This implementation is going to take advantage of the caching behavior in the chip itself. **Values that have been recently used are more likely to already be in L2 cache.** This is a safe assumption since the neighboring blocks will have loaded these values into shared memory. This means that the input and output tile sizes can be the same; there is no need to waste any threads in the block. The full kernel is given below.
 
 ```cuda
 __global__ void conv2DTiledCachedConstKernel(float *input, float *output,

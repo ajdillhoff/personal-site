@@ -23,7 +23,7 @@ draft = false
 
 Tracking features and objects is required in many applications ranging from autonomous driving to security. Vision tracking systems are often used for live sports broadcasts to keep track of players, the ball, and other visual queues related to the game.
 
-{{< figure src="Introduction/2022-03-08_21-16-34_screenshot.png" caption="<span class=\"figure-number\">Figure 1: </span>Source: <https://azbigmedia.com/lifestyle/ball-tracking-technology-changes-way-fans-consume-practice-sport-of-golf/>" >}}
+{{< figure src="/ox-hugo/2024-02-22_18-19-53_screenshot.png" caption="<span class=\"figure-number\">Figure 1: </span>Source: <https://azbigmedia.com/lifestyle/ball-tracking-technology-changes-way-fans-consume-practice-sport-of-golf/>" >}}
 
 Naive tracking will detect an object per frame without any regard for prior information.
 More sophisticated trackers will consider the previous frame as a starting point to their search space.

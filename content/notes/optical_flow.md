@@ -10,6 +10,7 @@ draft = false
 
 <div class="heading">Table of Contents</div>
 
+- [Review of Szeliski](#review-of-szeliski)
 - [Introduction](#introduction)
 - [Motion Features](#motion-features)
 - [Computing Optical Flow](#computing-optical-flow)
@@ -20,12 +21,17 @@ draft = false
 
 
 
+## Review of Szeliski {#review-of-szeliski}
+
+**Estimating motion**
+
+1.  Error metric
+2.  Search function
+
+
 ## Introduction {#introduction}
 
-Optical flow refers to the apparent motion in a 2D image.
-A motion field refers to the true motion of objects in 3D.
-The idea of optical flow features is a simple concept.
-If a fixed camera records a video of someone walking from the left side of the screen to the right, a difference of two consecutive frames reveals much about the apparent motion.
+Optical flow refers to the apparent motion in a 2D image. Optical flow methods estimate a **motion field**, which refers to the true motion of objects in 3D. If a fixed camera records a video of someone walking from the left side of the screen to the right, a difference of two consecutive frames reveals much about the apparent motion.
 
 **TODO** Frame differencing figure
 
@@ -67,7 +73,7 @@ This can be used to estimate the apparent depth between objects in a scene.
 
 ## Computing Optical Flow {#computing-optical-flow}
 
-A popular assumption for optical flow, as discussed in <&hornDeterminingOpticalFlow1980>, is that of brightness constancy.
+A popular assumption for optical flow, as discussed in (<a href="#citeproc_bib_item_2">Horn and Schunck 1980</a>), is that of brightness constancy.
 That is, a local feature has the same image intensity in one frame as it does in the subsequent frame.
 
 \\[
@@ -124,14 +130,14 @@ Then, we have 25 equations per pixel.
 Since this is a system of linear equations, it could be computed directly using the normal equations.
 
 However, Horn and Schunck did not have very fast computers in 1981.
-So, they introduced an iterative solution <&hornDeterminingOpticalFlow1980>.
+So, they introduced an iterative solution (<a href="#citeproc_bib_item_2">Horn and Schunck 1980</a>).
 
 
 ## Assumptions of Small Motion {#assumptions-of-small-motion}
 
 One of the core assumptions in early formulations of optical flow is that motion is very small (&lt;1 pixel).
 In reality, some objects may move over 100 pixels within a single frame.
-A simple solution to this problem was proposed by Bergen et al. in 1992 <&bergenHierarchicalModelbasedMotion>.
+A simple solution to this problem was proposed by Bergen et al. in 1992 (<a href="#citeproc_bib_item_1">Bergen et al., n.d.</a>).
 By creating an image pyramid over several resolutions, the assumption of small motion at each scale is still reasonable.
 
 {{< figure src="/ox-hugo/2022-03-06_19-37-48_screenshot.png" caption="<span class=\"figure-number\">Figure 3: </span>Hierarchical motion estimation (Bergen et al.)" >}}
@@ -140,3 +146,10 @@ At one scale, the warping parameters are estimated.
 Next, they are used to warp the image to match the one at \\(t-1\\).
 The warped image and true image at \\(t-1\\) are compared to refine the parameters.
 The refined parameters are then sent to the next scale layer.
+
+## References
+
+<style>.csl-entry{text-indent: -1.5em; margin-left: 1.5em;}</style><div class="csl-bib-body">
+  <div class="csl-entry"><a id="citeproc_bib_item_1"></a>Bergen, James R, P Anandan, Keith J Hanna, and Rajesh Hingorani. n.d. “Hierarchical Model-Based Motion Estimation,” 16.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_2"></a>Horn, Berthold K. P., and Brian G. Schunck. 1980. “Determining Optical Flow.” <a href="https://dspace.mit.edu/bitstream/handle/1721.1/6337/%EE%80%80AIM%EE%80%81-572.pdf?sequence=2">https://dspace.mit.edu/bitstream/handle/1721.1/6337/%EE%80%80AIM%EE%80%81-572.pdf?sequence=2</a>.</div>
+</div>

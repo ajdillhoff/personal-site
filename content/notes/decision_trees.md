@@ -4,6 +4,7 @@ authors = ["Alex Dillhoff"]
 date = 2022-03-18T00:00:00-05:00
 tags = ["machine learning"]
 draft = false
+lastmod = 2024-02-22
 +++
 
 <div class="ox-hugo-toc toc">
@@ -34,7 +35,7 @@ A **decision tree**, or Classification and Regression Trees (CART), is a model t
 The partitions are split based on very simple binary choices.
 If yes, branch to the left; if no, branch to the right.
 
-{{< figure src="Introduction/2022-03-18_13-03-12_screenshot.png" caption="<span class=\"figure-number\">Figure 1: </span>Regression tree (left) and its piecewise constant surface (right) (Source: _Machine Learning: A Probabilistic Perspective_ by Kevin P. Murphy)." >}}
+{{< figure src="/ox-hugo/2024-02-22_11-11-58_screenshot.png" caption="<span class=\"figure-number\">Figure 1: </span>Regression tree (left) and its piecewise constant surface (right) (Source: _Machine Learning: A Probabilistic Perspective_ by Kevin P. Murphy)." >}}
 
 To compute the response, we represent each individual decision as a function \\(\phi\\) and sum the responses:
 
@@ -42,7 +43,7 @@ To compute the response, we represent each individual decision as a function \\(
 f(\mathbf{x}) = \mathbb{E}[y | \mathbf{x}] = \sum\_{m=1}^M w\_m \mathbb{1} (\mathbf{x} \in R\_m) = \sum\_{m=1}^M w\_m \phi(\mathbf{x};\mathbf{v}\_m),
 \\]
 
-where \\(R\_m\\) is the \\(m^{\text{th}}\\) region, \\(w\_m\\) is the mean response, and \\(\mathbf{v}\_m\\) is the choice of variable to split on along with its threshold value.
+where \\(R\_m\\) is the \\(m^{\text{th}}\\) region, \\(w\_m\\) is the mean response, and \\(\mathbf{v}\_m\\) is the choice of variable to split on along with its threshold value. Note that this is **not** a differentiable function due to the indicator function.
 
 
 ## Example: Iris Dataset {#example-iris-dataset}
@@ -95,11 +96,22 @@ Splits that result in clusters with high variance may still see a higher cost, e
 As their alternative name implies, decision trees can also be used for classification.
 The splits are still based on features and threshold values at each branch.
 When a split is considered, a class-conditional probability is estimated for that data.
+
+
+### Splitting the Data {#splitting-the-data}
+
+Given a set of data that makes it to node \\(i\\), denoted \\(\mathcal{D}\_i\\), a fitting procedure must select the feature and threshold value that minimizes the cost. If the feature is continuous, the range of search values is selected by sorting a list of unique values from the subset of data. For each unique value, the cost is computed by splitting the data into two groups based on the threshold value. The threshold value that minimizes the cost is selected.
+
+In the case of categorical data, we would intuitively split the data into a set of data that contains the category and a set that does not. The cost is then computed for each category. The category that minimizes the cost is selected.
+
 Given data satisfying \\(X\_j < t\\), the class-conditional probability is
 
 \\[
 \hat{\pi}\_c = \frac{1}{|\mathcal{D}|}\sum\_{i \in \mathcal{D}} \mathbb{1}(y\_i = c).
 \\]
+
+
+### Error Functions {#error-functions}
 
 The common error functions used for classification are **misclassification rate**, **entropy**, and **Gini index**.
 Misclassification rate is computed by summing the number of misclassifications:
