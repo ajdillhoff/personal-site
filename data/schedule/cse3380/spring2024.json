@@ -49,7 +49,17 @@
         "topic": "Linear Independence, Bases, and Linear Transformations",
         "materials": [
             {
-                "title": "1.8, 4.3",
+                "title": "1.8 and 4.3",
+                "url": ""
+            }
+        ]
+    },
+    {
+        "date": "Week 7",
+        "topic": "Computer Graphics, Determinants and Volumes",
+        "materials": [
+            {
+                "title": "3.3 and 4.4",
                 "url": ""
             }
         ]

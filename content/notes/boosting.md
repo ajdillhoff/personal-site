@@ -2,26 +2,20 @@
 title = "Boosting"
 authors = ["Alex Dillhoff"]
 date = 2022-03-23T00:00:00-05:00
-draft = false
 tags = ["machine learning"]
+draft = false
 +++
 
 <div class="ox-hugo-toc toc">
 
 <div class="heading">Table of Contents</div>
 
-- [TODO](#todo)
 - [Introduction](#introduction)
 - [AdaBoost](#adaboost)
 
 </div>
 <!--endtoc-->
 
-
-
-## TODO {#todo}
-
--   [ ] Gradient Boosting
 
 
 ## Introduction {#introduction}

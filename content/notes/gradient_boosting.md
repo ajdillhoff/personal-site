@@ -6,7 +6,18 @@ tags = ["machine learning"]
 draft = false
 +++
 
-## Notes from (<a href="#citeproc_bib_item_1">Friedman 2001</a>) {#notes-from}
+<div class="ox-hugo-toc toc">
+
+<div class="heading">Table of Contents</div>
+
+- [Notes from (NO_ITEM_DATA:friedmanGreedyFunctionApproximation2001)](#notes-from--no-item-data-friedmangreedyfunctionapproximation2001)
+
+</div>
+<!--endtoc-->
+
+
+
+## Notes from (NO_ITEM_DATA:friedmanGreedyFunctionApproximation2001) {#notes-from--no-item-data-friedmangreedyfunctionapproximation2001}
 
 -   Many machine learning methods are parameterized functions that are optimized using some numerical optimization techniques, notably steepest-descent.
 -   Initial learner is a stump, subsequent learners are trees with depth as some power of 2 (commonly).
@@ -50,12 +61,12 @@ draft = false
             \mathbf{a}\_m = \mathop{\arg \min}\_{\mathbf{a}, \beta} \sum\_{i=1}^N \Big(-g\_m(\mathbf{x}\_i)-\beta h(\mathbf{x}\_i;\mathbf{a})\Big)^2
             \\]
 
-        {{< figure src="/ox-hugo/2023-07-18_19-43-31_screenshot.png" caption="<span class=\"figure-number\">Figure 1: </span>Original generic algorithm from (<a href=\"#citeproc_bib_item_1\">Friedman 2001</a>)." >}}
+        {{< figure src="/ox-hugo/2023-07-18_19-43-31_screenshot.png" caption="<span class=\"figure-number\">Figure 1: </span>Original generic algorithm from (NO_ITEM_DATA:friedmanGreedyFunctionApproximation2001)." >}}
 
         Check out a basic implementation in Python [here](<https://github.com/ajdillhoff/CSE6363/blob/main/boosting/intro_to_gradient_boosting.ipynb>).
 
 ## References
 
 <style>.csl-entry{text-indent: -1.5em; margin-left: 1.5em;}</style><div class="csl-bib-body">
-  <div class="csl-entry"><a id="citeproc_bib_item_1"></a>Friedman, Jerome H. 2001. “Greedy Function Approximation: A Gradient Boosting Machine.” <i>The Annals of Statistics</i> 29 (5): 1189–1232. <a href="https://www.jstor.org/stable/2699986">https://www.jstor.org/stable/2699986</a>.</div>
+  <div class="csl-entry">NO_ITEM_DATA:friedmanGreedyFunctionApproximation2001</div>
 </div>

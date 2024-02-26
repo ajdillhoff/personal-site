@@ -125,5 +125,29 @@
                 "url": "/notes/decision_trees"
             }
         ]
+    },
+    {
+        "date": "February 27",
+        "topic": "Random Forests and Boosting",
+        "materials": [
+            {
+                "title": "Decision Trees",
+                "url": "/notes/decision_trees"
+            },
+            {
+                "title": "Boosting",
+                "url": "/notes/boosting"
+            }
+        ]
+    },
+    {
+        "date": "February 29",
+        "topic": "Gradient Boosting",
+        "materials": [
+            {
+                "title": "Gradient Boosting",
+                "url": "/notes/gradient_boosting"
+            }
+        ]
     }
 ]

@@ -161,5 +161,35 @@
                 "url": "/notes/tracking"
             }
         ]
+    },
+    {
+        "date": "February 26",
+        "topic": "Kalman Filters",
+        "materials": [
+            {
+                "title": "Tracking",
+                "url": "/notes/tracking"
+            }
+        ]
+    },
+    {
+        "date": "February 28",
+        "topic": "Camera Models",
+        "materials": [
+            {
+                "title": "Camera Models",
+                "url": "/notes/camera_models"
+            }
+        ]
+    },
+    {
+        "date": "February 30",
+        "topic": "Camera Calibration",
+        "materials": [
+            {
+                "title": "Camera Models",
+                "url": "/notes/camera_models"
+            }
+        ]
     }
 ]

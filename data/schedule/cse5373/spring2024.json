@@ -138,5 +138,35 @@
         "date": "February 23",
         "topic": "Recitation",
         "materials": []
+    },
+    {
+        "date": "February 26",
+        "topic": "Stencil Pattern",
+        "materials": [
+            {
+                "title": "GPU Pattern: Stencils",
+                "url": "/notes/gpu_pattern_stencils"
+            }
+        ]
+    },
+    {
+        "date": "February 28",
+        "topic": "Stencil Pattern",
+        "materials": [
+            {
+                "title": "GPU Pattern: Stencils",
+                "url": "/notes/gpu_pattern_stencils"
+            }
+        ]
+    },
+    {
+        "date": "March 1",
+        "topic": "Parallel Histogram",
+        "materials": [
+            {
+                "title": "GPU Pattern: Parallel Histogram",
+                "url": "/notes/gpu_pattern_parallel_histogram"
+            }
+        ]
     }
 ]

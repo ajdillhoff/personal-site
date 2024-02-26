@@ -15,6 +15,9 @@ draft = false
 - [Kogge-Stone Algorithm](#kogge-stone-algorithm)
 - [Brent-Kung Algorithm](#brent-kung-algorithm)
 - [Adding Coarsening](#adding-coarsening)
+- [Segmented Parallel Scan](#segmented-parallel-scan)
+- [Optimizing Memory Efficiency](#optimizing-memory-efficiency)
+- [The Takeaway](#the-takeaway)
 
 </div>
 <!--endtoc-->
@@ -231,3 +234,104 @@ Similar to other problems such as tiled matrix multiplication, if the hardware d
 **TODO: Visualization of coarsening scan**
 
 Such a solution starts off by performing a sequential scan. The threads can also collaborate in the beginning to load data into shared memory. In the next phase, the threads execute a parallel scan via Kogge-Stone or Brent-Kung. Since each thread has already performed a sequential scan. This phase starts off with the last element assigned to each thread. In the last phase, each thread adds its last value to the first \\(n-1\\) elements of the next section, where \\(n\\) is the number of elements assigned to each thread.
+
+
+## Segmented Parallel Scan {#segmented-parallel-scan}
+
+Input to scan operations may be too large to fit in memory.
+Hierarchical scans can be used to solve this problem.
+Partition input so that each section fits into shared memory for an SM.
+Another kernel launches after this is done to consolidate the results by adding the sum of the preceding scan blocks to each element of a scan block.
+
+Each scan block is treated as an individual application of one of the previous kernels. Each successive scan block initially does not contain the sums of the preceding blocks. Those will be added in a separate kernel.
+
+**TODO: Add visualization following figs 11.9 and 11.10**
+
+After each scan block has computed the scan for its partition, the last elements are then processed in the next step. However, these elements are all from different blocks, which means we must write them to a global space so they can all be accessed. Completing this step yields an array that has the final values of the scan corresponding the the indices from the original scan blocks (see the figure above). These values can then be used to update the preceding elements in each scan block to complete the scan.
+
+**Kernel 1: Section Scan**
+
+The first kernel essentially implements one of the previously discussed parallel scan kernels. The only difference is that the accumulation array is passed so that the blocks can write their output element values.
+
+```cuda
+__syncthreads();
+if (threadIdx.x == blockDim.x - 1) {
+    accumulation[blockIdx.x] = A[threadIdx.x];
+}
+```
+
+**Kernel 2: Update Scan**
+
+For step 2, we need to run a parallel scan kernel like Kogge-Stone or Brent-Kung on the accumulation array.
+
+**Kernel 3: Update Elements**
+
+The final kernel takes the accumulated values and updates the original array so that all the elements have their correct scan value.
+
+```cuda
+uint i = blockIdx.x * blockDim.x + threadIdx.x;
+output[i] += accumulation[blockIdx.x - 1];
+```
+
+
+## Optimizing Memory Efficiency {#optimizing-memory-efficiency}
+
+The previous solution provides a way of working with large inputs, but it is not memory efficient because of the need to store the accumulation array. There have been several attempts at optimizing this flow of information in the form of a _stream-based_ scan. To understand the general strategy behind this approach, consider the segmented scan from the previous section.
+
+The process starts by executing all the scan blocks in parallel. The first scan block has all the information it needs to compute the full scan for its partition. However, the second block needs the final output value from the first before it can update its own values. It will have to wait until block 0 has finished and written its value to global memory. It can then add that value to its own elements before sending its final value to the next block. This process continues until all the blocks have been processed.
+
+To be clear, the first phase runs completely in parallel, and the second phase is sequential. If the final values are passed quickly enough between each block, the overall scan will still be efficient. Once each block has that passed value, it can continue its work in parallel since it is no longer dependent on the previous block.
+
+For this to work, there needs to be a form of synchronization between blocks. The CUDA API does not provide grid-wide synchronization, so **how can we accomplish this**? One solution is to use a lock to effectively halt a thread until the value is ready to be read (<a href="#citeproc_bib_item_1">Yan, Long, and Zhang 2013</a>). The code below shows how this can be implemented.
+
+```cuda
+__shared__ float previous_sum;
+if (threadIdx.x == 0) {
+    // Wait for previous flag
+    while(atomicAdd(&flags[bid], 0) == 0);
+    // Read previous partial sum
+    previous_sum = scan_value[bid];
+    // Propagate partial sum
+    scan_value[bid + 1] = previous_sum + local_sum;
+    // Memory fence
+    __threadfence();
+    // Update flag
+    atomicAdd(&flags[bid + 1], 1);
+}
+__syncthreads();
+```
+
+The section ensures that only the first element of each block will perform this update. The `flags` array is a global array that is used to store the lock values. Once the flag is set to 1, the value from the global array `scan_value` is read and used to update the local sum. We haven't used `__threadfence()` before, but it is used to ensure that the update to `scan_value[bid + 1]` is written before the call to `atomicAdd` is made.
+
+Your first thought might be that there are too many global memory accesses. Shouldn't this incur a large access penalty? Remember that many of these are overlapping values that were accessed by previous blocks, so they are most likely in the cache. Of course, if there is ever any doubt on the performance of a kernel, we can always profile it to verify our assumptions.
+
+As opposed to the previous solution, this one only requires a single kernel. In the three kernel approach, there is no overlap between the values since each kernel is executed sequentially.
+
+
+### Preventing Deadlocks {#preventing-deadlocks}
+
+This issue isn't production ready just yet. Depending on how the blocks are scheduled, it is possible that a deadlock could occur. For example, the second block could be scheduled before the first block. If there aren't enough SMs on the device then the first block will never be able to write its value to the global array. One solution to this is **dynamic block index assignment**.
+
+In this approach, the block index assignment is not dependent on `blockIdx.x`. Instead it is assigned dynamically as blocks are processed.
+
+```cuda
+__shared__ uint bid_s;
+if (threadIdx.x == 0) {
+    bid_s = atomicAdd(&block_index, 1);
+}
+__syncthreads();
+uint bid = bid_s;
+```
+
+This ensures that each block gets a unique index and that the blocks are processed in the order they are ready.
+
+
+## The Takeaway {#the-takeaway}
+
+Parallel scan is a powerful tool for solving problems that can be described in terms of a recursion. The Kogge-Stone and Brent-Kung algorithms are two ways of parallelizing the scan operation. This problem presents a unique look at how tradeoffs must be made when parallelizing a problem. At the end of the day, we must work within the constraints of the hardware and framework made available to us.
+
+## References
+
+<style>.csl-entry{text-indent: -1.5em; margin-left: 1.5em;}</style><div class="csl-bib-body">
+  <div class="csl-entry"><a id="citeproc_bib_item_1"></a>Yan, Shengen, Guoping Long, and Yunquan Zhang. 2013. “StreamScan: Fast Scan Algorithms for GPUs without Global Barrier Synchronization.” In <i>Proceedings of the 18th ACM SIGPLAN Symposium on Principles and Practice of Parallel Programming</i>, 229–38. PPoPP ’13. New York, NY, USA: Association for Computing Machinery. <a href="https://doi.org/10.1145/2442516.2442539">https://doi.org/10.1145/2442516.2442539</a>.</div>
+</div>
