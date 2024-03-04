@@ -73,7 +73,7 @@ __global__ void sumReduceKernel(float *input, float *output) {
 
 Each thread is assigned to a single write location `2 * threadIdx.x`. The stride is doubled after each iteration of the loop, effectively halving the number of active threads. The stride also determines the second value that is added to the first. By the last iteration, only one thread is active to perform that last reduction.
 
-**TODO: Visualization of kernel execution**
+{{< figure src="/ox-hugo/2024-03-03_19-24-37_screenshot.png" caption="<span class=\"figure-number\">Figure 2: </span>Execution of kernel reduction (Source: NVIDIA DLI)." >}}
 
 You can see that the kernel is simple, but it is also inefficient. There is a great deal of control divergence that will be addressed in the next section.
 
@@ -97,7 +97,7 @@ For an input of size \\(N = 1024\\), the number of resources consumed is \\((80 
 
 A simple rearrangement of where the active results are stored can improve the efficiency of the kernel by reducing control divergence. The idea is to keep the threads that own the results of the reduction close together. Instead of increasing the stride, it should be decreased. The figure below shows the rearrangement of the threads.
 
-**TODO: Visualization of rearranged kernel execution**
+{{< figure src="/ox-hugo/2024-03-03_21-28-40_screenshot.png" caption="<span class=\"figure-number\">Figure 3: </span>Optimized reduction kernel execution (Source: NVIDIA DLI)." >}}
 
 ```cuda
 __global__ void sumReduceKernel(float *input, float *output) {
@@ -129,7 +129,7 @@ At each iteration, half of warps become inactive and no longer consume resources
 
 Does this kernel take advantage of memory coalescing? Each thread reads and writes from and to its _assigned_ location. It also makes a read from a location that is a stride away. These locations are certainly not adjacent and will not be coalesced.
 
-Adjacent threads do not access adjacent locations. The warp itself is unable to coalesce the thread requests into a single global memory request. Each data element is 4 bytes. Since each of the 32 threads in a warp are accessing their assigned locations with a separate of `stride`, the `64 * 4` bytes will require two 128 byte memory requests to access the data. With each iteration, the assigned locations will always be separated such that two 128 byte memory requests will need to be made. Only on the last iteration, where only a single thread accesses a single assigned location, will a single memory request be made.
+Adjacent threads do not access adjacent locations. The warp itself is unable to coalesce the thread requests into a single global memory request. Each data element is 4 bytes. Since each of the 32 threads in a warp are accessing their assigned locations with a separation of `stride`, the `64 * 4` bytes will require two 128 byte memory requests to access the data. With each iteration, the assigned locations will always be separated such that two 128 byte memory requests will need to be made. Only on the last iteration, where only a single thread accesses a single assigned location, will a single memory request be made.
 
 The convergent kernel from the last section takes advantage of memory coalescing, leading to fewer memory requests.
 
@@ -166,8 +166,6 @@ This approach not only requires fewer global memory requests, but the original i
 
 One major assumption that has been made in each of these kernels is that they are running on a single block. Thread synchronization is critical to the success of the reduction. If we want to reduce a larger number of input across multiple blocks, the kernel should allow for independent execution. This is achieved by segmenting the input and performing a reduction on each segment. The final reduction is then performed on the results of the segment reductions.
 
-**TODO: Visualization of hierarchical reduction**
-
 ```cuda
 __global__ void sumReduceHierarchicalKernel(float *input, float *output) {
     __shared__ float input_s[BLOCK_DIM];
@@ -194,9 +192,9 @@ Each block has its own shared memory and can independently perform the reduction
 
 ## Thread Coarsening - Back Again {#thread-coarsening-back-again}
 
-Thread coarsening was first analyzed in the context of matrix multiplication in [GPU Performance Basics]({{< relref "gpu_performance_basics.md" >}}). Whenever the device does not have enough resources to execute the number of threads requested, it is forced to serialize the execution. In this case, we can serialize the work done by each thread so that no extra overhead is incurred. Another benefit to thread coarsening is improve data locality.
+Thread coarsening was first analyzed in the context of matrix multiplication in [GPU Performance Basics]({{< relref "gpu_performance_basics.md" >}}). Whenever the device does not have enough resources to execute the number of threads requested, it is forced to serialize the execution. In this case, we can serialize the work done by each thread so that no extra overhead is incurred. Another benefit to thread coarsening is improved data locality.
 
-For reduction, successive iterations increase the amount of inactive warps. For reduction, thread coarsening can be applied by increasing the number of elements that each one processes. If the time to perform the arithmetic is much faster than the time to load the data, then thread coarsening can be beneficial. We could further analyze our program to determine the optimal coarsening factor.
+Successive iterations increase the amount of inactive warps. For reduction, thread coarsening can be applied by increasing the number of elements that each one processes. If the time to perform the arithmetic is much faster than the time to load the data, then thread coarsening can be beneficial. We could further analyze our program to determine the optimal coarsening factor.
 
 ```cuda
 __global__ coarsenedSumReductionKernel(float *input, float *output) {
@@ -223,7 +221,5 @@ __global__ coarsenedSumReductionKernel(float *input, float *output) {
     }
 }
 ```
-
-****TODO: Add visualization of thread coarsening****
 
 In the coarsened version, less thread communication is required since the first several steps are computed in a single thread.

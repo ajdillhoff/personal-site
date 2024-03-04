@@ -26,10 +26,10 @@ These notes follow the presentation of the parallel histogram pattern in the boo
 ## Histograms {#histograms}
 
 -   Examples of histograms include:
-    -   Frequency of words in a document
-    -   Distribution of pixel intensities in an image
-    -   Distribution of particle energies in a physics simulation
-    -   Distribution of thread block execution times in a GPU kernel
+-   Frequency of words in a document
+-   Distribution of pixel intensities in an image
+-   Distribution of particle energies in a physics simulation
+-   Distribution of thread block execution times in a GPU kernel
 
 Consider the program below which computes a histogram of the letters in a string. The input is assumed to be lower case.
 Since this is executed sequentially, there is no risk of multiple threads writing to the same memory location at the same time.
@@ -52,7 +52,7 @@ For example, thread 1 and thread 2 may have the letter 'a' as their input. They 
 
 ### Atomic Operations {#atomic-operations}
 
-One solution to this problem is to perform atomic operations. This is a special type of operations that locks a memory location while it is being updated. This prevents other thread from reading or writing to the same location until the operation is complete. Each thread attempting to access a memory location will be forced to wait until the lock is released.
+One solution to this problem is to perform atomic operations. This is a special type of operation that locks a memory location while it is being updated. This prevents other threads from reading or writing to the same location until the operation is complete. Each thread attempting to access a memory location will be forced to wait until the lock is released.
 
 The CUDA API provides several atomic operations:
 
@@ -219,7 +219,7 @@ __global__ void histogram_privatized_ic(char *data, unsigned int length, unsigne
 }
 ```
 
-In the code above, the main difference is the second `for` loop. The index `i` is incremented by `blockDim.x * gridDim.x`. This ensures that the threads of each block access memory in a contiguous manner rather than each thread being contiguous. The differences are visualized in the figures above and below.
+In the code above, the main difference is the second `for` loop. The index `i` is incremented by `blockDim.x * gridDim.x`. This ensures that the threads of each block access memory in a contiguous manner rather than each thread being contiguous. The differences are visualized in the figures.
 
 
 ## Aggregation {#aggregation}

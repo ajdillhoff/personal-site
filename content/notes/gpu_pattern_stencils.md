@@ -248,7 +248,7 @@ __global__ void stencil_kernel(float *in, float *out, unsigned int N) {
 }
 ```
 
-The kernel always has the active plane in shared memory. Every threads collectively store the previous and next planes in registers.
+The kernel always has the active plane in shared memory. Every thread collectively store the previous and next planes in registers.
 
 The larger the stencil size, the more registers are required per thread. In this case, a tradeoff between shared memory space and register usage could be made. This will be explored in your lab.
 

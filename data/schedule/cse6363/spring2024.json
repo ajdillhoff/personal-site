@@ -142,11 +142,26 @@
     },
     {
         "date": "February 29",
+        "topic": "CANCELLED",
+        "materials": []
+    },
+    {
+        "date": "March 5",
         "topic": "Gradient Boosting",
         "materials": [
             {
                 "title": "Gradient Boosting",
                 "url": "/notes/gradient_boosting"
+            }
+        ]
+    },
+    {
+        "date": "March 7",
+        "topic": "Intro. to Deep Learning",
+        "materials": [
+            {
+                "title": "Deep Learning",
+                "url": "/notes/deep_learning"
             }
         ]
     }

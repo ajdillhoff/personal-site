@@ -168,5 +168,25 @@
                 "url": "/notes/gpu_pattern_parallel_histogram"
             }
         ]
+    },
+    {
+        "date": "March 4",
+        "topic": "Reductions",
+        "materials": [
+            {
+                "title": "GPU Pattern: Reduction",
+                "url": "/notes/gpu_pattern_reduction"
+            }
+        ]
+    },
+    {
+        "date": "March 6",
+        "topic": "NVIDIA Visual Profiler",
+        "materials": []
+    },
+    {
+        "date": "March 8",
+        "topic": "Recitation",
+        "materials": []
     }
 ]
