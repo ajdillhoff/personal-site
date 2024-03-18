@@ -2,7 +2,7 @@
 # Course title, summary, and position.
 linktitle: CSE 4373/5373 - General Purpose GPU Programming
 summary: Study of general purpose computation on a GPU. Topics include GPU architecture, CUDA programming, and performance optimization.
-weight: 2
+weight: 3
 
 # Page metadata.
 title: CSE 4373/5373 - General Purpose GPU Programming

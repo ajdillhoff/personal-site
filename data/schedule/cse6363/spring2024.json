@@ -164,5 +164,25 @@
                 "url": "/notes/deep_learning"
             }
         ]
+    },
+    {
+        "date": "March 19",
+        "topic": "Convolutional Neural Networks",
+        "materials": [
+            {
+                "title": "Convolutional Neural Networks",
+                "url": "/notes/convolutional_neural_networks"
+            }
+        ]
+    },
+    {
+        "date": "March 21",
+        "topic": "Optimization for Deep Learning",
+        "materials": [
+            {
+                "title": "Optimization for Deep Learning",
+                "url": "/notes/optimization_for_deep_learning"
+            }
+        ]
     }
 ]

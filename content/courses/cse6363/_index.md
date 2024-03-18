@@ -2,7 +2,7 @@
 # Course title, summary, and position.
 linktitle: CSE 6363 - Machine Learning
 summary: Graduate-level machine learning topics covering the foundations up to modern publications.
-weight: 2
+weight: 5
 
 # Page metadata.
 title: CSE 6363 - Machine Learning

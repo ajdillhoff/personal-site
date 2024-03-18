@@ -1,0 +1,96 @@
+[
+    {
+        "date": "March 18",
+        "topic": "Course Introduction, Algorithms, Growth Functions, and Computational Complexity",
+        "materials": [
+            {
+                "title": "Introduction to Algorithms",
+                "url": "/notes/introduction_to_complexity_analysis"
+            },
+            {
+                "title": "Complexity Analysis",
+                "url": "/notes/complexity_analysis"
+            }
+        ]
+    },
+    {
+        "date": "March 20",
+        "topic": "Divide and Conquer, Master Theorem",
+        "materials": [
+            {
+                "title": "Divide and Conquer",
+                "url": "/notes/divide_and_conquer_algorithms"
+            },
+            {
+                "title": "Master Theorem",
+                "url": "/notes/master_theorem"
+            }
+        ]
+    },
+    {
+        "date": "March 25",
+        "topic": "Heapsort and Quicksort",
+        "materials": [
+            {
+                "title": "Heapsort",
+                "url": "/notes/heapsort"
+            },
+            {
+                "title": "Quicksort",
+                "url": "/notes/quicksort"
+            }
+        ]
+    },
+    {
+        "date": "March 27",
+        "topic": "Sorting in Linear Time, Medians and Order Statistics",
+        "materials": [
+            {
+                "title": "Sorting in Linear Time",
+                "url": "/notes/sorting_in_linear_time"
+            },
+            {
+                "title": "Medians and Order Statistics",
+                "url": "/notes/medians_and_order_statistics"
+            }
+        ]
+    },
+    {
+        "date": "April 1",
+        "topic": "Hash Tables and Binary Search Trees",
+        "materials": [
+            {
+                "title": "Hash Maps",
+                "url": "/notes/hash_tables"
+            },
+            {
+                "title": "Binary Search Trees",
+                "url": "/notes/binary_search_trees"
+            }
+        ]
+    },
+    {
+        "date": "April 3",
+        "topic": "Red-Black Trees and Dynamic Programming",
+        "materials": [
+            {
+                "title": "Red-Black Trees",
+                "url": "/notes/red_black_trees"
+            },
+            {
+                "title": "Dynamic Programming",
+                "url": "/notes/dynamic_programming"
+            }
+        ]
+    },
+    {
+        "date": "April 8",
+        "topic": "Dynamic Programming, Exam 1",
+        "materials": [
+            {
+                "title": "Dynamic Programming",
+                "url": "/notes/dynamic_programming"
+            }
+        ]
+    }
+]

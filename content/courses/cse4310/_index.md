@@ -1,7 +1,7 @@
 ---
 # Course title, summary, and position.
 linktitle: CSE 4310 - Fundamentals of Computer Vision
-summary: Convers basic concepts in computer vision, including image formation, image filtering, feature extraction, stereo vision, and object recognition.
+summary: Covers basic concepts in computer vision, including image formation, image filtering, feature extraction, stereo vision, and object recognition.
 weight: 2
 
 # Page metadata.

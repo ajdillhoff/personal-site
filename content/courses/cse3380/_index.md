@@ -2,7 +2,7 @@
 # Course title, summary, and position.
 linktitle: CSE 3380 - Linear Algebra for CSE
 summary: Linear Algebra theory combined with applications in Engineering and Computer Science.
-weight: 2
+weight: 1
 
 # Page metadata.
 title: CSE 3380 - Linear Algebra for CSE

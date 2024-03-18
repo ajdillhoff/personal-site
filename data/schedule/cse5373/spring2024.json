@@ -188,5 +188,55 @@
         "date": "March 8",
         "topic": "Recitation",
         "materials": []
+    },
+    {
+        "date": "March 18",
+        "topic": "Parallel Scan",
+        "materials": [
+            {
+                "title": "GPU Pattern: Parallel Scan",
+                "url": "/notes/gpu_pattern_parallel_scan"
+            }
+        ]
+    },
+    {
+        "date": "March 20",
+        "topic": "Parallel Scan",
+        "materials": [
+            {
+                "title": "GPU Pattern: Parallel Scan",
+                "url": "/notes/gpu_pattern_parallel_scan"
+            }
+        ]
+    },
+    {
+        "date": "March 22",
+        "topic": "Quiz 2",
+        "materials": []
+    },
+    {
+        "date": "March 25",
+        "topic": "Merge",
+        "materials": [
+            {
+                "title": "GPU Pattern: Merge",
+                "url": "/notes/gpu_pattern_merge"
+            }
+        ]
+    },
+    {
+        "date": "March 27",
+        "topic": "Merge",
+        "materials": [
+            {
+                "title": "GPU Pattern: Merge",
+                "url": "/notes/gpu_pattern_merge"
+            }
+        ]
+    },
+    {
+        "date": "March 29",
+        "topic": "Recitation",
+        "materials": []
     }
 ]

@@ -19,6 +19,7 @@ lastmod = 2023-10-22
 - [Activation Functions](#activation-functions)
 - [Loss Functions](#loss-functions)
 - [A Typical Training Pipeline](#a-typical-training-pipeline)
+- [Useful Links](#useful-links)
 
 </div>
 <!--endtoc-->
@@ -188,6 +189,11 @@ We can do this in PyTorch using `torch.utils.data.random_split`.
 ```python
 train_dataset, val_dataset = torch.utils.data.random_split(dataset, [train_size, val_size])
 ```
+
+
+## Useful Links {#useful-links}
+
+-   [Deep learning Bootcamp: Kaiming He (author of ResNet)](https://www.youtube.com/watch?v=D_jt-xO_RmI)
 
 ## References
 

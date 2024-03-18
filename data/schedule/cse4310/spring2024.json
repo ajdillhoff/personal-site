@@ -218,11 +218,36 @@
     },
     {
         "date": "March 8",
+        "topic": "CANCELLED",
+        "materials": []
+    },
+    {
+        "date": "March 18",
         "topic": "Neural Networks",
         "materials": [
             {
                 "title": "Neural Networks",
                 "url": "/notes/neural_networks"
+            }
+        ]
+    },
+    {
+        "date": "March 20",
+        "topic": "Deep Learning",
+        "materials": [
+            {
+                "title": "Deep Learning",
+                "url": "/notes/deep_learning"
+            }
+        ]
+    },
+    {
+        "date": "March 22",
+        "topic": "Convolutional Neural Networks",
+        "materials": [
+            {
+                "title": "Convolutional Neural Networks",
+                "url": "/notes/convolutional_neural_networks"
             }
         ]
     }
