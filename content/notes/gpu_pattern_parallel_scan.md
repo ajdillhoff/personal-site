@@ -181,6 +181,8 @@ for (uint stride = blockDim.x / 4; stride > 0; stride /= 2) {
 
 Continuing the example from above, the first thread `threadIdx.x = 0` maps to index 3. This will load the value from index 3 and add it to the value at index 5. At that point, the value at index 5 will be the sum of the values from indices 0 through 5.
 
+{{< figure src="/ox-hugo/2024-03-19_22-19-28_screenshot.png" caption="<span class=\"figure-number\">Figure 3: </span>Full Brent-Kung visualization (source: NVIDIA DLI)." >}}
+
 
 ### Efficiency Analysis {#efficiency-analysis}
 
@@ -231,9 +233,22 @@ __global__ void Brent_Kung_scan_kernel(float *X, float *Y, uint N) {
 
 Similar to other problems such as tiled matrix multiplication, if the hardware does not meet the capacity ti parallelize the entire problem, the price for parallelization is wasted. In such cases, we can coarsen the problem so that the available resources are fully utilized. Each thread will execute a _phase_ of sequential scan, which is more work efficiency than other of the solutions presented above.
 
-**TODO: Visualization of coarsening scan**
 
-Such a solution starts off by performing a sequential scan. The threads can also collaborate in the beginning to load data into shared memory. In the next phase, the threads execute a parallel scan via Kogge-Stone or Brent-Kung. Since each thread has already performed a sequential scan. This phase starts off with the last element assigned to each thread. In the last phase, each thread adds its last value to the first \\(n-1\\) elements of the next section, where \\(n\\) is the number of elements assigned to each thread.
+### Phase 1 {#phase-1}
+
+Such a solution starts off by performing a sequential scan. The threads can also collaborate in the beginning to load data into shared memory.
+
+
+### Phase 2 {#phase-2}
+
+In the next phase, the threads execute a parallel scan via Kogge-Stone or Brent-Kung. Since each thread has already performed a sequential scan. This phase starts off with the last element assigned to each thread.
+
+
+### Phase 3 {#phase-3}
+
+In the last phase, each thread adds its last value to the first \\(n-1\\) elements of the next section, where \\(n\\) is the number of elements assigned to each thread.
+
+{{< figure src="/ox-hugo/2024-03-19_22-25-15_screenshot.png" caption="<span class=\"figure-number\">Figure 4: </span>Three-phase parallel scan (<a href=\"#citeproc_bib_item_1\">Hwu, Kirk, and El Hajj 2022</a>)." >}}
 
 
 ## Segmented Parallel Scan {#segmented-parallel-scan}
@@ -245,9 +260,9 @@ Another kernel launches after this is done to consolidate the results by adding 
 
 Each scan block is treated as an individual application of one of the previous kernels. Each successive scan block initially does not contain the sums of the preceding blocks. Those will be added in a separate kernel.
 
-**TODO: Add visualization following figs 11.9 and 11.10**
+{{< figure src="/ox-hugo/2024-03-19_22-31-17_screenshot.png" caption="<span class=\"figure-number\">Figure 5: </span>Segmented scan (<a href=\"#citeproc_bib_item_1\">Hwu, Kirk, and El Hajj 2022</a>)." >}}
 
-After each scan block has computed the scan for its partition, the last elements are then processed in the next step. However, these elements are all from different blocks, which means we must write them to a global space so they can all be accessed. Completing this step yields an array that has the final values of the scan corresponding the the indices from the original scan blocks (see the figure above). These values can then be used to update the preceding elements in each scan block to complete the scan.
+After each scan block has computed the scan for its partition, the last elements are then processed in the next step. However, these elements are all from different blocks, which means we must write them to a global space so they can all be accessed. Completing this step yields an array that has the final values of the scan corresponding to the indices from the original scan blocks (see the figure above). These values can then be used to update the preceding elements in each scan block to complete the scan.
 
 **Kernel 1: Section Scan**
 
@@ -282,7 +297,7 @@ The process starts by executing all the scan blocks in parallel. The first scan 
 
 To be clear, the first phase runs completely in parallel, and the second phase is sequential. If the final values are passed quickly enough between each block, the overall scan will still be efficient. Once each block has that passed value, it can continue its work in parallel since it is no longer dependent on the previous block.
 
-For this to work, there needs to be a form of synchronization between blocks. The CUDA API does not provide grid-wide synchronization, so **how can we accomplish this**? One solution is to use a lock to effectively halt a thread until the value is ready to be read (<a href="#citeproc_bib_item_1">Yan, Long, and Zhang 2013</a>). The code below shows how this can be implemented.
+For this to work, there needs to be a form of synchronization between blocks. The CUDA API does not provide grid-wide synchronization, so **how can we accomplish this**? One solution is to use a lock to effectively halt a thread until the value is ready to be read (<a href="#citeproc_bib_item_2">Yan, Long, and Zhang 2013</a>). The code below shows how this can be implemented.
 
 ```cuda
 __shared__ float previous_sum;
@@ -333,5 +348,6 @@ Parallel scan is a powerful tool for solving problems that can be described in t
 ## References
 
 <style>.csl-entry{text-indent: -1.5em; margin-left: 1.5em;}</style><div class="csl-bib-body">
-  <div class="csl-entry"><a id="citeproc_bib_item_1"></a>Yan, Shengen, Guoping Long, and Yunquan Zhang. 2013. “StreamScan: Fast Scan Algorithms for GPUs without Global Barrier Synchronization.” In <i>Proceedings of the 18th ACM SIGPLAN Symposium on Principles and Practice of Parallel Programming</i>, 229–38. PPoPP ’13. New York, NY, USA: Association for Computing Machinery. <a href="https://doi.org/10.1145/2442516.2442539">https://doi.org/10.1145/2442516.2442539</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_1"></a>Hwu, Wen-mei W., David B. Kirk, and Izzat El Hajj. 2022. <i>Programming Massively Parallel Processors: A Hands-on Approach</i>. Fourth. Morgan Kaufmann.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_2"></a>Yan, Shengen, Guoping Long, and Yunquan Zhang. 2013. “StreamScan: Fast Scan Algorithms for GPUs without Global Barrier Synchronization.” In <i>Proceedings of the 18th ACM SIGPLAN Symposium on Principles and Practice of Parallel Programming</i>, 229–38. PPoPP ’13. New York, NY, USA: Association for Computing Machinery. <a href="https://doi.org/10.1145/2442516.2442539">https://doi.org/10.1145/2442516.2442539</a>.</div>
 </div>

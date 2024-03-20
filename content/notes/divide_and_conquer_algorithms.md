@@ -120,11 +120,11 @@ Example code can be found [here.](https://github.com/ajdillhoff/python-examples/
 
 ### Analysis {#analysis}
 
-When analyzing the running time of a divide and conquer algorithm, it is safe to assume that the base case runs in constant time. The focus of the analysis should be on the **recurrence equation**. For merge sort, we originally have a problem of size \\(n\\). We then divide the problem into 2 subproblems of size \\(n/2\\). Therefore the recurrence is \\(T(n) = 2T(n/2)\\). These recurrence continues for as long as the base case is not reached.
+When analyzing the running time of a divide and conquer algorithm, it is safe to assume that the base case runs in constant time. The focus of the analysis should be on the **recurrence equation**. For merge sort, we originally have a problem of size \\(n\\). We then divide the problem into 2 subproblems of size \\(n/2\\). Therefore the recurrence is \\(T(n) = 2T(n/2)\\). This recurrence continues for as long as the base case is not reached.
 
 Of course we also have to factor in the time it takes for the divide and combine steps. These can be represented as \\(D(n)\\) and \\(C(n)\\), respectively. The total running time of the algorithm is then \\(T(n) = 2T(n/2) + D(n) + C(n)\\) when \\(n >= n\_0\\), where \\(n\_0\\) is the base case.
 
-For merge sort specifically, the base case is \\(D(n) = \Theta(1)\\) since all it does is compute the midpoint. As we saw above, the conquer step is the recurrent \\(T(n) = 2T(n/2)\\). The combine step is \\(C(n) = \Theta(n)\\) since it takes linear time to merge the two subarrays. Thus, the worst-case running time of merge sort is \\(T(n) = 2T(n/2) + \Theta(n)\\).
+For merge sort specifically, the base case is \\(D(n) = \Theta(1)\\) since all it does is compute the midpoint. As we saw above, the conquer step is the recurrence \\(T(n) = 2T(n/2)\\). The combine step is \\(C(n) = \Theta(n)\\) since it takes linear time to merge the two subarrays. Thus, the worst-case running time of merge sort is \\(T(n) = 2T(n/2) + \Theta(n)\\).
 
 Not every problem will have a recurrence of \\(2T(n/2)\\). We can generalize this to \\(aT(n/b)\\), where \\(a\\) is the number of subproblems and \\(b\\) is the size of the subproblems.
 
@@ -197,6 +197,41 @@ These matrices are already partitioned. They currently don't meet the base case,
 
 Peeking into the first recursive call, the \\(2 \times 2\\) matrices are partitioned into 4 \\(1 \times 1\\) matrices, or scalars. The base case is reached, and the product is computed. The same process is repeated for the other 7 recursive calls. The final matrix is then formed by adding the products together.
 
+```python
+def partition(A):
+    n = len(A)
+    mid = n // 2
+    A11 = [row[:mid] for row in A[:mid]]
+    A12 = [row[mid:] for row in A[:mid]]
+    A21 = [row[:mid] for row in A[mid:]]
+    A22 = [row[mid:] for row in A[mid:]]
+    return A11, A12, A21, A22
+
+def matrix_multiply_recursive(A, B, C, n):
+    if n == 1:
+        C[0][0] += A[0][0] * B[0][0]
+    else:
+        # Partition the matrices
+        A11, A12, A21, A22 = partition(A)
+        B11, B12, B21, B22 = partition(B)
+        C11, C12, C21, C22 = partition(C)
+
+        # Recursively compute the products
+        matrix_multiply_recursive(A11, B11, C11, n/2)
+        matrix_multiply_recursive(A12, B21, C11, n/2)
+        matrix_multiply_recursive(A11, B12, C11, n/2)
+        matrix_multiply_recursive(A12, B22, C11, n/2)
+        matrix_multiply_recursive(A21, B11, C11, n/2)
+        matrix_multiply_recursive(A22, B21, C11, n/2)
+        matrix_multiply_recursive(A21, B12, C11, n/2)
+        matrix_multiply_recursive(A22, B22, C11, n/2)
+```
+
+
+### Analysis {#analysis}
+
+Each recursive call contributes \\(T(n/2)\\) to the running time. Unless the base case is reached, each call contributes 8 recursive calls to the recurrence, yielding a running time of \\(T(n) = 8T(n/2) + \Theta(1)\\).
+
 
 ## Example: Convex Hull {#example-convex-hull}
 
@@ -204,6 +239,8 @@ Given \\(n\\) points in plane, the convex hull is the smallest convex polygon th
 
 -   No two points have the same \\(x\\) or \\(y\\) coordinate.
 -   Sequence of points on boundary in clockwise order as doubly linked list.
+
+    {{< figure src="/ox-hugo/2024-03-19_11-46-30_screenshot.png" caption="<span class=\"figure-number\">Figure 3: </span>Convex Hull (source: Wikipedia)" >}}
 
 
 ### Naive Solution {#naive-solution}
@@ -256,6 +293,25 @@ def merge_convex_hulls(left, right):
 This runs in \\(\Theta(n)\\) time.
 
 Removing the lines that are not part of the convex hull require the cut and paste operations. Starting at the upper tangent, move clockwise along the right convex hull until you reach the point in the lower tangent of the right convex hull. Make the connection to the corresponding point on the left convex hull based on the lower tangent, then move clockwise until you reach the upper tangent of the left convex hull. This is \\(\Theta(n)\\).
+
+
+#### Orientation Test {#orientation-test}
+
+The orientation test is a technique from computational geometry which determines the orientation of three points. For our purposes, it will tell us if a third point lies below or above a given line segment. The orientation test is used to determine if a point is part of the convex hull.
+
+Given three points \\(p\\), \\(q\\), and \\(r\\), the orientation is determined by the sign of the cross product of the vectors \\(\overrightarrow{pq}\\) and \\(\overrightarrow{pr}\\). If the cross product is positive, the orientation is clockwise. If the cross product is negative, the orientation is counterclockwise. If the cross product is zero, the points are collinear.
+
+This is expressed by a simple formula:
+
+\\[
+\text{orientation}(p, q, r) = (q\_y - p\_y)(r\_x - q\_x) - (q\_x - p\_x)(r\_y - q\_y)
+\\]
+
+Consider the visualization below. Let \\(p\\) be a point in the left convex hull and \\(q\\) be a point in the right convex hull. The orientation test will tell us if \\(r\\) is above or below the line segment \\(\overline{pq}\\). If the test is negative, \\(r\\) is above the line segment and is part of the convex hull, and vice versa.
+
+{{< figure src="/ox-hugo/2024-03-19_18-53-57_screenshot.png" caption="<span class=\"figure-number\">Figure 4: </span>Visualization of the orientation test." >}}
+
+When checking to see if a line is an upper tangent, consider the points \\(p\\), \\(q\\), and \\(r\\), where \\(p\\) is from the left convex hull and \\(q\\) is from the right convex hull. Let \\(r\\) be the point immediately after \\(q\\) in a clockwise direction.
 
 
 ## Example: Median Search {#example-median-search}

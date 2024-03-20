@@ -6,6 +6,16 @@ tags = ["algorithms", "computer science"]
 draft = false
 +++
 
+<div class="ox-hugo-toc toc">
+
+<div class="heading">Table of Contents</div>
+
+- [Example from CLRS](#example-from-clrs)
+- [Making the Wrong Guess](#making-the-wrong-guess)
+
+</div>
+<!--endtoc-->
+
 The **substitution method** is a technique for solving recurrences. It works in two steps:
 
 1.  Guess the solution
@@ -36,3 +46,45 @@ T(n) &\leq 2T(n-1) + 1 \\\\
 \end{align\*}
 
 This does not work because \\(2cn - 2c + 1 > cn\\) for all \\(c > 1\\). Therefore, our guess was wrong.
+
+
+## Example from CLRS {#example-from-clrs}
+
+Determine an asymptotic upper bound for
+
+\\[
+T(n) = 2T(\lfloor n/2 \rfloor) + \Theta(n).
+\\]
+
+**Guess:** \\(T(n) = O(n \lg n)\\)
+
+**Inductive hypothesis:** \\(T(n) \leq cn \lg n\\) for all \\(n \geq n\_0\\).
+
+**Inductive step:** Assume \\(T(n) \leq cn \lg n\\) for all \\(n\_0 \leq k < n\\). For \\(T(\lfloor n/2 \rfloor) \leq c\lfloor n/2 \rfloor \lg \lfloor n/2 \rfloor\\), it holds when \\(n \geq 2\\).
+
+\begin{align\*}
+T(n) &\leq 2T(\lfloor n/2 \rfloor) + \Theta(n) \\\\
+&\leq 2c\lfloor n/2 \rfloor \lg \lfloor n/2 \rfloor + \Theta(n) \\\\
+&= cn \lg (n / 2) + \Theta(n) \\\\
+&= cn \lg n - 2c\lg 2 + \Theta(n) \\\\
+&= cn \lg n - 2c + \Theta(n) \\\\
+&\leq cn \lg n
+\end{align\*}
+
+
+## Making the Wrong Guess {#making-the-wrong-guess}
+
+What if we took the same recurrence and guessed that \\(T(n) = O(n)\\)?
+
+**Guess:** \\(T(n) = O(n)\\)
+
+**Inductive hypothesis:** \\(T(n) \leq cn\\) for all \\(n \geq n\_0\\).
+
+**Inductive step:** Assume \\(T(n) \leq cn\\) for all \\(n \geq n\_0\\).
+
+\begin{align\*}
+T(n) &\leq 2c\lfloor n/2 \rfloor + \Theta(n) \\\\
+&\leq cn + \Theta(n) \\\\
+\end{align\*}
+
+This does not work because \\(cn + \Theta(n) > cn\\). Therefore, our guess was wrong.
