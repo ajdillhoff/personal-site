@@ -27,13 +27,20 @@ This can work very well, especially if we already have some intuition about the 
 2.  Each move consists of taking the top disk from one of the stacks and placing it on top of another stack
 3.  No disk may be placed on top of a smaller disk
 
+An algorithm to solve the puzzle goes like this:
+
+1.  Move \\(n-1\\) disks from peg 1 to peg 2 using peg 3 as a temporary holding area
+2.  Move the $n$th disk from peg 1 to peg 3
+3.  Move the \\(n-1\\) disks from peg 2 to peg 3 using peg 1 as a temporary holding area
+
 The number of moves required to solve the Tower of Hanoi puzzle is given by the recurrence relation \\(T(n) = 2T(n-1) + 1\\) with the initial condition \\(T(1) = 1\\). We can solve this recurrence using the substitution method.
 
-Our hypothesis might be that \\(T(n) \leq c2^n\\) for all \\(n \geq n\_0\\), where \\(c > 0\\) and \\(n\_0 > 0\\). For the base case, we have \\(T(1) = c \* 2^1 = 1\\), so \\(c = 1/2\\). Now we need to show that \\(T(n) \leq c2^n\\) for all \\(n \geq n\_0\\). We assume that \\(T(k) \leq c2^k\\) for all \\(k < n\\). Then we have:
+Our hypothesis might be that \\(T(n) \leq c2^n - 1\\) for all \\(n \geq n\_0\\), where \\(c > 0\\) and \\(n\_0 > 0\\). For the base case, we have \\(T(1) = c \* 2^1 - 1 = c\\), so \\(c = 1\\). Now we need to show that \\(T(n) \leq c2^n - 1\\) for all \\(n \geq n\_0\\). Then we have:
 
 \begin{align\*}
 T(n) &\leq 2T(n-1) + 1 \\\\
-&\leq 2\left(\frac{2^{n-1}}{2}\right) + 1 \\\\
+&\leq 2\left(2^{n-1} - 1\right) + 1 \\\\
+&= 2^n - 2 + 1 \\\\
 &= 2^n - 1 \\\\
 \end{align\*}
 
@@ -66,8 +73,8 @@ T(n) = 2T(\lfloor n/2 \rfloor) + \Theta(n).
 T(n) &\leq 2T(\lfloor n/2 \rfloor) + \Theta(n) \\\\
 &\leq 2c\lfloor n/2 \rfloor \lg \lfloor n/2 \rfloor + \Theta(n) \\\\
 &= cn \lg (n / 2) + \Theta(n) \\\\
-&= cn \lg n - 2c\lg 2 + \Theta(n) \\\\
-&= cn \lg n - 2c + \Theta(n) \\\\
+&= cn \lg n - cn\lg 2 + \Theta(n) \\\\
+&= cn \lg n - cn + \Theta(n) \\\\
 &\leq cn \lg n
 \end{align\*}
 
