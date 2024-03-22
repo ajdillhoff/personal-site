@@ -63,10 +63,10 @@ If our training set is extremely large, we may converge to a solution without ev
 Typically, models are able to train on multiple passes of the dataset to increase their generalization error.
 Each subsequent pass may increase the bias, but not enough to decrease generalization performance.
 
-The gradient norm can be monitored while training to see if the issue is local minima or any other critical point <&zhaoPenalizingGradientNorm>.
+The gradient norm can be monitored while training to see if the issue is local minima or any other critical point (<a href="#citeproc_bib_item_5">Zhao, Zhang, and Hu, n.d.</a>).
 If the parameters were to get stuck at a critical point, the gradient norm should shrink over time.
 
-{{< figure src="Introduction/2022-11-13_15-00-37_screenshot.png" caption="<span class=\"figure-number\">Figure 1: </span>The gradient norm decreases as it settles into some minima (Zhao et al.)." >}}
+{{< figure src="/ox-hugo/2024-03-21_09-21-37_screenshot.png" caption="<span class=\"figure-number\">Figure 1: </span>The gradient norm decreases as it settles into some minima (Zhao et al.)." >}}
 
 
 ## Gradient Descent and its Variants {#gradient-descent-and-its-variants}
@@ -126,7 +126,7 @@ In that way, the algorithm would be less dependent on the initial learning rate.
 
 ### Adagrad {#adagrad}
 
-Adagrad adapts the learning rate to the parameters following the idea that parameters associated with salient features should be updated less frequently <&duchiAdaptiveSubgradientMethods2011>. If they occur often, updating them with a larger step would result in a solution that is more dependent on them at the expense of other features.
+Adagrad adapts the learning rate to the parameters following the idea that parameters associated with salient features should be updated less frequently (<a href="#citeproc_bib_item_1">Duchi, Hazan, and Singer 2011</a>). If they occur often, updating them with a larger step would result in a solution that is more dependent on them at the expense of other features.
 
 Adagrad uses a different learning rate for every parameter:
 
@@ -162,7 +162,7 @@ Hinton proposed that \\(\rho=0.9\\) in the original lectures.
 
 ### Adam {#adam}
 
-One of the most popular gradient descent variants in used today is Adam <&kingmaAdamMethodStochastic2017>.
+One of the most popular gradient descent variants in used today is Adam (<a href="#citeproc_bib_item_4">Kingma and Ba 2017</a>).
 Short for Adaptive Moment Estimation, Adam adapts the learning rate to each parameter.
 Similar to RMSProp, it stores an exponentially moving average of past squared gradients.
 Adam additionally stores first-order moments of the gradients.
@@ -219,16 +219,26 @@ W\_{i,j} \sim U\Bigg(-\sqrt{\frac{6}{m + n}}, \sqrt{\frac{6}{m+n}}\Bigg),
 \\]
 
 where \\(m\\) and \\(n\\) are the number of input and output nodes, respectively.
-This initialization was empirically validated by <&glorotUnderstandingDifficultyTraining> with the goal that all layers have the same activation variance and back-propagated gradient variance.
+This initialization was empirically validated by (<a href="#citeproc_bib_item_2">Glorot and Bengio, n.d.</a>) with the goal that all layers have the same activation variance and back-propagated gradient variance.
 
 
 ### He Initialization {#he-initialization}
 
 Xavier initialization is based on successive matrix multiplications without any non-linearities.
 Any deep learning model will surely break this assumption.
-He et al. derive another initialization strategy while considering rectified linear units (ReLU) and parametric rectified linear units (PReLU) <&heDelvingDeepRectifiers2015>.
+He et al. derive another initialization strategy while considering rectified linear units (ReLU) and parametric rectified linear units (PReLU) (<a href="#citeproc_bib_item_3">He et al. 2015</a>).
 
 
 ## Resources {#resources}
 
 -   <https://spell.ml/blog/lr-schedulers-and-adaptive-optimizers-YHmwMhAAACYADm6F>
+
+    ## References
+
+    <style>.csl-entry{text-indent: -1.5em; margin-left: 1.5em;}</style><div class="csl-bib-body">
+      <div class="csl-entry"><a id="citeproc_bib_item_1"></a>Duchi, John, Elad Hazan, and Yoram Singer. 2011. “Adaptive Subgradient Methods for Online Learning and Stochastic Optimization.” <i>Journal of Machine Learning Research</i> 12 (61): 2121–59. <a href="http://jmlr.org/papers/v12/duchi11a.html">http://jmlr.org/papers/v12/duchi11a.html</a>.</div>
+      <div class="csl-entry"><a id="citeproc_bib_item_2"></a>Glorot, Xavier, and Yoshua Bengio. n.d. “Understanding the Difﬁculty of Training Deep Feedforward Neural Networks,” 8.</div>
+      <div class="csl-entry"><a id="citeproc_bib_item_3"></a>He, Kaiming, Xiangyu Zhang, Shaoqing Ren, and Jian Sun. 2015. “Delving Deep into Rectifiers: Surpassing Human-Level Performance on ImageNet Classification.” <i>Arxiv:1502.01852 [Cs]</i>, February. <a href="http://arxiv.org/abs/1502.01852">http://arxiv.org/abs/1502.01852</a>.</div>
+      <div class="csl-entry"><a id="citeproc_bib_item_4"></a>Kingma, Diederik P., and Jimmy Ba. 2017. “Adam: A Method for Stochastic Optimization.” <i>Arxiv:1412.6980 [Cs]</i>, January. <a href="http://arxiv.org/abs/1412.6980">http://arxiv.org/abs/1412.6980</a>.</div>
+      <div class="csl-entry"><a id="citeproc_bib_item_5"></a>Zhao, Yang, Hao Zhang, and Xiuyuan Hu. n.d. “Penalizing Gradient Norm for Efﬁciently Improving Generalization in Deep Learning,” 11.</div>
+    </div>
