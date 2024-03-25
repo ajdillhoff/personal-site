@@ -15,36 +15,44 @@
     },
     {
         "date": "March 20",
-        "topic": "Divide and Conquer, Master Theorem",
+        "topic": "Divide and Conquer Algorithms",
         "materials": [
             {
                 "title": "Divide and Conquer",
                 "url": "/notes/divide_and_conquer_algorithms"
             },
             {
-                "title": "Master Theorem",
-                "url": "/notes/master_theorem"
+                "title": "Substitution Method",
+                "url": "/notes/substitution_method"
+            },
+            {
+                "title": "Recursion Tree Method",
+                "url": "/notes/recursion_tree_method"
             }
         ]
     },
     {
         "date": "March 25",
-        "topic": "Heapsort and Quicksort",
+        "topic": "Master Theorem and Heapsort",
         "materials": [
+            {
+                "title": "Master Theorem",
+                "url": "/notes/master_theorem"
+            },
             {
                 "title": "Heapsort",
                 "url": "/notes/heapsort"
-            },
-            {
-                "title": "Quicksort",
-                "url": "/notes/quicksort"
             }
         ]
     },
     {
         "date": "March 27",
-        "topic": "Sorting in Linear Time, Medians and Order Statistics",
+        "topic": "Quicksort, Sorting in Linear Time, Medians and Order Statistics",
         "materials": [
+            {
+                "title": "Quicksort",
+                "url": "/notes/quicksort"
+            },
             {
                 "title": "Sorting in Linear Time",
                 "url": "/notes/sorting_in_linear_time"
@@ -90,6 +98,16 @@
             {
                 "title": "Dynamic Programming",
                 "url": "/notes/dynamic_programming"
+            }
+        ]
+    },
+    {
+        "date": "April 10",
+        "topic": "Greedy Algorithms",
+        "materials": [
+            {
+                "title": "Greedy Algorithms",
+                "url": "/notes/greedy_algorithms"
             }
         ]
     }
