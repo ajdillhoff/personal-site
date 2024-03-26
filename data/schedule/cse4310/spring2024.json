@@ -250,5 +250,20 @@
                 "url": "/notes/convolutional_neural_networks"
             }
         ]
+    },
+    {
+        "date": "March 25",
+        "topic": "PyTorch Tutorial",
+        "materials": []
+    },
+    {
+        "date": "March 27",
+        "topic": "Pytorch Lightning Tutorial",
+        "materials": []
+    },
+    {
+        "date": "March 29",
+        "topic": "CANCELLED",
+        "materials": []
     }
 ]

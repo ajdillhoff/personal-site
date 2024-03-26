@@ -47,7 +47,7 @@
     },
     {
         "date": "March 27",
-        "topic": "Quicksort, Sorting in Linear Time, Medians and Order Statistics",
+        "topic": "Quicksort, Sorting in Linear Time",
         "materials": [
             {
                 "title": "Quicksort",
@@ -56,38 +56,34 @@
             {
                 "title": "Sorting in Linear Time",
                 "url": "/notes/sorting_in_linear_time"
-            },
-            {
-                "title": "Medians and Order Statistics",
-                "url": "/notes/medians_and_order_statistics"
             }
         ]
     },
     {
         "date": "April 1",
-        "topic": "Hash Tables and Binary Search Trees",
+        "topic": "Medians and Order Statistics, Hash Tables",
         "materials": [
+            {
+                "title": "Medians and Order Statistics",
+                "url": "/notes/medians_and_order_statistics"
+            },
             {
                 "title": "Hash Maps",
                 "url": "/notes/hash_tables"
-            },
-            {
-                "title": "Binary Search Trees",
-                "url": "/notes/binary_search_trees"
             }
         ]
     },
     {
         "date": "April 3",
-        "topic": "Red-Black Trees and Dynamic Programming",
+        "topic": "Binary Search Trees and Red-Black Trees",
         "materials": [
+            {
+                "title": "Binary Search Trees",
+                "url": "/notes/binary_search_trees"
+            },
             {
                 "title": "Red-Black Trees",
                 "url": "/notes/red_black_trees"
-            },
-            {
-                "title": "Dynamic Programming",
-                "url": "/notes/dynamic_programming"
             }
         ]
     },
@@ -103,12 +99,75 @@
     },
     {
         "date": "April 10",
-        "topic": "Greedy Algorithms",
+        "topic": "Dynamic Programming and Greedy Algorithms",
         "materials": [
+            {
+                "title": "Dynamic Programming",
+                "url": "/notes/dynamic_programming"
+            },
             {
                 "title": "Greedy Algorithms",
                 "url": "/notes/greedy_algorithms"
             }
         ]
+    },
+    {
+        "date": "April 15",
+        "topic": "Greedy Algorithms, Introduction to Graph Theory",
+        "materials": [
+            {
+                "title": "Greedy Algorithms",
+                "url": "/notes/greedy_algorithms"
+            },
+            {
+                "title": "Intro. to Graph Theory",
+                "url": "/notes/introduction_to_graph_theory"
+            }
+        ]
+    },
+    {
+        "date": "April 17",
+        "topic": "Topological Sort, Minimum Spanning Trees",
+        "materials": [
+            {
+                "title": "Minimum Spanning Trees",
+                "url": "/notes/minimum_spanning_trees"
+            }
+        ]
+    },
+    {
+        "date": "April 22",
+        "topic": "Shortest Paths",
+        "materials": [
+            {
+                "title": "Single-Source Shortest Paths",
+                "url": "/notes/single_source_shortest_paths"
+            }
+        ]
+    },
+    {
+        "date": "April 24",
+        "topic": "Maximum Flow, Bipartite Matching",
+        "materials": []
+    },
+    {
+        "date": "April 29",
+        "topic": "Parallel Algorithms",
+        "materials": [
+            {
+                "title": "Single-Source Shortest Paths",
+                "url": "/notes/single_source_shortest_paths"
+            }
+        ]
+    },
+    {
+        "date": "May 1",
+        "topic": "Machine Learning Algorithms",
+        "materials": []
+    },
+    {
+        "date": "May 6",
+        "topic": "Exam 2",
+        "materials": []
     }
 ]

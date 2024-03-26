@@ -184,5 +184,25 @@
                 "url": "/notes/optimization_for_deep_learning"
             }
         ]
+    },
+    {
+        "date": "March 26",
+        "topic": "Recurrent Neural Networks",
+        "materials": [
+            {
+                "title": "Recurrent Neural Networks",
+                "url": "/notes/recurrent_neural_networks"
+            }
+        ]
+    },
+    {
+        "date": "March 28",
+        "topic": "Transformers",
+        "materials": [
+            {
+                "title": "Transformers",
+                "url": "/notes/transformers"
+            }
+        ]
     }
 ]

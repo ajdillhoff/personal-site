@@ -12,6 +12,7 @@ draft = false
 
 - [Activity Selection](#activity-selection)
 - [Properties of Greedy Solutions](#properties-of-greedy-solutions)
+- [Huffman Codes](#huffman-codes)
 
 </div>
 <!--endtoc-->
@@ -259,3 +260,36 @@ In this problem, we have a knapsack whose total capacity is \\(W = 50\\). A tabl
 | \\(v\_i/w\_i\\) | 6  | 5   | 4   |
 
 The fractional algorithm would selection the first item since it has the greatest value-to-weight ratio. The \\(0-1\\) knapsack problem, however, would select the second and third items to maximize the value of the items in the knapsack.
+
+
+## Huffman Codes {#huffman-codes}
+
+Huffman coding is a lossless data compression algorithm that assigns variable-length codes to input characters, with lengths based on the frequencies of occurrence for those characters. Originally developed by David A. Huffman in 1952 during his Ph.D. at MIT, he published the algorithm under the title "[A Method for the Construction of Minimum-Redundancy Codes](https://ieeexplore.ieee.org/document/4051119)".
+
+Huffman coding involves:
+
+1.  Building a Huffman tree from the input characters and their frequencies.
+2.  Traversing the tree to assign codes to each character.
+
+Before getting into the specifics of the algorithm, let's look at an example. Suppose we have a document consisting of 6 unique characters, each represented by a byte (8 bits). We could represent these 6 characters using 3 bits, since that is the minimum number of bits needed to represent 6 unique values. This is known as a **fixed-length code**. If we instead assigned a **variable-length code** to each character based on its frequency of occurrence, we would further reduce the footprint of the file size.
+
+|                          | A   | B   | C   | D   | E    | F    |
+|--------------------------|-----|-----|-----|-----|------|------|
+| Frequency (in thousands) | 45  | 13  | 12  | 16  | 9    | 5    |
+| Fixed-length code        | 000 | 001 | 010 | 011 | 100  | 101  |
+| Variable-length code     | 0   | 101 | 100 | 111 | 1101 | 1100 |
+
+-   **Does this seem like the best coding?**
+-   Why isn't a code of 1 used?
+-   What about 2 bit encoding?
+
+The truth is that it depends on the document being compressed. The encoding is optimal consider the overall but length of the encoded file. Based on the above **fixed-length code**, the file size is 300,000 bits. The **variable-length code** reduces the file size to 224,000 bits.
+
+**How many bits are needed to encode \\(n \geq 2\\) characters?**
+
+\\[
+\lceil \lg n \rceil
+\\]
+
+
+### Prefix-free Codes {#prefix-free-codes}

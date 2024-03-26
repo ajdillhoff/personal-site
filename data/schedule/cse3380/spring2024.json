@@ -88,5 +88,50 @@
                 "url": ""
             }
         ]
+    },
+    {
+        "date": "Week 11",
+        "topic": "Least-Squares Solutions, Eigenvectors and Eigenvalues",
+        "materials": [
+            {
+                "title": "5.1, 6.5, and 6.6",
+                "url": ""
+            }
+        ]
+    },
+    {
+        "date": "Week 12",
+        "topic": "Exam 2",
+        "materials": []
+    },
+    {
+        "date": "Week 13",
+        "topic": "Diagonalization",
+        "materials": [
+            {
+                "title": "5.3 and 7.1",
+                "url": ""
+            }
+        ]
+    },
+    {
+        "date": "Week 14",
+        "topic": "Singular Value Decomposition and Applications",
+        "materials": [
+            {
+                "title": "7.4",
+                "url": ""
+            }
+        ]
+    },
+    {
+        "date": "Week 15",
+        "topic": "Principal Component Analysis",
+        "materials": []
+    },
+    {
+        "date": "Week 16",
+        "topic": "Exam 3 Review",
+        "materials": []
     }
 ]
