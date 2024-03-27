@@ -51,14 +51,14 @@ def counting_sort(A, k):
     B = [0 for i in range(n)]
     C = [0 for i in range(k+1)]
 
-for i in range(2, n):
+for i in range(n):
     C[A[i]] += 1
 
-for i in range(2, k):
+for i in range(1, k):
     C[i] = C[i] + C[i-1]
 
 for i in range(n - 1, -1, -1):
-    B[C[A[i]]] = A[i]
+    B[C[A[i]]-1] = A[i]
     C[A[i]] = C[A[i]] - 1
 
     return B
@@ -66,7 +66,7 @@ for i in range(n - 1, -1, -1):
 
 The first two loops establish the number of elements less than or equal to \\(i\\) for each element \\(i\\). The main sticking point in understanding this algorithm is the last loop. It starts at the very end of loop, placing the last element from \\(A\\) into the output array \\(B\\) in its correct position as determined by \\(C\\).
 
-Consider a simple example with \\(\\{2, 5, 5, 3, 4\\}\\). After the second loop, \\(C = \\{0, 0, 1, 2, 3, 5\\}\\). On the first iteration of the last loop, \\(A[4] = 4\\) is used as the index into \\(C\\), which yields \\(3\\) since the value \\(4\\) is greater than or equal to \\(3\\) elements in the original array. It is then placed in the correct spot \\(B[3] = 4\\).
+Consider a simple example with \\(\\{2, 5, 5, 3, 4\\}\\). After the second loop, \\(C = \\{0, 0, 1, 2, 3, 5\\}\\). On the first iteration of the last loop, \\(A[4] = 4\\) is used as the index into \\(C\\), which yields \\(3\\) since the value \\(4\\) is greater than or equal to \\(3\\) elements in the original array. It is then placed in the correct spot \\(B[3-1] = 4\\).
 
 Another example is shown in figure 8.2 from (<a href="#citeproc_bib_item_1">Cormen et al. 2022</a>).
 
@@ -96,7 +96,7 @@ We know that counting sort is \\(\Theta(n + k)\\), and that radix sort calls it 
 
 ### Complex Keys {#complex-keys}
 
-What if the data is not just a single integer, but a complex key or series of keys? They keys themselves can be broken up into digits. Consider a 32-bit word. If we want to sort \\(n\\) of these words, and we have \\(b = 32\\) bits per word, we can break the words into \\(r=8\\) bit digits. This yields \\(d = \lceil b / r \rceil = 4\\) digits. The largest value for each digit is then \\(k = 2^r - 1 = 255\\). Plugging these values into the analysis from above yields $&Theta;((b/r)(n + 2^r)).$
+What if the data is not just a single integer, but a complex key or series of keys? The keys themselves can be broken up into digits. Consider a 32-bit word. If we want to sort \\(n\\) of these words, and we have \\(b = 32\\) bits per word, we can break the words into \\(r=8\\) bit digits. This yields \\(d = \lceil b / r \rceil = 4\\) digits. The largest value for each digit is then \\(k = 2^r - 1 = 255\\). Plugging these values into the analysis from above yields $&Theta;((b/r)(n + 2^r)).$
 
 **What is the best choice of \\(r\\)?** Consider what happens for different values of \\(r\\). As \\(r\\) increases, \\(2^r\\) increases. As it decreases, \\(\frac{b}{r}\\) increases. The best choice depends on whether \\(b < \lfloor \lg n \rfloor\\). If \\(b < \lfloor \lg n \rfloor\\), then \\(r \leq b\\) implies \\((n + 2^r) = \Theta(n)\\) since \\(2^{\lg n} = n\\). If \\(b \geq \lfloor \lg n \rfloor\\), then we should choose \\(r \approx \lg n\\). This would yield \\(\Theta((b / \lg n)(n + n)) = \Theta(bn / \lg n)\\).
 
@@ -266,10 +266,15 @@ def bucket_sort(A):
 Initializing the array and placing each item into a bucket takes \\(\Theta(n)\\) time. The call to each insertion sort is \\(O(n^2)\\). Therefore, the recurrence is given as
 
 \\[
-T(n) = \Theta(n) + \sum\_{i=0}^{n-1} O(n^2).
+T(n) = \Theta(n) + \sum\_{i=0}^{n-1} O(n\_i^2).
 \\]
 
-The key is to determine the expected value \\(E[n\_i^2]\\). We will frame the problem as a binomial distribution, where a success occurs when an element goes into bucket \\(i\\). Under a binomial distribution, we have that \\(E[n\_i] = np = n(1/n) = 1\\) and \\(\text{Var}[n\_i] = npq = 1 - 1/n\\), where \\(p = 1/n\\) and \\(q = 1 - 1/n\\). The expected value is then
+The key is to determine the expected value \\(E[n\_i^2]\\). We will frame the problem as a binomial distribution, where a success occurs when an element goes into bucket \\(i\\).
+
+-   \\(p\\) is the probability of success: \\(p = \frac{1}{n}\\).
+-   \\(q\\) is the probability of failure: \\(q = 1 - \frac{1}{n}\\).
+
+Under a binomial distribution, we have that \\(E[n\_i] = np = n(1/n) = 1\\) and \\(\text{Var}[n\_i] = npq = 1 - 1/n\\), where \\(p = 1/n\\) and \\(q = 1 - 1/n\\). The expected value is then
 
 \\[
 E[n\_i^2] = \text{Var}[n\_i] + E[n\_i]^2 = 1 - 1/n + 1 = 2 - 1/n.

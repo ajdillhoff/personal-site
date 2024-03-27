@@ -116,6 +116,10 @@
         "topic": "Greedy Algorithms, Introduction to Graph Theory",
         "materials": [
             {
+                "title": "Priority Queues",
+                "url": "/notes/priority_queues"
+            },
+            {
                 "title": "Greedy Algorithms",
                 "url": "/notes/greedy_algorithms"
             },
@@ -147,7 +151,7 @@
     },
     {
         "date": "April 24",
-        "topic": "Maximum Flow, Bipartite Matching",
+        "topic": "Maximum Flow, P vs. NP",
         "materials": []
     },
     {
@@ -155,8 +159,8 @@
         "topic": "Parallel Algorithms",
         "materials": [
             {
-                "title": "Single-Source Shortest Paths",
-                "url": "/notes/single_source_shortest_paths"
+                "title": "Parallel Merge",
+                "url": "/notes/gpu_pattern_merge"
             }
         ]
     },

@@ -293,3 +293,23 @@ The truth is that it depends on the document being compressed. The encoding is o
 
 
 ### Prefix-free Codes {#prefix-free-codes}
+
+A **prefix-free code** is a code in which no codeword is also a prefix of another codeword. This property simplifies decoding since the code can be read from left to right without ambiguity. The codeword "beef" has the encoding \\(101110111011100 = 101 \cdot 1101 \cdot 1101 \cdot 1100\\), where \\(\cdot\\) denotes concatenation.
+
+This definition may start to clarify why a code of 1 is not used. If a code of 1 were used, then the code would be a prefix of all other codes. This would make decoding ambiguous.
+
+**How are the codes decoded?**
+
+One solution to this is to keep a table of all codewords and their corresponding characters. A more compact solution is to use a binary tree. Starting with the first bit in the encoded message, traverse the tree until a leaf node is reached. The character at the leaf node is the decoded character. The tree is known as a **Huffman tree**.
+
+An **full binary tree**, where each nonleaf node has two subnodes, is optimal for decoding. If the tree has this property then an optimal prefix-free code has \\(|C|\\) leaves and exactly \\(|C| - 1\\) internal nodes. The tree for the variable-length code is shown below.
+
+{{< figure src="/ox-hugo/2024-03-26_09-07-14_screenshot.png" caption="<span class=\"figure-number\">Figure 4: </span>Huffman tree for the variable-length code (Cormen et al. 2022)." >}}
+
+Given a character \\(c\\) with frequency \\(c.freq\\), let \\(d\_T( c)\\) denote the depth of character \\(c\\) in tree \\(T\\). The cost of the code in bits is given by
+
+\\[
+B(T) = \sum\_{c \in C} c.freq \cdot d\_T( c).
+\\]
+
+The depth of the character \\(d\_T( c)\\) is used since it also denotes the length of the codeword.
