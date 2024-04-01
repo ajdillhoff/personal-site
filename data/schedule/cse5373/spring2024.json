@@ -238,5 +238,35 @@
         "date": "March 29",
         "topic": "CANCELLED",
         "materials": []
+    },
+    {
+        "date": "April 1",
+        "topic": "Parallel Sorting",
+        "materials": [
+            {
+                "title": "Parallel Sorting Algorithms",
+                "url": "/notes/parallel_sorting_algorithms"
+            }
+        ]
+    },
+    {
+        "date": "April 3",
+        "topic": "Sparse Matrix Multiplication",
+        "materials": [
+            {
+                "title": "Sparse Matrix Multiplication",
+                "url": "/notes/sparse_matrix_computation"
+            }
+        ]
+    },
+    {
+        "date": "April 5",
+        "topic": "Sparse Matrix Multiplication",
+        "materials": [
+            {
+                "title": "Sparse Matrix Multiplication",
+                "url": "/notes/sparse_matrix_computation"
+            }
+        ]
     }
 ]

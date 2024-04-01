@@ -265,5 +265,25 @@
         "date": "March 29",
         "topic": "CANCELLED",
         "materials": []
+    },
+    {
+        "date": "April 1",
+        "topic": "Optimization for Deep Learning",
+        "materials": [
+            {
+                "title": "Optimization for Deep Learning",
+                "url": "/notes/opimization_for_deep_learning"
+            }
+        ]
+    },
+    {
+        "date": "April 3",
+        "topic": "Object Detection",
+        "materials": []
+    },
+    {
+        "date": "April 5",
+        "topic": "Instance Segmentation",
+        "materials": []
     }
 ]

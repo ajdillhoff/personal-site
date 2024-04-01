@@ -327,6 +327,8 @@ Finding the median value of a set can be performed in linear time without fully 
 4.  ****Partition****: Use the pivot to separate values smaller and larger than the pivot.
 5.  ****Select****: If the given pivot is the true median based on its position in the original set, select it. If not, recursively select the median from the appropriate partition.
 
+{{< figure src="/ox-hugo/2024-03-31_18-33-21_screenshot.png" caption="<span class=\"figure-number\">Figure 5: </span>Visualization of median of medians (<a href=\"#citeproc_bib_item_1\">Cormen et al. 2022</a>)." >}}
+
 Given a set of \\(n\\) numbers, define \\(rank(X)\\) as the number in the set that are less than or equal to \\(X\\).
 
 \\(Select(S, i)\\)
