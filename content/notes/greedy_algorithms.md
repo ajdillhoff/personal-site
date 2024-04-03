@@ -313,3 +313,108 @@ B(T) = \sum\_{c \in C} c.freq \cdot d\_T( c).
 \\]
 
 The depth of the character \\(d\_T( c)\\) is used since it also denotes the length of the codeword.
+
+
+### Constructing a Huffman Code {#constructing-a-huffman-code}
+
+```python
+class Node:
+    def __init__(self, freq, char=None):
+        self.freq = freq
+        self.char = char
+        self.left = None
+        self.right = None
+
+def huffman(C):
+    n = len(C)
+    Q = build_min_heap(C)
+    for _ in range(n - 1):
+        z = Node(0)
+        z.left = x = extract_min(Q)
+        z.right = y = extract_min(Q)
+        z.freq = x.freq + y.freq
+        insert(Q, z)
+    return extract_min(Q)
+```
+
+The function above builds a Huffman tree from a set of characters \\(C\\). At each iteration, the two nodes with the smallest frequencies are extracted from the queue \\(Q\\) and are used to create a new node \\(z\\). This node represents the sum of the frequencies of the two nodes. The node is then inserted back into the queue so that it can be used in future iterations. The result is a Huffman tree.
+
+{{< figure src="/ox-hugo/2024-04-01_20-48-40_screenshot.png" caption="<span class=\"figure-number\">Figure 5: </span>Huffman tree for the data in the table above (Cormen et al. 2022)." >}}
+
+
+#### Analysis {#analysis}
+
+If the priority queue is implemented as a binary min-heap, the call to `build_min_heap` initializes the priority queue in \\(O(n)\\) time. The `for` loop runs \\(n-1\\) times, calling `extract_min` twice and `insert` once. Each call to `extract_min` takes \\(O(\lg n)\\) time yielding a total of \\(O(n \lg n)\\) time.
+
+
+### Correctness of Huffman Codes {#correctness-of-huffman-codes}
+
+The correctness of an algorithm means that it produces the expected output based on the input and its properties. To show that the Huffman algorithm is correct, we can show that it exhibits the greedy choice and optimal substructure properties.
+
+
+#### Lemma 15.2: Optimal prefix-free codes have the greedy-choice property {#lemma-15-dot-2-optimal-prefix-free-codes-have-the-greedy-choice-property}
+
+For alphabet \\(C\\), let \\(x\\) and \\(y\\) be the two characters with the lowest frequencies. Then there exists an optimal prefix-free code for \\(C\\) where the codewords for \\(x\\) and \\(y\\) have the same length and differ only in the last bit.
+
+This establishes the greedy choice property because the algorithm selects the two characters with the lowest frequencies at each step.
+
+**Proof**
+
+In the given optimal tree \\(T\\), leaves \\(a\\) and \\(b\\) are two siblings with maximum depth. It's also given that \\(x\\) and \\(y\\) are the two characters with the lowest frequencies, but they appear in arbitrary positions.
+
+Assume that \\(x \neq b\\). Swapping \\(a\\) and \\(x\\) produces tree \\(T'\\) does not increase the cost. Swapping \\(b\\) and \\(y\\) produces tree \\(T''\\) that also does not increase the cost. **This is the key argument: if swapping the lowest frequency characters with the deepest characters does not increase the cost, then the greedy choice is optimal.**
+
+{{< figure src="/ox-hugo/2024-04-02_10-40-38_screenshot.png" caption="<span class=\"figure-number\">Figure 6: </span>Creating \\(T'\\) and \\(T''\\) from \\(T\\) (Cormen et al. 2022)." >}}
+
+Next, we need to show that exchanging \\(a\\) and \\(x\\) does not increase the cost. The cost of the tree is given by
+
+\\[
+B(T) = \sum\_{c \in C} c.freq \cdot d\_T( c).
+\\]
+
+\begin{align\*}
+B(T) - B(T') &= \sum\_{c \in C} c.freq \cdot d\_{T}( c) - \sum\_{c \in C} c.freq \cdot d\_{T'}( c) \\\\
+&= x.freq \cdot d\_T(x) + a.freq \cdot d\_T(a) - x.freq \cdot d\_{T'}(x) - a.freq \cdot d\_{T'}(a) \\\\
+&= x.freq \cdot d\_T(x) + a.freq \cdot d\_T(a) - x.freq \cdot d\_{T}(a) - a.freq \cdot d\_{T}(x) \\\\
+&= (x.freq - a.freq)(d\_T(x) - d\_T(a)) \\\\
+&\geq 0.
+\end{align\*}
+
+The last line is true because \\(x.freq \leq a.freq\\) and \\(d\_T(x) \geq d\_T(a)\\). A similar argument can be made for \\(T''\\). \\(B(T'') \leq B(T')\\) since exchanging \\(y\\) and \\(b\\) does not increase the cost. This means that \\(B(T'') \leq B(T') \leq B(T)\\). \\(T\\) is an optimal tree, so \\(B(T) \leq B(T'') \implies B(T) = B(T'') \implies T\\) is optimal where \\(x\\) and \\(y\\) are siblings of maximum depth.
+
+
+#### Lemma 15.3: Optimal-substructure property {#lemma-15-dot-3-optimal-substructure-property}
+
+Let \\(x\\) and \\(y\\) be two characters with minimum frequency in alphabet \\(C\\) and let \\(C' = (C - \\{x, y\\}) \cup z\\) for a new character \\(z\\) with \\(z.freq = x.freq + y.freq\\). Additionally, let \\(T'\\) be a tree representing an optimal prefix-free code for \\(C'\\), and \\(T\\) be \\(T'\\) with the leaf for \\(z\\) replaced by an internal node with children \\(x\\) and \\(y\\). Then \\(T\\) represents an optimal prefix-free code for \\(C\\).
+
+**Simplified:** If the algorithm computed the optimal solution to the simplified problem, where \\(z\\) replaced \\(x\\) and \\(y\\), it can extend this to an optimal solution to the original problem by putting \\(x\\) and \\(y\\) back.
+
+**Proof**
+
+The first part of the proof establishes the costs of the relevant trees.
+
+\\(c \in C - \\{x, y\\} \implies d\_T( c) = d\_{T'}( c) \implies c.freq \cdot d\_T( c) = c.freq \cdot d\_{T'}( c)\\)
+
+The depth of \\(x\\) and \\(y\\) are equal to the depth of \\(z\\) in \\(T'\\) + 1:
+
+\begin{align\*}
+d\_T(x) = d\_T(y) = d\_{T'}(z) + 1 &\implies x.freq \cdot d\_T(x) + y.freq \cdot d\_T(y)\\\\
+&= (x.freq + y.freq)(d\_{T'}(z) + 1)\\\\
+&= z.freq \cdot d\_{T'}(z) + (x.freq + y.freq).
+\end{align\*}
+
+This means that \\(B(T) = B(T') + x.freq + y.freq\\), which is equivalent to \\(B(T') = B(T) - x.freq - y.freq\\).
+
+The second part of this proof supposes that \\(T\\) is not an optimal prefix code for \\(C\\) and ends in a contradiction, thus proving the original lemma. If \\(T\\) is not optimal for \\(C\\), then \\(B(T'') < B(T)\\) for some optimal tree \\(T''\\).
+
+**Here, \\(T''\\) is introduced as the supposed optimal tree for \\(C\\) if it turns out that \\(T\\) is not.**
+
+If \\(T''\\) is optimal, then lemma 15.2 (greedy property) from above implies that it has \\(x\\) and \\(y\\) as siblings. After all, \\(\\{x, y\\} \in C\\) and \\(T''\\) is an optimal tree for \\(C\\). Create a tree \\(T'''\\) by replacing the parent of \\(x\\) and \\(y\\) with a leaf (implying we remove \\(x\\) and \\(y\\)) \\(z\\) with \\(z.freq = x.freq + y.freq\\). Then,
+
+\begin{align\*}
+B(T''') &= B(T'') - x.freq - y.freq\\\\
+&< B(T) - x.freq - y.freq\\\\
+&= B(T').
+\end{align\*}
+
+\\(B(T''') < B(T')\\) is a contradiction because it was previously established that \\(T'\\) is an optimal tree for \\(C'\\). Therefore a suboptimal \\(T\\) is impossible if \\(T'\\) is optimal.

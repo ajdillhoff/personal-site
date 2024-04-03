@@ -204,5 +204,20 @@
                 "url": "/notes/transformers"
             }
         ]
+    },
+    {
+        "date": "April 2",
+        "topic": "Clustering",
+        "materials": []
+    },
+    {
+        "date": "April 4",
+        "topic": "Principal Component Analysis",
+        "materials": [
+            {
+                "title": "Principal Component Analysis",
+                "url": "/notes/principal_component_analysis"
+            }
+        ]
     }
 ]

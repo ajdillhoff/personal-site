@@ -89,7 +89,7 @@
     },
     {
         "date": "April 8",
-        "topic": "Dynamic Programming, Exam 1",
+        "topic": "Dynamic Programming",
         "materials": [
             {
                 "title": "Dynamic Programming",
@@ -99,12 +99,8 @@
     },
     {
         "date": "April 10",
-        "topic": "Dynamic Programming and Greedy Algorithms",
+        "topic": "Greedy Algorithms",
         "materials": [
-            {
-                "title": "Dynamic Programming",
-                "url": "/notes/dynamic_programming"
-            },
             {
                 "title": "Greedy Algorithms",
                 "url": "/notes/greedy_algorithms"
@@ -113,15 +109,11 @@
     },
     {
         "date": "April 15",
-        "topic": "Greedy Algorithms, Introduction to Graph Theory",
+        "topic": "Introduction to Graph Theory, Exam 1",
         "materials": [
             {
                 "title": "Priority Queues",
                 "url": "/notes/priority_queues"
-            },
-            {
-                "title": "Greedy Algorithms",
-                "url": "/notes/greedy_algorithms"
             },
             {
                 "title": "Intro. to Graph Theory",
