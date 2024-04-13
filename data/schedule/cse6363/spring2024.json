@@ -219,5 +219,45 @@
                 "url": "/notes/principal_component_analysis"
             }
         ]
+    },
+    {
+        "date": "April 9",
+        "topic": "Markov Decision Processes",
+        "materials": [
+            {
+                "title": "Markov Decision Processes",
+                "url": "/notes/markov_decision_processes"
+            }
+        ]
+    },
+    {
+        "date": "April 11",
+        "topic": "Reinforcement Learning",
+        "materials": [
+            {
+                "title": "Reinforcement Learning",
+                "url": "/notes/reinforcement_learning"
+            }
+        ]
+    },
+    {
+        "date": "April 16",
+        "topic": "Policy Gradient Methods",
+        "materials": [
+            {
+                "title": "Policy Gradient Methods",
+                "url": "/notes/policy_gradient_methods"
+            }
+        ]
+    },
+    {
+        "date": "April 18",
+        "topic": "Natural Language Processing",
+        "materials": [
+            {
+                "title": "Natural Language Processing",
+                "url": "/notes/natural_language_processing"
+            }
+        ]
     }
 ]

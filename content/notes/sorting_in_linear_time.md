@@ -45,24 +45,26 @@ Consider a binary tree of height \\(h\\) with \\(l\\) reachable leaves. Each of 
 
 Counting sort can sort an array of integers in \\(O(n+k)\\) time, where \\(k \geq 0\\) is the largest integer in the set. It works by counting the number of elements less than or equal to each element \\(x\\).
 
-\#+begin_src python
+```python
 def counting_sort(A, k):
     n = len(A)
     B = [0 for i in range(n)]
     C = [0 for i in range(k+1)]
 
-for i in range(n):
-    C[A[i]] += 1
+    for i in range(n):
+        C[A[i]] += 1
+    # C[i] contains the number of elements equal to i
 
-for i in range(1, k):
-    C[i] = C[i] + C[i-1]
+    for i in range(1, k):
+        C[i] = C[i] + C[i-1]
+    # C[i] contains the number of elements less than or equal to i
 
-for i in range(n - 1, -1, -1):
-    B[C[A[i]]-1] = A[i]
-    C[A[i]] = C[A[i]] - 1
+    for i in range(n - 1, -1, -1):
+        B[C[A[i]]-1] = A[i]
+        C[A[i]] = C[A[i]] - 1
 
     return B
-\#+end_src python
+```
 
 The first two loops establish the number of elements less than or equal to \\(i\\) for each element \\(i\\). The main sticking point in understanding this algorithm is the last loop. It starts at the very end of loop, placing the last element from \\(A\\) into the output array \\(B\\) in its correct position as determined by \\(C\\).
 

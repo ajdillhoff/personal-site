@@ -62,7 +62,7 @@ This recursion is more compactly written as
 r\_n = \max\_{1 \leq i \leq n}(p\_i + r\_{n-i}).
 \\]
 
-This problem has **optimal substructure**. If we cut the rod into smaller subsections, we can recursively solve this subproblems recursively and combine them. The recursive algorithm is as follows:
+This problem has **optimal substructure**. If we cut the rod into smaller subsections, we can recursively solve the subproblems and combine them. The recursive algorithm is as follows:
 
 ```python
 def cut_rod(p, n):
@@ -113,7 +113,7 @@ def memoized_cut_rod_aux(p, n, r):
     return q
 ```
 
-The algorithm starts off with a call to `memoized_cut_rod` which initializes the table `r` and then calls `memoized_cut_rod_aux`. The table `r` is initialized with \\(-\infty\\) so that we can check if a solution has been computed for a subproblem. Each subproblem is solved only ones, leading to \\(O(1)\\) lookups after that. The time complexity of this solution is \\(O(n^2)\\).
+The algorithm starts off with a call to `memoized_cut_rod` which initializes the table `r` and then calls `memoized_cut_rod_aux`. The table `r` is initialized with \\(-\infty\\) so that we can check if a solution has been computed for a subproblem. Each subproblem is solved only once, leading to \\(O(1)\\) lookups after that. The time complexity of this solution is \\(O(n^2)\\).
 
 
 ### Bottom-Up Solution {#bottom-up-solution}
@@ -142,7 +142,7 @@ Subproblem graphs offer a concise way to visualize the subproblems and their dep
 
 Subproblem \\(n=4\\) is dependent on subproblems \\(n=3\\), \\(n=2\\), and \\(n=1\\). The bottom-up approach follows this dependency by ensuring that the subproblems are solved in the correct order.
 
-Besides serving as a helpful visualization. Depicting the problem using a DAG can also help to identify the time complexity of the problem. This is the sum of the time needed to solve each subproblem. Each problem of size \\(n\\) requires \\(n-1\\) subproblems to be solved, and each subproblem of size \\(n-1\\) requires \\(n-2\\) subproblems to be solved. This leads to a time complexity of \\(O(n^2)\\).
+Besides serving as a helpful visualization, depicting the problem using a DAG can also help to identify the time complexity of the problem. This is the sum of the time needed to solve each subproblem. Each problem of size \\(n\\) requires \\(n-1\\) subproblems to be solved, and each subproblem of size \\(n-1\\) requires \\(n-2\\) subproblems to be solved. This leads to a time complexity of \\(O(n^2)\\).
 
 
 ### Reconstructing a Solution {#reconstructing-a-solution}
@@ -297,7 +297,7 @@ Consider the following problems which first appear to have optimal substructure.
 1.  **Shortest path**: find a path \\(u \leadsto v\\) with the fewest edges without cycles.
 2.  **Longest simple path**: find a path \\(u \leadsto v\\) with the most edges without cycles.
 
-The first problem has optimal substructure. If we suppose that the shortest path \\(u \leadsto v\\) is given by \\(p\\). Given some intermediate vertex \\(w\\), the optimal path from \\(u \leadsto w\\) is given by \\(p\_1\\) and the optimal path from \\(w \leadsto v\\) is given by \\(p\_2\\). If there were a shorter path \\(p\`\_1\\) from \\(u \leadsto w\\) then we could replace \\(p\_1\\) with it and get a total path with fewer edges.
+The first problem has optimal substructure. Suppose that the shortest path \\(u \leadsto v\\) is given by \\(p\\). Given some intermediate vertex \\(w\\), the optimal path from \\(u \leadsto w\\) is given by \\(p\_1\\) and the optimal path from \\(w \leadsto v\\) is given by \\(p\_2\\). If there were a shorter path \\(p'\_1\\) from \\(u \leadsto w\\) then we could replace \\(p\_1\\) with it and get a total path with fewer edges.
 
 **Check your understanding**
 

@@ -214,11 +214,11 @@ Since there is such overlap between greedy algorithms and dynamic programming in
 Consider the **\\(0-1\\) knapsack problem.**
 
 -   You have \\(n\\) items.
--   Item \\(i\\) is worth \\(v\_i\\) and weights \\(w\_i\\).
+-   Item \\(i\\) is worth \\(v\_i\\) and weighs \\(w\_i\\).
 -   Find the most valuable subset of items with total weight less than or equal to \\(W\\).
 -   Items cannot be divided.
 
-If the most valuable subset of items weighting at most \\(W\\) includes item \\(j\\), then the remaining weight must be the most valuable subset of items weighting at most \\(W - w\_j\\) taken from \\(n-1\\) original items excluding item \\(j\\).
+If the most valuable subset of items weighing at most \\(W\\) includes item \\(j\\), then the remaining weight must be the most valuable subset of items weighing at most \\(W - w\_j\\) taken from \\(n-1\\) original items excluding item \\(j\\).
 
 
 #### Fractional Knapsack Problem {#fractional-knapsack-problem}

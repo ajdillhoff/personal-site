@@ -283,7 +283,58 @@
     },
     {
         "date": "April 5",
+        "topic": "Recurrent Neural Networks",
+        "materials": [
+            {
+                "title": "Recurrent Neural Networks",
+                "url": "/notes/recurrent_neural_networks"
+            }
+        ]
+    },
+    {
+        "date": "April 8",
+        "topic": "CANCELLED: Solar Eclipse",
+        "materials": []
+    },
+    {
+        "date": "April 10",
+        "topic": "Transformers",
+        "materials": [
+            {
+                "title": "Transformers",
+                "url": "/notes/transformers"
+            }
+        ]
+    },
+    {
+        "date": "April 12",
+        "topic": "Transformers for Computer Vision",
+        "materials": []
+    },
+    {
+        "date": "April 15",
         "topic": "Instance Segmentation",
+        "materials": []
+    },
+    {
+        "date": "April 17",
+        "topic": "Generate Adversarial Networks",
+        "materials": []
+    },
+    {
+        "date": "April 19",
+        "topic": "Diffusion Models",
+        "materials": [
+            {
+                "title": "Diffusion Models",
+                "url": "/notes/diffusion_models_for_image_generation"
+
+            }
+        ]
+    },
+    {
+        "date": "April 22",
+        "topic": "Pose Estimation",
         "materials": []
     }
 ]

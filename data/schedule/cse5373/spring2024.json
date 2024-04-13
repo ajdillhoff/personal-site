@@ -268,5 +268,65 @@
                 "url": "/notes/sparse_matrix_computation"
             }
         ]
+    },
+    {
+        "date": "April 8",
+        "topic": "CANCELLED: Solar Eclipse",
+        "materials": []
+    },
+    {
+        "date": "April 10",
+        "topic": "Parallel Graph Traversal",
+        "materials": [
+            {
+                "title": "Parallel Graph Traversal",
+                "url": "/notes/parallel_graph_traversal"
+            }
+        ]
+    },
+    {
+        "date": "April 12",
+        "topic": "Parallel Graph Traversal",
+        "materials": [
+            {
+                "title": "Parallel Graph Traversal",
+                "url": "/notes/parallel_graph_traversal"
+            }
+        ]
+    },
+    {
+        "date": "April 15",
+        "topic": "Deep Learning",
+        "materials": []
+    },
+    {
+        "date": "April 17",
+        "topic": "Deep Learning",
+        "materials": []
+    },
+    {
+        "date": "April 19",
+        "topic": "CUDA Streams",
+        "materials": []
+    },
+    {
+        "date": "April 22",
+        "topic": "Dynamic Parallelism",
+        "materials": []
+    },
+    {
+        "date": "April 24",
+        "topic": "Project Presentations",
+        "materials": []
+    },
+    {
+        "date": "April 26",
+        "topic": "Project Presentations",
+        "materials": []
+    },
+    {
+        "date": "April 29",
+        "topic": "Project Presentations",
+        "materials": []
     }
 ]
