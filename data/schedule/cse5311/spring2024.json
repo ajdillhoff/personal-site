@@ -109,7 +109,17 @@
     },
     {
         "date": "April 15",
-        "topic": "Introduction to Graph Theory, Exam 1",
+        "topic": "Greedy Algorithms, Exam 1",
+        "materials": [
+            {
+                "title": "Greedy Algorithms",
+                "url": "/notes/greedy_algorithms"
+            }
+        ]
+    },
+    {
+        "date": "April 17",
+        "topic": "BFS, DFS, and Topological Sort",
         "materials": [
             {
                 "title": "Priority Queues",
@@ -118,27 +128,21 @@
             {
                 "title": "Intro. to Graph Theory",
                 "url": "/notes/introduction_to_graph_theory"
-            }
-        ]
-    },
-    {
-        "date": "April 17",
-        "topic": "Topological Sort, Minimum Spanning Trees",
-        "materials": [
+            },
             {
                 "title": "Topological Sort",
                 "url": "/notes/topological_sort"
-            },
-            {
-                "title": "Minimum Spanning Trees",
-                "url": "/notes/minimum_spanning_trees"
             }
         ]
     },
     {
         "date": "April 22",
-        "topic": "Shortest Paths",
+        "topic": "Minimum Spanning Trees, Shortest Path Algorithms",
         "materials": [
+            {
+                "title": "Minimum Spanning Trees",
+                "url": "/notes/minimum_spanning_trees"
+            },
             {
                 "title": "Single-Source Shortest Paths",
                 "url": "/notes/single_source_shortest_paths"
