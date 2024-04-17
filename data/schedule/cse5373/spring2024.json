@@ -297,12 +297,22 @@
     {
         "date": "April 15",
         "topic": "Deep Learning",
-        "materials": []
+        "materials": [
+            {
+                "title": "Convolutional Neural Networks",
+                "url": "/notes/convolutional_neural_networks"
+            }
+        ]
     },
     {
         "date": "April 17",
         "topic": "Deep Learning",
-        "materials": []
+        "materials": [
+            {
+                "title": "Using cuDNN",
+                "url": "/notes/using_the_cudnn_library"
+            }
+        ]
     },
     {
         "date": "April 19",

@@ -47,7 +47,7 @@
     },
     {
         "date": "March 27",
-        "topic": "Quicksort, Sorting in Linear Time",
+        "topic": "Quicksort, Sorting in Linear Time, Quiz 1",
         "materials": [
             {
                 "title": "Quicksort",
@@ -75,7 +75,7 @@
     },
     {
         "date": "April 3",
-        "topic": "Binary Search Trees and Red-Black Trees",
+        "topic": "Binary Search Trees and Red-Black Trees, Checkpoint 1",
         "materials": [
             {
                 "title": "Binary Search Trees",
@@ -99,7 +99,7 @@
     },
     {
         "date": "April 10",
-        "topic": "Greedy Algorithms",
+        "topic": "Greedy Algorithms, Quiz 2",
         "materials": [
             {
                 "title": "Greedy Algorithms",
@@ -151,7 +151,7 @@
     },
     {
         "date": "April 24",
-        "topic": "Maximum Flow, P vs. NP",
+        "topic": "Maximum Flow, Quiz 3",
         "materials": [
             {
                 "title": "Maximum Flow",
@@ -161,7 +161,7 @@
     },
     {
         "date": "April 29",
-        "topic": "Parallel Algorithms",
+        "topic": "P vs. NP, Parallel Algorithms",
         "materials": [
             {
                 "title": "Parallel Sorting Algorithms",
@@ -175,7 +175,7 @@
     },
     {
         "date": "May 1",
-        "topic": "Machine Learning Algorithms",
+        "topic": "Machine Learning Algorithms, Quiz 4",
         "materials": []
     },
     {
