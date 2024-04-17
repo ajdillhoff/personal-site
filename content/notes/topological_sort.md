@@ -124,7 +124,7 @@ There are two cases to consider depending on which strongly connected component 
 
 **Case 2**
 
--   If \\(d( C) > d(C')\\), let \\(y\\) be the first vertex discovered in \\(C'\\). At time \\(y.d\\), all vertices in \\(C\\) and \\(C'\\) are white. Thus, there exists paths of white vertices from \\(y\\) to all vertices in \\(C\\) and \\(C'\\). All vertices in \\(C'\\) become descendants of \\(y\\). Again, \\(y.f = f(C')\\).
+-   If \\(d( C) > d(C')\\), let \\(y\\) be the first vertex discovered in \\(C'\\). At time \\(y.d\\), all vertices in \\(C\\) and \\(C'\\) are white. Thus, there exists paths of white vertices from \\(y\\) to all vertices in \\(C'\\). All vertices in \\(C'\\) become descendants of \\(y\\). Again, \\(y.f = f(C')\\).
 -   At time \\(y.d\\), all vertices in \\(C\\) are also white.
 -   Since there is an edge \\((u, v)\\), where \\(u \in C\\) and \\(u' \in C'\\), we cannot have a path from \\(C'\\) to \\(C\\).
 -   No vertex in \\(C\\) is reachable from \\(y\\).
@@ -155,7 +155,7 @@ Let \\(C\\) and \\(C'\\) be distinct strongly connected components in \\(G\\), a
 
 #### Proof {#proof}
 
-When we perform the second DFS call, on \\(G^T\\), it starts with the component \\(C\\) such that \\(f( C)\\) is the maximum. This call starts from some \\(x \in C\\) and explores all vertices in \\(C\\). The corollary says that since \\(f( C) > f(C')\\), there cannot be an edge from \\(C\\) to \\(C'\\) in \\(G^T\\). Therefore, DFS will visit _only_ vertices in \\(C\\). This means that the depth-first tree rooted at \\(x\\) will contain only vertices in \\(C\\). \\(\blacksquare\\)
+When we perform the second DFS call, on \\(G^T\\), it starts with the component \\(C\\) such that \\(f( C)\\) is the maximum. This call starts from some \\(x \in C\\) and explores all vertices in \\(C\\). The corollary says that since \\(f( C) > f(C')\\), there cannot be an edge from \\(C\\) to \\(C'\\) in \\(G^T\\). Therefore, DFS will visit _only_ vertices in \\(C\\). This means that the depth-first tree rooted at \\(x\\) will contain only vertices in \\(C\\).
 
 The next root chosen is in \\(C'\\) such that \\(f(C')\\) is maximum over all strongly connected components **other than** \\(C\\). DFS visits all vertices in \\(C'\\), but the only edges out of \\(C'\\) go to \\(C\\), **which have already been visited.** Therefore, the only tree edges will be to vertices in \\(C'\\).
 
