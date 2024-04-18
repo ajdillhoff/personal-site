@@ -316,8 +316,13 @@
     },
     {
         "date": "April 19",
-        "topic": "CUDA Streams",
-        "materials": []
+        "topic": "Deep Learning",
+        "materials": [
+            {
+                "title": "Using cuDNN",
+                "url": "/notes/using_the_cudnn_library"
+            }
+        ]
     },
     {
         "date": "April 22",

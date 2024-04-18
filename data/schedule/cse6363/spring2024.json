@@ -242,22 +242,41 @@
     },
     {
         "date": "April 16",
-        "topic": "Policy Gradient Methods",
+        "topic": "CANCELLED",
+        "materials": []
+    },
+    {
+        "date": "April 18",
+        "topic": "Policy Gradient Methods, NLP",
         "materials": [
             {
                 "title": "Policy Gradient Methods",
                 "url": "/notes/policy_gradient_methods"
+            },
+            {
+                "title": "Natural Language Processing",
+                "url": "/notes/natural_language_processing"
             }
         ]
     },
     {
-        "date": "April 18",
-        "topic": "Natural Language Processing",
+        "date": "April 23",
+        "topic": "Large Language Models",
         "materials": [
             {
                 "title": "Natural Language Processing",
                 "url": "/notes/natural_language_processing"
             }
         ]
+    },
+    {
+        "date": "April 25",
+        "topic": "Project Presentations",
+        "materials": []
+    },
+    {
+        "date": "April 30",
+        "topic": "Project Presentations",
+        "materials": []
     }
 ]
