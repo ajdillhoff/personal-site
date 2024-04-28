@@ -41,7 +41,7 @@ A **flow** in a graph \\(G\\) satisfies two properties:
     \\[
        0 \leq f(u,v) \leq c(u,v).
        \\]
-2.  **Flow conservation:** For all $u &isin; V - \\{s, t\\},
+2.  **Flow conservation:** For all \\(u \in V - \\{s, t\\}\\),
     \\[
        \sum\_{v \in V} f(v, u) = \sum\_{v \in V} f(u, v).
        \\]
@@ -70,6 +70,61 @@ Ford-Fulkerson relies on three foundational concepts:
 1.  Residual networks
 2.  Augmenting paths
 3.  Cuts
+
+The solution presented by Ford and Fulkerson is not a single algorithm but rather a set of general instructions.
+
+1.  Initialize \\(f(u, v) = 0\\) for all \\(u,v \in V\\), giving an initial flow of 0.
+2.  Increase the flow by finding an **augmenting path** in a **residual network**.
+3.  The edges of the augmented path indicate where to increase the flow.
+
+This is repeated until the residual network has no more augmenting paths.
+
+
+### Residual Networks {#residual-networks}
+
+Consider a pair of vertices \\(u, v \in V\\), the residual capacity \\(c\_f(u, v)\\) is amount of additional flow that can be pushed from \\(u\\) to \\(v\\).
+
+\\[
+c\_f(u, v)= \begin{cases}
+c(u,v) - f(u, v)\quad \text{if } (u,v) \in E,\\\\
+f(v, u)\quad \text{if } (v, u) \in E,\\\\
+0\quad \text{otherwise (i.e., } (u, v), (v, u) \notin E).
+   \end{cases}
+\\]
+
+The **residual network** is \\(G\_f = (V, E\_f)\\), where
+
+\\[
+E\_f= \\{(u, v) \in V \times V : c\_f(u, v) > 0\\}.
+\\]
+
+The edges of \\(G\_f\\) represent those edges in \\(G\\) with the capacity to change the flow. There is also no requirement for all edges in \\(G\\) to be present in \\(G\_f\\). As the algorithm works out the solution, we are only considered with edges that permit more flow.
+
+An edge \\((u, v) \in E\\) means that the reverse edge \\((v, u) \notin E\\). However, the residual network can have edges that are not in \\(G\\). These are used to represent paths in which flow is sent in the reverse direction. This can happen if reducing flow from one edge results in a net increase across some other.
+
+In \\(G\_f\\), the reverse edges \\((v, u)\\) represent the flow on \\((u, v) \in G\\) that could be sent back.
+
+{{< figure src="/ox-hugo/2024-04-19_15-29-03_screenshot.png" caption="<span class=\"figure-number\">Figure 4: </span>A flow network and its residual network (<a href=\"#citeproc_bib_item_1\">Cormen et al. 2022</a>)." >}}
+
+
+#### Augmentation Function {#augmentation-function}
+
+Given flows \\(f\\) in \\(G\\) and \\(f'\\) in \\(G\_f\\), define the **augmentation** of \\(f\\) by \\(f'\\), as a function \\(V \times V \rightarrow \mathbb{R}\\):
+
+\\[
+(f \uparrow f')(u, v) = \begin{cases}
+        f(u, v) + f'(u, v) - f'(u, v)\quad \text{it } (u, v) \in E,\\\\
+        0 \quad \text{otherwise}
+   \end{cases}
+\\]
+
+for all \\((u, v) \in V\\).
+
+This augmentation function represents an increase of flow on \\((u, v)\\) by \\(f'(u, v)\\) with a decrease by \\(f'(v, u)\\) since pushing flow on the reverse edge in \\(G\_f\\) represents a decrease in \\(G\\). This is known as **cancellation**.
+
+**Lemma**
+
+Given a flow network \\(G\\), a flow \\(f\\) in \\(G\\), and the residual network \\(G\_f\\), let \\(f'\\) be a flow in \\(G\_f\\). Then \\((f \uparrow f')\\) is a flow in \\(G\\) with value \\(|f \uparrow f'| = |f| + |f'|\\).
 
 
 ## A linear time solution {#a-linear-time-solution}

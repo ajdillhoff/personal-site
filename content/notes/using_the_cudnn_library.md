@@ -87,6 +87,38 @@ cudaMalloc(&data, n * c * h * w * sizeof(float));
 ```
 
 
+### Retrieving Tensor Information {#retrieving-tensor-information}
+
+To retrieve the properties of a tensor that already exists, we can use the `cudnnGetTensor4dDescriptor` function.
+
+```C
+cudnnStatus_t cudnnGetTensor4dDescriptor(
+    const cudnnTensorDescriptor_t  tensorDesc,
+    cudnnDataType_t         *dataType,
+    int                     *n,
+    int                     *c,
+    int                     *h,
+    int                     *w,
+    int                     *nStride,
+    int                     *cStride,
+    int                     *hStride,
+    int                     *wStride)
+```
+
+The parameters are as follows:
+
+-   `tensorDesc`: the tensor descriptor
+-   `dataType`: the data type of the tensor
+-   `n`: the number of batches
+-   `c`: the number of channels
+-   `h`: the height of the tensor
+-   `w`: the width of the tensor
+-   `nStride`: the stride of the batch dimension
+-   `cStride`: the stride of the channel dimension
+-   `hStride`: the stride of the height dimension
+-   `wStride`: the stride of the width dimension
+
+
 ## Dense Layers {#dense-layers}
 
 A **dense layer** refers to a fully connected layer in a neural network. Each neuron in the layer is connected to every neuron in the previous layer. The weights of the connections are stored in a matrix, and the biases are stored in a vector. Implementing the forward and backward pass of a dense layer involves matrix multiplication and addition for which cuBLAS has optimized routines.
@@ -474,6 +506,77 @@ The parameters are as follows:
 -   `beta`: scalar modifier for the output tensor
 -   `yDesc`: the output tensor descriptor
 -   `y`: the output tensor
+
+
+### Backward Pass {#backward-pass}
+
+There are three different backward passes for a convolutional layer: one for the weights, one for the input tensor, and one for the bias.
+
+
+#### Weights {#weights}
+
+The backward pass for the weights is implemented with the `cudnnConvolutionBackwardFilter` function.
+
+```C
+cudnnStatus_t cudnnConvolutionBackwardFilter(
+    cudnnHandle_t                       handle,
+    const void                         *alpha,
+    const cudnnTensorDescriptor_t       xDesc,
+    const void                         *x,
+    const cudnnTensorDescriptor_t       dyDesc,
+    const void                         *dy,
+    const cudnnConvolutionDescriptor_t  convDesc,
+    cudnnConvolutionBwdFilterAlgo_t     algo,
+    void                               *workSpace,
+    size_t                              workSpaceSizeInBytes,
+    const void                         *beta,
+    const cudnnFilterDescriptor_t       dwDesc,
+    void                               *dw)
+```
+
+A detailed description of the parameters can be found [here.](https://docs.nvidia.com/deeplearning/cudnn/latest/api/cudnn-cnn-library.html#cudnnconvolutionbackwardfilter)
+
+
+#### Bias {#bias}
+
+The backward pass for the bias is implemented with the `cudnnConvolutionBackwardBias` function.
+
+```C
+cudnnStatus_t cudnnConvolutionBackwardBias(
+    cudnnHandle_t                    handle,
+    const void                      *alpha,
+    const cudnnTensorDescriptor_t    dyDesc,
+    const void                      *dy,
+    const void                      *beta,
+    const cudnnTensorDescriptor_t    dbDesc,
+    void                            *db)
+```
+
+A detailed description of the parameters can be found [here.](https://docs.nvidia.com/deeplearning/cudnn/latest/api/cudnn-cnn-library.html#cudnnconvolutionbackwardbias)
+
+
+#### Input {#input}
+
+The backward pass for the input tensor is implemented with the `cudnnConvolutionBackwardData` function.
+
+```C
+cudnnStatus_t cudnnConvolutionBackwardData(
+    cudnnHandle_t                       handle,
+    const void                         *alpha,
+    const cudnnFilterDescriptor_t       wDesc,
+    const void                         *w,
+    const cudnnTensorDescriptor_t       dyDesc,
+    const void                         *dy,
+    const cudnnConvolutionDescriptor_t  convDesc,
+    cudnnConvolutionBwdDataAlgo_t       algo,
+    void                               *workSpace,
+    size_t                              workSpaceSizeInBytes,
+    const void                         *beta,
+    const cudnnTensorDescriptor_t       dxDesc,
+    void                               *dx)
+```
+
+A detailed description of the parameters can be found [here](https://docs.nvidia.com/deeplearning/cudnn/latest/api/cudnn-cnn-library.html#cudnnconvolutionbackwarddata).
 
 
 ## Pooling {#pooling}

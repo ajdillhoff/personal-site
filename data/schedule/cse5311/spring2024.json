@@ -151,36 +151,45 @@
     },
     {
         "date": "April 24",
-        "topic": "Maximum Flow, Quiz 3",
+        "topic": "All-Pairs Shortest Path, Quiz 3",
         "materials": [
             {
-                "title": "Maximum Flow",
-                "url": "/notes/maximum_flow"
+                "title": "All-Pairs Shortest Paths",
+                "url": "/notes/all_pairs_shortest_paths"
             }
         ]
     },
     {
         "date": "April 29",
-        "topic": "P vs. NP, Parallel Algorithms",
+        "topic": "Maximum Flow, Parallel Algorithms",
         "materials": [
+            {
+                "title": "Maximum Flow",
+                "url": "/notes/maximum_flow"
+            },
             {
                 "title": "Parallel Sorting Algorithms",
                 "url": "/notes/parallel_sorting_algorithms"
-            },
-            {
-                "title": "Parallel Merge",
-                "url": "/notes/gpu_pattern_merge"
             }
         ]
     },
     {
         "date": "May 1",
-        "topic": "Machine Learning Algorithms, Quiz 4",
-        "materials": []
+        "topic": "Parallel Algorithms, Intractability, Quiz 4",
+        "materials": [
+            {
+                "title": "Parallel Merge",
+                "url": "/notes/gpu_pattern_merge"
+            },
+            {
+                "title": "NP-Completeness",
+                "url": "/notes/np_completeness"
+            }
+        ]
     },
     {
         "date": "May 6",
-        "topic": "Exam 2",
+        "topic": "Machine Learning Algorithms, Exam 2",
         "materials": []
     }
 ]

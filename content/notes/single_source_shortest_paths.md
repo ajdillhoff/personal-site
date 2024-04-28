@@ -12,6 +12,7 @@ draft = false
 
 - [Definition](#definition)
 - [Bellman-Ford](#bellman-ford)
+- [Shortest Paths on a DAG](#shortest-paths-on-a-dag)
 - [Dijkstra's Algorithm](#dijkstra-s-algorithm)
 
 </div>
@@ -44,6 +45,11 @@ The shortest-path weight between two vertices \\(u\\) and \\(v\\) is given by
 \\]
 
 where \\(P(u, v)\\) is the set of all paths from \\(u\\) to \\(v\\). The shortest-path weight from \\(s\\) to \\(t\\) is given by \\(\delta(s, t)\\).
+
+The output of a shortest-path algorithm will produce, for each vertex \\(v \in V\\):
+
+-   \\(v.d\\): The shortest-path estimate from \\(s\\) to \\(v\\).
+-   \\(v.\pi\\): The predecessor of \\(v\\) in the shortest path from \\(s\\) to \\(v\\).
 
 Shortest-path algorithms rely on an optimal substructure property that is defined by Lemma 22.1 (<a href="#citeproc_bib_item_1">Cormen et al. 2022</a>).
 
@@ -115,9 +121,78 @@ In the figure below, graph (a) shows the original graph before iterating over th
 {{< figure src="/ox-hugo/2023-10-24_21-05-33_screenshot.png" caption="<span class=\"figure-number\">Figure 1: </span>Step-by-step execution of Bellman-Ford on a graph with negative-weight edges (<a href=\"#citeproc_bib_item_1\">Cormen et al. 2022</a>)." >}}
 
 
+### Correctness {#correctness}
+
+Bellman-Ford is guaranteed to converge after \\(|V| - 1\\) iterations, assuming no negative-weight cycles.
+
+
+#### Proof {#proof}
+
+The first iteration relaxes \\((v\_0, v\_1)\\). The second iteration relaxes \\((v\_1, v\_2)\\), and so on. The **path-relaxation** property from before implies that \\(v.d = v\_k.d = \delta(s, v\_k) = \delta(s, v)\\). If there is a negative-weight cycle, then the shortest path to \\(v\_k\\) is not well-defined. This is verified in the final loop over the edges.
+
+```python
+for (u, v) in G.E:
+    if v.d > u.d + w(u, v):
+        return False
+```
+
+If there exists a negative-weight cycle \\(c = \langle v\_0, v\_1, \dots, v\_k \rangle\\), where \\(v\_0 = v\_k\\) that can be reached from \\(s\\), then
+
+\\[
+\sum\_{i=1}^{k} w(v\_{i-1}, v\_i) < 0.
+\\]
+
+To complete the proof by contradiction, assume that Bellman-Ford returns `True`. Then we would have that \\(v\_i.d \leq v\_{i-1}.d + w(v\_{i-1}, v\_i)\\) for \\(i = 1, 2, \dots, k\\) by the **triangle inequality** property. If we sum around the cycle, we get
+
+\begin{align\*}
+\sum\_{i=1}^k v\_i.d &\leq \sum\_{i=1}^k (v\_{i-1}.d + w(v\_{i-1}, v\_i))\\\\
+&= \sum\_{i=1}^k v\_{i-1}.d + \sum\_{i=1}^k w(v\_{i-1}, v\_i)\\\\
+\end{align\*}
+
+Since the vertices are in a cycle, each vertex appears only once in each summation \\(\sum\_{i=1}^k v\_{i}.d\\) and \\(\sum\_{i=1}^k v\_{i-1}.d\\). Subtracting this from both sides of the inequality, we get
+
+\\[
+0 \leq \sum\_{i=1}^k w(v\_{i-1}, v\_i).
+\\]
+
+This contradicts the assumption that there is a negative-weight cycle. Therefore, if Bellman-Ford returns `True`, then there are no negative-weight cycles.
+
+
 ### Analysis {#analysis}
 
 Using an adjacency list representation, the runtime of Bellman-Ford is \\(O(V^2 + VE)\\). The initialization takes \\(\Theta(V)\\). Each of the \\(|V| - 1\\) iterations over the edges takes \\(\Theta(V + E)\\), and the final check for negative-weight cycles takes \\(\Theta(V + E)\\). If the number of edges and vertices is such that the number of vertices are a lower bound on the edges, then the runtime is \\(O(VE)\\).
+
+
+### Example 22.1-1 {#example-22-dot-1-1}
+
+Run Bellman-Ford on the given path using \\(z\\) as the source. Then change the weight of \\((z, x)\\) to 4 and run it again with \\(s\\) as the source.
+
+{{< figure src="/ox-hugo/2024-04-22_11-13-14_screenshot.png" caption="<span class=\"figure-number\">Figure 2: </span>Figure 22.4 from (<a href=\"#citeproc_bib_item_1\">Cormen et al. 2022</a>)." >}}
+
+
+## Shortest Paths on a DAG {#shortest-paths-on-a-dag}
+
+If we are given a directed acyclic graph (DAG), we can solve the single-source shortest path problem in \\(O(V + E)\\) time. By definition, the graph has no cycles and thus no negative-weight cycles.
+
+```python
+def dag_shortest_paths(G, w, s):
+    initialize_single_source(G, s)
+    for u in topological_sort(G):
+        for v in G.adj[u]:
+            relax(u, v, w)
+```
+
+
+### Example {#example}
+
+Run `dag_shortest_paths` on the graph given below with \\(s\\) as the source.
+
+{{< figure src="/ox-hugo/2024-04-22_11-23-05_screenshot.png" caption="<span class=\"figure-number\">Figure 3: </span>Figure 22.5 from (<a href=\"#citeproc_bib_item_1\">Cormen et al. 2022</a>)." >}}
+
+
+### Analysis {#analysis}
+
+The runtime of `dag_shortest_paths` is \\(O(V + E)\\), where \\(V\\) is the number of vertices and \\(E\\) is the number of edges. The topological sort takes \\(O(V + E)\\) time. Initializing the vertices takes \\(O(V)\\) time. The first `for` loop makes on iteration per vertex, and the inner loop relaxes each edge only once.
 
 
 ## Dijkstra's Algorithm {#dijkstra-s-algorithm}
@@ -144,7 +219,7 @@ def dijkstra(G, w, s):
 
 A Python example of the figure below is available [here](<https://github.com/ajdillhoff/python-examples/blob/main/data_structures/graphs/dijkstras_algorithm.ipynb>).
 
-{{< figure src="/ox-hugo/2023-10-25_08-21-04_screenshot.png" caption="<span class=\"figure-number\">Figure 2: </span>A step-by-step execution of Dijkstra's algorithm on a graph with non-negative edge weights (<a href=\"#citeproc_bib_item_1\">Cormen et al. 2022</a>)." >}}
+{{< figure src="/ox-hugo/2023-10-25_08-21-04_screenshot.png" caption="<span class=\"figure-number\">Figure 4: </span>A step-by-step execution of Dijkstra's algorithm on a graph with non-negative edge weights (<a href=\"#citeproc_bib_item_1\">Cormen et al. 2022</a>)." >}}
 
 
 ### Analysis {#analysis}

@@ -327,7 +327,12 @@
     {
         "date": "April 22",
         "topic": "Dynamic Parallelism",
-        "materials": []
+        "materials": [
+            {
+                "title": "Dynamic Parallelism",
+                "url": "/notes/dynamic_parallelism"
+            }
+        ]
     },
     {
         "date": "April 24",
