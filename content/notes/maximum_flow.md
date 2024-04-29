@@ -13,7 +13,6 @@ draft = false
 - [Objective Questions](#objective-questions)
 - [Maximum Flow](#maximum-flow)
 - [A polynomial time solution](#a-polynomial-time-solution)
-- [A linear time solution](#a-linear-time-solution)
 
 </div>
 <!--endtoc-->
@@ -35,7 +34,7 @@ A **flow network** \\(G = (V, E)\\) is a directed graph in which each edge \\((u
 
 {{< figure src="/ox-hugo/2024-04-13_19-02-08_screenshot.png" caption="<span class=\"figure-number\">Figure 1: </span>A flow network. Each edge depicts \\(f(u,v)/c(u,v)\\), the flow and capacity (<a href=\"#citeproc_bib_item_1\">Cormen et al. 2022</a>)." >}}
 
-A **flow** in a graph \\(G\\) satisfies two properties:
+A **flow** in a graph \\(G\\) is a function \\(f : V \times V \rightarrow \mathbb{R}\\) that satisfies two properties:
 
 1.  **Capacity constraint:** For all \\(u, v \in V\\),
     \\[
@@ -113,7 +112,7 @@ Given flows \\(f\\) in \\(G\\) and \\(f'\\) in \\(G\_f\\), define the **augmenta
 
 \\[
 (f \uparrow f')(u, v) = \begin{cases}
-        f(u, v) + f'(u, v) - f'(u, v)\quad \text{it } (u, v) \in E,\\\\
+        f(u, v) + f'(u, v) - f'(u, v)\quad \text{if } (u, v) \in E,\\\\
         0 \quad \text{otherwise}
    \end{cases}
 \\]
@@ -126,8 +125,121 @@ This augmentation function represents an increase of flow on \\((u, v)\\) by \\(
 
 Given a flow network \\(G\\), a flow \\(f\\) in \\(G\\), and the residual network \\(G\_f\\), let \\(f'\\) be a flow in \\(G\_f\\). Then \\((f \uparrow f')\\) is a flow in \\(G\\) with value \\(|f \uparrow f'| = |f| + |f'|\\).
 
+This lemma defines the idea of **net** flow. If there are 10 units of flow in one direction and 4 in the other, the edge effectively has 6 units of flow.
 
-## A linear time solution {#a-linear-time-solution}
+
+### Augmenting Paths {#augmenting-paths}
+
+An **augmenting path** is a simple path from the source to the sink in the residual network.
+
+{{< figure src="/ox-hugo/2024-04-28_13-46-13_screenshot.png" caption="<span class=\"figure-number\">Figure 5: </span>An augmenting path in a flow network (<a href=\"#citeproc_bib_item_1\">Cormen et al. 2022</a>)." >}}
+
+The purpose of an augmenting path is to increase the flow from the source to the sink. The flow is increased by the minimum capacity of the edges in the path.
+
+**Lemma 24.2**
+
+Let \\(G = (V, E)\\) be a flow network, let \\(f\\) be a flow in \\(G\\), and let \\(p\\) be an augmenting path in \\(G\_f\\). Define \\(f\_p : V \times V \rightarrow \mathbb{R}\\) by
+
+\\[
+f\_p(u, v) = \begin{cases}
+        c\_f(p) & \text{if } (u, v) \text{ is in } p,\\\\
+        0 & \text{otherwise}.
+   \end{cases}
+\\]
+
+Then \\(f\_p\\) is a flow in \\(G\_f\\) with value \\(|f\_p| > 0\\).
+
+The maximum amount that an augmenting path can be increased is the minimum capacity of the edges in the path. This is known as the **residual capacity** of the path.
+
+\\[
+c\_f(p) = \min \\{c\_f(u, v) : (u, v) \text{ is in } p\\}.
+\\]
+
+Put simply, if there is a path in the residual network, the flow can be increased by the minimum capacity of the edges in the path. If there is no path, the flow is at its maximum.
+
+
+### Cuts {#cuts}
+
+A **cut** \\((S, T)\\) of a flow network \\(G = (V, E)\\) is a partition of \\(V\\) into two sets \\(S\\) and \\(T = V - S\\) such that \\(s \in S\\) and \\(t \in T\\). The **capacity** of the cut is the sum of the capacities of the edges from \\(S\\) to \\(T\\). Any cut is a valid cut as long as the source is in \\(S\\) and the sink is in \\(T\\).
+
+If \\(f\\) is a flow in \\(G\\) and \\((S, T)\\) is a cut of \\(G\\), then the **net flow** across the cut is
+
+\\[
+f(S, T) = \sum\_{u \in S} \sum\_{v \in T} f(u, v) - \sum\_{u \in S} \sum\_{v \in T} f(v, u).
+\\]
+
+The **capacity** of the cut is
+
+\\[
+c(S, T) = \sum\_{u \in S} \sum\_{v \in T} c(u, v).
+\\]
+
+A **minimum cut** is a cut whose capacity is the smallest among all cuts.
+
+**Lemma**
+
+For any flow \\(f\\) and any cut \\((S, T)\\) of \\(G\\), we have that $|f| = f(S, T).$
+
+This lemma states that the flow across a cut is equal to the value of the flow.
+
+**Proof**
+
+\begin{align\*}
+f(S, T) &= f(S, V) - f(S, S)\\\\
+&= f(S, V)\\\\
+&= f(s, V) + f(S - s, V)\\\\
+&= f(s, V) = |f|.
+\end{align\*}
+
+**Key concept:** We can determine the flow by making cuts in the graph. The minimum cut leads to the maximum flow.
+
+**Corollary**
+
+The value of any flow \\(f\\) in a flow network \\(G\\) is bounded from above by the capacity of any cut of \\(G\\).
+
+
+#### Max-flow Min-cut Theorem {#max-flow-min-cut-theorem}
+
+The following statements are logically equivalent.
+
+1.  The flow \\(f\\) is a maximum flow in \\(G\\).
+2.  The residual network \\(G\_f\\) contains no augmenting paths.
+3.  The value of the flow \\(f\\) is equal to the capacity of the cut \\((S, T)\\) for some cut of \\(G\\).
+
+
+### Ford-Fulkerson Algorithm {#ford-fulkerson-algorithm}
+
+The Ford-Fulkerson algorithm is a general method for solving the maximum flow problem. The algorithm is not a single algorithm but rather a set of instructions that can be implemented in different ways. The algorithm is as follows:
+
+```python
+def ford_fulkerson(G, s, t):
+    f = {u: {v: 0 for v in G} for u in G}
+    while True:
+        # Find an augmenting path
+        path = bfs(G, s, t, f)
+        if not path:
+            break
+        cf = min(G[u][v] - f[u][v] for u, v in path)
+        for u, v in path:
+            f[u][v] += cf
+            f[v][u] -= cf
+    return f
+```
+
+
+#### Example {#example}
+
+Run the Ford-Fulkerson algorithm on the following graph.
+
+
+### Analysis {#analysis}
+
+The running time of Ford-Fulkerson hinges on how the augmenting path is found. If implemented with a breadth-first search, the algorithm runs in \\(O(VE^2)\\) time.
+
+
+### Edmonds-Karp Algorithm {#edmonds-karp-algorithm}
+
+The Edmonds-Karp algorithm is a specific implementation of Ford-Fulkerson that uses breadth-first search to find the augmenting path. The algorithm presented above is actually the Edmonds-Karp algorithm.
 
 ## References
 
