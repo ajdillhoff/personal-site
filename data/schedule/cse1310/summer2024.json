@@ -1,0 +1,26 @@
+[
+    {
+        "date": "June 4",
+        "topic": "Course Introduction, Introduction to C",
+        "materials": [
+            {
+                "title": "Introduction",
+                "url": "/teaching/cse1310/lectures/intro.pdf"
+            },
+            {
+                "title": "Introduction to C",
+                "url": "/teaching/cse1310/lectures/intro_to_c.pdf"
+            }
+        ]
+    },
+    {
+        "date": "June 6",
+        "topic": "Introduction to C (Continued)",
+        "materials": [
+            {
+                "title": "Introduction to C",
+                "url": "/teaching/cse1310/lectures/intro_to_c.pdf"
+            }
+        ]
+    }
+]

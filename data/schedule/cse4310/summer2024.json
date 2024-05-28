@@ -1,0 +1,26 @@
+[
+    {
+        "date": "June 4",
+        "topic": "Course Introduction, Color",
+        "materials": [
+            {
+                "title": "Color",
+                "url": "/notes/color"
+            }
+        ]
+    },
+    {
+        "date": "June 6",
+        "topic": "Sampling, Aliasing, Linear Filters",
+        "materials": [
+            {
+                "title": "Sampling and Aliasing",
+                "url": "/notes/sampling"
+            },
+            {
+                "title": "Linear Filters",
+                "url": "/notes/linear_filters"
+            }
+        ]
+    }
+]

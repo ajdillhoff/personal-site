@@ -6,7 +6,7 @@ type: docs
 date: "2023-08-15T00:00:00+01:00"
 draft: false
 menu:
-    cse6363:
+    cse6363-spring2024:
         name: "Schedule"
         parent: "CSE 6363"
 
@@ -16,4 +16,4 @@ weight: 1
 
 This schedule is tentative and may change.
 
-{{< json-table path="schedule/cse6363/summer2024" >}}
+{{< json-table path="schedule/cse6363/spring2024" >}}

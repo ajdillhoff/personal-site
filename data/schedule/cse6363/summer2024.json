@@ -1,0 +1,22 @@
+[
+    {
+        "date": "June 3",
+        "topic": "Course Introcuction, Supervised Learning",
+        "materials": [
+            {
+                "title": "Linear Regression",
+                "url": "/notes/linear_regression"
+            }
+        ]
+    },
+    {
+        "date": "June 5",
+        "topic": "Supervised Learning, Python Crash Course, HW1 Out",
+        "materials": [
+            {
+                "title": "Linear Regression",
+                "url": "/notes/linear_regression"
+            }
+        ]
+    }
+]

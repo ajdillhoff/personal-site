@@ -16,4 +16,4 @@ weight: 1
 
 This schedule is tentative and may change.
 
-{{< json-table path="schedule/cse4310/spring2024" >}}
+{{< json-table path="schedule/cse4310/summer2024" >}}

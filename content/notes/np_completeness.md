@@ -38,11 +38,9 @@ There are three classes of algorithms:
 
 Problems in P are those solvable in polynomial time. This means _any_ constant \\(k\\) such that the running time is \\(O(n^k)\\).
 
-The class NP is a superset of P. These a problems that can be **verified** in polynomial time. This means that if someone gives you a solution to the problem, you can verify that it is correct in polynomial time. This is different from solving the problem in polynomial time. Problems in NP can be solved in **nondeterministic** polynomial time. However, such a model of computation does not exist in the real world.
+The class NP is a superset of P. These are problems that can be **verified** in polynomial time. This means that if someone gives you a solution to the problem, you can verify that it is correct in polynomial time. This is different from solving the problem in polynomial time. Problems in NP can be solved in **nondeterministic** polynomial time. However, such a model of computation does not exist in the real world.
 
 NP-Complete problems are problems in NP that are as _hard_ as any other problem in NP. This means that if you can solve an NP-Complete problem in polynomial time, you can solve any problem in NP in polynomial time. This is why NP-Complete problems are so important.
-
-**TODO: Describe \\(P \neq NP\\)**
 
 
 ### Verifying a Solution {#verifying-a-solution}

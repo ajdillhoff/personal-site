@@ -16,17 +16,17 @@ type: docs  # Do not modify.
 # - name: Declare this menu item as a parent with ID `name`.
 # - weight: Position of link in menu.
 menu:
-    cse1310-summer2023:
+    cse1310:
         name: Home
         weight: 1
 ---
 
-This is the course page for CSE1310 - Introduction to Computers & Programming in Summer 2023. Here you'll find slides and other helpful resources. All assignments and announcements will be posted on Canvas.
+This is the course page for CSE1310 - Introduction to Computers & Programming in Summer 2024. Here you'll find slides and other helpful resources. All assignments and announcements will be posted on Canvas.
 
 ## Teaching Assistants
 
-- Sachit Satyal (sxs3757 (at) mavs (dot) uta (dot) edu)
+- Yan Wang (yan (dot) wang3 (at) mavs (dot) uta (dot) edu)
 
 ## Office Hours
 
-MoWeFri 2PM - 3PM and TuTh 4:30PM - 5:30PM via Teams **(or by appointment).**
+MoWeFri 1PM - 2PM and TuTh 4PM - 5PM via Teams **(or by appointment).**

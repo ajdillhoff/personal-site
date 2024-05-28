@@ -16,7 +16,7 @@ type: docs  # Do not modify.
 # - name: Declare this menu item as a parent with ID `name`.
 # - weight: Position of link in menu.
 menu:
-    cse4310:
+    cse4310-spring2024:
         name: "CSE 4310"
         weight: 1
 ---
@@ -25,10 +25,10 @@ This is the course page for CSE 4310 - Fundamentals of Computer Vision. Here you
 
 ## Teaching Assistants
 
-- TBD
+- Section 001: Roman Strukov (rxs6055 (at) mavs (dot) uta (dot) edu)
 
 ## Office Hours
 | Days    | Time       | Location |
 | ------- | ---------- | -------- |
-| MoWeFri | 1PM - 2PM  | Teams    |
-| TuTh    | 4PM - 5PM  | Team     |
+| MoWeFri | 12PM - 1PM | ERB 651  |
+| TuTh    | 1PM - 2PM  | ERB 125  |
