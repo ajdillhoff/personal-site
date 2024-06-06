@@ -1,25 +1,20 @@
 [
     {
         "date": "June 4",
-        "topic": "Course Introduction, Color",
-        "materials": [
-            {
-                "title": "Color",
-                "url": "/notes/color"
-            }
-        ]
+        "topic": "Course Introduction, Python Review",
+        "materials": []
     },
     {
         "date": "June 6",
-        "topic": "Sampling, Aliasing, Linear Filters",
+        "topic": "Color, Sampling and Aliasing",
         "materials": [
+            {
+                "title": "Light and Color",
+                "url": "/notes/color"
+            },
             {
                 "title": "Sampling and Aliasing",
                 "url": "/notes/sampling"
-            },
-            {
-                "title": "Linear Filters",
-                "url": "/notes/linear_filters"
             }
         ]
     }
