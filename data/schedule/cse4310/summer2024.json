@@ -17,5 +17,33 @@
                 "url": "/notes/sampling"
             }
         ]
+    },
+    {
+        "date": "June 11",
+        "topic": "Linear Filters and Interest Points",
+        "materials": [
+            {
+                "title": "Linear Filters",
+                "url": "/notes/linear_filters"
+            },
+            {
+                "title": "Interest Points",
+                "url": "/notes/image_features"
+            }
+        ]
+    },
+    {
+        "date": "June 13",
+        "topic": "Histogram of Oriented Features, Scale-Invariant Feature Transform",
+        "materials": [
+            {
+                "title": "HOG",
+                "url": "/notes/histogram_of_oriented_gradients"
+            },
+            {
+                "title": "SIFT",
+                "url": "/notes/scale_invariant_feature_transforms"
+            }
+        ]
     }
 ]

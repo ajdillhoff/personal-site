@@ -22,5 +22,19 @@
                 "url": "/notes/logistic_regression"
             }
         ]
+    },
+    {
+        "date": "June 12",
+        "topic": "Review of Probability Theory, Linear Discriminant Analysis",
+        "materials": [
+            {
+                "title": "Probability Theory",
+                "url": "/notes/probability_theory"
+            },
+            {
+                "title": "LDA",
+                "url": "/notes/linear_discriminant_analysis"
+            }
+        ]
     }
 ]

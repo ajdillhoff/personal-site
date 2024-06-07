@@ -22,5 +22,25 @@
                 "url": "/teaching/cse1310/lectures/intro_to_c.pdf"
             }
         ]
+    },
+    {
+        "date": "June 11",
+        "topic": "UNIX, Code Formatting, Input/Output Examples",
+        "materials": [
+            {
+                "title": "Introduction to UNIX",
+                "url": "/teaching/cse1310/lectures/unix.pdf"
+            }
+        ]
+    },
+    {
+        "date": "June 13",
+        "topic": "Control Structures",
+        "materials": [
+            {
+                "title": "Basic Control",
+                "url": "/teaching/cse1310/lectures/basic_control.pdf"
+            }
+        ]
     }
 ]

@@ -3,7 +3,7 @@ title: Schedule
 linktitle: Schedule
 toc: false
 type: docs
-date: "2023-08-15T00:00:00+01:00"
+date: "2024-06-07T00:00:00+01:00"
 draft: false
 menu:
     cse4310:
