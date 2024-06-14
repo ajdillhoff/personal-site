@@ -45,5 +45,37 @@
                 "url": "/notes/scale_invariant_feature_transforms"
             }
         ]
+    },
+    {
+        "date": "June 18",
+        "topic": "Bag of Words, Feature Matching, RANSAC",
+        "materials": [
+            {
+                "title": "Bag of Visual Words",
+                "url": "/notes/bag_of_visual_words"
+            },
+            {
+                "title": "RANSAC",
+                "url": "/notes/random_sample_consensus"
+            }
+        ]
+    },
+    {
+        "date": "June 20",
+        "topic": "Hough Transform, Image Segmentation",
+        "materials": [
+            {
+                "title": "Hough Transform",
+                "url": "/notes/hough_transform"
+            },
+            {
+                "title": "Image Segmentation",
+                "url": "/notes/image_segmentation"
+            },
+            {
+                "title": "Segmentation via Clustering",
+                "url": "/notes/segmentation_via_clustering"
+            }
+        ]
     }
 ]

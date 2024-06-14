@@ -42,5 +42,25 @@
                 "url": "/teaching/cse1310/lectures/basic_control.pdf"
             }
         ]
+    },
+    {
+        "date": "June 18",
+        "topic": "Control Structures",
+        "materials": [
+            {
+                "title": "Loops",
+                "url": "/teaching/cse1310/lectures/loops.pdf"
+            }
+        ]
+    },
+    {
+        "date": "June 20",
+        "topic": "Data Types and Number Systems",
+        "materials": [
+            {
+                "title": "Number Systems",
+                "url": "/teaching/cse1310/lectures/number_systems.pdf"
+            }
+        ]
     }
 ]

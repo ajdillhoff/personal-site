@@ -36,5 +36,24 @@
                 "url": "/notes/linear_discriminant_analysis"
             }
         ]
+    },
+    {
+        "date": "June 17",
+        "topic": "Naive Bayes, Kernels, HW2 Out",
+        "materials": [
+            {
+                "title": "Naive Bayes",
+                "url": "/notes/naive_bayes"
+            },
+            {
+                "title": "Kernels",
+                "url": "/notes/kernels"
+            }
+        ]
+    },
+    {
+        "date": "June 19",
+        "topic": "Juneteenth Holiday",
+        "materials": []
     }
 ]
