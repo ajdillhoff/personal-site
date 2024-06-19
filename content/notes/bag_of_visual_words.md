@@ -22,6 +22,8 @@ The dictionary is the same for all documents in the original dataset. Ideally, t
 
 ## Bag of Visual Words {#bag-of-visual-words}
 
+{{< figure src="/ox-hugo/2024-06-17_18-40-50_screenshot.png" caption="<span class=\"figure-number\">Figure 1: </span>An image and its visual \"words\" ([Li et al.](http://people.csail.mit.edu/torralba/shortCourseRLOC/index.html))" >}}
+
 The Bag of Visual Words model adapts this technique to computer vision. Instead of words, distinct visual features are extracted from each image. Some images may have more features than others, similar to how some documents will have different word counts. The dictionary is created by clustering the visual features into a finite number of groups, determined as a hyperparameter. The visual features for each image are then counted and used as a feature vector for a machine learning model.
 
 
@@ -38,6 +40,8 @@ Creating the dictionary requires clustering the features into a finite number of
 ### Build Sparse Frequency Vectors {#build-sparse-frequency-vectors}
 
 The next step is to create a histogram of the visual features for each image. The histogram is a sparse vector, where each element represents the count of a visual feature in the image. The histogram is then normalized to create a feature vector. Given an input image, the feature vector is extracted and assigned a label based on the cluster model. That label is one of the \\(n\\) chosen words in the vocabulary, which is incremented in the histogram.
+
+{{< figure src="/ox-hugo/2024-06-17_18-49-57_screenshot.png" caption="<span class=\"figure-number\">Figure 2: </span>Histogram creates from visual words ([Li et al.](http://people.csail.mit.edu/torralba/shortCourseRLOC/index.html))" >}}
 
 
 ### Adjust Frequency Vectors {#adjust-frequency-vectors}
