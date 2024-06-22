@@ -62,5 +62,25 @@
                 "url": "/teaching/cse1310/lectures/number_systems.pdf"
             }
         ]
+    },
+    {
+        "date": "June 25",
+        "topic": "Arrays",
+        "materials": [
+            {
+                "title": "Arrays",
+                "url": "/teaching/cse1310/lectures/arrays.pdf"
+            }
+        ]
+    },
+    {
+        "date": "June 27",
+        "topic": "Arrays, Midterm Review",
+        "materials": [
+            {
+                "title": "Arrays",
+                "url": "/teaching/cse1310/lectures/arrays.pdf"
+            }
+        ]
     }
 ]

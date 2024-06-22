@@ -77,5 +77,29 @@
                 "url": "/notes/segmentation_via_clustering"
             }
         ]
+    },
+    {
+        "date": "June 25",
+        "topic": "Segmentation by Clustering, Optical Flow",
+        "materials": [
+            {
+                "title": "Segmentation via Clustering",
+                "url": "/notes/segmentation_via_clustering"
+            },
+            {
+                "title": "Optical Flow",
+                "url": "/notes/optical_flow"
+            }
+        ]
+    },
+    {
+        "date": "June 27",
+        "topic": "Tracking",
+        "materials": [
+            {
+                "title": "Tracking",
+                "url": "/notes/tracking"
+            }
+        ]
     }
 ]

@@ -55,5 +55,25 @@
         "date": "June 19",
         "topic": "Juneteenth Holiday",
         "materials": []
+    },
+    {
+        "date": "June 24",
+        "topic": "Support Vector Machine",
+        "materials": [
+            {
+                "title": "Support Vector Machine",
+                "url": "/notes/support_vector_machine"
+            }
+        ]
+    },
+    {
+        "date": "June 26",
+        "topic": "Neural Networks",
+        "materials": [
+            {
+                "title": "Neural Networks",
+                "url": "/notes/neural_networks"
+            }
+        ]
     }
 ]

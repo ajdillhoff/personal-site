@@ -25,7 +25,7 @@ This is the course page for CSE 4310 - Fundamentals of Computer Vision. Here you
 
 ## Teaching Assistants
 
-- TBD
+- Samyam Thapa (sxt4279 (at) mavs (dot) uta (dot) edu)
 
 ## Office Hours
 | Days    | Time       | Location |
