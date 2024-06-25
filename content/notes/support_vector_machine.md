@@ -4,6 +4,7 @@ authors = ["Alex Dillhoff"]
 date = 2022-01-22T00:00:00-06:00
 tags = ["machine learning"]
 draft = false
+lastmod = 2024-06-25
 +++
 
 <div class="ox-hugo-toc toc">
@@ -42,8 +43,6 @@ where \\(\phi(\mathbf{x})\\) is a function which transforms our original input i
 **What about the quality of the decision boundary?**
 
 Is one decision boundary better than the other?
-
-**TODO:** Add a few plots comparing decision boundaries
 
 
 ## Formulation {#formulation}
