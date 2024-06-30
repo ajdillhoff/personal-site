@@ -75,5 +75,29 @@
                 "url": "/notes/neural_networks"
             }
         ]
+    },
+    {
+        "date": "July 1",
+        "topic": "Backpropagation, Bias-Variance Tradeoff, HW3 Out",
+        "materials": [
+            {
+                "title": "Neural Networks",
+                "url": "/notes/neural_networks"
+            },
+            {
+                "title": "Bias-Variance Tradeoff",
+                "url": "/notes/bias_and_variance"
+            }
+        ]
+    },
+    {
+        "date": "July 3",
+        "topic": "Decision Trees",
+        "materials": [
+            {
+                "title": "Decision Trees",
+                "url": "/notes/decision_trees"
+            }
+        ]
     }
 ]

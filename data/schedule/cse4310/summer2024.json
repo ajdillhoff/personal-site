@@ -94,6 +94,11 @@
     },
     {
         "date": "June 27",
+        "topic": "CLASS CANCELLED",
+        "materials": []
+    },
+    {
+        "date": "July 2",
         "topic": "Tracking",
         "materials": [
             {
@@ -101,5 +106,10 @@
                 "url": "/notes/tracking"
             }
         ]
+    },
+    {
+        "date": "July 4",
+        "topic": "Independence Day Holiday",
+        "materials": []
     }
 ]

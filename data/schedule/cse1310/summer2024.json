@@ -75,12 +75,22 @@
     },
     {
         "date": "June 27",
-        "topic": "Arrays, Midterm Review",
+        "topic": "Strings, Midterm Review",
         "materials": [
             {
                 "title": "Arrays",
                 "url": "/teaching/cse1310/lectures/arrays.pdf"
             }
         ]
+    },
+    {
+        "date": "July 2",
+        "topic": "Midterm Exam",
+        "materials": []
+    },
+    {
+        "date": "July 4",
+        "topic": "Independence Day Holiday",
+        "materials": []
     }
 ]
