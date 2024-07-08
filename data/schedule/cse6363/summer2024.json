@@ -101,20 +101,6 @@
         ]
     },
     {
-        "date": "July 8",
-        "topic": "Boosting",
-        "materials": [
-            {
-                "title": "Boosting",
-                "url": "/notes/boosting"
-            },
-            {
-                "title": "Gradient Boosting",
-                "url": "/notes/gradient_boosting"
-            }
-        ]
-    },
-    {
         "date": "July 10",
         "topic": "Deep Learning",
         "materials": [
@@ -125,6 +111,20 @@
             {
                 "title": "Convolutional Neural Networks",
                 "url": "/notes/convolutional_neural_networks"
+            }
+        ]
+    },
+    {
+        "date": "July 8",
+        "topic": "Boosting",
+        "materials": [
+            {
+                "title": "Boosting",
+                "url": "/notes/boosting"
+            },
+            {
+                "title": "Gradient Boosting",
+                "url": "/notes/gradient_boosting"
             }
         ]
     }
