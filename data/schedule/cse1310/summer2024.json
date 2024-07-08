@@ -92,5 +92,20 @@
         "date": "July 4",
         "topic": "Independence Day Holiday",
         "materials": []
+    },
+    {
+        "date": "July 9",
+        "topic": "Functions",
+        "materials": [
+            {
+                "title": "Functions",
+                "url": "/teaching/cse1310/lectures/functions.pdf"
+            }
+        ]
+    },
+    {
+        "date": "July 11",
+        "topic": "Debugging",
+        "materials": []
     }
 ]

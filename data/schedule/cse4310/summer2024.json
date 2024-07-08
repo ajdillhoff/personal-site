@@ -111,5 +111,33 @@
         "date": "July 4",
         "topic": "Independence Day Holiday",
         "materials": []
+    },
+    {
+        "date": "July 9",
+        "topic": "Camera Calibration, Stereo Vision",
+        "materials": [
+            {
+                "title": "Camera Models",
+                "url": "/notes/camera_models"
+            },
+            {
+                "title": "Stereo Vision",
+                "url": "/notes/stereo_vision"
+            }
+        ]
+    },
+    {
+        "date": "July 11",
+        "topic": "Machine Learning Intro.",
+        "materials": [
+            {
+                "title": "Linear Regression",
+                "url": "/notes/linear_regression"
+            },
+            {
+                "title": "Logistic Regression",
+                "url": "/notes/logistic_regression"
+            }
+        ]
     }
 ]
