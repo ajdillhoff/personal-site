@@ -4,7 +4,7 @@ authors = ["Alex Dillhoff"]
 date = 2022-03-11T00:00:00-06:00
 tags = ["machine learning"]
 draft = false
-lastmod = 2024-02-25
+lastmod = 2024-07-10
 +++
 
 <div class="ox-hugo-toc toc">
@@ -16,7 +16,8 @@ lastmod = 2024-02-25
 - [Pinhole Model](#pinhole-model)
 - [From World Space to Image Space](#from-world-space-to-image-space)
 - [Camera Parameters](#camera-parameters)
-- [Camera Calibration](#camera-calibration)
+- [Estimating Camera Parameters](#estimating-camera-parameters)
+- [Application: Camera Calibration](#application-camera-calibration)
 
 </div>
 <!--endtoc-->
@@ -485,15 +486,71 @@ The full transformation from world space to image space is then represented as
 where \\([\mathbf{p}]\_W = \begin{bmatrix}x\\\y\\\z\\\1\end{bmatrix}\\).
 
 
-## Camera Calibration {#camera-calibration}
+## Estimating Camera Parameters {#estimating-camera-parameters}
 
-There are many applications which require that we know the exact camera parameters, including augmented reality, inpainting techniques, and depth estimation.
-We now investigate how, given a fixed world coordinate system with known structure, we can approximate the camera parameters.
+There are many applications which require that we know the exact camera parameters, including augmented reality, inpainting techniques, and depth estimation. We now investigate how, given a fixed world coordinate system with known structure, we can approximate the camera parameters.
 
-Popular software solutions for calibrating cameras are provided by [MATLAB](http://www.vision.caltech.edu/bouguetj/calib_doc/htmls/example.html) and [OpenCV](https://docs.opencv.org/4.x/dc/dbb/tutorial_py_calibration.html).
-These are based off of work by [Zhengyou Zhang](https://www.microsoft.com/en-us/research/project/a-flexible-new-technique-for-camera-calibration-2/?from=https%3A%2F%2Fresearch.microsoft.com%2F%7Ezhang%2FCalib%2F).
-We will follow the original publication to explain the solutions to camera calibration.
-As such, the notation will change a bit.
+Consider a set of \\(n\\) image-to-world point correspondences \\(\mathbf{X}\_i \leftrightarrow \mathbf{x}\_i\\). The goal is to compute a homography \\(\mathbf{H}\\) that relates the image points to the world points: \\(\mathbf{x}\_i = \mathbf{H}\mathbf{X}\_i\\). This relationship can be written as \\(\mathbf{x}\_i \times \mathbf{H}\mathbf{X}\_i = 0\\) because the cross product of two vectors is zero if they are parallel. \\(H\mathbf{x}\_i\\) can be written as
+
+\begin{pmatrix}
+\mathbf{h}\_1^T\mathbf{x}\_i\\\\
+\mathbf{h}\_2^T\mathbf{x}\_i\\\\
+\mathbf{h}\_3^T\mathbf{x}\_i\\\\
+\end{pmatrix}
+
+Then the cross product is given by
+
+\begin{pmatrix}
+y\_i\mathbf{h}\_3^T\mathbf{X}\_i - w\_i\mathbf{h}\_2^T\mathbf{X}\_i\\\\
+w\_i\mathbf{h}\_1^T\mathbf{X}\_i - x\_i\mathbf{h}\_3^T\mathbf{X}\_i\\\\
+x\_i\mathbf{h}\_2^T\mathbf{X}\_i - y\_i\mathbf{h}\_1^T\mathbf{X}\_i\\\\
+\end{pmatrix}
+
+Observing that \\(\mathbf{h}\_j^T\mathbf{X}\_i = \mathbf{X}\_i^T\mathbf{h}\_j\\), we can write this as a homogeneous linear system.
+
+\\[
+\begin{bmatrix}
+\mathbf{0}^T & -w\_i\mathbf{X}\_i^T & y\_i\mathbf{X}\_i^T\\\\
+w\_i\mathbf{X}\_i^T & \mathbf{0}^T & -x\_i\mathbf{X}\_i^T\\\\
+-y\_i\mathbf{X}\_i^T & x\_i\mathbf{X}\_i^T & \mathbf{0}^T\\\\
+\end{bmatrix} \begin{pmatrix}
+\mathbf{h}\_1\\\\
+\mathbf{h}\_2\\\\
+\mathbf{h}\_3\\\\
+\end{pmatrix} = \mathbf{0}
+\\]
+
+This is a linear system whose third equation is linearly dependent on the first two, thus we only need to solve the first two equations.
+
+\\[
+\begin{bmatrix}
+\mathbf{0}^T & -w\_i\mathbf{X}\_i^T & y\_i\mathbf{X}\_i^T\\\\
+w\_i\mathbf{X}\_i^T & \mathbf{0}^T & -x\_i\mathbf{X}\_i^T\\\\
+\end{bmatrix} \begin{pmatrix}
+\mathbf{h}\_1\\\\
+\mathbf{h}\_2\\\\
+\mathbf{h}\_3\\\\
+\end{pmatrix} = \mathbf{0}
+\\]
+
+In practice, this system is denoted as \\(A\_i \mathbf{h} = \mathbf{0}\\) where \\(A\_i\\) is a \\(2 \times 9\\) matrix and \\(\mathbf{h}\\) is a \\(9 \times 1\\) vector. This implies that we need at least 4 point correspondences to solve for \\(\mathbf{h}\\). These correspondences can be used to create 4 matrices \\(A\_i\\) which are then stacked to form a \\(8 \times 9\\) matrix \\(A\\). **But wait... \\(A\\) is only rank 8!** This is because the solution can only be determined up to a scale factor.
+
+If we the matrix had rank 9, then the solution would be trivial. Remember, we're working with a homogeneous linear system.
+
+
+### Relationship to Camera Parameters {#relationship-to-camera-parameters}
+
+Given the basic solution, let's relate this to the camera parameters. Our goal is to estimate \\(P\\) which is a \\(3 \times 4\\) matrix. This matrix is composed of the intrinsic matrix \\(K\\) and the extrinsic matrix \\(M\\). Since each row of \\(P\\) is a 4-vector, each \\(A\_i\\) is a \\(2 \times 12\\) matrix.
+
+
+### Algebraic versus Geometric Error {#algebraic-versus-geometric-error}
+
+The solution to the linear system minimizes the algebraic error. Even if the points are perfectly matched, the solution may not be accurate. This is because the solution is only determined up to a scale factor. The geometric error is minimized by using a non-linear optimization technique such as [Levenberg-Marquardt](https://en.wikipedia.org/wiki/Levenberg%E2%80%93Marquardt_algorithm).
+
+
+## Application: Camera Calibration {#application-camera-calibration}
+
+Popular software solutions for calibrating cameras are provided by [MATLAB](http://www.vision.caltech.edu/bouguetj/calib_doc/htmls/example.html) and [OpenCV](https://docs.opencv.org/4.x/dc/dbb/tutorial_py_calibration.html). These are based off of work by [Zhengyou Zhang](https://www.microsoft.com/en-us/research/project/a-flexible-new-technique-for-camera-calibration-2/?from=https%3A%2F%2Fresearch.microsoft.com%2F%7Ezhang%2FCalib%2F). We will follow the original publication to explain the solutions to camera calibration. As such, the notation will change a bit.
 
 The first goal is to relate the model points \\(\mathbf{M}\\) to the image points \\(\mathbf{m}\\) by a homography \\(\mathbf{H}\\) such that
 

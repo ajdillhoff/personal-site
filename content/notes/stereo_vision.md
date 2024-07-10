@@ -4,6 +4,7 @@ authors = ["Alex Dillhoff"]
 date = 2022-03-23T00:00:00-05:00
 tags = ["algorithms", "computer science"]
 draft = false
+lastmod = 2024-07-10
 +++
 
 <div class="ox-hugo-toc toc">
@@ -30,6 +31,12 @@ The process of computing these correspondences assumes two or more cameras with 
 Methods exist to estimate the required transformation parameters using points based on matching image features.
 If some set of points which a fixed coordinate system is known, such as a calibration pattern, the problem becomes even simpler.
 Knowing the exact world point as it is projected in all image planes is essentially a ground truth.
+
+Hartley and Zisserman address three primary questions when dealing with two views:
+
+1.  **Correspondence geometry:** How does a point in one view constraint the corresponding point in a second view?
+2.  **Camera geometry:** How do we determine the cameras of both views given a set of corresponding image points?
+3.  **Scene geometry:** If we know the cameras and have a set of corresponding points, how can we compute the depth?
 
 
 ## Epipolar Geometry {#epipolar-geometry}
