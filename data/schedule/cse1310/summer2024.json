@@ -105,6 +105,26 @@
     },
     {
         "date": "July 11",
+        "topic": "File I/O",
+        "materials": [
+            {
+                "title": "File I/O",
+                "url": "/teaching/cse1310/lectures/file_io.pdf"
+            }
+        ]
+    },
+    {
+        "date": "July 16",
+        "topic": "File I/O",
+        "materials": [
+            {
+                "title": "File I/O",
+                "url": "/teaching/cse1310/lectures/file_io.pdf"
+            }
+        ]
+    },
+    {
+        "date": "July 18",
         "topic": "Debugging",
         "materials": []
     }

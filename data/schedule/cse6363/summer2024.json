@@ -116,6 +116,16 @@
     },
     {
         "date": "July 10",
+        "topic": "Convolutional Neural Networks",
+        "materials": [
+            {
+                "title": "Convolutional Neural Networks",
+                "url": "/notes/convolutional_neural_networks"
+            }
+        ]
+    },
+    {
+        "date": "July 15",
         "topic": "Boosting",
         "materials": [
             {
@@ -125,6 +135,20 @@
             {
                 "title": "Gradient Boosting",
                 "url": "/notes/gradient_boosting"
+            }
+        ]
+    },
+    {
+        "date": "July 17",
+        "topic": "Optimization Methods, Recurrent Neural Networks, HW4 Out",
+        "materials": [
+            {
+                "title": "Optimization for Deep learning",
+                "url": "/notes/optimization_for_deep_learning"
+            },
+            {
+                "title": "Recurrent Neural Networks",
+                "url": "/notes/recurrent_neural_networks"
             }
         ]
     }

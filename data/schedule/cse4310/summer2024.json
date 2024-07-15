@@ -139,5 +139,24 @@
                 "url": "/notes/logistic_regression"
             }
         ]
+    },
+    {
+        "date": "July 16",
+        "topic": "Intro. to Deep Learning",
+        "materials": [
+            {
+                "title": "Deep Learning",
+                "url": "/notes/deep_learning"
+            },
+            {
+                "title": "Convolutional Neural Networks",
+                "url": "/notes/convolutional_neural_networks"
+            }
+        ]
+    },
+    {
+        "date": "July 18",
+        "topic": "PyTorch Tutorial",
+        "materials": []
     }
 ]
