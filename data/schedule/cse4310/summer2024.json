@@ -142,6 +142,16 @@
     },
     {
         "date": "July 16",
+        "topic": "Neural Networks",
+        "materials": [
+            {
+                "title": "Neural Networks",
+                "url": "/notes/neural_networks"
+            }
+        ]
+    },
+    {
+        "date": "July 18",
         "topic": "Intro. to Deep Learning",
         "materials": [
             {
@@ -153,10 +163,5 @@
                 "url": "/notes/convolutional_neural_networks"
             }
         ]
-    },
-    {
-        "date": "July 18",
-        "topic": "PyTorch Tutorial",
-        "materials": []
     }
 ]
