@@ -163,5 +163,20 @@
                 "url": "/notes/convolutional_neural_networks"
             }
         ]
+    },
+    {
+        "date": "July 23",
+        "topic": "PyTorch Tutorial",
+        "materials": [
+            {
+                "title": "Neural Networks",
+                "url": "/notes/neural_networks"
+            }
+        ]
+    },
+    {
+        "date": "July 25",
+        "topic": "Object Detection",
+        "materials": []
     }
 ]

@@ -140,16 +140,75 @@
     },
     {
         "date": "July 17",
-        "topic": "Optimization Methods, Recurrent Neural Networks, HW4 Out",
+        "topic": "PyTorch Tutorial, HW4 Out",
+        "materials": [
+        ]
+    },
+    {
+        "date": "July 22",
+        "topic": "Optimization for Deep learning",
         "materials": [
             {
                 "title": "Optimization for Deep learning",
                 "url": "/notes/optimization_for_deep_learning"
+            }
+        ]
+    },
+    {
+        "date": "July 24",
+        "topic": "Markov Decision Processes and Reinforcement Learning",
+        "materials": [
+            {
+                "title": "Markov Decision Processes",
+                "url": "/notes/markov_decision_processes"
             },
+            {
+                "title": "Reinforcement Learning",
+                "url": "/notes/reinforcement_learning"
+            },
+            {
+                "title": "Policy Gradient Methods",
+                "url": "/notes/policy_gradient_methods"
+            }
+        ]
+    },
+    {
+        "date": "July 29",
+        "topic": "Unsupervised Learning",
+        "materials": [
+            {
+                "title": "Principal Component Analysis",
+                "url": "/notes/principal_component_analysis"
+            }
+        ]
+    },
+    {
+        "date": "July 31",
+        "topic": "Attention Mechanism, Transformers",
+        "materials": [
             {
                 "title": "Recurrent Neural Networks",
                 "url": "/notes/recurrent_neural_networks"
+            },
+            {
+                "title": "Transformers",
+                "url": "/notes/transformers"
             }
         ]
+    },
+    {
+        "date": "August 5",
+        "topic": "Natural Language Processing",
+        "materials": [
+            {
+                "title": "Natural Language Processing",
+                "url": "/notes/natural_language_processing"
+            }
+        ]
+    },
+    {
+        "date": "August 7",
+        "topic": "Project Presentations",
+        "materials": []
     }
 ]
