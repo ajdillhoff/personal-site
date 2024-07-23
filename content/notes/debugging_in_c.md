@@ -105,6 +105,59 @@ The `if` statement only applies to the first line of code after it. This is a co
 
 ### Logical Errors {#logical-errors}
 
+Errors in logic can be hard to detect, especially as the scope of our problem grows. These errors are not necessarily syntax errors, and they may not even produce a compiler error. They are usually detected by testing the program and verifying that the output matches the expected output.
+
+Consider the [Collatz conjecture](https://en.wikipedia.org/wiki/Collatz_conjecture) problem, as seen on [Project Euler](https://projecteuler.net/problem=14):
+
+> The following iterative sequence is defined for the set of positive integers:
+>
+> n → n/2 (n is even)
+> n → 3n + 1 (n is odd)
+>
+> Using the rule above and starting with 13, we generate the following sequence:
+>
+> 13 → 40 → 20 → 10 → 5 → 16 → 8 → 4 → 2 → 1
+>
+> It can be seen that this sequence (starting at 13 and finishing at 1) contains 10 terms. Although it has not been proved yet (Collatz Problem), it is thought that all starting numbers finish at 1.
+>
+> Which starting number, under one million, produces the longest chain?
+
+An incorrect solution to the problem is shown below.
+
+```c
+#include <stdio.h>
+
+int collatz_steps(long long n) {
+    int steps = 0;
+
+    while (n != 1) {
+        if (!n % 2 == 0) {
+            n = n / 2;
+        } else {
+            n = 3 * n + 1;
+        }
+        printf("%lld", n);
+        if (n != 1) {
+            printf(" -> ");
+        }
+        steps++;
+    }
+
+    printf("\n");
+
+    return steps;
+}
+
+int main() {
+    long long n = 12;
+    int result = collatz_steps(n);
+    printf("Number of steps for %lld to reach 1: %d\n", n, result);
+    return 0;
+}
+```
+
+This solution is _almost_ correct. The issue lies in the `if` statement in the `collatz_steps` function. The condition `!n % 2 == 0` is incorrect. The correct condition should be `n % 2 == 0`. If you organize your code such that your functions are relatively small and modular, you can easily test each function individually to ensure that it works as expected.
+
 
 ### Runtime Errors {#runtime-errors}
 
@@ -232,8 +285,11 @@ Ensuring that our pointers are always initialized to `NULL` saves us a LOT of he
 
 We can inspect the memory of our program with the `x` command. This command takes two arguments: the number of units to print and the format. For example, if we want to print the first 10 bytes of memory, we can do this:
 
-\#+begin_src bash
+```bash
 (gdb) x/10b ptr
+0x0:	0	0	0	0	0	0	0	0
+0x8:	0	0
+```
 
 
 ## Examples {#examples}
