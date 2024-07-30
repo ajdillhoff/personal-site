@@ -176,7 +176,36 @@
     },
     {
         "date": "July 25",
-        "topic": "Object Detection",
-        "materials": []
+        "topic": "Recurrent Neural Networks and Transformers",
+        "materials": [
+            {
+                "title": "Transformers",
+                "url": "/notes/transformers"
+            }
+        ]
+    },
+    {
+        "date": "July 30",
+        "topic": "Object Detection and Instance Segmentation",
+        "materials": [
+            {
+                "title": "Object Detection",
+                "url": "/notes/object_detection"
+            },
+            {
+                "title": "Instance Segmentation",
+                "url": "/notes/instance_segmentation"
+            }
+        ]
+    },
+    {
+        "date": "August 1",
+        "topic": "Generative Adversarial Networks and Vision Transformers",
+        "materials": [
+            {
+                "title": "Vision Transformers",
+                "url": "/notes/transfomers_for_computer_vision"
+            }
+        ]
     }
 ]
