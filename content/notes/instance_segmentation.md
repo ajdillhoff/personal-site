@@ -178,7 +178,7 @@ Each stage after that uses the output bounding boxes from the previous stage as 
 
 {{< figure src="/ox-hugo/2024-07-30_09-15-23_screenshot.png" caption="<span class=\"figure-number\">Figure 9: </span>Original Mask R-CNN (left) and three different Cascade Mask R-CNN strategies (right) (<a href=\"#citeproc_bib_item_1\">Cai and Vasconcelos 2019</a>)." >}}
 
-To adapt the model for instance segmentation, the segmentation branch is inserted in parallel to the detection branch. The main question during develop was _where_ to add the segmentation branch and _how many_ should be added. The authors try several different configurations, as seen in the figure above. Experimentally, the third (right-most) strategy depicted above yields the greatest performance of 35.5% AP.
+To adapt the model for instance segmentation, the segmentation branch is inserted in parallel to the detection branch. The main question during development was _where_ to add the segmentation branch and _how many_ should be added. The authors try several different configurations, as seen in the figure above. Experimentally, the third (right-most) strategy depicted above yields the greatest performance of 35.5% AP.
 
 
 ## MaskFormer (<a href="#citeproc_bib_item_3">Cheng, Schwing, and Kirillov 2021</a>) {#maskformer}
