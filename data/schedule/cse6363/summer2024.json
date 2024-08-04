@@ -156,12 +156,18 @@
     },
     {
         "date": "July 24",
-        "topic": "Markov Decision Processes and Reinforcement Learning",
+        "topic": "Markov Decision Processes",
         "materials": [
             {
                 "title": "Markov Decision Processes",
                 "url": "/notes/markov_decision_processes"
-            },
+            }
+        ]
+    },
+    {
+        "date": "July 29",
+        "topic": "Reinforcement Learning",
+        "materials": [
             {
                 "title": "Reinforcement Learning",
                 "url": "/notes/reinforcement_learning"
@@ -173,7 +179,7 @@
         ]
     },
     {
-        "date": "July 29",
+        "date": "July 31",
         "topic": "Unsupervised Learning",
         "materials": [
             {
@@ -183,7 +189,7 @@
         ]
     },
     {
-        "date": "July 31",
+        "date": "August 5",
         "topic": "Attention Mechanism, Transformers",
         "materials": [
             {
@@ -193,16 +199,6 @@
             {
                 "title": "Transformers",
                 "url": "/notes/transformers"
-            }
-        ]
-    },
-    {
-        "date": "August 5",
-        "topic": "Natural Language Processing",
-        "materials": [
-            {
-                "title": "Natural Language Processing",
-                "url": "/notes/natural_language_processing"
             }
         ]
     },

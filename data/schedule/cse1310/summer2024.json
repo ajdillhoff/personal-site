@@ -142,5 +142,30 @@
         "date": "July 25",
         "topic": "Debugging",
         "materials": []
+    },
+    {
+        "date": "July 30",
+        "topic": "Software Development Life Cycle",
+        "materials": [
+            {
+                "title": "Software Development Life Cycle",
+                "url": "/teaching/cse1310/lectures/sdlc.pdf"
+            }
+        ]
+    },
+    {
+        "date": "August 1",
+        "topic": "Software Development Life Cycle, Final Exam Review",
+        "materials": [
+            {
+                "title": "Software Development Life Cycle",
+                "url": "/teaching/cse1310/lectures/sdlc.pdf"
+            }
+        ]
+    },
+    {
+        "date": "August 6",
+        "topic": "Final Exam",
+        "materials": []
     }
 ]
