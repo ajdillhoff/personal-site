@@ -3,13 +3,12 @@ title: Schedule
 linktitle: Schedule
 toc: false
 type: docs
-date: "2023-08-15T00:00:00+01:00"
+date: "2024-06-07T00:00:00+01:00"
 draft: false
 menu:
-    cse3380-spring2024:
+    cse4310-summer2024:
         name: "Schedule"
-        weight: 1
-        parent: "CSE 3380"
+        parent: "CSE 4310"
 
 # Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
 weight: 1
@@ -17,4 +16,4 @@ weight: 1
 
 This schedule is tentative and may change.
 
-{{< json-table path="schedule/cse3380/spring2024" >}}
+{{< json-table path="schedule/cse4310/summer2024" >}}

@@ -6,7 +6,7 @@ type: docs
 date: "2023-08-15T00:00:00+01:00"
 draft: false
 menu:
-    cse4310:
+    cse4310-summer2024:
         name: "Course Materials"
         parent: "CSE 4310"
         weight: 2

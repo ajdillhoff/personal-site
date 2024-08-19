@@ -16,7 +16,7 @@ type: docs  # Do not modify.
 # - name: Declare this menu item as a parent with ID `name`.
 # - weight: Position of link in menu.
 menu:
-    cse3380:
+    cse3380-spring2024:
         name: "CSE 3380"
         weight: 1
 ---

@@ -1,0 +1,38 @@
+[
+    {
+        "date": "Week 1",
+        "topic": "Course Introduction, CSE 1310 Review",
+        "materials": [
+            {
+                "title": "Introduction",
+                "url": "/teaching/cse1320/lectures/intro.pdf"
+            },
+            {
+                "title": "Introduction to C",
+                "url": "/teaching/cse1320/lectures/intro_to_c.pdf"
+            },
+            {
+                "title": "Number Systems",
+                "url": "/teaching/cse1320/lectures/number_systems.pdf"
+            }
+        ]
+    },
+    {
+        "date": "Week 2",
+        "topic": "CSE 1310 Review",
+        "materials": [
+            {
+                "title": "Arrays",
+                "url": "/teaching/cse1320/lectures/arrays.pdf"
+            },
+            {
+                "title": "Loops",
+                "url": "/teaching/cse1320/lectures/loops.pdf"
+            },
+            {
+                "title": "File I/O",
+                "url": "/teaching/cse1320/lectures/file_io.pdf"
+            }
+        ]
+    }
+]
