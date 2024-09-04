@@ -24,5 +24,59 @@
                 "url": "/notes/logistic_regression"
             }
         ]
+    },
+    {
+        "date": "August 26",
+        "topic": "Multi-class Classification",
+        "materials": [
+            {
+                "title": "Logistic Regression",
+                "url": "/notes/logistic_regression"
+            },
+            {
+                "title": "Regularization",
+                "url": "/notes/regularization"
+            }
+        ]
+    },
+    {
+        "date": "August 28",
+        "topic": "Probability Theory Review",
+        "materials": [
+            {
+                "title": "Probability Theory",
+                "url": "/notes/probability_theory"
+            }
+        ]
+    },
+    {
+        "date": "August 30",
+        "topic": "Linear Discriminant Analysis",
+        "materials": [
+            {
+                "title": "Linear Discriminant Analysis",
+                "url": "/notes/linear_discriminant_analysis"
+            }
+        ]
+    },
+    {
+        "date": "September 4",
+        "topic": "Naive Bayes Classifier",
+        "materials": [
+            {
+                "title": "Naive Bayes Classifier",
+                "url": "/notes/naive_bayes"
+            }
+        ]
+    },
+    {
+        "date": "September 6",
+        "topic": "Kernels",
+        "materials": [
+            {
+                "title": "Kernels",
+                "url": "/notes/kernels"
+            }
+        ]
     }
 ]

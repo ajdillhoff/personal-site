@@ -24,3 +24,4 @@ weight: 2
 
 - [3blue1brown - Essence of Linear Algebra](https://youtu.be/fNk_zzaMoSs)
 - [Python Programming Language](https://www.python.org/)
+- [Why row replacement doesn't change the solution set](https://www.math.utah.edu/~schwede/MichiganClasses/math217/RowReplacementIsOk.pdf)
