@@ -65,5 +65,29 @@
                 "url": "/notes/kernels"
             }
         ]
+    },
+    {
+        "date": "September 9",
+        "topic": "Support Vector Machine",
+        "materials": [
+            {
+                "title": "Support Vector Machine",
+                "url": "/notes/support_vector_machine"
+            }
+        ]
+    },
+    {
+        "date": "September 11",
+        "topic": "Support Vector Machine, Perceptron",
+        "materials": [
+            {
+                "title": "Support Vector Machine",
+                "url": "/notes/support_vector_machine"
+            },
+            {
+                "title": "Perceptron",
+                "url": "/notes/perceptron"
+            }
+        ]
     }
 ]

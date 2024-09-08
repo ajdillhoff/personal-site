@@ -28,5 +28,15 @@
                 "url": ""
             }
         ]
+    },
+    {
+        "date": "Week 4",
+        "topic": "Determinants, Vector Spaces, and Linear Independence",
+        "materials": [
+            {
+                "title": "3.2, 4.1, 4.2, 4.3",
+                "url": ""
+            }
+        ]
     }
 ]
