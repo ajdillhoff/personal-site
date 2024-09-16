@@ -62,5 +62,20 @@
                 "url": "/teaching/cse1320/lectures/dynamic_memory.pdf"
             }
         ]
+    },
+    {
+        "date": "Week 5",
+        "topic": "Dynamic Memory Allocation",
+        "materials": [
+            {
+                "title": "Dynamic Memory Allocation",
+                "url": "/teaching/cse1320/lectures/dynamic_memory.pdf"
+            }
+        ]
+    },
+    {
+        "date": "Week 6",
+        "topic": "Exam 1",
+        "materials": []
     }
 ]

@@ -108,5 +108,35 @@
                 "url": "/notes/perceptron"
             }
         ]
+    },
+    {
+        "date": "September 16",
+        "topic": "Artificial Neural Networks and Backpropagation",
+        "materials": [
+            {
+                "title": "Neural Networks",
+                "url": "/notes/neural_networks"
+            }
+        ]
+    },
+    {
+        "date": "September 18",
+        "topic": "Bias-Variance Tradeoff",
+        "materials": [
+            {
+                "title": "Bias-Variance Tradeoff",
+                "url": "/notes/bias_and_variance"
+            }
+        ]
+    },
+    {
+        "date": "September 20",
+        "topic": "Decision Trees",
+        "materials": [
+            {
+                "title": "Decision Trees",
+                "url": "/notes/decision_trees"
+            }
+        ]
     }
 ]
