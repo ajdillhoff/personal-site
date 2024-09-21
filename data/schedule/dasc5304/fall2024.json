@@ -113,5 +113,33 @@
                 "url": "/notes/decision_trees"
             }
         ]
+    },
+    {
+        "date": "September 23",
+        "topic": "Ensemble Methods",
+        "materials": [
+            {
+                "title": "Random Forest",
+                "url": "/notes/gradient_boosting"
+            },
+            {
+                "title": "Boosting",
+                "url": "/notes/boosting"
+            }
+        ]
+    },
+    {
+        "date": "September 27",
+        "topic": "Gradient Boosting, Introduction to Deep Learning",
+        "materials": [
+            {
+                "title": "Gradient Boosting",
+                "url": "/notes/gradient_boosting"
+            },
+            {
+                "title": "Deep Learning",
+                "url": "/notes/deep_learning"
+            }
+        ]
     }
 ]

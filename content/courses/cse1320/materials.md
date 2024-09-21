@@ -23,10 +23,12 @@ weight: 2
 
 - [Submitting Assignments using GitHub](/notes/submitting_assignments_using_github/)
 - [Using GCC with MinGW](https://code.visualstudio.com/docs/cpp/config-mingw)
+- [Using GCC with WSL](https://code.visualstudio.com/docs/remote/wsl)
 - [CSE 13xx SharePoint](https://mavsuta.sharepoint.com/sites/cse13xx)
 - [C/C++ Reference](https://en.cppreference.com/w/)
 - [The Linux Command Line](http://linuxcommand.org/tlcl.php)
 - [Git Cheat Sheet](https://education.github.com/git-cheat-sheet-education.pdf)
+- [Why not explicitly #include .c files?](https://stackoverflow.com/questions/52792348/why-not-explicitly-include-c-files)
 
 ## Programming Practice
 

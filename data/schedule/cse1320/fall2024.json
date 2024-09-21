@@ -65,11 +65,15 @@
     },
     {
         "date": "Week 5",
-        "topic": "Dynamic Memory Allocation",
+        "topic": "Dynamic Memory Allocation, Stacks & Queues",
         "materials": [
             {
                 "title": "Dynamic Memory Allocation",
                 "url": "/teaching/cse1320/lectures/dynamic_memory.pdf"
+            },
+            {
+                "title": "Stacks & Queues",
+                "url": "/teaching/cse1320/lectures/stacks_queues.pdf"
             }
         ]
     },
