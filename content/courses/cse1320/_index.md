@@ -6,8 +6,8 @@ weight: 2
 
 # Page metadata.
 title: CSE 1320 - Intermediate Programming
-date: "2024-08-19:00:00Z"
-lastmod: "2024-08-19:00:00Z"
+date: "2024-08-19T00:00:00Z"
+lastmod: "2024-08-19T00:00:00Z"
 draft: false  # Is this a draft? true/false
 toc: true  # Show table of contents? true/false
 type: docs  # Do not modify.

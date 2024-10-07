@@ -141,5 +141,41 @@
                 "url": "/notes/deep_learning"
             }
         ]
+    },
+    {
+        "date": "September 30",
+        "topic": "Convolutional Neural Networks",
+        "materials": [
+            {
+                "title": "Convolutional Neural Networks",
+                "url": "/notes/convolutional_neural_networks"
+            }
+        ]
+    },
+    {
+        "date": "October 4",
+        "topic": "Introduction to PyTorch",
+        "materials": []
+    },
+    {
+        "date": "October 7",
+        "topic": "PyTorch Lightning, Optimization for Deep Learning",
+        "materials": [
+
+            {
+                "title": "Optimization for Deep learning",
+                "url": "/notes/optimization_for_deep_learning"
+            }
+        ]
+    },
+    {
+        "date": "October 9",
+        "topic": "Automatic Differentiation",
+        "materials": [
+            {
+                "title": "Automatic Differentiation",
+                "url": "/notes/automatic_differentiation"
+            }
+        ]
     }
 ]

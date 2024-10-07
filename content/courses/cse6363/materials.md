@@ -26,5 +26,7 @@ weight: 2
 
 - [Python Programming Language](https://www.python.org/)
 - [PyTorch](https://pytorch.org/)
+- [PyTorch Lightning](https://www.lightning.ai/)
 - [Anaconda](https://www.anaconda.com/products/individual)
 - [HuggingFace](https://huggingface.co/)
+- [ML Code Challenges](https://www.deep-ml.com/)

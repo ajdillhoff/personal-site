@@ -81,5 +81,33 @@
         "date": "Week 6",
         "topic": "Exam 1",
         "materials": []
+    },
+    {
+        "date": "Week 7",
+        "topic": "Introduction to Data Structures",
+        "materials": [
+            {
+                "title": "Stacks & Queues",
+                "url": "/teaching/cse1320/lectures/stacks_queues.pdf"
+            },
+            {
+                "title": "Linked Lists",
+                "url": "/teaching/cse1320/lectures/linked_lists.pdf"
+            }
+        ]
+    },
+    {
+        "date": "Week 8",
+        "topic": "Data Structures Continued",
+        "materials": [
+            {
+                "title": "Linked Lists",
+                "url": "/teaching/cse1320/lectures/linked_lists.pdf"
+            },
+            {
+                "title": "Binary Search Trees",
+                "url": "/teaching/cse1320/lectures/binary_trees.pdf"
+            }
+        ]
     }
 ]
