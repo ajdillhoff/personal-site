@@ -1,0 +1,34 @@
+[
+    {
+        "date": "October 14",
+        "topic": "Course Introduction, Algorithms, Growth Functions, and Computational Complexity",
+        "materials": [
+            {
+                "title": "Introduction to Algorithms",
+                "url": "/notes/introduction_to_complexity_analysis"
+            },
+            {
+                "title": "Complexity Analysis",
+                "url": "/notes/complexity_analysis"
+            }
+        ]
+    },
+    {
+        "date": "October 16",
+        "topic": "Divide and Conquer Algorithms",
+        "materials": [
+            {
+                "title": "Divide and Conquer",
+                "url": "/notes/divide_and_conquer_algorithms"
+            },
+            {
+                "title": "Substitution Method",
+                "url": "/notes/substitution_method"
+            },
+            {
+                "title": "Recursion Tree Method",
+                "url": "/notes/recursion_tree_method"
+            }
+        ]
+    }
+]

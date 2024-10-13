@@ -4,6 +4,7 @@ authors = ["Alex Dillhoff"]
 date = 2023-09-19T00:00:00-05:00
 tags = ["computer science", "algorithms"]
 draft = false
+lastmod = 2024-10-12
 +++
 
 <div class="ox-hugo-toc toc">
@@ -13,6 +14,7 @@ draft = false
 - [Introduction to Algorithms](#introduction-to-algorithms)
 - [Insertion Sort](#insertion-sort)
 - [Example: Sorting Numbers](#example-sorting-numbers)
+- [Correctness](#correctness)
 - [Worst-Case Analysis](#worst-case-analysis)
 - [Best-Case Analysis](#best-case-analysis)
 - [Rate of Growth](#rate-of-growth)
@@ -28,6 +30,11 @@ draft = false
 One of the major goals of computer science is to solve important problems. In order to do that, we must be able to express those solutions both mathematically and in a way that can be executed by a computer. Further, those solutions need to be aware of the resources that are available to them. It does us no good to come up with a solution that could never be run by current hardware or executed in a reasonable amount of time.
 
 There are of course other considerations besides runtime. How much memory does the solution require? Does it require a lot of data to be stored on disk? What about distributed solutions that can be run on multiple machines? Some solutions can be so complex, that we must also consider their environmental impact. For example, Meta's Llama 2 large language models required 3,311,616 combined GPU hours to train. They report that their total carbon emissions from training were 539 tons of CO2 equivalent (<a href="#citeproc_bib_item_1">Touvron et al. 2023</a>).
+
+
+### What is an algorithm? {#what-is-an-algorithm}
+
+Generally speaking, an **algorithm** is a sequence of steps describing some computational process. It is more abstract that a single function, and an algorithm will typically call many functions to accomplish its task. Algorithms give us a way of translating complex processes from human language into a form that can be executed by a computer.
 
 We begin our algorithmic journey by studying a simple sorting algorithm, insertion sort. First, we need to formally define the problem of sorting. Given a sequence of \\(n\\) objects \\(A = \langle a\_1, a\_2, \ldots, a\_n \rangle\\), we want to rearrange the elements such that \\(a\_1' \leq a\_2' \leq \ldots \leq a\_n'\\). We will assume that the elements are comparable, meaning that we can use the operators \\(<\\) and \\(>\\) to compare them. Some sets, such as the set of all real numbers, have a natural ordering. A useful programming language would provide the required comparison operators. For other types of elements, such as strings, this may not be the case. For example, how would you compare the strings "apple" and "banana"? In these cases, we will need to define our own comparison operators. Either way, we will assume that the comparison operators are available to us.
 
@@ -52,7 +59,51 @@ def insertion_sort(A):
 
 ## Example: Sorting Numbers {#example-sorting-numbers}
 
-TODO: Add a step-by-step example of sorting a list of numbers.
+Using the algorithm above, sort the following set of numbers. Show the output of the set each time an element is swapped.
+
+\\[
+S = \\{10, 4, 7, 0, 2\\}
+\\]
+
+\begin{align\*}
+\\{10, 4, 7, 0, 2\\}\\\\
+\\{4, 10, 7, 0, 2\\}\\\\
+\\{4, 7, 10, 0, 2\\}\\\\
+\\{4, 7, 0, 10, 2\\}\\\\
+\\{4, 0, 7, 10, 2\\}\\\\
+\\{0, 4, 7, 10, 2\\}\\\\
+\\{0, 4, 7, 2, 10\\}\\\\
+\\{0, 4, 2, 7, 10\\}\\\\
+\\{0, 2, 4, 7, 10\\}\\\\
+\end{align\*}
+
+
+## Correctness {#correctness}
+
+When coming up with novel algorithms, we may find that it works with a specific use-case, but not in general. It is important to verify that the algorithm works for all possible inputs. Proving the **correctness** of an algorithm may be tricky in some cases, but we can utilize a few techniques to make it easier. The first such technique is called a **loop invariant**. A loop invariant is a statement that is true before and after each iteration of a loop.
+
+The loop invariant for insertion sort is that the subarray \\(A[0 : i - 1]\\) is sorted. This is chosen based on the task. In some cases, the loop invariant is clear from the problem statement. In others, it may require some thought. It is also possible that more than one loop invariant exists for a given algorithm. To determine if a loop invariant is correct, we must verify three things:
+
+1.  **Initialization**: The loop invariant is true before the first iteration of the loop.
+2.  **Maintenance**: If the loop invariant is true before an iteration of the loop, it remains true after the iteration.
+3.  **Termination**: When the loop terminates, the loop invariant is true.
+
+As long as we can show that the properties above hold, we can be confident that the algorithm is correct. Let's verify the loop invariant for insertion sort.
+
+
+### Initialization {#initialization}
+
+Before the first iteration of the loop, \\(i = 1\\). The subarray \\(A[0 : i - 1] = A[0 : 0] = \langle A[0] \rangle\\). Since a single element is always sorted, the loop invariant is true before the first iteration.
+
+
+### Maintenance {#maintenance}
+
+Assume that the loop invariant is true before the $i$th iteration of the loop. That is, \\(A[0 : i - 1]\\) is sorted. We need to show that the loop invariant remains true after the $i + 1$th iteration. The $i + 1$th iteration of the loop will swap elements in the subarray \\(A[0 : i]\\). The loop invariant is maintained if the subarray \\(A[0 : i]\\) is sorted after the $i + 1$th iteration. This is true because the $i + 1$th iteration will swap elements in the subarray \\(A[0 : i]\\) until the element at index \\(i\\) is in the correct position. Therefore, the loop invariant is maintained.
+
+
+### Termination {#termination}
+
+The loop terminates when \\(i = n\\). At this point, the subarray \\(A[0 : n - 1]\\) is sorted. Since the loop invariant is true after the last iteration, the algorithm is correct.
 
 
 ## Worst-Case Analysis {#worst-case-analysis}
@@ -76,7 +127,7 @@ def insertion_sort(A):
 
 For the `while` loop, we can denote the number of times it runs by \\(t\_i\\), where \\(i\\) is the iteration of the `for` loop. If the `while` condition check costs \\(c\_4\\) and is executed \\(t\_i\\) times for each `for` loop iteration, the total cost is given as \\(c\_4 \sum\_{i=1}^{n-1} t\_i\\).
 
-The statement inside the `while` loop are executed 1 fewer times than the number of times the condition check is executed. Therefore, the total cost of the statements inside the `while` loop is \\(c\_5 \sum\_{i=1}^{n-1} (t\_i - 1) + c\_5 \sum\_{i=1}^{n-1} (t\_i - 1)\\). The cost of the `while` loop is updated in the code below.
+The statements inside the `while` loop are executed 1 fewer times than the number of times the condition check is executed. Therefore, the total cost of the statements inside the `while` loop is \\(c\_5 \sum\_{i=1}^{n-1} (t\_i - 1) + c\_5 \sum\_{i=1}^{n-1} (t\_i - 1)\\). The cost of the `while` loop is updated in the code below.
 
 ```python
 def insertion_sort(A):

@@ -222,5 +222,20 @@
                 "url": "/notes/automatic_differentiation"
             }
         ]
+    },
+    {
+        "date": "October 14",
+        "topic": "Generative Adversarial Networks",
+        "materials": []
+    },
+    {
+        "date": "October 16",
+        "topic": "Unsupervised Learning - Clustering",
+        "materials": []
+    },
+    {
+        "date": "October 18",
+        "topic": "CANCELLED",
+        "materials": []
     }
 ]

@@ -4,6 +4,7 @@ authors = ["Alex Dillhoff"]
 date = 2023-09-25T00:00:00-05:00
 tags = ["computer science", "algorithms", "complexity analysis"]
 draft = false
+lastmod = 2024-10-13
 +++
 
 <div class="ox-hugo-toc toc">
@@ -144,6 +145,31 @@ Lastly, the notation used for an **asymptotically tight bound** is \\(\Theta(g(n
 We had mentioned previously that if \\(f(n) = \Omega(g(n))\\) and \\(f(n) = O(g(n))\\), then \\(f(n) = \Theta(g(n))\\). This is formalized in the following theorem, as stated in Cormen et al.
 
 > For any two functions \\(f(n)\\) and \\(g(n)\\), we have \\(f(n) = \Theta(g(n))\\) if and only if \\(f(n) = O(g(n))\\) and \\(f(n) = \Omega(g(n))\\).
+
+
+### $o$-notation {#o-notation}
+
+There are two less commonly used notations that are worth mentioning. The first is $o$-notation, which is used to describe an upper bound that is _not_ asymptotically tight. It is defined as \\(o(g(n)) = \\{f(n) : \forall c > 0, \exists n\_0 > 0 \text{ such that } 0 \leq f(n) < cg(n) \text{ for all } n \geq n\_0\\}\\).
+
+As an example, the bound on \\(an^3 = O(n^3)\\) is asymptotically tight, but the bound on \\(an^3 = o(n^4)\\) is not. Using the definition of $o$-notation, we can see that \\(an^3 = o(n^4)\\), but \\(an^3 \neq o(n^3)\\).
+
+
+### $&omega;$-notation {#and-omega-notation}
+
+Analogous to $&Omega;$-notation, $&omega;$-notation is used to describe a lower bound that is _not_ asymptotically tight. It is defined as \\(\omega(g(n)) = \\{f(n) : \forall c > 0, \exists n\_0 > 0 \text{ such that } 0 \leq cg(n) < f(n) \text{ for all } n \geq n\_0\\}\\).
+
+It is true that \\(an^3 = \Omega(n^3)\\), but \\(an^3 \neq \omega(n^3)\\).
+
+
+### Summary of Notation {#summary-of-notation}
+
+An easy way to remember each notation is to think of the following:
+
+-   $O$-notation: "less than or equal to"
+-   $&Omega;$-notation: "greater than or equal to"
+-   $&Theta;$-notation: "equal to"
+-   $o$-notation: "strictly less than"
+-   $&omega;$-notation: "strictly greater than"
 
 
 ### Function Properties {#function-properties}

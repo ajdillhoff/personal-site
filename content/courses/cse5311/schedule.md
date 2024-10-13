@@ -3,10 +3,10 @@ title: Schedule
 linktitle: Schedule
 toc: false
 type: docs
-date: "2024-03-12T00:00:00+01:00"
+date: "2024-10-12T00:00:00+01:00"
 draft: false
 menu:
-    cse5311-spring2024:
+    cse5311-fall2024:
         name: "Schedule"
         weight: 1
         parent: "CSE 5311"
@@ -17,4 +17,4 @@ weight: 1
 
 This schedule is tentative and may change.
 
-{{< json-table path="schedule/cse5311/spring2024" >}}
+{{< json-table path="schedule/cse5311/fall2024" >}}

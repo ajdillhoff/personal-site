@@ -177,5 +177,15 @@
                 "url": "/notes/automatic_differentiation"
             }
         ]
+    },
+    {
+        "date": "October 14",
+        "topic": "Generative Adversarial Networks, Unsupervised Learning - Clustering",
+        "materials": []
+    },
+    {
+        "date": "October 16",
+        "topic": "Principal Component Analysis",
+        "materials": []
     }
 ]

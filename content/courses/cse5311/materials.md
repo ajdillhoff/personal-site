@@ -3,10 +3,10 @@ title: Course Materials
 linktitle: Course Materials
 toc: true
 type: docs
-date: "2024-03-12T00:00:00+01:00"
+date: "2024-10-12T00:00:00+01:00"
 draft: false
 menu:
-    cse5311-spring2024:
+    cse5311-fall2024:
         name: "Course Materials"
         weight: 2
         parent: "CSE 5311"

@@ -109,5 +109,19 @@
                 "url": "/teaching/cse1320/lectures/binary_trees.pdf"
             }
         ]
+    },
+    {
+        "date": "Week 9",
+        "topic": "Enums and Binary Search Trees",
+        "materials": [
+            {
+                "title": "Enumerated Types",
+                "url": "/teaching/cse1320/lectures/enums.pdf"
+            },
+            {
+                "title": "Binary Search Trees",
+                "url": "/teaching/cse1320/lectures/binary_trees.pdf"
+            }
+        ]
     }
 ]
