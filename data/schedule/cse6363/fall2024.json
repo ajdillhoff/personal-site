@@ -237,5 +237,25 @@
         "date": "October 18",
         "topic": "CANCELLED",
         "materials": []
+    },
+    {
+        "date": "October 21",
+        "topic": "Principal Component Analysis",
+        "materials": [
+            {
+                "title": "Principal Component Analysis",
+                "url": "/notes/principal_component_analysis"
+            }
+        ]
+    },
+    {
+        "date": "October 23",
+        "topic": "CANCELLED",
+        "materials": []
+    },
+    {
+        "date": "October 25",
+        "topic": "CANCELLED",
+        "materials": []
     }
 ]

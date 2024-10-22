@@ -123,5 +123,20 @@
                 "url": "/teaching/cse1320/lectures/binary_trees.pdf"
             }
         ]
+    },
+    {
+        "date": "Week 10",
+        "topic": "Hash Maps",
+        "materials": [
+            {
+                "title": "Hash Maps",
+                "url": "/teaching/cse1320/lectures/hash_maps.pdf"
+            }
+        ]
+    },
+    {
+        "date": "Week 11",
+        "topic": "Exam 2",
+        "materials": []
     }
 ]

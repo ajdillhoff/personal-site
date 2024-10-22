@@ -30,5 +30,23 @@
                 "url": "/notes/recursion_tree_method"
             }
         ]
+    },
+    {
+        "date": "October 21",
+        "topic": "Master Theorem and Heapsort",
+        "materials": [
+            {
+                "title": "Parallel Mergesort",
+                "url": "/notes/gpu_pattern_merge"
+            },
+            {
+                "title": "Master Theorem",
+                "url": "/notes/master_theorem"
+            },
+            {
+                "title": "Heapsort",
+                "url": "/notes/heapsort"
+            }
+        ]
     }
 ]
