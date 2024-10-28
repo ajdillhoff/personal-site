@@ -48,5 +48,41 @@
                 "url": "/notes/heapsort"
             }
         ]
+    },
+    {
+        "date": "October 28",
+        "topic": "Quicksort, Sorting in Linear Time, Order Statistics",
+        "materials": [
+            {
+                "title": "Quicksort",
+                "url": "/notes/quicksort"
+            },
+            {
+                "title": "Sorting in Linear Time",
+                "url": "/notes/sorting_in_linear_time"
+            },
+            {
+                "title": "Medians and Order Statistics",
+                "url": "/notes/medians_and_order_statistics"
+            }
+        ]
+    },
+    {
+        "date": "October 30",
+        "topic": "Hash Maps and Binary Trees",
+        "materials": [
+            {
+                "title": "Hash Maps",
+                "url": "/notes/hash_tables"
+            },
+            {
+                "title": "Binary Search Trees",
+                "url": "/notes/binary_search_trees"
+            },
+            {
+                "title": "Red-Black Trees",
+                "url": "/notes/red_black_trees"
+            }
+        ]
     }
 ]

@@ -4,6 +4,7 @@ authors = ["Alex Dillhoff"]
 date = 2024-02-25T17:24:00-06:00
 tags = ["algorithms", "computer science"]
 draft = false
+lastmod = 2024-10-27
 +++
 
 <div class="ox-hugo-toc toc">
@@ -19,8 +20,6 @@ draft = false
 <!--endtoc-->
 
 Quicksort is a popular sorting algorithm implemented in many language libraries that has a worst-case running time of \\(\Theta(n^2)\\). **Why would anyone choose this as the default sorting algorithm if one like mergesort has better worst-case performance?** As you will see, the devil is in the details. Quicksort is often faster in practice. It also has a small memory footprint and is easy to implement.
-
-**TODO: Discuss distinct values and the impact on quicksort**
 
 
 ## Basic Quicksort {#basic-quicksort}
@@ -150,7 +149,7 @@ L(n) &= 2U(n/2) + \Theta(n) \\\\
 
 ## Randomized Quicksort {#randomized-quicksort}
 
-The intuition of the crude analysis above is that we would have to be extremely unlucky to get a quadratic running time if the input is randomly ordered. Randomized quicksort builds on this intuition by selection a random pivot on each iteration. This is done by swapping the pivot with a random element before partitioning.
+The intuition of the crude analysis above is that we would have to be extremely unlucky to get a quadratic running time if the input is randomly ordered. Randomized quicksort builds on this intuition by selecting a random pivot on each iteration. This is done by swapping the pivot with a random element before partitioning.
 
 ```python
 import random
@@ -191,7 +190,7 @@ E[X] &= E\left[\sum\_{i=1}^{n-1} \sum\_{j=i+1}^{n} X\_{ij}\right] \\\\
 &= \sum\_{i=1}^{n-1} \sum\_{j=i+1}^{n} P(X\_{ij} = 1).
 \end{align\*}
 
-**What is P(X<sub>ij</sub> = 1)?** Let \\(z\_i, \dots, z\_j\\) be the indices of elements in a sorted version of the array. Under this assumption, \\(z\_i\\) is compared to \\(z\_j\\) only if \\(z\_i\\) or \\(z\_j\\) is the first pivot chosen from the subarray \\(A[i \dots j]\\). In a set of distinct elements, the probability of picking any pivot from the array from \\(i\\) to \\(j\\) is \\(\frac{1}{j - i + 1}\\). This means that the probability of comparing \\(z\_i\\) and \\(z\_j\\) is \\(\frac{2}{j - i + 1}\\). We can now finish the calculation.
+**What is \\(P(X\_{ij} = 1)\\)?** Let \\(z\_i, \dots, z\_j\\) be the indices of elements in a sorted version of the array. Under this assumption, \\(z\_i\\) is compared to \\(z\_j\\) only if \\(z\_i\\) or \\(z\_j\\) is the first pivot chosen from the subarray \\(A[i \dots j]\\). In a set of distinct elements, the probability of picking any pivot from the array from \\(i\\) to \\(j\\) is \\(\frac{1}{j - i + 1}\\). This means that the probability of comparing \\(z\_i\\) and \\(z\_j\\) is \\(\frac{2}{j - i + 1}\\). We can now finish the calculation.
 
 \begin{align\*}
 E[X] &= \sum\_{i=1}^{n-1} \sum\_{j=i+1}^{n} \frac{2}{j - i + 1} \\\\
@@ -208,6 +207,24 @@ Repeat the following until the partitioning until the left or right subarray is 
 
 1.  Choose a random pivot.
 2.  Partition the array.
+3.  Verify that the left and right subarrays are less than or equal to \\(\frac{3}{4}\\) of the original array.
+    1.  If not, repeat the partitioning.
+4.  Recursively sort the subarrays.
+
+
+### Analysis {#analysis}
+
+Most of the analysis of Paranoid Quicksort follows that of randomized quicksort. The focus is on the expected number of calls times `partition` is called until no side of the split is greater than \\(\frac{3}{4}\\) of the input.
+
+Consider a sorted array of \\(n\\) _distinct_ elements. The first and last \\(\frac{n}{4}\\) elements would produce a bad split. That means there are \\(n/2\\) values that provide a good split, implying that \\(p(\text{good split}) = \frac{1}{2}\\). Knowing the probability of this event means we can calculated the expected number of times we should call `partition` before getting a _good_ split, [which is 2.](https://math.stackexchange.com/questions/1196452/expected-value-of-the-number-of-flips-until-the-first-head)
+
+Continuing on with this analysis, we need to state the recurrence:
+
+\\[
+T(n) \leq 2cn + T(\lfloor 3n/4) \rfloor) + T(\lceil n/4 \rceil) + O(1)
+\\]
+
+The addition of \\(2cn\\) is not enough to change our analysis from above. Thus, the expected running time of Quicksort is \\(O(n \log n)\\).
 
 ## References
 

@@ -257,5 +257,30 @@
         "date": "October 25",
         "topic": "CANCELLED",
         "materials": []
+    },
+    {
+        "date": "October 28",
+        "topic": "Recurrent Neural Networks",
+        "materials": [
+            {
+                "title": "Recurrent Neural Networks",
+                "url": "/notes/recurrent_neural_networks"
+            }
+        ]
+    },
+    {
+        "date": "October 30",
+        "topic": "Transformers",
+        "materials": [
+            {
+                "title": "Transformers",
+                "url": "/notes/transformers"
+            }
+        ]
+    },
+    {
+        "date": "November 1",
+        "topic": "Unsupervised Deep Learning",
+        "materials": []
     }
 ]
