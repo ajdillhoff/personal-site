@@ -42,7 +42,7 @@ Property 5 implies that the _black-height_ of a tree is an important property. T
 
 ### Rotate {#rotate}
 
-If a <Binary Search Tree> is balanced, then searching for a node takes \\(O(\log n)\\) time. However, if the tree is unbalanced, then searching can take \\(O(n)\\) time. When items are inserted or deleted from a tree, it can become unbalanced. Without any way to correct for this, a BST is less desirable unless the data will not change.
+If a [binary search tree]({{< relref "binary_search_trees.md" >}}) is balanced, then searching for a node takes \\(O(\log n)\\) time. However, if the tree is unbalanced, then searching can take \\(O(n)\\) time. When items are inserted or deleted from a tree, it can become unbalanced. Without any way to correct for this, a BST is less desirable unless the data will not change.
 
 When nodes are inserted or deleted into a red-black tree, the ****rotation**** operation is used in functions that maintain the red-black properties. This ensures that the tree remains balanced and that operations like search, insert, and delete run in \\(O(\log n)\\) time. The figure below shows the two types of rotations that can be performed on a red-black tree.
 
@@ -153,6 +153,8 @@ def insert_fixup(self, z):
                 self.left_rotate(z.p.p)
     self.root.color = BLACK
 ```
+
+The main logic of this is that the loop will continue to make corrections up the tree until it reaches the root, which must be a black node.
 
 
 #### Case 1 {#case-1}

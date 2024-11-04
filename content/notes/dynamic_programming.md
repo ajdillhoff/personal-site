@@ -4,6 +4,7 @@ authors = ["Alex Dillhoff"]
 date = 2024-03-14T10:40:00-05:00
 tags = ["computer science", "algorithms"]
 draft = false
+lastmod = 2024-11-03
 +++
 
 <div class="ox-hugo-toc toc">
@@ -176,7 +177,7 @@ In the bottom-up approach, the table `s` is used to store the size of the first 
 
 The next problem covered by Cormen et al. is **matrix-chain multiplication** (<a href="#citeproc_bib_item_1">Cormen et al. 2022</a>). Given a sequence of matrices \\(A\_1, A\_2, \ldots, A\_n\\), where the dimensions of matrix \\(A\_i\\) are \\(p\_{i-1} \times p\_i\\), determine the most efficient way to multiply the matrices. The problem is to determine the order in which the matrices should be multiplied so that the number of scalar multiplications is minimized.
 
-Understanding the solution to this problem requires understanding the problem itself. Depending on the order in which matrices are multiplied in a chain, the number of scalar multiplications can vary. Consider three matrices \\(A \in \mathbb{R}^{10 \times 100}\\), \\(B \in \mathbb{R}^{100 \times 5}\\), and \\(C \in \mathbb{R}^{5 \times 50}\\). The number of scalar multiplications required to compute \\(A(BC)\\) is \\(10 \times 100 \times 5 + 10 \times 5 \times 50 = 7500\\), while the number of scalar multiplications required to compute \\((AB)C\\) is \\(10 \times 100 \times 50 + 100 \times 5 \times 50 = 75000\\). The order in which the matrices are multiplied can have a significant impact on the number of scalar multiplications required.
+Understanding the solution to this problem requires understanding the problem itself. Depending on the order in which matrices are multiplied in a chain, the number of scalar multiplications can vary. Consider three matrices \\(A \in \mathbb{R}^{10 \times 100}\\), \\(B \in \mathbb{R}^{100 \times 5}\\), and \\(C \in \mathbb{R}^{5 \times 50}\\). The number of scalar multiplications required to compute \\((AB)C\\) is \\(10 \times 100 \times 5 + 10 \times 5 \times 50 = 7500\\), while the number of scalar multiplications required to compute \\(A(BC)\\) is \\(10 \times 100 \times 50 + 100 \times 5 \times 50 = 75000\\). The order in which the matrices are multiplied can have a significant impact on the number of scalar multiplications required.
 
 Matrix multiplication is associative, so the order in which the matrices are grouped does not matter. The key to solving this problem is to find the most efficient way to group the matrices. The first part of the solution is to determine the number of possible groupings, or parenthesizations, we can make.
 

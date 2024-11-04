@@ -69,7 +69,7 @@
     },
     {
         "date": "October 30",
-        "topic": "Hash Maps and Binary Trees",
+        "topic": "Hash Maps and Binary Trees, Quiz 2",
         "materials": [
             {
                 "title": "Hash Maps",
@@ -82,6 +82,49 @@
             {
                 "title": "Red-Black Trees",
                 "url": "/notes/red_black_trees"
+            }
+        ]
+    },
+    {
+        "date": "November 4",
+        "topic": "Red-Black Trees, AVL Trees, Dynamic Programming",
+        "materials": [
+            {
+                "title": "Red-Black Trees",
+                "url": "/notes/red_black_trees"
+            },
+            {
+                "title": "AVL Trees",
+                "url": "/notes/avl_trees"
+            },
+            {
+                "title": "Dynamic Programming",
+                "url": "/notes/dynamic_programming"
+            }
+        ]
+    },
+    {
+        "date": "November 6",
+        "topic": "Dynamic Programming",
+        "materials": [
+            {
+                "title": "Dynamic Programming",
+                "url": "/notes/dynamic_programming"
+            }
+        ]
+    },
+    {
+        "date": "November 11",
+        "topic": "Exam 1",
+        "materials": []
+    },
+    {
+        "date": "November 13",
+        "topic": "Greedy Algorithms",
+        "materials": [
+            {
+                "title": "Greedy Algorithms",
+                "url": "/notes/greedy_algorithms"
             }
         ]
     }

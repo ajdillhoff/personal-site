@@ -231,5 +231,29 @@
                 "url": "/notes/transformers"
             }
         ]
+    },
+    {
+        "date": "November 4",
+        "topic": "Markov Decision Processes",
+        "materials": [
+            {
+                "title": "Markov Decision Processes",
+                "url": "/notes/markov_decision_processes"
+            }
+        ]
+    },
+    {
+        "date": "November 6",
+        "topic": "Reinforcement Learning",
+        "materials": [
+            {
+                "title": "Reinforcement Learning",
+                "url": "/notes/reinforcement_learning"
+            },
+            {
+                "title": "Natural Language Processing",
+                "url": "/notes/natural_language_processing"
+            }
+        ]
     }
 ]

@@ -138,5 +138,23 @@
         "date": "Week 11",
         "topic": "Exam 2",
         "materials": []
+    },
+    {
+        "date": "Week 12",
+        "topic": "Macros, Bit Manipulation, and Unions",
+        "materials": [
+            {
+                "title": "Macros",
+                "url": "/teaching/cse1320/lectures/macros.pdf"
+            },
+            {
+                "title": "Bitwise Operations",
+                "url": "/teaching/cse1320/lectures/bit_operations.pdf"
+            },
+            {
+                "title": "Unions",
+                "url": "/teaching/cse1320/lectures/union_bitfields.pdf"
+            }
+        ]
     }
 ]
