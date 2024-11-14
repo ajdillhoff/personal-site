@@ -156,5 +156,25 @@
                 "url": "/teaching/cse1320/lectures/union_bitfields.pdf"
             }
         ]
+    },
+    {
+        "date": "Week 13",
+        "topic": "In-class Exercises and Review",
+        "materials": []
+    },
+    {
+        "date": "Week 14",
+        "topic": "Unit Testing",
+        "materials": []
+    },
+    {
+        "date": "Week 15",
+        "topic": "Review",
+        "materials": []
+    },
+    {
+        "date": "Week 16",
+        "topic": "Final Exam Review",
+        "materials": []
     }
 ]

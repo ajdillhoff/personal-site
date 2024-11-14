@@ -120,12 +120,79 @@
     },
     {
         "date": "November 13",
-        "topic": "Greedy Algorithms",
+        "topic": "Greedy Algorithms, Intro. to Graphs",
         "materials": [
             {
                 "title": "Greedy Algorithms",
                 "url": "/notes/greedy_algorithms"
+            },
+            {
+                "title": "Intro. to Graph Theory",
+                "url": "/notes/introduction_to_graph_theory"
             }
         ]
+    },
+    {
+        "date": "November 18",
+        "topic": "DFS, Topological Sort, Minimum Spanning Trees",
+        "materials": [
+            {
+                "title": "Intro. to Graph Theory",
+                "url": "/notes/introduction_to_graph_theory"
+            },
+            {
+                "title": "Minimum Spanning Trees",
+                "url": "/notes/minimum_spanning_trees"
+            }
+        ]
+    },
+    {
+        "date": "November 20",
+        "topic": "Shortest Paths, Quiz 3",
+        "materials": [
+            {
+                "title": "Single-Source Shortest Paths",
+                "url": "/notes/single_source_shortest_paths"
+            },
+            {
+                "title": "All-Pairs Shortest Paths",
+                "url": "/notes/all_pairs_shortest_paths"
+            }
+        ]
+    },
+    {
+        "date": "November 25",
+        "topic": "Maximum Flow",
+        "materials": [
+            {
+                "title": "Maximum Flow",
+                "url": "/notes/maximum_flow"
+            }
+        ]
+    },
+    {
+        "date": "December 2",
+        "topic": "Intractability, NP-Completeness",
+        "materials": [
+            {
+                "title": "NP-Completeness",
+                "url": "/notes/np_completeness"
+            }
+        ]
+    },
+    {
+        "date": "December 4",
+        "topic": "Parallel Algorithms, Machine Learning, Quiz 4",
+        "materials": [
+            {
+                "title": "Parallel Sorting Algorithms",
+                "url": "/notes/parallel_sorting_algorithms"
+            }
+        ]
+    },
+    {
+        "date": "December 9",
+        "topic": "Final Exam",
+        "materials": []
     }
 ]

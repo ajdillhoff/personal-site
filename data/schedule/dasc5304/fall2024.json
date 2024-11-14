@@ -249,11 +249,52 @@
             {
                 "title": "Reinforcement Learning",
                 "url": "/notes/reinforcement_learning"
-            },
-            {
-                "title": "Natural Language Processing",
-                "url": "/notes/natural_language_processing"
             }
         ]
+    },
+    {
+        "date": "November 11",
+        "topic": "Policy Gradient Methods",
+        "materials": [
+            {
+                "title": "Policy Gradient Methods",
+                "url": "/notes/policy_gradient_methods"
+            }
+        ]
+    },
+    {
+        "date": "November 13",
+        "topic": "Object Detection",
+        "materials": [
+            {
+                "title": "Object Detection",
+                "url": "/notes/object_detection"
+            }
+        ]
+    },
+    {
+        "date": "November 18",
+        "topic": "Instance Segmentation, Large Language Models",
+        "materials": [
+            {
+                "title": "Instance Segmentation",
+                "url": "/notes/instance_segmentation"
+            }
+        ]
+    },
+    {
+        "date": "November 20",
+        "topic": "Project Presentations",
+        "materials": []
+    },
+    {
+        "date": "November 25",
+        "topic": "Project Presentations",
+        "materials": []
+    },
+    {
+        "date": "December 2",
+        "topic": "Project Presentations",
+        "materials": []
     }
 ]

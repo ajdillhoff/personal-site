@@ -306,11 +306,60 @@
     {
         "date": "November 8",
         "topic": "Policy Gradient Methods",
+        "materials": []
+    },
+    {
+        "date": "November 11",
+        "topic": "Deep Reinforcement Learning",
+        "materials": []
+    },
+    {
+        "date": "November 13",
+        "topic": "Object Detection",
         "materials": [
             {
-                "title": "Natural Language Processing",
-                "url": "/notes/natural_language_processing"
+                "title": "Object Detection",
+                "url": "/notes/object_detection"
             }
         ]
+    },
+    {
+        "date": "November 15",
+        "topic": "Object Detection, Image Segmentation",
+        "materials": [
+            {
+                "title": "Object Detection",
+                "url": "/notes/object_detection"
+            },
+            {
+                "title": "Image Segmentation",
+                "url": "/notes/instance_segmentation"
+            }
+        ]
+    },
+    {
+        "date": "November 18",
+        "topic": "Large Language Models",
+        "materials": []
+    },
+    {
+        "date": "November 20",
+        "topic": "Large Language Models",
+        "materials": []
+    },
+    {
+        "date": "November 22",
+        "topic": "Project Presentations",
+        "materials": []
+    },
+    {
+        "date": "November 25",
+        "topic": "Project Presentations",
+        "materials": []
+    },
+    {
+        "date": "December 2",
+        "topic": "Project Presentations",
+        "materials": []
     }
 ]
