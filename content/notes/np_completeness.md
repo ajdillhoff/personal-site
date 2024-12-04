@@ -4,6 +4,7 @@ authors = ["Alex Dillhoff"]
 date = 2024-04-25T11:03:00-05:00
 tags = ["algorithms", "computer science"]
 draft = false
+lastmod = 2024-12-04
 +++
 
 <div class="ox-hugo-toc toc">
@@ -11,7 +12,6 @@ draft = false
 <div class="heading">Table of Contents</div>
 
 - [Introduction](#introduction)
-- [Formal Languages](#formal-languages)
 - [Reductions](#reductions)
 - [Clique Problem](#clique-problem)
 - [Vertex Cover Problem](#vertex-cover-problem)
@@ -30,7 +30,7 @@ One of the most fundamental problems in computer science is the classification o
 
 ### P, NP, and NP-Complete {#p-np-and-np-complete}
 
-There are three classes of algorithms:
+We start with three classes of algorithms:
 
 -   Polynomial-time
 -   NP (nondeterministic polynomial time)
@@ -39,6 +39,8 @@ There are three classes of algorithms:
 Problems in P are those solvable in polynomial time. This means _any_ constant \\(k\\) such that the running time is \\(O(n^k)\\).
 
 The class NP is a superset of P. These are problems that can be **verified** in polynomial time. This means that if someone gives you a solution to the problem, you can verify that it is correct in polynomial time. This is different from solving the problem in polynomial time. Problems in NP can be solved in **nondeterministic** polynomial time. However, such a model of computation does not exist in the real world.
+
+There is also a class of problems labeled **NP-Hard**. These are problems that cannot be solved in polynomial time, nor can they be verified in polynomial times. Basically, they are not decision problems. This class includes certain optimization problems and the classic [Halting problem](https://en.wikipedia.org/wiki/Halting_problem).
 
 NP-Complete problems are problems in NP that are as _hard_ as any other problem in NP. This means that if you can solve an NP-Complete problem in polynomial time, you can solve any problem in NP in polynomial time. This is why NP-Complete problems are so important.
 
@@ -50,7 +52,7 @@ As long as we can come up with a verification algorithm for a problem in polynom
 
 ### Proving that a problem is NP-Complete {#proving-that-a-problem-is-np-complete}
 
-Proving that a problem belongs to either NP or NPC is difficult the first time you do it. Luckily, now that problems have been proven to be NP-Complete, you can use these problems to prove that other problems are NP-Complete. First, let's introduce one more class: NP-Hard. Informally, a problem \\(X\\) is NP-Hard if it is at least as hard as any problem in NP. If we can reduce every problem \\(Y \in NP\\) to \\(X\\) in polynomial time, then \\(X\\) is NP-Hard. If \\(X\\) is also in NP, then \\(X\\) is NP-Complete.
+Proving that a problem belongs to either NP or NPC is difficult the first time you do it. Luckily, now that problems have been proven to be NP-Complete, you can use these problems to prove that other problems are NP-Complete. Informally, a problem \\(X\\) is NP-Hard if it is at least as hard as any problem in NP. If we can reduce every problem \\(Y \in NP\\) to \\(X\\) in polynomial time, then \\(X\\) is NP-Hard. If \\(X\\) is also in NP, then \\(X\\) is NP-Complete.
 
 
 ### Optimization versus decision problems {#optimization-versus-decision-problems}
@@ -63,9 +65,6 @@ The reason this is worth talking about is that decision problems are often easie
 ### Reducing one problem to another {#reducing-one-problem-to-another}
 
 A common strategy for relating two problems is to reduce one to the other. For example, if problem \\(B\\) runs in polynomial time, and we can reduce problem \\(A\\) to problem \\(B\\) in polynomial time, then problem \\(A\\) is also in P. This is because we can solve \\(A\\) by reducing it to \\(B\\) and then solving \\(B\\) in polynomial time.
-
-
-## Formal Languages {#formal-languages}
 
 
 ## Reductions {#reductions}
@@ -103,6 +102,10 @@ For reference, here are definitions for each of the gates listed in the figure.
 **How can we prove this circuit is unsatisfiable?**
 
 The easiest way to do this is to code it up and brute force it.
+
+The satisfiability problem was the first problem proved to be NP-Complete by the Cook-Levin theorem. Cormen et al. describe a summarized proof in section 34.3 (<a href="#citeproc_bib_item_1">Cormen et al. 2022</a>). Michael Sipser's book on the theory of computation offers a more detailed sketch of the proof (<a href="#citeproc_bib_item_2">Sipser 2012</a>). You can also [watch his lecture](https://www.youtube.com/watch?v=6Az1gtDRaAU) on the Cook-Levin theorem from MIT.
+
+The basic idea of the proof is as follows. For any problem in NP, there exists some machine that can verify solutions in polynomial time. Cook's proof involves simulating this machine with a Boolean formula. The idea is to encode the computation of the machine as a sequence of logical operations that can be expressed as a Boolean formula. Since the boolean formula is satisfiable if and only if the machine accepts the input, the satisfiability problem is NP-Complete.
 
 
 ### Formula Satisfiability {#formula-satisfiability}
@@ -251,4 +254,5 @@ In the example above, any edge in \\(\overline{G}\\) has at least one vertex tha
 
 <style>.csl-entry{text-indent: -1.5em; margin-left: 1.5em;}</style><div class="csl-bib-body">
   <div class="csl-entry"><a id="citeproc_bib_item_1"></a>Cormen, Thomas H., Charles E. Leiserson, Ronald L. Rivest, and Clifford Stein. 2022. <i>Introduction to Algorithms</i>. 4th ed. MIT Press. <a href="http://mitpress.mit.edu/9780262046305/introduction-to-algorithms/">http://mitpress.mit.edu/9780262046305/introduction-to-algorithms/</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_2"></a>Sipser, Michael. 2012. <i>Introduction to the Theory of Computation</i>. 3rd. CENGAGE Learning.</div>
 </div>

@@ -172,21 +172,33 @@
     },
     {
         "date": "December 2",
-        "topic": "Intractability, NP-Completeness",
+        "topic": "Parallel Algorithms, Machine Learning",
         "materials": [
             {
-                "title": "NP-Completeness",
-                "url": "/notes/np_completeness"
+                "title": "Heterogeneous Data Parallel Computing",
+                "url": "/notes/heterogeneous_data_parallel_computing"
+            },
+            {
+                "title": "Multidimensional Grids and Data",
+                "url": "/notes/multidimensional_grids_and_data"
+            },
+            {
+                "title": "CUDA Architecture",
+                "url": "/notes/cuda_architecture"
+            },
+            {
+                "title": "Linear Regression",
+                "url": "/notes/linear_regression"
             }
         ]
     },
     {
         "date": "December 4",
-        "topic": "Parallel Algorithms, Machine Learning, Quiz 4",
+        "topic": "Intractability, NP-Completeness, Quiz 4",
         "materials": [
             {
-                "title": "Parallel Sorting Algorithms",
-                "url": "/notes/parallel_sorting_algorithms"
+                "title": "NP-Completeness",
+                "url": "/notes/np_completeness"
             }
         ]
     },
