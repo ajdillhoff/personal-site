@@ -1,0 +1,274 @@
+// This file is empty within the template
+// You can use it to override CSS from within your project
+
+// -----------------------
+// Courses Section
+// -----------------------
+.courses {
+  column-count: 2;
+  column-gap: 1.5rem;
+  @include desktop {
+    column-count: 2;
+  }
+  @include tablet {
+    column-count: 1;
+  }
+}
+
+.meta-link {
+  &:hover {
+    color: $color-primary !important;
+    text-decoration: underline !important;
+  }
+}
+
+.course-item {
+  .card {
+    border: 1px solid $border-color;
+    overflow: hidden;
+
+    & > a:first-child img {
+      transition: all 0.2s;
+      display: block;
+      border: none;
+    }
+
+    & > a:first-child:hover img {
+      transform: scale(1.02);
+    }
+
+    .card-title {
+      margin-bottom: 0.8rem;
+      a {
+        text-decoration-color: $color-primary;
+        &:hover {
+          text-decoration: underline;
+          text-decoration-color: $color-primary;
+        }
+      }
+    }
+
+    .card-text {
+      font-size: 1rem;
+      font-weight: 300;
+      line-height: 160%;
+    }
+
+    .card-btn {
+      i {
+        transition: all 0.4s;
+        font-size: 14px;
+        text-align: center;
+        line-height: 12px;
+        margin-left: 5px;
+      }
+
+      &:hover {
+        i {
+          transform: translateX(5px);
+          color: $color-primary !important;
+        }
+      }
+    }
+  }
+}
+
+// .blog-post {
+//   .post-meta {
+//     li:not(:first-child) {
+//       &::before {
+//         content: "-";
+//         font-size: 10px;
+//         margin-right: 5px;
+//       }
+//     }
+
+//     a,
+//     li {
+//       font-size: 0.875rem;
+//       color: rgba($white, 0.7);
+//     }
+
+//     span {
+//       font-size: 0.875rem;
+//       color: rgba($white, 0.7);
+//     }
+//   }
+
+//   .card {
+//     & > a:first-child {
+//       border-radius: 10px 10px 0px 0px;
+//     }
+
+//     .card-btn {
+//       color: $white;
+
+//       img {
+//         transition: all 0.4s;
+//       }
+
+//       &:hover {
+//         color: $color-primary !important;
+
+//         img {
+//           margin-left: 15px;
+//         }
+//       }
+
+//       img {
+//         margin-left: 10px;
+//       }
+//     }
+//   }
+// }
+// .light {
+//   .blog-post .post-meta {
+//     a,
+//     li {
+//       color: rgba($dark, 0.7) !important;
+//     }
+//   }
+// }
+
+// .post-meta {
+//   a,
+//   li,
+//   span {
+//     font-size: 0.975rem;
+//     color: rgba($white, 0.7);
+//   }
+
+//   li:not(:first-child) {
+//     &::before {
+//       content: "-";
+//       font-size: 10px;
+//       margin-right: 5px;
+//     }
+//   }
+// }
+
+// .featured-image {
+//   max-height: 600px;
+//   object-fit: cover;
+// }
+
+// -----------------------
+// Course Single
+// -----------------------
+#course {
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+
+    width: 1159px;
+    height: 644px;
+    left: -60%;
+    top: 10%;
+
+    background: #34d71b;
+    opacity: 0.1;
+    filter: blur(200px);
+    transform: rotate(30deg);
+
+    @include desktop {
+      display: none;
+    }
+  }
+}
+
+// -----------------------
+// Figures
+// -----------------------
+
+.outer-figure {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+/* Center all figure elements on the page */
+.custom-figure {
+    max-width: 66%;
+    text-align: center;
+}
+
+/* Style for images inside figures */
+.custom-figure img {
+    background-color: white;
+}
+
+// /* Style for captions inside figures */
+// .custom-figure figcaption {
+//   text-align: center; /* Centers text within the caption */
+//   margin-top: 10px; /* Adds spacing between image and caption */
+//   font-size: 1rem; /* Adjust font size as needed */
+//   color: #555; /* Optional: Caption text color */
+// }
+
+// -----------------------
+// Table of Contents
+// -----------------------
+.dark {
+    .toc {
+        border: 1px solid $border-color;
+        border-radius: 10px;
+        padding: 1rem;
+        background-color: $color-secondary;
+        margin: 1.5rem 1rem 1rem 0;
+        width: fit-content;
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 0; // Added to remove extra space at the bottom
+
+            li {
+                margin-bottom: 0rem;
+
+                a {
+                    text-decoration: none;
+                    color: $link-color;
+
+                    &:hover {
+                        text-decoration: underline;
+                        color: $link-hover-color;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.light {
+    .toc {
+        border: 1px solid $border-color;
+        border-radius: 10px;
+        padding: 1rem;
+        background-color: $color-secondary;
+        margin: 1.5rem 1rem 1rem 0;
+        width: fit-content;
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 0; // Added to remove extra space at the bottom
+
+            li {
+                margin-bottom: 0rem;
+
+                a {
+                    text-decoration: none;
+                    color: $link-color;
+
+                    &:hover {
+                        text-decoration: underline;
+                        color: $link-hover-color;
+                    }
+                }
+            }
+        }
+    }
+}

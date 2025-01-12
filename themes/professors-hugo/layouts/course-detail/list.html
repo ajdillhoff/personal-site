@@ -1,0 +1,56 @@
+{{ define "main" }}
+<section class="section bg-shape">
+    <div class="container">
+        <div class="row">
+            <div class="col-xxl-10 mx-auto" data-aos="fade-up" data-aos-delay="100">
+                <button class="text-primary mb-5 border-0 bg-transparent" onclick="history.back()"><i
+                        class="fa-solid fa-backward me-2"></i>Back</button>
+                <article>
+                    <h1 class="text-capitalize h2 mb-4">{{.Title}}</h1>
+                    <div class="post-meta d-flex flex-wrap flex-lg-nowrap align-items-center mb-4">
+                        <ul class="list-inline me-5">
+                            <li class="list-inline-item">
+                                <i class="fa-solid fa-calendar-days me-2"></i>{{.Params.term}}
+                            </li>
+                        </ul>
+                        <span>Last updated on {{ .Lastmod | time.Format "Jan 2, 2006" }}</span>
+                    </div>
+
+                    {{if .Params.image}}
+                    <div class="w-100">
+                        {{ partial "image.html" (dict "Src" .Params.image "Alt" .Title "Class" `featured-image lazy mb-5
+                        rounded-3`) }}
+                    </div>
+                    {{ end }}
+
+                    <nav class="toc">
+                        <ul class="list">
+                            {{ range .Data.Pages }}
+                            <li>
+                                <a href="#{{ .File.BaseFileName }}" class="text-primary">{{ .Title }}</a>
+                            </li>
+                            {{ end }}
+                        </ul>
+                    </nav>
+
+                    {{ range .Data.Pages }}
+                    <section id="{{ .File.BaseFileName }}" class="section position-relative" style="padding-top: 10px; margin-top: 10px;">
+                        <div class="row">
+                            <div class="section-title mb-4 pb-1" data-aos="fadeIn">
+                                <h3 class="h3">
+                                    <span class="text-primary pe-3">⭓</span>{{ .Title | markdownify }}
+                                </h3>
+                            </div>
+                            <div class="content">
+                                {{.Content}}
+                            </div>
+                        </div>
+                    </section>
+                    {{ end }}
+
+                </article>
+            </div>
+        </div>
+    </div>
+</section>
+{{ end }}

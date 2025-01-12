@@ -1,0 +1,42 @@
+{{define "main"}}
+
+<section class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-xxl-11 mx-auto">
+        <div class="mb-5 pb-2">
+          {{ if or (eq .Section "categories") (eq .Section "tags") }}
+          <p class="mb-3">Category</p>
+          {{ end }}
+          <h2 class="h3"><span class="text-primary pe-3 small">//</span>{{.Title | title}}</h2>
+        </div>
+        
+        <div class="courses align-items-start overflow-hidden">
+          {{range .Data.Pages}}
+          <div class="course-item mb-4">
+            <div class="card bg-dark rounded-3">
+              {{if .Params.image}}
+              <a href="{{.RelPermalink | urlize}}" class="overflow-hidden p-3">
+                {{ partial "image.html" (dict "Src" .Params.image "Alt" .Params.title "Class" `rounded-2`) }}
+              </a>
+              {{ end }}
+              <div class="card-body pb-4">
+                <div class="px-2">
+                  <h3 class="h5 card-title fw-medium text-capitalize">
+                    <a class="text-white" href="{{.RelPermalink}}">{{.Params.title | markdownify}}</a>
+                  </h3>
+                  <p class="card-text mb-3">{{.Params.description}}</p>
+
+                  <a class="card-btn text-primary" href="{{.RelPermalink | urlize}}">More<i class="fa-solid fa-arrow-right-long"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          {{ end }}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{end}}

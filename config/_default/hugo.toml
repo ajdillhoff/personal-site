@@ -1,96 +1,65 @@
-# Configuration of Academia
-# Documentation: https://sourcethemes.com/academic/
-#
-# This file is formatted using TOML syntax - learn more at https://learnxinyminutes.com/docs/toml/
-# Each configuration section is defined by a name in square brackets (e.g. `[outputs]`).
-
-# Title of your site
-title = "Alex Dillhoff"
-
-# The URL of your site.
-# End your URL with a `/` trailing slash, e.g. `https://example.com/`.
+######################## default configuration ####################
 baseURL = "https://ajdillhoff.github.io/"
+title = "Alex Dillhoff"
+theme = ["professors-hugo"]
+# Default time zone for time stamps; use any valid tz database name: https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List
+timeZone = "America/New_York"
+# post pagination
+pagination.pagerSize = 6 # see https://gohugo.io/extras/pagination/
+# post excerpt
+summaryLength = 10 # see https://gohugo.io/content-management/excerpts/
 
-# Enter a copyright notice to display in the site footer.
-# To display a copyright symbol, type `&copy;`. For current year, type `{year}`.
-copyright = "Copyright &copy; {year}"
+########################### Services #############################
+[services]
+[services.googleAnalytics]
+ID = 'G-MEASUREMENT_ID' # see https://gohugo.io/templates/internal/#configure-google-analytics
 
-# Enable analytics by entering your Google Analytics tracking ID
-googleAnalytics = "UA-123456-78" # example: UA-123456-78, for more info, read the article https://support.google.com/analytics/answer/1008080?hl=en
-
-# Enable comments by entering your Disqus shortname
-# disqusShortname = "themefisher-template" # we use disqus to show comments in blog posts . To install disqus please follow this tutorial https://portfolio.peter-baumgartner.net/2017/09/10/how-to-install-disqus-on-hugo/
-
-############################
-## Advanced options below ##
-############################
-
-# Name of Academia theme folder in `themes/`.
-theme = "academia-hugo"
-
-# Get last modified date for content from Git?
-enableGitInfo = false
-
-# Default language to use (if you setup multilingual support)
-defaultContentLanguage = "en"
-hasCJKLanguage = false  # Set `true` for Chinese/Japanese/Korean languages.
-defaultContentLanguageInSubdir = false
-removePathAccents = true  # Workaround for https://github.com/gohugoio/hugo/issues/5687
-
-paginate = 12  # Number of items per page in paginated lists.
-enableEmoji = true
-footnotereturnlinkcontents = "<sup>^</sup>"
-ignoreFiles = ["\\.ipynb$", ".ipynb_checkpoints$", "\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
-
-# Build
+############################# Build ##############################
 [build]
-noJSConfigInAssets = false
-useResourceCacheWhen = 'fallback'
-[build.buildStats]
-enable = true
-[[build.cachebusters]]
-source = 'assets/.*\.(js|ts|jsx|tsx)'
-target = '(js|scripts|javascript)'
-[[build.cachebusters]]
-source = 'assets/.*\.(css|sass|scss)$'
-target = '(css|styles|scss|sass)'
-[[build.cachebusters]]
-source = 'assets/.*\.(.*)$'
-target = '$1'
+writeStats = true
 
+############################# Outputs ##############################
 [outputs]
-  home = [ "HTML", "RSS", "JSON" ]
-  section = [ "HTML", "RSS" ]
+home = ["HTML", "RSS", "JSON", "WebAppManifest"]
 
-# Configure BlackFriday Markdown rendering.
-#   See: https://gohugo.io/getting-started/configuration/#configure-blackfriday
-# [blackfriday]
-#   hrefTargetBlank = true  # `true` opens external links in a new tab. See https://github.com/gohugoio/hugo/issues/2424
-# 	angledQuotes = false
-# 	latexDashes = true
-#   extensions = ["backslashLineBreak"]
-
+############################# Imaging ##############################
 [imaging]
-  resampleFilter = "lanczos"
-  quality = 90
-  anchor = "smart"  # Anchor for cropping. Options include Smart and Center.
+# See https://github.com/disintegration/imaging
+# Default JPEG or WebP quality setting. Default is 75.
+quality = 80
+resampleFilter = "Lanczos"
 
-# Taxonomies.
-[taxonomies]
-  tag = "tags"
-  category = "categories"
-  publication_type = "publication_types"
-  author = "authors"
-
-# Caches
+############################# Caches ###############################
 [caches]
-  [caches.images]
-    dir = ":resourceDir/_gen"
-    maxAge = "720h"
+[caches.images]
+dir = ":resourceDir/_gen"
+maxAge = "720h"
 
-  [caches.assets]
-    dir = ":resourceDir/_gen"
-    maxAge = "720h"
+[caches.assets]
+dir = ":resourceDir/_gen"
+maxAge = "720h"
 
+
+############################# Markup ###############################
+[markup]
 [markup.goldmark.renderer]
-unsafe=true
+unsafe = true
+
+[markup.highlight]
+style = 'monokai' # see https://xyproto.github.io/splash/docs/all.html
+
+
+########################### Media types ###########################
+[mediaTypes]
+[mediaTypes."application/manifest+json"]
+suffixes = ["webmanifest"]
+
+
+############################ Output Format ###########################
+[outputFormats]
+[outputFormats.WebAppManifest]
+mediaType = "application/manifest+json"
+rel = "manifest"
+
+[taxonomies]
+tag = "tags"

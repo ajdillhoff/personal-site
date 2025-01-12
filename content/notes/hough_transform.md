@@ -2,6 +2,7 @@
 title = "Hough Transform"
 authors = ["Alex Dillhoff"]
 date = 2022-02-17T00:00:00-06:00
+tags = ["computer vision"]
 draft = false
 lastmod = 2024-02-11
 +++

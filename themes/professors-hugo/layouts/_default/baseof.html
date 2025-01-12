@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="{{ site.LanguageCode | default `en-US` }}" itemscope itemtype="http://schema.org/WebPage">
+
+<head>
+  <!-- head (don't cache it) -->
+  {{ partial "essentials/head.html" . }}
+
+  <!-- cache partial only in production -->
+  {{ if hugo.IsProduction }}
+  {{ partialCached "essentials/style.html" . }}
+  {{ else }}
+  {{ partial "essentials/style.html" . }}
+  {{ end }}
+</head>
+
+<body>
+  <!-- cache partial only in production -->
+  {{ if hugo.IsProduction }}
+  {{ partialCached "gtm-noscript.html" . }}
+  {{ end }}
+
+  <!-- header (don't cache it) -->
+  {{ partial "essentials/header.html" . }}
+
+  <main class="px-2 px-lg-0 px-xl-4 overflow-hidden">
+    <div {{if .IsHome}} data-bs-spy="scroll" data-bs-target="#navbar" data-bs-smooth-scroll="true" {{end}}>
+      {{ block "main" . }}{{ end }}
+    </div>
+    {{ partial "essentials/footer.html" . }}
+  </main>
+
+  <!-- cache partial only in production -->
+  {{ if hugo.IsProduction }}
+  {{ partialCached "essentials/script.html" . }}
+  {{ else }}
+  {{ partial "essentials/script.html" . }}
+  {{ end }}
+</body>
+
+</html>

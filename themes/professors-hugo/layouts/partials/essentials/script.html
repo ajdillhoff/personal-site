@@ -1,0 +1,97 @@
+<!-- theme switcher -->
+{{ if site.Params.theme_switcher }}
+<script>
+  let lightMode = {{if eq site.Params.theme_default "light"}}true{{else}}false{{end}};
+  let systemIsDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  let localStorageTheme = localStorage.getItem('theme');
+  let switcher = document.querySelector(".theme-switcher input");
+
+  if(localStorageTheme) {
+    if (localStorageTheme === null) {
+      lightMode = false;
+    }
+    else if (localStorageTheme === 'light') {
+      lightMode = true;
+      switcher.checked = false;
+    } else if (localStorageTheme === 'dark') {
+      lightMode = false;
+      switcher.checked = true;
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    if (localStorageTheme === null || !lightMode) {
+      document.documentElement.classList.add('dark');
+    } else if (lightMode) {
+      document.documentElement.classList.add('light');
+    }
+
+    switcher.addEventListener('change', (e) => {
+      if (e.currentTarget.checked === true) {
+        document.documentElement.classList.remove('light');
+        document.documentElement.classList.add('dark');
+        localStorage.setItem('theme', 'dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+        document.documentElement.classList.add('light');
+        localStorage.setItem('theme', 'light');
+      }
+    });
+  });
+</script>
+{{ end }}
+
+
+<!-- Bootstrap scripts -->
+{{ $bootstrap := resources.Get "js/bootstrap.js" }}
+{{ $params := dict }}
+{{ $sourceMap := cond hugo.IsProduction "" "inline" }}
+{{ $opts := dict "sourceMap" $sourceMap "target" "es2018" "params" $params }}
+{{ $bootstrap = $bootstrap | js.Build $opts }}
+{{ if hugo.IsProduction }}
+  {{ $bootstrap = $bootstrap | fingerprint "sha512" }}
+{{ end }}
+<script crossorigin="anonymous" defer {{ if hugo.IsProduction }}integrity="{{ $bootstrap.Data.Integrity }}"{{end}} type="application/javascript">{{$bootstrap.Content | safeJS}}</script>
+
+<!-- JS Plugins + Main script -->
+{{ $scripts := slice }}
+{{ range site.Params.plugins.js }}
+  {{ if findRE "^http" .link }}
+    <script
+      src="{{ .link | relURL }}"
+      type="application/javascript"
+      {{ .attributes | safeHTMLAttr }}></script>
+  {{ else }}
+    {{ $scripts = $scripts | append (resources.Get .link) }}
+  {{ end }}
+{{ end }}
+
+
+<!-- main script -->
+{{ $scripts = $scripts | append (resources.Get "js/script.js") }}
+{{ $scripts = $scripts | resources.Concat "js/scripts.js" }}
+{{ if hugo.IsProduction }}
+  {{ $scripts = $scripts | fingerprint "sha512" }}
+{{ end }}
+<script crossorigin="anonymous" defer {{ if hugo.IsProduction }}integrity="{{ $scripts.Data.Integrity }}"{{end}} type="application/javascript">{{$scripts.Content | safeJS}}</script>
+
+<!-- font family -->
+{{ $pf:= site.Params.variables.font_primary }}
+{{ $sf:= site.Params.variables.font_secondary }}
+<script type="application/javascript">
+  WebFont.load({
+    google: {
+      api: 'https://fonts.googleapis.com/css2',
+      families: ['{{$pf | default `Lato:wght@400`}}{{if not $sf}}&display=swap{{end}}'{{with $sf}},'{{. | default `Lato:wght@400`}}&display=swap'{{end}}],
+      version: 2
+    },
+    active: () => {sessionStorage.fontsLoaded = true}
+  });
+</script>
+
+<!-- progressive web app -->
+{{ partialCached "pwa.html" . }}
+
+
+<!-- cookie consent -->
+{{ partialCached "cookie-consent.html" . }}

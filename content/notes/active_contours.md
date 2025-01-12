@@ -2,7 +2,7 @@
 title = "Active Contours"
 authors = ["Alex Dillhoff"]
 date = 2022-02-22T00:00:00-06:00
-tags = ["gpgpu"]
+tags = ["computer vision"]
 draft = false
 +++
 

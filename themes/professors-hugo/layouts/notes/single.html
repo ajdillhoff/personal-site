@@ -1,0 +1,45 @@
+{{ define "main" }}
+
+<section class="section bg-shape">
+  <div class="container">
+    <div class="row">
+      <div class="col-xxl-10 mx-auto" data-aos="fade-up" data-aos-delay="100">
+        <article>
+          <button class="text-primary mb-5 border-0 bg-transparent" onclick="history.back()"><i class="fa-solid fa-backward me-2"></i>Back</button>
+          <h1 class="text-capitalize h3 mb-4">{{.Title}}</h1>
+          <div class="post-meta d-flex flex-wrap flex-lg-nowrap align-items-center mb-4">
+            <ul class="list-inline me-5">
+              <li class="list-inline-item">
+                <i class="fa-solid fa-calendar-days me-2"></i>{{.Params.date | time.Format "02 Jan 2006"}}
+              </li>
+              {{ if .Params.tags }}
+              <li class="list-inline-item">
+                <i class="fa-solid fa-folder-open me-2"></i>
+                {{ $categoryLength := sub (.Params.tags | len) 1 }}
+                {{range $i, $e := .Params.tags}}
+                  {{if .}}
+                  <a href="{{site.BaseURL}}categories/{{. | urlize}}" class="meta-link">{{(. | title)}}</a>{{if ne $categoryLength $i}},{{end}}
+                  {{ else }} Uncategorized {{end}}
+                {{ end }}
+              </li>
+                {{ end }}
+            </ul>
+            <span>Last updated on {{ .Lastmod | time.Format "Jan 2, 2006" }}</span>
+          </div>
+
+          {{if .Params.image}}
+          <div class="w-100">
+            {{ partial "image.html" (dict "Src" .Params.image "Alt" .Title "Class" `featured-image mb-5 rounded-3` ) }}
+          </div>
+          {{ end }}
+
+          <div class="content">
+            {{.Content}}
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{ end }}

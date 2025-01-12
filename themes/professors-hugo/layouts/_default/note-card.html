@@ -1,0 +1,29 @@
+<div class="project-item mb-4">
+    <div class="card bg-dark rounded-3">
+        <div class="card-body pb-4">
+            <div class="px-2">
+                <div data-aos="fade-up" data-aos-delay="50">
+                    <h3 class="h5 card-title fw-medium text-capitalize">
+                        <a class="text-white" href="{{.RelPermalink}}">{{.Params.title | markdownify}}</a>
+                    </h3>
+                    <p class="card-text mb-3">{{.Params.description | truncate 115}}</p>
+                </div>
+
+                <ul class="list-inline post-meta mb-3 mt-2" data-aos="fade-up" data-aos-delay="50">
+                    {{ if .Params.tags }}
+                    <li class="list-inline-item">
+                        <i class="fa-solid fa-tag me-2"></i>
+                        {{ $categoryLength := sub (.Params.tags | len) 1 }}
+                        {{range $i, $e := .Params.tags }}
+                        {{if .}}
+                        <a href="{{site.BaseURL}}tags/{{. | urlize}}" class="meta-link">{{(. | title)}}</a>{{if ne
+                        $categoryLength $i}},{{end}}
+                        {{ else }} Uncategorized {{end}}
+                        {{ end }}
+                    </li>
+                    {{ end }}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

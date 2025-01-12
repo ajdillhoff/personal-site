@@ -1,0 +1,21 @@
+<div class="project-item mb-4">
+  <div class="card bg-dark rounded-3">
+    {{if .Params.image}}
+    <a href="{{.RelPermalink | urlize}}" class="overflow-hidden p-3" data-aos="fade-up">
+      {{ partial "image.html" (dict "Src" .Params.image "Alt" .Params.title "Class" `rounded-2`) }}
+    </a>
+    {{ end }}
+    <div class="card-body pb-4">
+      <div class="px-2">
+        <div data-aos="fade-up" data-aos-delay="50">
+          <h3 class="h5 card-title fw-medium text-capitalize">
+            <a class="text-white" href="{{.RelPermalink}}">{{.Params.title | markdownify}}</a>
+          </h3>
+          <p class="card-text mb-3">{{.Params.description | truncate 115}}</p>
+        </div>
+
+        <a class="card-btn text-primary d-inline-block" href="{{.RelPermalink | urlize}}" data-aos="fade-up" data-aos-delay="100">Discover<i class="fa-solid fa-arrow-right-long"></i></a>
+      </div>
+    </div>
+  </div>
+</div>

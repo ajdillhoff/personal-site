@@ -1,0 +1,480 @@
+{{ define "main" }}
+  <!-- Banner Section Start  -->
+  {{ with .Params.banner }}
+    <section id="banner" class="position-relative pb-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-xxl-11 mx-auto">
+            <div class="row">
+              <div
+                class="col-sm-6 col-lg-4 col-xl-5 col-xxl-5 text-start text-lg-center"
+                data-aos="fadeIn">
+                <div class="image-block rounded-3 mb-4 mx-auto">
+                  {{ partial "image.html" (dict "Src" .image "Alt" .title "Class" `rounded-2 w-100` ) }}
+                </div>
+                <div class="d-none d-lg-block">
+                  <p class="lead mb-0 pt-2 fw-medium">
+                    {{ .designation | markdownify }}
+                  </p>
+                  <small>{{ .institution | markdownify }}</small>
+                </div>
+              </div>
+              <div class="col-lg-8 col-xl-7 col-xxl-6">
+                <div class="ps-xxl-4">
+                  <div data-aos="fade-up" data-aos-delay="50">
+                    <p class="fw-normal mb-3">{{ .greeting | markdownify }}</p>
+                    <div class="section-title mb-4">
+                      <h1 class="h3 fw-semibold mb-0">
+                        {{ .title | markdownify }}
+                      </h1>
+                    </div>
+                    <div class="lead">{{ .description | markdownify }}</div>
+                  </div>
+
+                  {{ with .additional_info }}
+                    <div
+                      class="mt-4 pt-1"
+                      data-aos="fade-up"
+                      data-aos-delay="150">
+                      <p class="text-primary mb-3 fw-medium">Additional Info</p>
+                      <table class="additional-info">
+                        <tbody>
+                          {{ range . }}
+                            <tr>
+                              <td>{{ .title }}</td>
+                              <td>{{ .content }}</td>
+                            </tr>
+                          {{ end }}
+                        </tbody>
+                      </table>
+                    </div>
+                  {{ end }}
+
+                  {{ with .button }}
+                    {{ if .enable }}
+                      <div data-aos="fade-up" data-aos-delay="250">
+                        <a
+                          href="{{ .link | relURL }}"
+                          class="btn btn-outline-primary"
+                          {{ if .isDownloadable }}download=""{{ end }}>
+                          {{ .label | markdownify }}<i
+                            class="fa-solid fa-download ms-3"></i>
+                        </a>
+                      </div>
+                    {{ end }}
+                  {{ end }}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  {{ end }}
+  <!-- Banner Section End  -->
+
+  <!-- Skill Section Start  -->
+  <!-- {{ with .Params.skill }}
+    {{ if .enable }}
+      <section id="skill" class="section position-relative">
+        <div class="container">
+          <div class="row">
+            <div class="col-xxl-11 mx-auto">
+              <div class="section-title" data-aos="fadeIn">
+                <h2 class="h3">{{ .title | markdownify }}</h2>
+              </div>
+
+              {{ with .skills }}
+                {{ $leftItem := sub (len .) (div (len .) 2) }}
+                <div class="row justify-content-between gy-4 gx-md-5">
+                  {{ range . }}
+                    <div class="col-lg-6">
+                      <div class="d-flex flex-column gap-5">
+                        <div class="progress-item">
+                          <div class="mb-2 d-flex justify-content-between">
+                            <span class="fw-normal">{{ .title | markdownify }}</span>
+                            <span class="fw-light">{{ .percentage }}%</span>
+                          </div>
+                          <div class="progress rounded-1">
+                            <div
+                              data-aos="slide-right"
+                              data-aos-duration="1000"
+                              class="progress-bar rounded-1"
+                              role="progressbar"
+                              aria-label="Skill Progress Bar"
+                              style="width: {{ .percentage }}%"
+                              aria-va`luenow="{{ .percentage }}"
+                              aria-valuemin="0"
+                              aria-valuemax="100"
+                              data-aos></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  {{ end }}
+                </div>
+              {{ end }}
+            </div>
+          </div>
+        </div>
+      </section>
+    {{ end }}
+  {{ end }} -->
+  <!-- Skill Section End  -->
+
+  <!-- Resume Section Start  -->
+  <!-- <section id="resume" class="section position-relative">
+    <div class="container">
+      <div class="row">
+        <div class="col-xxl-11 mx-auto">
+          <div
+            class="row justify-content-between align-items-start gy-5 gx-xxl-5 gy-xxl-0 position-relative">
+            {{ with .Params.experience }}
+              {{ if .enable }}
+                <div class="col-lg-6">
+                  <div class="section-title mb-4 pb-1" data-aos="fadeIn">
+                    <h3 class="h4">
+                      <span class="text-primary pe-3">⭓</span
+                      >{{ .title | markdownify }}
+                    </h3>
+                  </div>
+                  <div class="d-flex flex-column gap-4">
+                    {{ range .experience_list }}
+                      <div
+                        class="card border bg-dark rounded-3 pt-0 overflow-hidden">
+                        {{ with .icon }}
+                          <div
+                            class="icon rounded-2 mb-4"
+                            data-aos="fade-in"
+                            data-aos-duration="500">
+                            <i class="{{ . }}"></i>
+                          </div>
+                        {{ end }}
+
+
+                        <div
+                          class="card-body p-0"
+                          data-aos="fade-up"
+                          data-aos-delay="50">
+                          <h4 class="card-title mb-2 h5 fw-medium">
+                            {{ .title | markdownify }}
+                          </h4>
+                          {{ with .company }}
+                            <p class="d-inline-block me-2">
+                              {{ . | markdownify }}
+                            </p>
+                          {{ end }}
+
+                          {{ if .duration }}
+                            <small
+                              class="bg-primary-soft px-2 rounded-1 d-inline-block text-white mb-2"
+                              >{{ .duration | markdownify }}
+                            </small>
+                          {{ end }}
+
+                          {{ with .description }}
+                            <div class="content mt-2">{{ . }}</div>
+                          {{ end }}
+                        </div>
+                      </div>
+                    {{ end }}
+                  </div>
+                </div>
+              {{ end }}
+            {{ end }}
+
+            {{ with .Params.education }}
+              {{ if .enable }}
+                <div class="col-lg-6">
+                  <div class="section-title mb-4 pb-1" data-aos="fadeIn">
+                    <h3 class="h4">
+                      <span class="text-primary pe-3">⭓</span
+                      >{{ .title | markdownify }}
+                    </h3>
+                  </div>
+                  <div class="d-flex flex-column gap-4">
+                    {{ range .education_list }}
+                      <div
+                        class="card border bg-dark rounded-3 pt-0 overflow-hidden">
+                        {{ with .icon }}
+                          <div
+                            class="icon rounded-2 mb-4"
+                            data-aos="fade-in"
+                            data-aos-duration="500"
+                            data-aos-delay="150">
+                            <i class="{{ . }}"></i>
+                          </div>
+                        {{ end }}
+
+
+                        <div class="card-body p-0" data-aos="fade-up">
+                          <h4 class="card-title mb-2 h5 fw-medium">
+                            {{ .title | markdownify }}
+                          </h4>
+                          {{ with .company }}
+                            <p class="d-inline-block me-2">
+                              {{ . | markdownify }}
+                            </p>
+                          {{ end }}
+
+                          {{ if .duration }}
+                            <small
+                              class="bg-primary-soft px-2 rounded-1 d-inline-block text-white mb-2"
+                              >{{ .duration | markdownify }}
+                            </small>
+                          {{ end }}
+
+                          {{ with .description }}
+                            <div class="content mt-2">{{ . }}</div>
+                          {{ end }}
+                        </div>
+                      </div>
+                    {{ end }}
+                  </div>
+                </div>
+              {{ end }}
+            {{ end }}
+
+
+            <div class="divider d-none d-xxl-block"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> -->
+  <!-- Resume Section End  -->
+
+  <!-- Courses Section Start  -->
+  {{ if .Params.courses.enable }}
+    {{ $button := .Params.courses.button }}
+    {{ with site.GetPage "/courses" }}
+      <section id="courses" class="section">
+        <div class="container">
+          <div class="row">
+            <div class="col-xxl-11 mx-auto">
+              <div class="section-title" data-aos="fadeIn">
+                <h2 class="h3">{{ .Params.title | markdownify }}</h2>
+              </div>
+
+              <div class="courses align-items-start overflow-hidden">
+                {{ range .Pages.Reverse }}
+                  {{ .Render "course-card" }}
+                {{ end }}
+              </div>
+
+              {{ with $button }}
+                <div class="text-center mt-5" data-aos="fade-up">
+                  <a href="{{ .link }}" class="btn btn-primary"
+                    >{{ .label | markdownify }}<i
+                      class="fa-solid fa-angle-right ms-2"></i
+                  ></a>
+                </div>
+              {{ end }}
+            </div>
+          </div>
+        </div>
+      </section>
+    {{ end }}
+  {{ end }}
+  <!-- Courses Section End  -->
+
+  <!-- Blog Section Start  -->
+  {{ if .Params.blogs.enable }}
+    {{ $button := .Params.blogs.button }}
+    {{ with site.GetPage "/blog" }}
+      <section id="blog" class="section">
+        <div class="container">
+          <div class="row">
+            <div class="col-xxl-11 mx-auto">
+              <div class="section-title" data-aos="fadeIn">
+                <h2 class="h3">{{ .Params.title | markdownify }}</h2>
+              </div>
+
+              <div class="blog-wrapper">
+                {{ range .Pages }}
+                  {{ if not .Draft }}
+                    {{ .Render "blog-card" }}
+                  {{ end }}
+                {{ end }}
+              </div>
+
+              {{ with $button }}
+                <div class="text-center mt-5" data-aos="fade-up">
+                  <a href="{{ .link }}" class="btn btn-primary"
+                    >{{ .label | markdownify }}<i
+                      class="fa-solid fa-angle-right ms-2"></i
+                  ></a>
+                </div>
+              {{ end }}
+            </div>
+          </div>
+        </div>
+      </section>
+    {{ end }}
+  {{ end }}
+  <!-- Blog Section End  -->
+
+  <!-- Projects Section Start  -->
+  {{ if .Params.projects.enable }}
+    {{ $button := .Params.projects.button }}
+    {{ with site.GetPage "/project" }}
+      <section id="projects" class="section">
+        <div class="container">
+          <div class="row">
+            <div class="col-xxl-11 mx-auto">
+              <div class="section-title" data-aos="fadeIn">
+                <h2 class="h3">{{ .Params.title | markdownify }}</h2>
+              </div>
+
+              <div class="projects align-items-start overflow-hidden">
+                {{ range .Pages.Reverse }}
+                  {{ .Render "project-card" }}
+                {{ end }}
+              </div>
+
+              {{ with $button }}
+                <div class="text-center mt-5" data-aos="fade-up">
+                  <a href="{{ .link }}" class="btn btn-primary"
+                    >{{ .label | markdownify }}<i
+                      class="fa-solid fa-angle-right ms-2"></i
+                  ></a>
+                </div>
+              {{ end }}
+            </div>
+          </div>
+        </div>
+      </section>
+    {{ end }}
+  {{ end }}
+  <!-- Projects Section End  -->
+
+  <!-- Contact Section Start  -->
+  {{ with .Params.contact }}
+    {{ if .enable }}
+      <section id="contact" class="section position-relative">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-xxl-11 mx-auto">
+              <div class="section-title" data-aos="fadeIn">
+                <h2 class="h3">{{ .title | markdownify }}</h2>
+              </div>
+
+              <div class="row gy-5">
+                <div class="col-lg-8">
+                  <form action="" method="POST" class="rounded-3 p-4 bg-dark">
+                    <div class="p-2">
+                      <div class="row gy-4">
+                        <div class="col-md-6">
+                          <label for="firstName" class="form-label mb-2"
+                            >First Name*</label
+                          >
+                          <input
+                            type="text"
+                            class="form-control rounded-2"
+                            name=""
+                            id="firstName"
+                            required
+                            aria-describedby="firstName"
+                            placeholder="" />
+                        </div>
+                        <div class="col-md-6">
+                          <label for="lastName" class="form-label mb-2"
+                            >Last Name</label
+                          >
+                          <input
+                            type="text"
+                            class="form-control rounded-2"
+                            name=""
+                            id="lastName"
+                            required
+                            aria-describedby="lastName"
+                            placeholder="" />
+                        </div>
+
+                        <div class="col-md-6">
+                          <label for="email" class="form-label mb-2"
+                            >Email*</label
+                          >
+                          <input
+                            type="email"
+                            class="form-control rounded-2"
+                            name=""
+                            id="email"
+                            required
+                            aria-describedby="email"
+                            placeholder="" />
+                        </div>
+                        <div class="col-md-6">
+                          <label for="phone" class="form-label mb-2"
+                            >Phone</label
+                          >
+                          <input
+                            type="tel"
+                            class="form-control rounded-2"
+                            name=""
+                            id="phone"
+                            required
+                            aria-describedby="phone"
+                            placeholder="" />
+                        </div>
+
+                        <div class="col-12">
+                          <label for="message" class="form-label mb-2"
+                            >Message</label
+                          >
+                          <textarea
+                            class="form-control rounded-2"
+                            name=""
+                            id="message"
+                            required
+                            aria-describedby="message"
+                            placeholder=""
+                            rows="4"></textarea>
+                        </div>
+                        <div class="col-12">
+                          <button
+                            type="submit"
+                            class="btn btn-outline-primary w-auto">
+                            Send Message
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+                {{ with .contact_info }}
+                  <div class="col-lg-4">
+                    <div class="ps-0 ps-lg-4">
+                      <h3 class="h4">{{ .title | markdownify }}</h3>
+                      <p class="mb-0">{{ .subtitle | markdownify }}</p>
+                      <div class="py-1">
+                        <hr class="border my-4 opacity-100" />
+                      </div>
+                      <div class="row gy-4">
+                        {{ range $i, $e := .contact_details }}
+                          <div
+                            class="col-lg-12 col-sm-6 d-flex gap-3 align-items-start">
+                            <i class="{{ .icon }} fs-4 mt-1 text-primary"></i>
+                            <div>
+                              <p class="text-white mb-2 pt-1">
+                                {{ .name | markdownify }}
+                              </p>
+                              <div class="content">
+                                {{ .content | markdownify }}
+                              </div>
+                            </div>
+                          </div>
+                        {{ end }}
+                      </div>
+                    </div>
+                  </div>
+                {{ end }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    {{ end }}
+  {{ end }}
+  <!-- Contact Section End  -->
+{{ end }}

@@ -1,0 +1,55 @@
+<button class="navbar-toggler d-block d-xl-none rounded" type="button" title="Expand & shrink sidebar">
+  <label class="position-relative">
+    <input class="d-none" type="checkbox" />
+    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <path class="line--1" d="M0 40h62c13 0 6 28-4 18L35 35" />
+      <path class="line--2" d="M0 50h70" />
+      <path class="line--3" d="M0 60h62c13 0 6-28-4-18L35 65" />
+    </svg>
+  </label>
+</button>
+
+<aside id="sidebarContent" class="position-fixed hidden d-lg-block top-0 w-100 vh-100">
+  <nav id="navbar" class="navigation d-flex flex-column justify-content-between h-100">
+    <ul class="navbar-nav mb-5">
+      {{$currentPage := .}}
+      {{ range site.Menus.main }}
+      <li class="nav-item d-block">
+        <a class="nav-link d-flex align-items-center" aria-current="page" href="{{ if findRE `^#` .URL }}{{ if not $.IsHome }}{{ site.BaseURL | relLangURL }}{{ end }}{{ .URL }}{{ else }}{{ .URL | relLangURL }}{{ end }}"><i class="{{.Pre}} me-3"></i><span>{{.Name}}</span></a>
+      </li>
+      {{ end }}
+    </ul>
+
+    {{ with site.Params.sidebar }}
+    {{ if .social_enable }}
+    <div class="pb-3 mt-auto">
+      <div class="mb-3">{{.social_title | markdownify}}</div>
+      <ul class="list-inline social-links">
+        {{range site.Params.social}}
+        <li class="list-inline-item mb-2">
+          <a class="rounded-2 d-block position-relative text-white" target="_blank" href="{{.link | absURL}}">
+            <i class="{{.icon}}"></i>
+          </a>
+        </li>
+        {{ end }}
+      </ul>
+    </div>
+    {{ end }}
+    {{ end }}
+
+    {{ if site.Params.theme_switcher }}
+    <div class="pb-5">
+      <label class="theme-switcher">
+        <input id="toggler" type="checkbox" checked>
+        <span></span>
+      </label>
+
+      <!-- <select class="theme-switcher form-select shadow-none text-white mt-2" aria-label="switch theme">
+        <option value="system">System</option>
+        <option value="dark">Dark</option>
+        <option value="light">Light</option>
+      </select> -->
+    </div>
+    {{ end }}
+  </nav>
+</aside>

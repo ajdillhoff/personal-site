@@ -1,0 +1,432 @@
+.dark {
+  color-scheme: dark;
+}
+.light {
+  color-scheme: light;
+}
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #313847;
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3f4759;
+}
+.dark body {
+  color: $text-color;
+  background-color: $body-bg;
+}
+.light body {
+  color: $light-text-color !important;
+  background-color: $light-body-bg;
+}
+
+main {
+  width: calc(100% - 320px);
+  margin-left: auto;
+  @include desktop-lg {
+    width: 100%;
+  }
+  @include desktop {
+    width: auto;
+  }
+}
+
+footer {
+  padding-top: 2rem;
+}
+
+.section {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  @include tablet {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+}
+
+.section-title {
+  margin-bottom: 4rem;
+  @include tablet {
+    margin-bottom: 2.5rem;
+  }
+  h1,
+  h2,
+  h3 {
+    strong {
+      color: $color-primary;
+    }
+  }
+
+  h2 {
+    margin: auto;
+    width: fit-content;
+    text-align: center;
+    position: relative;
+    font-weight: 500;
+    @include tablet {
+      padding-left: 40px;
+      font-size: 1.6rem !important;
+      text-align: start;
+      margin: 0;
+    }
+
+    &::before,
+    &::after {
+      content: "⭓";
+      font-weight: bold;
+      position: absolute;
+      color: $color-primary;
+      letter-spacing: 2px;
+      left: -55px;
+      top: 50%;
+      line-height: 0;
+      font-size: 85%;
+      @include tablet {
+        left: 0;
+      }
+    }
+
+    &::after {
+      left: auto;
+      right: -55px;
+
+      @include tablet {
+        display: none;
+      }
+    }
+  }
+
+  .sub-title {
+    font-size: 1rem;
+    padding: 20px 0px;
+    margin-top: 10px;
+    text-align: center;
+
+    @include mobile {
+      text-align: start;
+    }
+  }
+}
+
+// Social links
+.social-links a {
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  background-color: transparent !important;
+  color: $light !important;
+  border: 1px solid $border-color !important;
+  transition: all 0.3s;
+
+  &:hover {
+    background-color: $color-primary !important;
+    color: $white !important;
+    border-color: transparent !important;
+  }
+}
+.light {
+  .social-links a {
+    color: $dark !important;
+    &:hover {
+      color: $white !important;
+    }
+  }
+}
+
+// Image gallery
+.gallery-item img {
+  @extend .rounded-2;
+}
+
+// Common Classes
+.fw-medium {
+  font-weight: 500;
+}
+.bg-dark {
+  background-color: $color-secondary !important;
+}
+.text-primary {
+  color: $color-primary !important;
+}
+.bg-primary {
+  background-color: $color-primary !important;
+}
+.bg-primary-soft {
+  background-color: rgba($color-primary, 0.2) !important;
+}
+.light {
+  .text-white {
+    color: $dark !important;
+  }
+  .bg-primary-soft {
+    background-color: rgba($color-primary, 0.1) !important;
+  }
+  .bg-dark {
+    background-color: $light-color-secondary !important;
+  }
+}
+
+// Form Control
+.form-control {
+  padding: 0.6rem 1rem !important;
+  color: $white !important;
+  border: 1px solid $border-color !important;
+  box-shadow: none !important;
+  background-color: $black !important;
+
+  &:focus {
+    border-color: rgba($color-primary, 0.8) !important;
+  }
+}
+.light {
+  .form-control {
+    color: $dark !important;
+    background-color: $light !important;
+  }
+}
+textarea {
+  resize: none;
+}
+
+// Back to Top
+.back-to-top {
+  position: fixed;
+  right: 25px;
+  bottom: 15px;
+  width: 46px;
+  height: 46px;
+  z-index: 50;
+  visibility: visible;
+  transform: translateY(30px);
+  transition: all 0.2s ease-out;
+  background-color: rgba($white, 0.1);
+  opacity: 0;
+  color: $white;
+  @include desktop {
+    background-color: $color-primary;
+  }
+  @include tablet {
+    right: 10px;
+  }
+
+  &.active {
+    transform: translateY(-10px);
+    opacity: 1;
+  }
+
+  &:hover {
+    background-color: $border-color !important;
+  }
+}
+.light {
+  .back-to-top {
+    background-color: rgba($dark, 0.1);
+    color: $dark;
+    @include desktop {
+      color: $white;
+      background-color: $color-primary;
+    }
+  }
+}
+
+// content style
+.content {
+  h1,
+  .h1,
+  h2,
+  .h2,
+  h3,
+  .h3,
+  h4,
+  .h4,
+  h5,
+  .h5,
+  h6,
+  .h6 {
+    font-weight: 400;
+  }
+
+  p {
+    margin-bottom: 1rem !important;
+  }
+  a {
+    color: $text-light;
+    &:hover {
+      color: $color-primary;
+    }
+  }
+
+  img {
+    border-radius: 6px;
+  }
+
+  ol,
+  ul {
+    padding-left: 1.5rem;
+
+    li {
+      margin-bottom: 0.7rem;
+    }
+  }
+
+  ul {
+    padding-left: 0;
+    margin-bottom: 1.5rem;
+    list-style-type: none;
+
+    li {
+      padding-left: 1.5rem;
+      position: relative;
+
+      &::before {
+        position: absolute;
+        content: "";
+        height: 0.5rem;
+        width: 0.5rem;
+        border-radius: 50%;
+        background-color: $color-primary;
+        left: 3px;
+        top: 0.5rem;
+      }
+    }
+  }
+
+  // table
+  table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 1rem;
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  table td,
+  table th {
+    padding: 0.75rem;
+    vertical-align: top;
+    margin-bottom: 0;
+  }
+
+  tr:not(:last-child) {
+    border-bottom: 1px solid $border-color;
+  }
+
+  th {
+    font-weight: 500;
+  }
+  thead {
+    background-color: $black;
+    margin-bottom: 0;
+    tr {
+      border-bottom: 1px solid $border-color;
+    }
+  }
+  tbody {
+    background-color: $color-secondary;
+    margin-bottom: 0;
+  }
+
+  .notices p {
+    border-radius: 5px;
+    color: $black;
+    &::before {
+      content: "⭓";
+      border: 0px !important;
+    }
+  }
+
+  // collapse / accordion
+  .accordion {
+    &-item {
+      border: 0;
+    }
+
+    &-button {
+      padding: 0.7rem 1.25rem;
+      color: $text-color;
+      background-color: $light;
+
+      &::after {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 16 16%22 fill=%22%23000000%22%3E%3Cpath fill-rule=%22evenodd%22 d=%22M1.646 4.646a.5.5.0 01.708.0L8 10.293l5.646-5.647a.5.5.0 01.708.708l-6 6a.5.5.0 01-.708.0l-6-6a.5.5.0 010-.708z%22/%3E%3C/svg%3E");
+      }
+
+      &:focus {
+        border-color: inherit;
+        box-shadow: none;
+      }
+
+      &:not(.collapsed) {
+        color: $text-color;
+        box-shadow: none;
+      }
+    }
+  }
+
+  // blockquote
+  blockquote {
+    color: $light;
+    padding: 1.2rem 30px;
+    border: 1px solid rgba($color-primary, 0.4);
+    border-left: 3px solid rgba($color-primary, 0.8);
+    margin: 2rem 0;
+    background: transparent;
+    font-weight: 400;
+    @extend .rounded-2;
+
+    p {
+      margin-bottom: 0 !important;
+    }
+
+    cite {
+      display: inline-block;
+      margin-top: 1rem;
+    }
+  }
+
+  //code
+  pre {
+    display: block;
+    padding: 20px;
+    margin: 0.7rem 0;
+    white-space: pre-wrap;
+    border-radius: 6px;
+  }
+
+  code {
+    margin-bottom: 0 !important;
+    font-size: 100%;
+  }
+
+  iframe {
+    border-radius: 6px;
+  }
+}
+
+.light {
+  .content {
+    thead {
+      background-color: $light;
+    }
+    tbody {
+      background-color: $light-color-secondary;
+    }
+  }
+}
+
+.dark {
+  .card {
+    color: $text-color;
+  }
+}
+.light {
+  .card {
+    color: $light-text-color;
+  }
+}

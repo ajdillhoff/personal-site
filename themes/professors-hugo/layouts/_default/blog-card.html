@@ -1,0 +1,36 @@
+<div class="blog-post mb-4">
+  <article class="card bg-transparent border-0 p-1">
+    {{if .Params.image}}
+    <a href="{{.RelPermalink | urlize}}" class="rounded-2 overflow-hidden" data-aos="fade-up">
+      {{ partial "image.html" (dict "Src" .Params.image "Alt" .Params.title "Class" "w-100") }}
+    </a>
+    {{ end }}
+
+    <div class="card-body pt-4 px-0">
+      <ul class="list-inline post-meta mb-3 mt-2" data-aos="fade-up" data-aos-delay="50">
+        <li class="list-inline-item">
+          <i class="fa-solid fa-calendar-days me-2"></i>{{.Params.date | time.Format "02 Jan 2006"}}
+        </li>
+        {{ if .Params.tags }}
+        <li class="list-inline-item">
+          <i class="fa-solid fa-folder-open me-2"></i>
+          {{ $categoryLength := sub (.Params.tags | len) 1 }}
+          {{range $i, $e := .Params.tags }}
+            {{if .}}
+            <a href="{{site.BaseURL}}tags/{{. | urlize}}" class="meta-link">{{(. | title)}}</a>{{if ne $categoryLength $i}},{{end}}
+            {{ else }} Uncategorized {{end}}
+          {{ end }}
+        </li>
+        {{ end }}
+      </ul>
+      <div data-aos="fade-up" data-aos-delay="100">
+        <h3 class="h5 card-title fw-normal mb-3">
+          <a class="text-white" href="{{.RelPermalink}}">{{.Params.title | markdownify}}</a>
+        </h3>
+        <p class="card-text mb-4">{{.Params.description | truncate 80}}</p>
+      </div>
+
+      <a href="{{.RelPermalink}}" class="card-btn text-primary d-inline-block" data-aos="fade-up" data-aos-delay="150">Read More <i class="fa-solid fa-arrow-right-long"></i></a>
+    </div>
+  </article>
+</div>

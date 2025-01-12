@@ -1,0 +1,22 @@
+[
+    {
+        "date": "Week 1",
+        "topic": "Course Introduction and Systems of Linear Equations",
+        "materials": [
+            {
+                "title": "1.1 and 1.2",
+                "url": ""
+            }
+        ]
+    },
+    {
+        "date": "Week 2",
+        "topic": "Solution Sets, Vectors, and Linear Combinations",
+        "materials": [
+            {
+                "title": "1.3, 1.4, and 1.5",
+                "url": ""
+            }
+        ]
+    }
+]

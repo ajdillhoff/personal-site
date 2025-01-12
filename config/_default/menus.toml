@@ -1,61 +1,48 @@
-# Navigation Links
-#   To link a homepage widget, specify the URL as a hash `#` followed by the filename of the
-#     desired widget in your `content/home/` folder.
-#   The weight parameter defines the order that the links will appear in.
-
+# main menu
 [[main]]
-  name = "Home"
-  url = "#about"
-  weight = 10
+name = "Introduction"
+url = "#banner"
+pre = "fa-solid fa-user"
+weight = -1
 
-[[main]]
-  name = "Posts"
-  url = "#posts"
-  weight = 20
-
-[[main]]
-  name = "Brain Dump"
-  url = "notes/"
-  weight = 30
-
-#[[main]]
-  #name = "Projects"
-  #url = "#projects"
-  #weight = 30
-
-#[[main]]
-  #name = "Publications"
-  #url = "#publications"
-  #weight = 40
-
-[[main]]
-  name = "Courses"
-  url = "courses/"
-  weight = 50
-
-#[[main]]
-  #name = "Contact"
-  #url = "#contact"
-  #weight = 60
-
-#[[main]]
-  #name = "dropdown"
-  #url = "#"
-  #hasChildren = true
-
-#[[main]]
-  #parent = "dropdown"
-  #name = "dropdown 1"
-  #url = "#"
-
-#[[main]]
-  #parent = "dropdown"
-  #name = "dropdown 2"
-  #url = "#!"
-
-# Link to a PDF of your resume/CV from the menu.
-# To enable, copy your resume/CV to `static/files/cv.pdf` and uncomment the lines below.
 # [[main]]
-#    name = "CV"
-#    url = "files/cv.pdf"
-#    weight = 70
+# name = "My Skills"
+# url = "#skill"
+# pre = "fa-solid fa-list-check"
+# weight = 2
+
+[[main]]
+name = "Courses"
+url = "#courses"
+pre = "fa-solid fa-school"
+weight = 2
+
+# [[main]]
+# name = "Resume"
+# url = "#resume"
+# pre = "fa-solid fa-address-card"
+# weight = 3
+
+[[main]]
+name = "Articles"
+url = "#blog"
+pre = "fa-solid fa-newspaper"
+weight = 3
+
+[[main]]
+name = "Notes"
+url = "notes"
+pre = "fa-solid fa-note-sticky"
+weight = 4
+
+# [[main]]
+# name = "Projects"
+# url = "#projects"
+# pre = "fa-solid fa-box"
+# weight = 4
+
+# [[main]]
+# name = "Contact"
+# url = "#contact"
+# pre = "fa-solid fa-paper-plane"
+# weight = 6

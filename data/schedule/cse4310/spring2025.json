@@ -1,0 +1,27 @@
+[
+    {
+        "date": "January 13",
+        "topic": "Course Introduction",
+        "materials": []
+    },
+    {
+        "date": "January 15",
+        "topic": "Human Vision and Color",
+        "materials": [
+            {
+                "title": "Color",
+                "url": "/notes/color"
+            }
+        ]
+    },
+    {
+        "date": "January 17",
+        "topic": "Sampling and Aliasing",
+        "materials": [
+            {
+                "title": "Sampling and Aliasing",
+                "url": "/notes/sampling"
+            }
+        ]
+    }
+]

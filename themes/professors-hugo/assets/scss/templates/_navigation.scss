@@ -1,0 +1,179 @@
+#sidebarContent {
+  background-color: $black;
+  padding: 45px 45px 0 45px;
+  max-width: 320px;
+  overflow-y: auto;
+  &::-webkit-scrollbar-thumb {
+    background: transparent;
+  }
+  &:hover::-webkit-scrollbar-thumb {
+    background: #2b313e;
+  }
+  @include desktop-lg {
+    &.hidden {
+      top: 0px;
+      max-width: 100%;
+      left: -100%;
+      max-width: 256px;
+      padding-left: 20px;
+      transition: all 0.4s ease-out;
+      z-index: 777;
+      &.active {
+        left: 0px;
+      }
+    }
+  }
+
+  .navbar-nav .nav-item a {
+    font-weight: 400;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    color: rgba($white, 0.75);
+    transition: color 0.3s;
+    i {
+      font-size: 0.9em;
+      color: rgba($white, 0.5);
+      transition: 0.3s;
+    }
+  }
+
+  .navbar-nav .nav-item a.nav-link.active,
+  .navbar-nav .nav-item a.nav-link:hover {
+    color: $white;
+    i {
+      color: $white;
+    }
+  }
+}
+
+.theme-switcher {
+  position: relative;
+  span {
+    position: absolute;
+    height: 30px;
+    width: 50px;
+    border-radius: 30px;
+    background-color: $dark;
+    cursor: pointer;
+    z-index: 99;
+    transform: rotateZ(180deg) rotateX(180deg);
+    transform-origin: center;
+    &::before {
+      position: absolute;
+      left: 5px;
+      bottom: 5px;
+      height: 20px;
+      width: 20px;
+      content: "";
+      border-radius: 50%;
+      background-color: $white;
+      transition: 0.3s;
+    }
+  }
+  #toggler {
+    opacity: 0;
+    display: none;
+    touch-action: none;
+    &:checked ~ span {
+      background-color: lighten($black, 10);
+      &::before {
+        background-color: lighten($black, 10);
+        box-shadow: inset -8px -3px 0 0px $white;
+        transform: translate(18px, 0px);
+      }
+    }
+  }
+}
+
+.navbar-toggler {
+  background-color: rgba($white, 0.2);
+  transition: background-color 0.3s;
+  padding: 2px;
+  position: fixed;
+  top: 30px;
+  right: 25px;
+  z-index: 9999;
+  @include desktop {
+    background-color: $color-primary;
+  }
+  @include tablet {
+    right: 10px;
+  }
+  &:focus {
+    box-shadow: none;
+  }
+  label {
+    display: block;
+    cursor: pointer;
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    bottom: 0;
+    right: 0;
+    svg {
+      transform: scale(1.5);
+    }
+  }
+
+  &.active {
+    .line--1,
+    .line--3 {
+      stroke-dasharray: 22.627416998 126.64183044433594;
+    }
+    .line--2 {
+      stroke-dasharray: 0 126.64183044433594;
+    }
+    .line--1,
+    .line--3 {
+      stroke-dashoffset: -94.1149185097;
+    }
+    .line--2 {
+      stroke-dashoffset: -50;
+    }
+  }
+  path {
+    fill: none;
+    stroke: white;
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 24 126.64183044433594;
+    stroke-dashoffset: -38;
+    transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  }
+}
+
+.navbar-show {
+  overflow-y: hidden;
+}
+
+.tf-backdrop {
+  display: none !important;
+
+  @include desktop-lg {
+    display: block !important;
+  }
+}
+
+// light style
+html.light {
+  #sidebarContent {
+    background-color: rgba(188, 188, 188, 0.2) !important;
+    &:hover::-webkit-scrollbar-thumb {
+      background: rgba(188, 188, 188, 0.7);
+    }
+  }
+  .navbar-nav .nav-item a {
+    color: rgba($dark, 0.6) !important;
+    i {
+      color: rgba($dark, 0.4) !important;
+    }
+  }
+  .navbar-nav .nav-item a.nav-link.active,
+  .navbar-nav .nav-item a.nav-link:hover {
+    color: $dark !important;
+    i {
+      color: $dark !important;
+    }
+  }
+}

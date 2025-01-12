@@ -1,3 +1,11 @@
++++
+title = "NVIDIA Visual Profiler Quickstart Guide"
+authors = ["Alex Dillhoff"]
+date = 2024-04-15T20:14:00-05:00
+tags = ["gpgpu"]
+draft = false
++++
+
 # NVIDIA Visual Profiler Quickstart Guide
 
 NVIDIA Visual Profiler is installed on both the GPU machines and the workstations. The following guide will show you how to use the NVIDIA Visual Profiler to profile your CUDA code. For more details, please refer to the [official documentation](https://docs.nvidia.com/cuda/profiler-users-guide/index.html).

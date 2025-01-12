@@ -1,0 +1,30 @@
+[
+    {
+        "date": "January 13",
+        "topic": "Course Introduction, Supervised Learning",
+        "materials": [
+            {
+                "title": "Linear Regression",
+                "url": "/notes/linear_regression"
+            },
+            {
+                "title": "Logistic Regression",
+                "url": "/notes/logistic_regression"
+            }
+        ]
+    },
+    {
+        "date": "January 15",
+        "topic": "Regularization and Probability Theory",
+        "materials": [
+            {
+                "title": "Regularization",
+                "url": "/notes/regularization"
+            },
+            {
+                "title": "Probability Theory",
+                "url": "/notes/probability_theory"
+            }
+        ]
+    }
+]
