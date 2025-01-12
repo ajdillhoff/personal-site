@@ -8,6 +8,7 @@ timeZone = "America/New_York"
 pagination.pagerSize = 6 # see https://gohugo.io/extras/pagination/
 # post excerpt
 summaryLength = 10 # see https://gohugo.io/content-management/excerpts/
+publishDir = "/home/alex/dev/ajdillhoff.github.io/"
 
 ########################### Services #############################
 [services]
