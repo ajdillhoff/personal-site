@@ -28,10 +28,12 @@ This is the course page for CSE 3380 - Linear Algebra in Spring 2025. Here you'l
 | MoWeFri | 12PM - 1PM | ERB 556A |
 | TuTh    | 1PM - 2PM  | ERB 556A |
 
-#### Teaching Assistants
+#### Teaching Assistant
 
 Hayden Lotspeich (hayden (dot) lotspeich (at) mavs (dot) uta (dot) edu)
 
-**Office Hours**
+##### Office Hours
 
-TBD
+| Days    | Time       | Location |
+| ------- | ---------- | -------- |
+| MoWeFri | 12PM - 1PM | ERB 125  |

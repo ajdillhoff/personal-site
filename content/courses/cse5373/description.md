@@ -21,12 +21,18 @@ draft: false  # Is this a draft? true/false
 
 This is the course page for CSE 4373/5373 - General Purpose GPU Programming in Spring 2024. Here you'll find class notes and other helpful resources. All assignments and announcements will be posted on Canvas.
 
-#### Teaching Assistants
-
-- Keshav Bansal (kxb5527 (at) mavs (dot) uta (dot) edu)
-
-#### Office Hours
+#### Instructor Office Hours
 | Days    | Time       | Location |
 | ------- | ---------- | -------- |
 | MoWeFri | 12PM - 1PM | ERB 556A |
 | TuTh    | 1PM - 2PM  | ERB 556A |
+
+#### Teaching Assistant
+
+Keshav Bansal (kxb5527 (at) mavs (dot) uta (dot) edu)
+
+##### Office Hours
+
+| Days | Time      | Location |
+| ---- | --------- | -------- |
+| MoWe | 3PM - 5PM | ERB 125  |
