@@ -15,7 +15,7 @@
     },
     {
         "date": "January 15",
-        "topic": "Regularization and Probability Theory",
+        "topic": "Regularization, Probability Theory, and Linear Discriminant Analysis",
         "materials": [
             {
                 "title": "Regularization",
@@ -24,6 +24,10 @@
             {
                 "title": "Probability Theory",
                 "url": "/notes/probability_theory"
+            },
+            {
+                "title": "Linear Discriminant Analysis",
+                "url": "/notes/linear_discriminant_analysis"
             }
         ]
     }

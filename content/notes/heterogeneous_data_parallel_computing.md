@@ -4,13 +4,13 @@ authors = ["Alex Dillhoff"]
 date = 2023-12-30T14:41:00-06:00
 tags = ["gpgpu", "computer science"]
 draft = false
+lastmod = 2025-01-14
 +++
 
 <div class="ox-hugo-toc toc">
 
 <div class="heading">Table of Contents</div>
 
-- [Key Concepts](#key-concepts)
 - [Summary](#summary)
 - [CUDA C Programs](#cuda-c-programs)
 - [Example: Vector Addition](#example-vector-addition)
@@ -19,19 +19,17 @@ draft = false
 </div>
 <!--endtoc-->
 
-
-
-## Key Concepts {#key-concepts}
-
--   Task Parallelism vs. Data Parallelism
--   kernels
--   threads
--   grids
--   blocks
--   global memory
--   data transfer
--   error checking
--   compilation of CUDA programs
+{{< notice "info" "Terms & Concepts" >}}
+- Task Parallelism vs. Data Parallelism
+- kernels
+- threads
+- grids
+- blocks
+- global memory
+- data transfer
+- error checking
+- compilation of CUDA programs
+{{< /notice >}}
 
 
 ## Summary {#summary}
@@ -100,7 +98,7 @@ Unless otherwise specified, functions that you define will be executed on the ho
 
 The kernel is executed on the host machine using the following code.
 
-```cuda
+```c
 int main() {
     // Allocate memory on the host
     float *x_h, *y_h, *z_h;
@@ -186,9 +184,9 @@ CUDA code is compiled using the NVCC compiler driver. It works by compiling host
 
 ## Error Checking {#error-checking}
 
-The functions we use in the CUDA API return an error code. We can use this to create robust code that checks for errors and either corrects them or exits gracefully. The following example shows a simple way to check the result of \`cudaMalloc\`:
+The functions we use in the CUDA API return an error code. We can use this to create robust code that checks for errors and either corrects them or exits gracefully. The following example shows a simple way to check the result of `cudaMalloc`:
 
-```cuda
+```c
 cudaError_t err = cudaMalloc(&x_d, n * sizeof(float));
 if (err != cudaSuccess) {
     fprintf(stderr, "Error: %s\n", cudaGetErrorString(err));
@@ -198,7 +196,7 @@ if (err != cudaSuccess) {
 
 A common pattern is to define a macro that checks the result of a CUDA function and exits if there is an error. This is shown below.
 
-```cuda
+```c
 #define gpuErrchk(ans) { gpuAssert((ans), __FILE__, __LINE__); }
 inline void gpuAssert(cudaError_t code, const char *file, int line, bool abort=true) {
    if (code != cudaSuccess) {

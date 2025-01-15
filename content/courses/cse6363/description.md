@@ -28,10 +28,12 @@ This is the course page for CSE 6363 - Machine Learning in Spring 2025. Here you
 | MoWeFri | 12PM - 1PM | ERB 556A |
 | TuTh    | 1PM - 2PM  | ERB 556A |
 
-#### Teaching Assistants
+#### Teaching Assistant
 
 - Usha Chintha (uxc5333 (at) mavs (dot) uta (dot) edu)
 
 ##### Office Hours
 
-TBD
+| Days   | Time      | Location |
+| ------ | --------- | -------- |
+| Mo-Fri | 4PM - 5PM | Teams    |
