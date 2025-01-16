@@ -1,0 +1,290 @@
+{{ $currentPage := . }}
+
+<nav class="section-nav" id="section-nav">
+  <style>
+    .section-nav {
+      max-height: calc(100vh - 4rem);
+      overflow-y: auto;
+      padding: 1rem;
+      font-size: 1rem;
+      scrollbar-width: thin;
+      scrollbar-color: rgba(155, 155, 155, 0.5) transparent;
+    }
+
+    .section-nav::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    .section-nav::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    .section-nav::-webkit-scrollbar-thumb {
+      background-color: rgba(155, 155, 155, 0.5);
+      border-radius: 3px;
+    }
+
+    .section-group {
+      margin-bottom: 0.5rem;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      padding: 0.25rem 0;
+      color: $text-color;
+      transition: color 0.2s;
+    }
+
+    .section-header:hover {
+      color: #000;
+    }
+
+    .section-header::before {
+      content: "▸";
+      display: inline-block;
+      width: 1rem;
+      transition: transform 0.2s;
+    }
+
+    .section-header.expanded::before {
+      transform: rotate(90deg);
+    }
+
+    .section-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.2s ease-out;
+      margin-left: 1rem;
+    }
+
+    .section-content.expanded {
+      max-height: 1000px;
+    }
+
+    .note-link {
+      display: block;
+      padding: 0.25rem 0;
+      color: #666;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .note-link:hover {
+      color: #000;
+    }
+
+    .note-link.active {
+      color: #000;
+      font-weight: 500;
+      background-color: rgba(0, 0, 0, 0.05);
+      border-radius: 4px;
+      padding: 0.25rem 0.5rem;
+      margin: 0.25rem -0.5rem;
+    }
+
+    /* Fade transition styles for article content */
+    article {
+      opacity: 1;
+      transition: opacity 0.2s ease-in-out;
+    }
+
+    article.fade-out {
+      opacity: 0;
+    }
+
+    article.fade-in {
+      opacity: 1;
+    }
+  </style>
+
+  <script>
+    class SectionNav {
+      constructor() {
+        this.initializeEventListeners();
+        this.restoreState();
+      }
+
+      initializeEventListeners() {
+        // Attach click handlers for all note links
+        document.querySelectorAll('#section-nav .note-link').forEach(link => {
+          link.onclick = (e) => {
+            e.preventDefault();
+            console.log('Link clicked:', link.href);  // Debug log
+            this.loadContent(link.href);
+            return false;
+          };
+        });
+
+        // Handle browser back/forward buttons
+        window.onpopstate = (event) => {
+          if (event.state?.url) {
+            this.loadContent(event.state.url, false);
+          }
+        };
+
+        // Handle section toggles
+        document.querySelectorAll('#section-nav .section-header').forEach(header => {
+          header.onclick = (e) => {
+            const sectionName = header.dataset.section;
+            this.toggleSection(header, sectionName);
+          };
+        });
+      }
+
+      async loadContent(url, pushState = true) {
+        console.log('Loading content for URL:', url);  // Debug log
+        
+        try {
+          // Start fade out
+          const currentArticle = document.querySelector('article');
+          currentArticle.classList.add('fade-out');
+
+          // Wait for fade out
+          await new Promise(resolve => setTimeout(resolve, 200));
+
+          // Fetch new content
+          const response = await fetch(url);
+          console.log('Fetch response:', response.ok);  // Debug log
+          
+          if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+          
+          const html = await response.text();
+          console.log('Received HTML length:', html.length);  // Debug log
+
+          // Parse the new content
+          const parser = new DOMParser();
+          const doc = parser.parseFromString(html, 'text/html');
+          const newArticle = doc.querySelector('article');
+          
+          if (!newArticle) {
+            console.error('No article found in fetched content');  // Debug log
+            throw new Error('No article found in fetched content');
+          }
+
+          // Update content
+          currentArticle.innerHTML = newArticle.innerHTML;
+          
+          // Update URL and history if this isn't a popstate event
+          if (pushState) {
+            history.pushState({ url }, '', url);
+          }
+
+          // Update active state in navigation
+          this.updateActiveState(url);
+
+          // Fade in new content
+          currentArticle.classList.remove('fade-out');
+
+          // Run any scripts in the new content
+          this.runScripts(currentArticle);
+
+          // Rerender MathJax content if MathJax is available
+          if (window.MathJax) {
+            if (window.MathJax.typesetPromise) {
+              // MathJax v3
+              await window.MathJax.typesetPromise([currentArticle]);
+            } else if (window.MathJax.Hub) {
+              // MathJax v2
+              window.MathJax.Hub.Queue(["Typeset", window.MathJax.Hub, currentArticle]);
+            }
+          }
+
+          // Scroll to top
+          window.scrollTo(0, 0);
+          
+        } catch (error) {
+          console.error('Error loading content:', error);  // Debug log
+          // Fallback to traditional navigation
+          window.location.href = url;
+        }
+      }
+
+      updateActiveState(currentUrl) {
+        document.querySelectorAll('#section-nav .note-link').forEach(link => {
+          // Remove any existing active states
+          link.classList.remove('active');
+          
+          // Compare the paths, ignoring potential trailing slashes
+          const linkPath = link.getAttribute('href').replace(/\/$/, '');
+          const currentPath = currentUrl.replace(/\/$/, '');
+          
+          if (linkPath === currentPath) {
+            link.classList.add('active');
+            // Ensure parent section is expanded
+            const parentSection = link.closest('.section-group');
+            if (parentSection) {
+              const header = parentSection.querySelector('.section-header');
+              const content = parentSection.querySelector('.section-content');
+              header.classList.add('expanded');
+              content.classList.add('expanded');
+            }
+          }
+        });
+      }
+
+      runScripts(container) {
+        container.querySelectorAll('script').forEach(oldScript => {
+          const newScript = document.createElement('script');
+          Array.from(oldScript.attributes).forEach(attr => {
+            newScript.setAttribute(attr.name, attr.value);
+          });
+          newScript.textContent = oldScript.textContent;
+          oldScript.parentNode.replaceChild(newScript, oldScript);
+        });
+      }
+
+      toggleSection(header, sectionName) {
+        const content = header.nextElementSibling;
+        const isExpanded = header.classList.toggle('expanded');
+        content.classList.toggle('expanded');
+        localStorage.setItem(`nav-section-${sectionName}`, isExpanded);
+      }
+
+      restoreState() {
+        document.querySelectorAll('#section-nav .section-group').forEach(section => {
+          const header = section.querySelector('.section-header');
+          const content = section.querySelector('.section-content');
+          const sectionName = header.dataset.section;
+          
+          // Restore saved state
+          if (localStorage.getItem(`nav-section-${sectionName}`) === 'true') {
+            header.classList.add('expanded');
+            content.classList.add('expanded');
+          }
+
+          // Auto-expand section with active page
+          if (section.querySelector('.note-link.active')) {
+            header.classList.add('expanded');
+            content.classList.add('expanded');
+            localStorage.setItem(`nav-section-${sectionName}`, 'true');
+          }
+        });
+      }
+    }
+
+    // Initialize when DOM is loaded
+    document.addEventListener('DOMContentLoaded', () => {
+      console.log('Initializing SectionNav');  // Debug log
+      window.sectionNav = new SectionNav();
+    });
+  </script>
+
+  {{ range $section, $pages := .Site.Taxonomies.sections }}
+    <div class="section-group">
+      <div class="section-header" 
+           data-section="{{ $section }}">
+        {{ $section }}
+      </div>
+      <div class="section-content">
+        {{ range $pages.Pages }}
+          <a href="{{ .RelPermalink }}" 
+             class="note-link{{ if eq . $currentPage }} active{{ end }}">
+            {{ .Title }}
+          </a>
+        {{ end }}
+      </div>
+    </div>
+  {{ end }}
+</nav>

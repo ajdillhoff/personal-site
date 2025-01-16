@@ -28,11 +28,12 @@ This is the course page for DASC 5304 - Machine Learning in Spring 2025. Here yo
 | MoWeFri | 12PM - 1PM | ERB 556A |
 | TuTh    | 1PM - 2PM  | ERB 556A |
 
-#### Teaching Assistants
+#### Teaching Assistant
 
-- **Primary:** Sudharani Bannengala (sxb7066 (at) mavs (dot) uta (dot) edu)
-- **Supplemental:** Prashanth Mattam Shankaraiah (pxm4936 (at) mavs (dot) uta (dot) edu)
+##### Sudharani Bannengala (sxb7066 (at) mavs (dot) uta (dot) edu)
 
-##### Office Hours
+**Office Hours**
 
-TBD
+| Days | Time        | Location |
+| ---- | ----------- | -------- |
+| MoWe | 11AM - 12PM | ERB 501  |

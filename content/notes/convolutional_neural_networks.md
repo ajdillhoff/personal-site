@@ -3,6 +3,7 @@ title = "Convolutional Neural Networks"
 authors = ["Alex Dillhoff"]
 date = 2022-04-02T00:00:00-05:00
 tags = ["deep learning", "computer vision"]
+sections = ["Machine Learning"]
 draft = false
 +++
 

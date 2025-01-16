@@ -64,3 +64,4 @@ rel = "manifest"
 
 [taxonomies]
 tag = "tags"
+section = "sections"
