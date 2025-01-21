@@ -4,13 +4,14 @@ authors = ["Alex Dillhoff"]
 date = 2022-01-22T00:00:00-06:00
 tags = ["computer vision"]
 draft = false
+lastmod = 2025-01-21
+sections = "Computer Vision"
 +++
 
 <div class="ox-hugo-toc toc">
 
 <div class="heading">Table of Contents</div>
 
-- [Introduction](#introduction)
 - [Smoothing](#smoothing)
 - [Convolution](#convolution)
 - [Gaussian Filters](#gaussian-filters)
@@ -19,12 +20,7 @@ draft = false
 </div>
 <!--endtoc-->
 
-
-
-## Introduction {#introduction}
-
--   How do we detect specific patterns in images (eyes, nose, spots, etc.)?
--   Weighted sums of pixel values.
+Liner filters are a fundamental concept in computer vision. They are used to process images in a variety of ways, such as smoothing, sharpening, and edge detection. They are also used in convolutional neural networks to extract features from images. An essential building block of the computer vision pipeline, understanding linear filters is crucial for anyone working in the field.
 
 
 ## Smoothing {#smoothing}
@@ -113,6 +109,10 @@ A **system** is linear if it satisfies both the superposition and scaling proper
 **Is the average box filter linear?** Yes, it is applied with convolution which behaves the same everywhere.
 
 **Is thresholding a linear system?** No, it can be shown that \\(f(n, m) + g(n, m) > T\\), but \\(f(n, m) < T\\) and \\(g(n, m) < T\\).
+
+{{< notice "info" "Why is this important?" >}}
+In the context of computer vision, this property has very important practical implications. For example, convolutions are used to identify common image features in a Convolutional Neural Network. This property ensures that the feature will be detected regardless of its absolute position in the image. This is critical for tasks like object recognition, where the same feature can appear anywhere in the input.
+{{< /notice >}}
 
 
 ## Gaussian Filters {#gaussian-filters}

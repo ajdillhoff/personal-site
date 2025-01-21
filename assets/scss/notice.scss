@@ -15,7 +15,7 @@ $quote-color: #918e91;
 .notice {
   margin-bottom: 1.5rem;
   border: 1px solid;
-  padding: 1.5rem;
+  padding: 1.5rem 1.5rem .5rem 1.5rem;
   border-color: currentColor;
 }
 
@@ -32,7 +32,7 @@ $quote-color: #918e91;
   font-size: 1.25rem;
   font-weight: 600;
   color: #1f2937;
-  margin: 0;
+  margin: 0 !important;
   line-height: 1;
 }
 
