@@ -4,7 +4,8 @@ authors = ["Alex Dillhoff"]
 date = 2022-01-22T00:00:00-06:00
 tags = ["computer vision"]
 draft = false
-lastmod = 2024-01-28
+lastmod = 2025-01-21
+sections = "Computer Vision"
 +++
 
 <div class="ox-hugo-toc toc">
@@ -38,19 +39,11 @@ Image features are the building blocks of many higher level applications such as
 2.  Image stitching
 3.  Object recognition and detection
 
-{{< figure src="Introduction/2022-02-08_09-02-34_screenshot.png" caption="<span class=\"figure-number\">Figure 1: </span>Patches taken from two images from different perspectives. Some patches are more descriptive than others. Source: Szeliski" >}}
+{{< figure src="/ox-hugo/2022-02-08_09-02-34_screenshot.png" caption="<span class=\"figure-number\">Figure 1: </span>Patches taken from two images from different perspectives. Some patches are more descriptive than others. Source: Szeliski" >}}
 
-{{< figure src="Introduction/2022-02-08_09-06-10_screenshot.png" caption="<span class=\"figure-number\">Figure 2: </span>Objects detected using YOLOv3. Source: Wikipedia." >}}
+{{< figure src="/ox-hugo/2022-02-08_09-06-10_screenshot.png" caption="<span class=\"figure-number\">Figure 2: </span>Objects detected using YOLOv3. Source: Wikipedia." >}}
 
-{{< figure src="Introduction/2022-02-08_09-07-29_screenshot.png" caption="<span class=\"figure-number\">Figure 3: </span>Image stitching result. The red lines show the seams at which the images are joined. Source: Wikipedia." >}}
-
-Topics:
-
--   Corners
--   HOG
--   SIFT
--   Correlation with template
--   PCA
+{{< figure src="/ox-hugo/2022-02-08_09-07-29_screenshot.png" caption="<span class=\"figure-number\">Figure 3: </span>Image stitching result. The red lines show the seams at which the images are joined. Source: Wikipedia." >}}
 
 We have talked about [Edge Detection]({{< relref "edge_detection.md" >}}), which produces an image of edge pixels given some raw input. Edges are certainly useful features, but are they distinct enough to produce consistent image features?
 
@@ -60,7 +53,7 @@ Consider an image patch detected from three different primitives:
 2.  Edges
 3.  Corners
 
-{{< figure src="Introduction/2022-02-08_09-33-27_screenshot.png" caption="<span class=\"figure-number\">Figure 4: </span>Aperture problem for patches detected from different primitives. Source: Szeliski." >}}
+{{< figure src="/ox-hugo/2022-02-08_09-33-27_screenshot.png" caption="<span class=\"figure-number\">Figure 4: </span>Aperture problem for patches detected from different primitives. Source: Szeliski." >}}
 
 The above figure illustrates the aperture problem.
 Consider a flat surface without texture. If we generate a patch around any arbitrary point, it will have many correspondences with other patches.

@@ -5,6 +5,7 @@ date = 2023-12-30T14:41:00-06:00
 tags = ["gpgpu", "computer science"]
 draft = false
 lastmod = 2025-01-14
+sections = "GPU Programming"
 +++
 
 <div class="ox-hugo-toc toc">

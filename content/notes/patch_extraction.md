@@ -4,6 +4,8 @@ authors = ["Alex Dillhoff"]
 date = 2024-06-06T17:57:00-05:00
 tags = ["deep learning", "data augmentation"]
 draft = false
+lastmod = 2025-01-21
+sections = "Computer Vision"
 +++
 
 <div class="ox-hugo-toc toc">

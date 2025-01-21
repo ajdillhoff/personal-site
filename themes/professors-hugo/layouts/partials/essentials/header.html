@@ -11,7 +11,7 @@
 
 <aside id="sidebarContent" class="position-fixed hidden d-lg-block top-0 w-100 vh-100">
   <nav id="navbar" class="navigation d-flex flex-column justify-content-between h-100">
-    <ul class="navbar-nav mb-5">
+    <ul class="navbar-nav mb-2">
       {{$currentPage := .}}
       {{ range site.Menus.main }}
       <li class="nav-item d-block">
@@ -20,7 +20,7 @@
       {{ end }}
     </ul>
 
-    <!-- {{ partial "category-nav" . }} -->
+    {{ partial "category-nav" . }}
 
     {{ with site.Params.sidebar }}
     {{ if .social_enable }}

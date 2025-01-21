@@ -4,6 +4,8 @@ authors = ["Alex Dillhoff"]
 date = 2024-01-05T11:56:00-06:00
 tags = ["gpgpu", "computer science"]
 draft = false
+lastmod = 2025-01-21
+sections = "GPU Programming"
 +++
 
 <div class="ox-hugo-toc toc">
@@ -134,7 +136,7 @@ colorToGrayscale<<<gridSize, blockSize>>>(rgbImage, grayImage, numRows, numCols)
 
 ## No longer embarrassing: overlapping data {#no-longer-embarrassing-overlapping-data}
 
-At this point, you should have a basic understanding of how to solve problems that are embarrassingly parallel. Now comes the next step in shaping your parallel thinking skills. What if the thread relies on multiple data points that may be used by other threads. This is further complicated with problems that require some computation to complete before a thread can begin its work. Let's take a step into deeper waters by looking at image blurring. This is a common technique used in image processing to reduce noise and detail. The basic idea is to replace each pixel with a weighted average of its neighboring pixels. The size of the neighborhood is called the **kernel size**. The kernel size is typically an odd number so that the pixel of interest is in the center of the neighborhood.
+At this point, you should have a basic understanding of how to solve problems that are embarrassingly parallel. Now comes the next step in shaping your parallel thinking skills. What if the thread relies on multiple data points that may be used by other threads? This is further complicated with problems that require some computation to complete before a thread can begin its work. Let's take a step into deeper waters by looking at image blurring. This is a common technique used in image processing to reduce noise and detail. The basic idea is to replace each pixel with a weighted average of its neighboring pixels. The size of the neighborhood is called the **kernel size**. The kernel size is typically an odd number so that the pixel of interest is in the center of the neighborhood.
 
 The core operation behind blurring is called a **convolution**. We will explore this operation in depth as it serves as a more advanced pattern for parallelism. For now, we will focus on the basic idea. Given a kernel size of \\(5 \times 5\\) centered on a pixel, we will compute the weighted average of the 25 pixels in the neighborhood. To keep it simple, the weights will be uniform.
 
@@ -236,7 +238,7 @@ dim3 gridSize((p + blockSize.x - 1) / blockSize.x,
 matrixMultiplyGPU<<<gridSize, blockSize>>>(A_d, B_d, C_d, m, n, p);
 ```
 
-What happens when the output matrix size exceeds the number of blocks per grid and threads per block? Either multiple kernels will be launched, each working with a submatrix of the original input, or each thread will be responsible for multiple elements.
+What happens when the output matrix size exceeds the number of blocks per grid and threads per block? If your input is exceeding the maximum grid size, you probably have bigger fish to fry. The largest square grid size that can be launched is \\(65536 \times 65536\\). The largest square block that can be launched is \\(32 \times 32\\). This means that your input matrix would need to be larger than \\(2097152 \times 2097152\\).
 
 
 ## What's Next? {#what-s-next}

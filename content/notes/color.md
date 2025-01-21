@@ -4,13 +4,15 @@ authors = ["Alex Dillhoff"]
 date = 2022-01-22T00:00:00-06:00
 tags = ["computer vision"]
 draft = false
+sections = "Computer Vision"
 +++
 
 <div class="ox-hugo-toc toc">
 
 <div class="heading">Table of Contents</div>
 
-- [Topics](#topics)
+- [Agenda](#agenda)
+- [Light and Color](#light-and-color)
 - [The Human Eye](#the-human-eye)
 - [Color Matching](#color-matching)
 - [Color Physics](#color-physics)
@@ -22,12 +24,22 @@ draft = false
 
 
 
-## Topics {#topics}
+## Agenda {#agenda}
 
 -   What is color?
 -   How do we process color?
+-   How is color modeled?
 -   What information does color contain?
 -   What can we infer from color?
+
+
+## Light and Color {#light-and-color}
+
+Light is electromagnetic radiation. It is generally described as waves in an electromagnetic field, but it also considered as photons. Electromagnetic radiation is typically measured based on its wavelength and intensity. Intensity refers to the amount of power that is carried by the photons.
+
+{{< figure src="/ox-hugo/2024-06-05_14-33-11_screenshot.png" caption="<span class=\"figure-number\">Figure 1: </span>Electromagnetic spectrum (Wikipedia)." >}}
+
+The **visible spectrum** consists of waves between 380nm and 800nm. The range of what we can see depends on several factors such as the levels of illumination. We generally associate light with color. After all, without light there is no color. However, light has no color! Light of a particular wavelength can appear as different colors depending on a myriad of factors (surroundings, shade, luminosity, etc.).
 
 
 ## The Human Eye {#the-human-eye}
@@ -36,11 +48,11 @@ The eye acts as a camera, including a lens which focuses light onto a receptive 
 
 The **pupil** is a diaphragm that adjusts the amount of light that enters the eye in response to varying intensities. However, this isn't the only mechanism available for this task. Our perception of the amount of light, _luminance adaptation_, occurs also in the retina and brain over a longer time period (usually several minutes).
 
-{{< figure src="/ox-hugo/2022-01-02_20-23-37_screenshot.png" caption="<span class=\"figure-number\">Figure 1: </span>Source: Wikipedia" >}}
+{{< figure src="/ox-hugo/2022-01-02_20-23-37_screenshot.png" caption="<span class=\"figure-number\">Figure 2: </span>Source: Wikipedia" >}}
 
 The following image from Wikipedia shows the evolution of the eye from a simple region of photoreceptors to the current model we have today.
 
-{{< figure src="/ox-hugo/2022-01-04_10-00-18_screenshot.png" caption="<span class=\"figure-number\">Figure 2: </span>Source: <https://en.wikipedia.org/wiki/Eye>" >}}
+{{< figure src="/ox-hugo/2022-01-04_10-00-18_screenshot.png" caption="<span class=\"figure-number\">Figure 3: </span>Source: <https://en.wikipedia.org/wiki/Eye>" >}}
 
 
 ### Retina {#retina}
@@ -52,11 +64,11 @@ The primary purpose of the optics of the eye is to focus light onto the **retina
 
 ### Photoreceptor Cells {#photoreceptor-cells}
 
-{{< figure src="/ox-hugo/2022-01-23_21-19-58_screenshot.png" caption="<span class=\"figure-number\">Figure 3: </span>Distribution of rods and cones. Source: Wikipedia" >}}
+{{< figure src="/ox-hugo/2022-01-23_21-19-58_screenshot.png" caption="<span class=\"figure-number\">Figure 4: </span>Distribution of rods and cones. Source: Wikipedia" >}}
 
 Photorceptor cells can be classified into two types: rods and cones. There are about 100 million rods and 6 million cones. **Rods** dominate our low-light vision. They do not have the variety of photopigments necessary for color vision. **Cones** dominate our color vision. They can be separated into one of three classes of light receptors. These three classes contain a specific type of photopigment that is sensitive to different wavelengths of light.
 
-{{< figure src="/ox-hugo/2021-12-31_13-24-45_screenshot.png" caption="<span class=\"figure-number\">Figure 4: </span>Source: <https://handprint.com/HP/WCL/color1.html#3cones>" >}}
+{{< figure src="/ox-hugo/2021-12-31_13-24-45_screenshot.png" caption="<span class=\"figure-number\">Figure 5: </span>Source: <https://handprint.com/HP/WCL/color1.html#3cones>" >}}
 
 Rods can pool input together before sending it to the brain. Low-light perception is better through peripheral vision.
 
@@ -64,7 +76,7 @@ Most of the cones are in the **fovea**. The high density of cones in this region
 
 The other segment of a photoreceptor cell lies the photopigment molecules. These act as transducers which convert light energy into a biological response. These molecules are made up of a light sensitive molecule called **chromophore** and a protein called **opsin**. Together, they are usually referred to as **rhodopsin**.
 
-{{< figure src="/ox-hugo/2022-01-02_20-47-55_screenshot.png" caption="<span class=\"figure-number\">Figure 5: </span>Photopigment Molecules. Source: <https://handprint.com/HP/WCL/color1.html>" >}}
+{{< figure src="/ox-hugo/2022-01-02_20-47-55_screenshot.png" caption="<span class=\"figure-number\">Figure 6: </span>Photopigment Molecules. Source: <https://handprint.com/HP/WCL/color1.html>" >}}
 
 
 #### Types of Photopigments {#types-of-photopigments}
@@ -113,7 +125,7 @@ This graph is normalized to peak response and is not representative of the distr
 
 The fact that the 3 shapes are colored as blue, green, and red are misleading. There are far more photoreceptors that perceive green light than there are blue or red light. You can see this when comparing green text versus blue text. Reading the blue text may strain your eyes and appear blurry. This is because there are simply fewer receptors available for these wavelengths. Fewer such receptors also implies that the resolution is smaller.
 
-{{< figure src="/ox-hugo/2022-01-03_13-34-15_screenshot.png" caption="<span class=\"figure-number\">Figure 6: </span>Fewer blue cones results in blue light appearing more blurry." >}}
+{{< figure src="/ox-hugo/2022-01-03_13-34-15_screenshot.png" caption="<span class=\"figure-number\">Figure 7: </span>Fewer blue cones results in blue light appearing more blurry." >}}
 
 
 ## Color Physics {#color-physics}
@@ -129,11 +141,11 @@ The perceived color of an object can be computed by multiplying the incident ill
 
 ### Color Temperature {#color-temperature}
 
-One quantity that is commonly used to describe a light source is temperature (measured in Kelvins). This is derived from the concept of the **black body**. That is, a body that does not reflect light. A heated black body emits radiation and the spectral power distribution of this radiation depends only on the temperature. The color temperature is the surface temperature of an ideal black body.
+Color temperature is a measure of the color characteristics of light. It is measured in degrees Kelving (K) and is based on the color of light emitted by an idealized black body radiator at a given temperature. A **black body** absorbs all incident electromagnetic radiation and emits the maximum possible amount of radiation at every wavelength for a given temperature.
 
-At lower temperature, the color is a red. As it increases, the color becomes whiter until reaching a light blue. See the table below:
+As a black body is heated, it emits light that changes color depending on its temperature. At lower temperatures, the color is a red. As it increases, the color becomes whiter until reaching a light blue. See the table below:
 
-{{< figure src="/ox-hugo/2022-01-25_11-49-50_screenshot.png" caption="<span class=\"figure-number\">Figure 7: </span>Colors corresponding to different temperatures. Source: Wikipedia" >}}
+{{< figure src="/ox-hugo/2022-01-25_11-49-50_screenshot.png" caption="<span class=\"figure-number\">Figure 8: </span>Colors corresponding to different temperatures. Source: Wikipedia" >}}
 
 
 ## Color Spaces {#color-spaces}
@@ -146,14 +158,14 @@ Interesting podcast on Color.
 
 There are several color spaces (or color models) available. The most common is RGB. In this section, we will explore the most common color spaces.
 
-{{< figure src="/ox-hugo/2022-01-03_17-51-15_screenshot.png" caption="<span class=\"figure-number\">Figure 8: </span>Comparison of several common color spaces. Source: <https://en.wikipedia.org/wiki/ProPhoto_RGB_color_space>" >}}
+{{< figure src="/ox-hugo/2022-01-03_17-51-15_screenshot.png" caption="<span class=\"figure-number\">Figure 9: </span>Comparison of several common color spaces. Source: <https://en.wikipedia.org/wiki/ProPhoto_RGB_color_space>" >}}
 
 
 ### CIE xy Color Space {#cie-xy-color-space}
 
 Verifying trichomatic theory meant that one should attempt to reproduce monochromatic (single wavelength) colors as a weighted mixture of primary colors. The Commision Internationale d'Eclairage did just that in the 1930s. They performed their own color matching experiments using red, blue, and green wavelengths as primary colors. Another benefit of this process is to set a standard in which colors can be reproduced.
 
-{{< figure src="/ox-hugo/2022-01-03_17-30-28_screenshot.png" caption="<span class=\"figure-number\">Figure 9: </span>CIE xy color space." >}}
+{{< figure src="/ox-hugo/2022-01-03_17-30-28_screenshot.png" caption="<span class=\"figure-number\">Figure 10: </span>CIE xy color space." >}}
 
 This shows the CIE xy space which was taken from CIE XYZ space. This 2D space is an intersection of the original XYZ space by the plane \\(X + Y + Z = 1\\). The coordinates are then
 
@@ -168,22 +180,22 @@ The border of this shape represents the wavevelength of the pure color. The colo
 
 RGB color spaces are the most commonly used in computer graphics. CIE also has their own RGB color space. It is derived from color matching experiments using 3 monochromatic primary colors.
 
-{{< figure src="/ox-hugo/2022-01-24_20-49-50_screenshot.png" caption="<span class=\"figure-number\">Figure 10: </span>CIE RGB gamut on the CIE xy color space." >}}
+{{< figure src="/ox-hugo/2022-01-24_20-49-50_screenshot.png" caption="<span class=\"figure-number\">Figure 11: </span>CIE RGB gamut on the CIE xy color space." >}}
 
 RGB models are commonly represented as a cube, as seen in the figure below.
 
-{{< figure src="/ox-hugo/2022-01-24_20-54-20_screenshot.png" caption="<span class=\"figure-number\">Figure 11: </span>Cube representation of an RGB color space." >}}
+{{< figure src="/ox-hugo/2022-01-24_20-54-20_screenshot.png" caption="<span class=\"figure-number\">Figure 12: </span>Cube representation of an RGB color space." >}}
 
 
 ## HSV Color Space {#hsv-color-space}
 
 Hue, Saturation, Value (HSV) provides an alternative representation of RGB. **Hue** represents the color. Given a fixed value for saturation and value, colors in HSV should appear as if they are receiving the same level of light.
 
-{{< figure src="/ox-hugo/2022-01-24_21-05-11_screenshot.png" caption="<span class=\"figure-number\">Figure 12: </span>Hue values when saturation and value are fixed. Source: Wikipedia" >}}
+{{< figure src="/ox-hugo/2022-01-24_21-05-11_screenshot.png" caption="<span class=\"figure-number\">Figure 13: </span>Hue values when saturation and value are fixed. Source: Wikipedia" >}}
 
 The CIE defines **saturation** as "the colourfulness of an area judged in proportion to its brightness." The **value** of a pixel represents how bright the color is compared to black.
 
-{{< figure src="/ox-hugo/2022-01-24_21-10-29_screenshot.png" caption="<span class=\"figure-number\">Figure 13: </span>HSV cylinder exemplifies the concepts of hue, saturation, and value. Source: Wikipedia" >}}
+{{< figure src="/ox-hugo/2022-01-24_21-10-29_screenshot.png" caption="<span class=\"figure-number\">Figure 14: </span>HSV cylinder exemplifies the concepts of hue, saturation, and value. Source: Wikipedia" >}}
 
 
 #### Conversion from RGB {#conversion-from-rgb}
@@ -218,7 +230,7 @@ Saturation is then computed as \\(S = \frac{C}{V}\\). Note that this will be und
 
 Hue is commonly measured in degrees between \\([0, 360]\\). As seen in the figure below, it is the angle past the previous edge of the hexagon.
 
-{{< figure src="/ox-hugo/2022-01-25_10-29-28_screenshot.png" caption="<span class=\"figure-number\">Figure 14: </span>Hue is the angle of the projected point with respect to the hexagon. 0 degrees is marked by the red edge. Source: Wikipedia" >}}
+{{< figure src="/ox-hugo/2022-01-25_10-29-28_screenshot.png" caption="<span class=\"figure-number\">Figure 15: </span>Hue is the angle of the projected point with respect to the hexagon. 0 degrees is marked by the red edge. Source: Wikipedia" >}}
 
 The function for Hue can be written as a piecewise function, altered slightly to account for undefined values in practice:
 
@@ -284,22 +296,22 @@ m = V - C
 
 Given an original image (below), we'll view the output of changing the Hue, Saturation, and Value.
 
-{{< figure src="/ox-hugo/2022-01-25_10-53-17_screenshot.png" caption="<span class=\"figure-number\">Figure 15: </span>Original image. Credit: The Expanse" >}}
+{{< figure src="/ox-hugo/2022-01-25_10-53-17_screenshot.png" caption="<span class=\"figure-number\">Figure 16: </span>Original image. Credit: The Expanse" >}}
 
 Reducing the Hue by 20 produces the following image:
 
-{{< figure src="/ox-hugo/2022-01-25_10-55-52_screenshot.png" caption="<span class=\"figure-number\">Figure 16: </span>Image with Hue subtracted by 20 degrees. Credit: The Expanse" >}}
+{{< figure src="/ox-hugo/2022-01-25_10-55-52_screenshot.png" caption="<span class=\"figure-number\">Figure 17: </span>Image with Hue subtracted by 20 degrees. Credit: The Expanse" >}}
 
 Given our working knowledge of how hue is computed, this makes sense. The previous angle clearly pointed to lighter blue colors, reducing that by \\(20^{\circ}\\) moves us towards the green edge.
 
 Now let's take the original image and increase saturation by 0.3:
 
-{{< figure src="/ox-hugo/2022-01-25_10-59-02_screenshot.png" caption="<span class=\"figure-number\">Figure 17: </span>Image with Saturation increased by 0.3. Credit: The Expanse" >}}
+{{< figure src="/ox-hugo/2022-01-25_10-59-02_screenshot.png" caption="<span class=\"figure-number\">Figure 18: </span>Image with Saturation increased by 0.3. Credit: The Expanse" >}}
 
 All colors across the board look "richer" and "deeper". This corresponds with the definition of the HSV cylinder.
 
 Finally, we'll view an image in which the value was modified. Let's increase the values by 0.2:
 
-{{< figure src="/ox-hugo/2022-01-25_11-03-01_screenshot.png" caption="<span class=\"figure-number\">Figure 18: </span>Image with Values increased by 0.2. Credit: The Expanse" >}}
+{{< figure src="/ox-hugo/2022-01-25_11-03-01_screenshot.png" caption="<span class=\"figure-number\">Figure 19: </span>Image with Values increased by 0.2. Credit: The Expanse" >}}
 
 This looks washed out. All of the pixels with 0 values were increased uniformly. Perhaps we could clamp that by setting all pixels with the given value change back to their original values.

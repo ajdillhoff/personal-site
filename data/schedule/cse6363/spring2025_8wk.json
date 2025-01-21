@@ -30,5 +30,23 @@
                 "url": "/notes/linear_discriminant_analysis"
             }
         ]
+    },
+    {
+        "date": "January 22",
+        "topic": "Naive Bayes Classifier, Support Vector Machine",
+        "materials": [
+            {
+                "title": "Naive Bayes Classifier",
+                "url": "/notes/naive_bayes"
+            },
+            {
+                "title": "Kernels",
+                "url": "/notes/kernels"
+            },
+            {
+                "title": "Support Vector Machine",
+                "url": "/notes/support_vector_machine"
+            }
+        ]
     }
 ]

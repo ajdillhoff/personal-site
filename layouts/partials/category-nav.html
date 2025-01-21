@@ -1,104 +1,6 @@
 {{ $currentPage := . }}
 
-<nav class="section-nav" id="section-nav">
-  <style>
-    .section-nav {
-      max-height: calc(100vh - 4rem);
-      overflow-y: auto;
-      padding: 1rem;
-      font-size: 1rem;
-      scrollbar-width: thin;
-      scrollbar-color: rgba(155, 155, 155, 0.5) transparent;
-    }
-
-    .section-nav::-webkit-scrollbar {
-      width: 6px;
-    }
-
-    .section-nav::-webkit-scrollbar-track {
-      background: transparent;
-    }
-
-    .section-nav::-webkit-scrollbar-thumb {
-      background-color: rgba(155, 155, 155, 0.5);
-      border-radius: 3px;
-    }
-
-    .section-group {
-      margin-bottom: 0.5rem;
-    }
-
-    .section-header {
-      display: flex;
-      align-items: center;
-      cursor: pointer;
-      padding: 0.25rem 0;
-      color: $text-color;
-      transition: color 0.2s;
-    }
-
-    .section-header:hover {
-      color: #000;
-    }
-
-    .section-header::before {
-      content: "▸";
-      display: inline-block;
-      width: 1rem;
-      transition: transform 0.2s;
-    }
-
-    .section-header.expanded::before {
-      transform: rotate(90deg);
-    }
-
-    .section-content {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.2s ease-out;
-      margin-left: 1rem;
-    }
-
-    .section-content.expanded {
-      max-height: 1000px;
-    }
-
-    .note-link {
-      display: block;
-      padding: 0.25rem 0;
-      color: #666;
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-
-    .note-link:hover {
-      color: #000;
-    }
-
-    .note-link.active {
-      color: #000;
-      font-weight: 500;
-      background-color: rgba(0, 0, 0, 0.05);
-      border-radius: 4px;
-      padding: 0.25rem 0.5rem;
-      margin: 0.25rem -0.5rem;
-    }
-
-    /* Fade transition styles for article content */
-    article {
-      opacity: 1;
-      transition: opacity 0.2s ease-in-out;
-    }
-
-    article.fade-out {
-      opacity: 0;
-    }
-
-    article.fade-in {
-      opacity: 1;
-    }
-  </style>
-
+<div class="section-nav mb-3" id="section-nav">
   <script>
     class SectionNav {
       constructor() {
@@ -138,7 +40,7 @@
         
         try {
           // Start fade out
-          const currentArticle = document.querySelector('article');
+          const currentArticle = document.querySelector('.main-content');
           currentArticle.classList.add('fade-out');
 
           // Wait for fade out
@@ -156,7 +58,7 @@
           // Parse the new content
           const parser = new DOMParser();
           const doc = parser.parseFromString(html, 'text/html');
-          const newArticle = doc.querySelector('article');
+          const newArticle = doc.querySelector('.main-content');
           
           if (!newArticle) {
             console.error('No article found in fetched content');  // Debug log
@@ -174,7 +76,7 @@
           // Update active state in navigation
           this.updateActiveState(url);
 
-          // Fade in new content
+          // End fade out
           currentArticle.classList.remove('fade-out');
 
           // Run any scripts in the new content
@@ -189,6 +91,11 @@
               // MathJax v2
               window.MathJax.Hub.Queue(["Typeset", window.MathJax.Hub, currentArticle]);
             }
+          }
+
+          // reinitialize aos
+          if (window.AOS) {
+            window.AOS.init();
           }
 
           // Scroll to top
@@ -278,7 +185,7 @@
         {{ $section }}
       </div>
       <div class="section-content">
-        {{ range $pages.Pages }}
+        {{ range sort $pages.Pages "Title" "asc" }}
           <a href="{{ .RelPermalink }}" 
              class="note-link{{ if eq . $currentPage }} active{{ end }}">
             {{ .Title }}
@@ -287,4 +194,4 @@
       </div>
     </div>
   {{ end }}
-</nav>
+</div>

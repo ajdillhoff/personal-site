@@ -1,7 +1,7 @@
 # main menu
 [[main]]
 name = "Introduction"
-url = "#banner"
+url = "/#banner"
 pre = "fa-solid fa-user"
 weight = -1
 
@@ -13,7 +13,7 @@ weight = -1
 
 [[main]]
 name = "Courses"
-url = "#courses"
+url = "/#courses"
 pre = "fa-solid fa-school"
 weight = 2
 
@@ -25,13 +25,13 @@ weight = 2
 
 [[main]]
 name = "Articles"
-url = "#blog"
+url = "/#blog"
 pre = "fa-solid fa-newspaper"
 weight = 3
 
 [[main]]
 name = "Notes"
-url = "notes"
+url = "/notes"
 pre = "fa-solid fa-note-sticky"
 weight = 4
 

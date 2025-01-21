@@ -272,3 +272,122 @@
         }
     }
 }
+
+// -----------------------
+// Sections
+// -----------------------
+.section-nav {
+    max-height: calc(100vh - 4rem);
+    overflow-y: auto;
+    padding: 0;
+    font-size: 1.1rem;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(155, 155, 155, 0.5) transparent;
+}
+    
+.section-nav::-webkit-scrollbar {
+    width: 6px;
+}
+    
+.section-nav::-webkit-scrollbar-track {
+    background: transparent;
+}
+    
+.section-nav::-webkit-scrollbar-thumb {
+    background-color: rgba(155, 155, 155, 0.5);
+    border-radius: 0px;
+}
+    
+.section-group {
+    margin-bottom: 0.5rem;
+}
+    
+.section-header {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 0;
+    color: var(--bs-nav-link-color);
+    transition: color 0.2s;
+    text-transform: capitalize;
+
+    &:hover {
+        color: #222;
+    }
+}
+    
+.dark {
+    .section-header:hover {
+        color: #fff;
+    }
+}
+    
+.section-header::before {
+    content: "⭓";
+    margin-right: 0.5rem;
+    display: inline-block;
+    width: 1rem;
+    transition: transform 0.2s;
+    color: $color-primary;
+}
+    
+.section-header.expanded::before {
+    transform: rotate(90deg) translateX(10%) translateY(10%);
+}
+    
+.section-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    margin-left: 1rem;
+}
+    
+.section-content.expanded {
+    max-height: 1000px;
+}
+    
+.note-link {
+    display: block;
+    padding: 0.1rem 0;
+    text-decoration: none;
+    transition: color 0.2s;
+    font-size: 0.85rem;
+}
+    
+.dark {
+    .note-link {
+            color: $text-color;
+    
+            &:hover {
+                color: #fff
+            }
+        }
+}
+
+.light {
+    .note-link {
+        color: var(--bs-nav-link-color);
+    
+        &:hover {
+            color: #222;
+        }
+    }
+}
+    
+// .note-link.active {
+//     color: $link-color;
+//     font-weight: 500;
+//     border-radius: 4px;
+//     padding: 0.25rem 0.5rem;
+//     margin: 0.25rem -0.5rem;
+// }
+    
+/* Fade transition styles for article content */
+.main-content {
+    opacity: 1;
+    transition: opacity 0.2s ease-in-out;
+}
+    
+.main-content.fade-out {
+    opacity: 0;
+}

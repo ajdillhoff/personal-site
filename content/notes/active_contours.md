@@ -3,8 +3,9 @@ title = "Active Contours"
 authors = ["Alex Dillhoff"]
 date = 2022-02-22T00:00:00-06:00
 tags = ["computer vision"]
-sections = ["Computer Vision"]
 draft = false
+lastmod = 2025-01-21
+sections = "Computer Vision"
 +++
 
 <div class="ox-hugo-toc toc">
@@ -38,7 +39,7 @@ draft = false
 **Snakes**, as named by Kass et al., is a spline curve that is minimized such that it moves towards distinct image features such as edges.
 The closed curve, or snake, can be thought of as a rubber band.
 
-{{< figure src="Introduction/2022-02-23_08-37-57_screenshot.png" caption="<span class=\"figure-number\">Figure 1: </span>Example of snake snapping to object. (Copyright 2018, 2008 Pearson Education, Inc.)" >}}
+{{< figure src="/ox-hugo/2022-02-23_08-37-57_screenshot.png" caption="<span class=\"figure-number\">Figure 1: </span>Example of snake snapping to object. (Copyright 2018, 2008 Pearson Education, Inc.)" >}}
 
 When stretched out, the band has an internal potential energy that forces the band to close in around some rigid object which exerts force against the band's internal energy.
 This method does not tout itself it be a fully autonomous way to segment interesting features.
