@@ -4,7 +4,8 @@ authors = ["Alex Dillhoff"]
 date = 2022-01-22T00:00:00-06:00
 tags = ["machine learning"]
 draft = false
-lastmod = 2024-02-01
+lastmod = 2025-01-21
+sections = "Machine Learning"
 +++
 
 <div class="ox-hugo-toc toc">
@@ -29,7 +30,7 @@ Slides for these notes can be found [here.](/teaching/cse6363/lectures/naive_bay
 
 To motivate naive Bayes classifiers, let's look at slightly more complex data. The MNIST dataset was one of the standard benchmarks for computer vision classification algorithms for a long time. It remains useful for educational purposes. The dataset consists of 60,000 training images and 10,000 testing images of size \\(28 \times 28\\). These images depict handwritten digits. For the purposes of this section, we will work with binary version of the images. This implies that each data sample has 784 binary features.
 
-We will use the naive Bayes classifier to make an image classification model which predicts the class of digit given a new image. Each image will be represented by a vector \\(\mathbf{x} \in \mathbb{R}^{784}\\). Modeling \\(p(\mathbf{x}|C\_k)\\) with a multinomial distribution would require \\(10^{784} - 1\\) parameters since there are 10 classes and 784 features.
+We will use the naive Bayes classifier to make an image classification model which predicts the class of digit given a new image. Each image will be represented by a vector \\(\mathbf{x} \in \mathbb{R}^{784}\\). Modeling \\(p(\mathbf{x}|C\_k)\\) with a multinomial distribution would require \\(10 \times 2^{784} - 10\\) parameters since there are 10 classes and 784 features.
 
 {{< figure src="/ox-hugo/2022-02-01_18-47-49_screenshot.png" caption="<span class=\"figure-number\">Figure 1: </span>Samples of the MNIST training dataset." >}}
 
