@@ -25,8 +25,8 @@ This is the course page for CSE 6363 - Machine Learning (8-week) in Spring 2025.
 
 | Days    | Time       | Location |
 | ------- | ---------- | -------- |
-| MoWeFri | 12PM - 1PM | ERB 556A |
-| TuTh    | 1PM - 2PM  | ERB 556A |
+| MoWeFri | 12PM - 1PM | ERB 125  |
+| TuTh    | 1PM - 2PM  | ERB 125  |
 
 #### Teaching Assistant
 

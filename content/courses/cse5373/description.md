@@ -24,8 +24,8 @@ This is the course page for CSE 4373/5373 - General Purpose GPU Programming in S
 #### Instructor Office Hours
 | Days    | Time       | Location |
 | ------- | ---------- | -------- |
-| MoWeFri | 12PM - 1PM | ERB 556A |
-| TuTh    | 1PM - 2PM  | ERB 556A |
+| MoWeFri | 12PM - 1PM | ERB 125  |
+| TuTh    | 1PM - 2PM  | ERB 125  |
 
 #### Teaching Assistant
 

@@ -84,7 +84,7 @@ gray = 0.299f * red + 0.587f * green + 0.114f * blue
 
 A CPU implementation would require a `for` loop over the exact number of pixels. The CUDA kernel for this is straightforward since it only depends on the current pixel. The only real challenge is to compute the correct indices for each thread.
 
-```cuda
+```cpp
 __global__
 void colorToGrayscale(unsigned char *rgbImage,
                       unsigned char *grayImage,
@@ -211,7 +211,7 @@ For a parallel implementation, we can reason that each thread should compute a s
 
 The output matrix is separated into blocks based on our block size. When writing the kernel, it is necessary to make sure that the index is not out of bounds.
 
-```cuda
+```cpp
 __global__
 void matrixMultiplyGPU(float *A, float *B, float *C, int m, int n, int p) {
     int row = blockIdx.y * blockDim.y + threadIdx.y;

@@ -212,6 +212,10 @@ With these new terms defined, we have that \\(\mathbf{w}'^T\mathbf{x}\_0 = -(\ma
 p(C\_1|\mathbf{x};\mathbf{\theta}) = \sigma(\mathbf{w}'^T(\mathbf{x} - \mathbf{x}\_0)).
 \end{equation\*}
 
+{{< notice "tip" "Decision Boundary Geometry" >}}
+Understanding the derivation above is not as important as understanding the result. Remember that $\mathbf{w}^T\mathbf{x}$ returns the coefficient of projection of $\mathbf{x}$ onto $\mathbf{w}$. That number is then passed through the logistic sigmoid function, which gives us a number that we can *interpret* as the probability of $\mathbf{x}$ belonging to class 1.
+{{< /notice >}}
+
 The middle point between the two class means \\(\mathbf{x}\_0\\) is the point where the posterior probability of class 1 is 0.5. This is the decision boundary between the two classes. That is, if \\(\mathbf{w}'^T\mathbf{x} > \mathbf{w}'^T\mathbf{x}\_0\\), then the posterior probability of class 1 is greater than \\(0.5\\) and the input vector \\(\mathbf{x}\\) is classified as class 1.
 
 The split between the class priors controls the location of the decision boundary. If the class priors are equal, then the decision boundary is the point directly between the two class means. If the class priors are not equal, then the decision boundary is shifted towards the class with the higher prior. The figure below visualizes this.
