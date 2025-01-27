@@ -50,5 +50,24 @@
                 "url": "/notes/naive_bayes"
             }
         ]
+    },
+    {
+        "date": "January 28",
+        "topic": "Using Python for Machine Learning",
+        "materials": []
+    },
+    {
+        "date": "January 30",
+        "topic": "Kernels and Support Vector Machine",
+        "materials": [
+            {
+                "title": "Kernel Methods",
+                "url": "/notes/kernels"
+            },
+            {
+                "title": "Support Vector Machine",
+                "url": "/notes/support_vector_machine"
+            }
+        ]
     }
 ]

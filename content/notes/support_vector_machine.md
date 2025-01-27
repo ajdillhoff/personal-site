@@ -4,7 +4,8 @@ authors = ["Alex Dillhoff"]
 date = 2022-01-22T00:00:00-06:00
 tags = ["machine learning"]
 draft = false
-lastmod = 2024-06-25
+lastmod = 2025-01-26
+sections = "Machine Learning"
 +++
 
 <div class="ox-hugo-toc toc">

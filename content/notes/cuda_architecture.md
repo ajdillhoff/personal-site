@@ -4,6 +4,8 @@ authors = ["Alex Dillhoff"]
 date = 2024-01-08T20:49:00-06:00
 tags = ["gpgpu", "computer science"]
 draft = false
+sections = "GPU Programming"
+lastmod = 2025-01-26
 +++
 
 <div class="ox-hugo-toc toc">
@@ -45,7 +47,7 @@ Threads that run on the same block can be synchronized using `__syncthreads()`. 
 
 Be careful on using this call. An example of incorrect usage is shown below.
 
-```cuda
+```c
 __global__
 void kernel(int *a, int *b, int *c) {
     if (threadIdx.x % 2 == 0) {
@@ -78,6 +80,11 @@ Warps are executed following the Single-Instruction, Multiple-Data (SIMD) model.
 {{< figure src="/ox-hugo/2024-01-28_21-08-27_screenshot.png" caption="<span class=\"figure-number\">Figure 3: </span>SM layout (source: NVIDIA DLI)" >}}
 
 The advantage of this model is that more physical space can be dedicated to ALUs instead of control logic. In a traditional CPU, each processing core would have its own control logic. The tradeoff is that different cores can execute their own programs at varying points in time.
+
+
+### Clarification on Warps, FP Cores, and Blocks {#clarification-on-warps-fp-cores-and-blocks}
+
+As stated above, the H100 has 128 FP cores per SM, the warp size is 32, the maximum number of threads per block is 1024, and the maximum number of threads per SM is 2048. Each SM can execute instructions for a number of warps defined by the specific architecture. The scheduler will assign warps to actual processing cores.
 
 
 ## Control Divergence {#control-divergence}

@@ -4,19 +4,21 @@ authors = ["Alex Dillhoff"]
 date = 2022-01-22T00:00:00-06:00
 tags = ["machine learning"]
 draft = false
+sections = "Machine Learning"
+lastmod = 2025-01-26
 +++
 
 <div class="ox-hugo-toc toc">
 
 <div class="heading">Table of Contents</div>
 
-- [Resources](#resources)
-- [Introduction](#introduction)
+- [Linear Models as a Template for Machine Learning](#linear-models-as-a-template-for-machine-learning)
 - [Definition](#definition)
 - [Forward Pass](#forward-pass)
 - [Activation Functions](#activation-functions)
 - [Multi-Class Classification](#multi-class-classification)
 - [Backpropagation](#backpropagation)
+- [Visualizing Neural Networks](#visualizing-neural-networks)
 - [Non-Convex Optimization](#non-convex-optimization)
 
 </div>
@@ -24,12 +26,7 @@ draft = false
 
 
 
-## Resources {#resources}
-
--   <https://playground.tensorflow.org/>
-
-
-## Introduction {#introduction}
+## Linear Models as a Template for Machine Learning {#linear-models-as-a-template-for-machine-learning}
 
 Previously, we studied the [Perceptron]({{< relref "perceptron.md" >}}) and saw that while it made for a simple linear classifier, it is severely limited to problems that are already linearly separable.
 This limitation was resolved by introduding a hidden layer with multiple perceptron units, aptly named Multi-Layer Perceptrons.
@@ -37,6 +34,10 @@ This limitation was resolved by introduding a hidden layer with multiple percept
 In this series, we will explore the more general method of neural networks.
 We will see that even a network of only two layers can approximate any continuous functional mapping to arbitrary accuracy.
 Through a discussion about network architectures, activation functions, and backpropagation, we will understand and use neural networks to resolve a large number of both classification and regression tasks.
+
+Before jumping into a definition, consider a simple linear model such as the one discussed in [Linear Regression]({{< relref "linear_regression.md" >}}). We can adapt the model to fit all kinds of complex functions through the use of basis functions. Under this variation, it would seem possible to construct a model that fits any function to some arbitrary accuracy. However, this approach suffers greatly from the **curse of dimensionality**. The more input samples we have, and the more complex they are, the greater then number of parameters required becomes. This was previously discussed when introducing [Kernels]({{< relref "kernels.md" >}}). Depending on the choice of basis function, the number of parameters required explodes exponentially.
+
+Instead of guessing about which combination of basis functions would result in the best possible model for our particular problem, neural networks are optimized to produce a set of parameters that best fits the training data given a loss function.
 
 
 ## Definition {#definition}
@@ -298,6 +299,11 @@ Putting all of this together yields
 \frac{d\mathcal{L}}{dW^{(2)}} &= \frac{\mathbf{z}^{(2)} - \mathbf{y}}{\mathbf{z}^{(2)}(1 - \mathbf{z}^{(2)})} \* \mathbf{z}^{(2)}(1 - \mathbf{z}^{(2)}) \* \mathbf{z}^{(1)}\\\\
 &= \mathbf{z}^{(1)} (\mathbf{z}^{(2)} - \mathbf{y}).
 \end{align\*}
+
+
+## Visualizing Neural Networks {#visualizing-neural-networks}
+
+-   <https://playground.tensorflow.org/>
 
 
 ## Non-Convex Optimization {#non-convex-optimization}

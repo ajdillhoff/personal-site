@@ -48,5 +48,45 @@
                 "url": "/notes/support_vector_machine"
             }
         ]
+    },
+    {
+        "date": "January 27",
+        "topic": "Support Vector Machine, Neural Networks",
+        "materials": [
+            {
+                "title": "Support Vector Machine",
+                "url": "/notes/support_vector_machine"
+            },
+            {
+                "title": "Sequential Minimal Optimization",
+                "url": "/notes/support_vector_machine"
+            },
+            {
+                "title": "Perceptron",
+                "url": "/notes/perceptron"
+            },
+            {
+                "title": "Neural Networks",
+                "url": "/notes/neural_networks"
+            }
+        ]
+    },
+    {
+        "date": "January 29",
+        "topic": "Decision Trees, Boosting and Bagging",
+        "materials": [
+            {
+                "title": "Decision Trees",
+                "url": "/notes/decision_trees"
+            },
+            {
+                "title": "Boosting",
+                "url": "/notes/boosting"
+            },
+            {
+                "title": "Gradient Boosting",
+                "url": "/notes/gradient_boosting"
+            }
+        ]
     }
 ]

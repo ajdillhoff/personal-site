@@ -4,7 +4,8 @@ authors = ["Alex Dillhoff"]
 date = 2022-07-04T00:00:00-05:00
 tags = ["machine learning"]
 draft = false
-lastmod = 2024-02-01
+lastmod = 2025-01-26
+sections = "Machine Learning"
 +++
 
 <div class="ox-hugo-toc toc">
@@ -26,7 +27,7 @@ lastmod = 2024-02-01
 
 **Paper link:** <https://www.microsoft.com/en-us/research/publication/sequential-minimal-optimization-a-fast-algorithm-for-training-support-vector-machines/>
 
-Sequential Minimal Optimization (SMO) is an algorithm to solve the SVM Quadratic Programming (QP) problem efficiently (<a href="#citeproc_bib_item_1">Platt, n.d.</a>). Developed by John Platt at Microsoft Research, SMO deals with the constraints of the SVM objective by breaking it down into a smaller optimization problem at each step.
+Sequential Minimal Optimization (SMO) is an algorithm to solve the SVM Quadratic Programming (QP) problem efficiently (<a href="#citeproc_bib_item_1">Platt 1998</a>). Developed by John Platt at Microsoft Research, SMO deals with the constraints of the SVM objective by breaking it down into a smaller optimization problem at each step.
 
 The two key components of SMO are
 
@@ -116,12 +117,12 @@ We first consider the case when \\(y\_1 \neq y\_2\\).
 Let \\(y\_1 = 1\\) and \\(y\_2 = -1\\), then \\(a\_1 - a\_2 = w\\).
 As \\(\alpha\_1\\) increases, \\(\alpha\_2\\) must also increase to satisfy the constraint.
 
-{{< figure src="/ox-hugo/2022-07-10_22-48-56_screenshot.png" caption="<span class=\"figure-number\">Figure 1: </span>Equality constraint for case 1 (from Platt's SMO paper)." >}}
+{{< figure src="/ox-hugo/2022-07-10_22-48-56_screenshot.png" caption="<span class=\"figure-number\">Figure 1: </span>Equality constraint for case 1 (<a href=\"#citeproc_bib_item_1\">Platt 1998</a>)." >}}
 
 The other case is when \\(y\_1 = y\_2\\), then \\(\alpha\_1 + \alpha\_2 = w\\).
 As \\(\alpha\_1\\) is increased, \\(\alpha\_2\\) is decreased to satisfy the constraint.
 
-{{< figure src="/ox-hugo/2022-07-10_22-51-53_screenshot.png" caption="<span class=\"figure-number\">Figure 2: </span>Box constraint for samples of the same class (from Platt's SMO paper)." >}}
+{{< figure src="/ox-hugo/2022-07-10_22-51-53_screenshot.png" caption="<span class=\"figure-number\">Figure 2: </span>Box constraint for samples of the same class (<a href=\"#citeproc_bib_item_1\">Platt 1998</a>)." >}}
 
 
 ## Updating the Lagrangians {#updating-the-lagrangians}
@@ -313,6 +314,25 @@ u = \sum\_{i=1}^N y\_i \alpha\_i K(\mathbf{x}\_i, \mathbf{x}) - b.
 \\]
 
 
+#### Computing the bias {#computing-the-bias}
+
+There is yet one parameter left to update: this bias term. Given the equation for SVM's output above, we can compute the output as
+
+\\[
+b = \mathbf{w}^T \mathbf{x}\_k - y\_k\quad \text{for } \alpha\_k > 0.
+\\]
+
+We can also come up with an equation for updating \\(b\\) intuitively. The support vectors lie in the margins, where \\(\alpha\_i = 1\\). That is, where \\(y\_i \mathbf{w}^T \mathbf{x}\_i = 1\\). Then taking the average of a support vector lying on each margin yields \\(b\\).
+
+\\[
+b = - \frac{1}{2} \Big( \max\_{i:y\_i=-1} \mathbf{w}^T \mathbf{x}\_i + \min\_{i:y\_i=1} \mathbf{w}^T \mathbf{x}\_i \Big).
+\\]
+
+{{< notice "note" "SMO's Iterative Solution" >}}
+The updates given above assume that the optimal solution for $\mathbf{w}$ has already been found. The bias update term given by Platt allows for iterative updates. See the paper for more details.
+{{< /notice >}}
+
+
 ## Implementation {#implementation}
 
 An implementation of SMO in Python is available at <https://github.com/ajdillhoff/CSE6363/blob/main/svm/smo.ipynb>
@@ -320,5 +340,5 @@ An implementation of SMO in Python is available at <https://github.com/ajdillhof
 ## References
 
 <style>.csl-entry{text-indent: -1.5em; margin-left: 1.5em;}</style><div class="csl-bib-body">
-  <div class="csl-entry"><a id="citeproc_bib_item_1"></a>Platt, John C. n.d. “Sequential Minimal Optimization: A Fast Algorithm for Training Support Vector Machines,” 21.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_1"></a>Platt, John C. 1998. “Sequential Minimal Optimization: A Fast Algorithm for Training Support Vector Machines,” 21.</div>
 </div>

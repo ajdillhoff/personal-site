@@ -4,7 +4,7 @@ authors = ["Alex Dillhoff"]
 date = 2023-12-30T14:41:00-06:00
 tags = ["gpgpu", "computer science"]
 draft = false
-lastmod = 2025-01-14
+lastmod = 2025-01-26
 sections = "GPU Programming"
 +++
 
@@ -75,7 +75,7 @@ One small note about the variable names: it is common to use the suffix \`_h\` t
 
 An equivalent implementation in CUDA C is shown below.
 
-```cuda
+```c
 __global__
 void vecAdd(float *x_d, float *y_d, float *z_d, int n) {
     int i = blockIdx.x * blockDim.x + threadIdx.x;

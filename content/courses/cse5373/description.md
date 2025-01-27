@@ -31,7 +31,6 @@ This is the course page for CSE 4373/5373 - General Purpose GPU Programming in S
 | Thu  | 11:30AM - 1:30PM           |
 | Fri  | 9AM - 8PM                  |
 
-
 #### Instructor Office Hours
 | Days    | Time       | Location |
 | ------- | ---------- | -------- |
