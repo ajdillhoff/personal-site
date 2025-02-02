@@ -53,11 +53,6 @@
     },
     {
         "date": "January 28",
-        "topic": "Using Python for Machine Learning",
-        "materials": []
-    },
-    {
-        "date": "January 30",
         "topic": "Kernels and Support Vector Machine",
         "materials": [
             {
@@ -67,6 +62,44 @@
             {
                 "title": "Support Vector Machine",
                 "url": "/notes/support_vector_machine"
+            }
+        ]
+    },
+    {
+        "date": "January 30",
+        "topic": "Using Python for Machine Learning, Decision Trees",
+        "materials": [
+            {
+                "title": "Decision Trees",
+                "url": "/notes/decision_trees"
+            }
+        ]
+    },
+    {
+        "date": "February 4",
+        "topic": "Perceptron and Neural Networks",
+        "materials": [
+            {
+                "title": "Perceptron",
+                "url": "/notes/perceptron"
+            },
+            {
+                "title": "Neural Networks",
+                "url": "/notes/neural_networks"
+            }
+        ]
+    },
+    {
+        "date": "February 6",
+        "topic": "Ensemble Methods",
+        "materials": [
+            {
+                "title": "Random Forest",
+                "url": "/notes/gradient_boosting"
+            },
+            {
+                "title": "Boosting",
+                "url": "/notes/boosting"
             }
         ]
     }

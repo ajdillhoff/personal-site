@@ -56,12 +56,28 @@
     },
     {
         "date": "January 29",
-        "topic": "HOG and SIFT",
+        "topic": "Image Features",
+        "materials": [
+            {
+                "title": "Image Features",
+                "url": "/notes/image_features"
+            }
+        ]
+    },
+    {
+        "date": "January 31",
+        "topic": "Histogram of Oriented Gradients",
         "materials": [
             {
                 "title": "Histogram of Oriented Gradients",
                 "url": "/notes/histogram_of_oriented_gradients"
-            },
+            }
+        ]
+    },
+    {
+        "date": "February 3",
+        "topic": "Scale Invariant Feature Transforms",
+        "materials": [
             {
                 "title": "SIFT Features",
                 "url": "/notes/scale_invariant_feature_transforms"
@@ -69,7 +85,7 @@
         ]
     },
     {
-        "date": "January 31",
+        "date": "February 5",
         "topic": "Bag of Visual Words and Feature Matching",
         "materials": [
             {

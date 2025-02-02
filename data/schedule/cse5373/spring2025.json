@@ -63,5 +63,25 @@
         "date": "January 31",
         "topic": "Lab/Recitation",
         "materials": []
+    },
+    {
+        "date": "February 3",
+        "topic": "Memory Architecture",
+        "materials": [
+            {
+                "title": "Memory Architecture",
+                "url": "/notes/cuda_memory_architecture"
+            }
+        ]
+    },
+    {
+        "date": "February 5",
+        "topic": "Tiling and Shared Memory",
+        "materials": [
+            {
+                "title": "Memory Architecture",
+                "url": "/notes/cuda_memory_architecture"
+            }
+        ]
     }
 ]

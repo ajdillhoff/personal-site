@@ -4,6 +4,8 @@ authors = ["Alex Dillhoff"]
 date = 2024-01-11T15:07:00-06:00
 tags = ["gpgpu", "computer science"]
 draft = false
+sections = "GPU Programming"
+lastmod = 2025-02-02
 +++
 
 <div class="ox-hugo-toc toc">
@@ -36,7 +38,7 @@ Transferring memory is one of the biggest bottlenecks in GPU programming. Compan
 
 The example provided in Chapter 5 of "Programming Massively Parallel Processors" is a great introduction to understanding memory access efficiency (<a href="#citeproc_bib_item_1">Hwu, Kirk, and El Hajj 2022</a>). In matrix multiplication, the data accesses are limited to a single line of code in the inner-most loop. This means that the memory access pattern is very regular and predictable. The example code is shown below:
 
-```cuda
+```c
 for (int k = 0; i k < numCols; k++) {
     Cvalue += A[row * numCols + k] * B[k * numCols + col];
 }
@@ -135,7 +137,7 @@ Our implementation should follow these steps:
 
 Step 1 is obvious. We need to establish the shared memory for this solution. Steps 2 and 3 are the same as described above, but we do need to remember to synchronize the threads. Without synchronization, the computation may continue before all the data is properly loaded. Step 4 implies that each thread will loop through the subsets until all values have been computed. The kernel is shown below.
 
-```cuda
+```c
 __global__ void MatMulKernel(float* M, float* N, float* P, int Width) {
     // Block index
     int bx = blockIdx.x;
@@ -216,7 +218,7 @@ Our implementation would follow the same process for the first subset of pattern
 
 Another solution is to pad the input with zeros. If the index is outside our boundary, adding a 0 will not affect the result of the dot product. This allows for a simpler implementation while still being flexible enough to handle matrices of any size. The relevant portion of the kernel is shown below.
 
-```cuda
+```c
 float Pvalue = 0;
 for (int ph = 0; ph < ceil(Width/(float)TILE_WIDTH); ph++) {
     // Collaborative loading of M and N tiles into shared memory
@@ -250,14 +252,14 @@ The solution presented above uses a constant to determine the tile size. What if
 
 When launching this kernel, we need some way to inform it of the tile size. First, we would query the device properties and determine the optimal tile size based on the hardware. This size can be used as a third launch configuration input, as shown below. Additionally, the size of the shared memory for each input matrix is provided as two additional arguments to the kernel.
 
-```cuda
+```c
 size_t size = compute_optimal_size(); // Determine optimal tile size
 MatMulKernel<<<dimGrid, dimBlock, size>>>(M_d, N_d, P_d, Width, size/2, size/2);
 ```
 
 The kernel will need to be modified to use the new shared memory array. The first step is to determine the offset for each matrix. This is done by multiplying the tile size by the thread index. The second step is to use the offset to access the correct value in the shared memory array. The kernel is shown below.
 
-```cuda
+```c
 __global__ void MatMulKernel(float* M, float* N, float* P, int Width, int Mds_offset, int Nds_offset) {
     extern __shared__ float Mds_Nds[];
 
