@@ -5,6 +5,7 @@ date = 2022-04-18T00:00:00-05:00
 tags = ["computer vision", "machine learning"]
 draft = false
 lastmod = 2024-07-27
+sections = "Computer Vision"
 +++
 
 <div class="ox-hugo-toc toc">
