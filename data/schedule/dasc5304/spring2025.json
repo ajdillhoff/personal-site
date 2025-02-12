@@ -102,5 +102,25 @@
                 "url": "/notes/boosting"
             }
         ]
+    },
+    {
+        "date": "February 11",
+        "topic": "Bagging, Random Forests, and Adaboost",
+        "materials": [
+            {
+                "title": "Adaboost",
+                "url": "/notes/boosting"
+            }
+        ]
+    },
+    {
+        "date": "February 13",
+        "topic": "Gradient Boosting",
+        "materials": [
+            {
+                "title": "Gradient Boosting",
+                "url": "/notes/gradient_boosting"
+            }
+        ]
     }
 ]

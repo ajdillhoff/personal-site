@@ -112,5 +112,69 @@
                 "url": "/notes/object_detection"
             }
         ]
+    },
+    {
+        "date": "February 10",
+        "topic": "Optimization for Deep Learning, Recurrent Neural Networks",
+        "materials": [
+            {
+                "title": "Optimization for Deep Learning",
+                "url": "/notes/optimization_for_deep_learning"
+            },
+            {
+                "title": "Recurrent Neural Networks",
+                "url": "/notes/recurrent_neural_networks"
+            }
+        ]
+    },
+    {
+        "date": "February 12",
+        "topic": "Transformers",
+        "materials": [
+            {
+                "title": "Transformers",
+                "url": "/notes/transformers"
+            }
+        ]
+    },
+    {
+        "date": "February 17",
+        "topic": "Unsupervised Learning",
+        "materials": [
+            {
+                "title": "Principal Component Analysis",
+                "url": "/notes/principal_component_analysis"
+            }
+        ]
+    },
+    {
+        "date": "February 19",
+        "topic": "Reinforcement Learning",
+        "materials": [
+            {
+                "title": "Markov Decision Processes",
+                "url": "/notes/markov_decision_processes"
+            }
+        ]
+    },
+    {
+        "date": "February 24",
+        "topic": "Natural Language Processing",
+        "materials": []
+    },
+    {
+        "date": "February 26",
+        "topic": "Large Language Models",
+        "materials": []
+    },
+    {
+        "date": "March 3",
+        "topic": "Special Topics",
+        "materials": []
+    },
+    {
+        "date": "March 5",
+        "topic": "Project Presentations",
+        "materials": []
     }
 ]

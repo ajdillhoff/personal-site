@@ -90,16 +90,22 @@
         ]
     },
     {
-        "date": "February 6",
-        "topic": "Ensemble Methods",
+        "date": "February 11",
+        "topic": "Bagging, Random Forests, and Adaboost",
         "materials": [
             {
-                "title": "Random Forest",
-                "url": "/notes/gradient_boosting"
-            },
-            {
-                "title": "Boosting",
+                "title": "Adaboost",
                 "url": "/notes/boosting"
+            }
+        ]
+    },
+    {
+        "date": "February 13",
+        "topic": "Gradient Boosting",
+        "materials": [
+            {
+                "title": "Gradient Boosting",
+                "url": "/notes/gradient_boosting"
             }
         ]
     }

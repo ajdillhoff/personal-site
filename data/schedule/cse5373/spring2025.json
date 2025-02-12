@@ -83,5 +83,30 @@
                 "url": "/notes/cuda_memory_architecture"
             }
         ]
+    },
+    {
+        "date": "February 10",
+        "topic": "GPU Performance Basics",
+        "materials": [
+            {
+                "title": "GPU Performance Basics",
+                "url": "/notes/gpu_performance_basics"
+            }
+        ]
+    },
+    {
+        "date": "February 12",
+        "topic": "GPU Performance Basics",
+        "materials": [
+            {
+                "title": "GPU Performance Basics",
+                "url": "/notes/gpu_performance_basics"
+            }
+        ]
+    },
+    {
+        "date": "February 14",
+        "topic": "Recitation",
+        "materials": []
     }
 ]
