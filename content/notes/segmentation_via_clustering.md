@@ -4,6 +4,8 @@ authors = ["Alex Dillhoff"]
 date = 2022-02-24T00:00:00-06:00
 tags = ["computer vision"]
 draft = false
+lastmod = 2025-02-13
+sections = "Computer Vision"
 +++
 
 <div class="ox-hugo-toc toc">
@@ -46,7 +48,7 @@ Feature vectors are assigned to a single cluster. These clusters represent some 
 
 When it comes to clustering methods, there are two main approaches: agglomerative and divisive.
 Simply, one is a bottom-up approach. The other is a top-down approach.
-After briefly introductin agglomerative clustering, we will explore specific implementations of segmentation using k-means clustering as well as segmentation using superpixels (Achanta et al. 2012).
+After briefly introductin agglomerative clustering, we will explore specific implementations of segmentation using k-means clustering as well as segmentation using superpixels (<a href="#citeproc_bib_item_1">Achanta et al. 2012</a>).
 
 
 ## Agglomerative Clustering {#agglomerative-clustering}
@@ -72,7 +74,7 @@ By defining the specific goal of segmentation (segment by color, shape, etc.), w
 {{< figure src="/ox-hugo/2022-02-24_16-24-28_screenshot.png" caption="<span class=\"figure-number\">Figure 2: </span>3D-PointCapsNet learns point segmentations on only 1% of the training data (Zhao et al.)." >}}
 
 There are approaches which attempt to segment objects in semi-supervised settings.
-As seen in [Figure 1](#figure--fig1), Zhao et al. propose a part segmentation model for 3D objects which only utilizes 1-5% of the training part labels (Zhao et al. 2019).
+As seen in [Figure 1](#figure--fig1), Zhao et al. propose a part segmentation model for 3D objects which only utilizes 1-5% of the training part labels (<a href="#citeproc_bib_item_4">Zhao et al. 2019</a>).
 
 For example, if we divised an algorithm that would segment an image by color values, it might be able to segment the hand wearing a solid color glove relatively easily.
 If we wanted to segment the hand into its individual joints, we would have to introduce a visual prior such as asking the subject to wear a multicolored glove.
@@ -128,7 +130,7 @@ The standard algorithm is as follows:
 
 ## Simple Linear Iterative Clustering (SLIC) {#simple-linear-iterative-clustering--slic}
 
-Simple Linear Iterative Clustering (SLIC) is widely used algorithm based on K-Means clustering for image segmentation (Achanta et al. 2012).
+Simple Linear Iterative Clustering (SLIC) is widely used algorithm based on K-Means clustering for image segmentation (<a href="#citeproc_bib_item_1">Achanta et al. 2012</a>).
 
 As discussed in the original paper, the authors state that SLIC h   as two main advantages over traditional K-Means:
 
@@ -202,7 +204,7 @@ This requires that the functions used in a deep network be differentiable.
 
 {{< figure src="/ox-hugo/2022-03-03_20-47-51_screenshot.png" caption="<span class=\"figure-number\">Figure 9: </span>Superpixels optimized for semantic segmentation (Jampani et al.)" >}}
 
-Superpixel Sampling Networks, proposed by Jampani et al., introduce the first attempt at integrating superpixel extraction methods with deep learning models (Jampani et al. 2018).
+Superpixel Sampling Networks, proposed by Jampani et al., introduce the first attempt at integrating superpixel extraction methods with deep learning models (<a href="#citeproc_bib_item_2">Jampani et al. 2018</a>).
 In this work, they adapt SLIC as a differentiable layer in a deep network which result in superpixels that are fine-tuned for specific tasks.
 
 {{< figure src="/ox-hugo/2022-03-03_21-45-09_screenshot.png" caption="<span class=\"figure-number\">Figure 10: </span>Model diagram for SSN (Jampani et al.)" >}}
@@ -211,7 +213,7 @@ The train their model on a semantic segmentation task which fine tunes the learn
 
 {{< figure src="/ox-hugo/2022-03-03_21-51-28_screenshot.png" caption="<span class=\"figure-number\">Figure 11: </span>Results on semantic segmentation (Jampani et al.)" >}}
 
-In a more recent work, Yang et al. propose a deep network that directly produces the superpixels as opposed to using a soft K-Means layer (Yang et al. 2020).
+In a more recent work, Yang et al. propose a deep network that directly produces the superpixels as opposed to using a soft K-Means layer (<a href="#citeproc_bib_item_3">Yang et al. 2020</a>).
 
 {{< figure src="/ox-hugo/2022-03-03_22-05-40_screenshot.png" caption="<span class=\"figure-number\">Figure 12: </span>Model comparison between Jampani et al. and Yang et al. (Yang et al.)" >}}
 
@@ -222,4 +224,11 @@ Additionally, their model runs at 50 fps using 4 NVIDIA Titan Xp GPUs.
 
 {{< figure src="/ox-hugo/2022-03-03_22-14-22_screenshot.png" caption="<span class=\"figure-number\">Figure 13: </span>Comparison of results on competing methods (Yang et al.)" >}}
 
-\#print_bibliography: t
+## References
+
+<style>.csl-entry{text-indent: -1.5em; margin-left: 1.5em;}</style><div class="csl-bib-body">
+  <div class="csl-entry"><a id="citeproc_bib_item_1"></a>Achanta, Radhakrishna, Appu Shaji, Kevin Smith, Aurelien Lucchi, Pascal Fua, and Sabine Süsstrunk. 2012. “SLIC Superpixels Compared to State-of-the-Art Superpixel Methods.” <i>Ieee Transactions on Pattern Analysis and Machine Intelligence</i> 34 (11): 2274–82. <a href="https://doi.org/10.1109/TPAMI.2012.120">https://doi.org/10.1109/TPAMI.2012.120</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_2"></a>Jampani, Varun, Deqing Sun, Ming-Yu Liu, Ming-Hsuan Yang, and Kautz Jan. 2018. “Superpixel Sampling Networks.” <i>Cvf European Conference on Computer Vision</i>, 17.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_3"></a>Yang, Fengting, Qian Sun, Hailin Jin, and Zihan Zhou. 2020. “Superpixel Segmentation With Fully Convolutional Networks.” <i>Computer Vision and Pattern Recognition (Cvpr)</i>, 10.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_4"></a>Zhao, Yongheng, Tolga Birdal, Haowen Deng, and Federico Tombari. 2019. “3D Point Capsule Networks.” In <i>2019 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)</i>, 1009–18. Long Beach, CA, USA: IEEE. <a href="https://doi.org/10.1109/CVPR.2019.00110">https://doi.org/10.1109/CVPR.2019.00110</a>.</div>
+</div>

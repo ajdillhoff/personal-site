@@ -116,7 +116,16 @@
     },
     {
         "date": "February 14",
-        "topic": "K-Means Clustering",
-        "materials": []
+        "topic": "Image Segmentation",
+        "materials": [
+            {
+                "title": "Image Segmentation",
+                "url": "/notes/image_segmentation"
+            },
+            {
+                "title": "Segmentation via Clustering",
+                "url": "/notes/segmentation_via_clustering"
+            }
+        ]
     }
 ]
