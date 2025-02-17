@@ -142,8 +142,20 @@
         "topic": "Unsupervised Learning",
         "materials": [
             {
+                "title": "Clustering",
+                "url": "/notes/clustering"
+            },
+            {
+                "title": "Segmentation via Clustering",
+                "url": "/notes/segmentation_via_clustering"
+            },
+            {
                 "title": "Principal Component Analysis",
                 "url": "/notes/principal_component_analysis"
+            },
+            {
+                "title": "Generative Adversarial Networks",
+                "url": "https://arxiv.org/abs/1406.2661"
             }
         ]
     },
