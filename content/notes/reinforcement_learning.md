@@ -3,6 +3,8 @@ title = "Reinforcement Learning"
 author = ["Alex Dillhoff"]
 date = 2023-07-12T00:00:00-05:00
 draft = false
+sections = "Machine Learning"
+lastmod = 2025-02-18
 +++
 
 <div class="ox-hugo-toc toc">
@@ -12,7 +14,6 @@ draft = false
 - [Topics](#topics)
 - [Introduction](#introduction)
 - [Definition](#definition)
-- [Markov Decision Processes](#markov-decision-processes)
 - [RL vs. MDP](#rl-vs-dot-mdp)
 - [Passive RL](#passive-rl)
 - [Resources](#resources)
@@ -87,9 +88,6 @@ This can be predicted from the value function.
 
 Additionally, a **model** of the environment will include prior knowledge about that environment.
 This allows the agent to act optimally over a longer sequence of states.
-
-
-## Markov Decision Processes {#markov-decision-processes}
 
 
 ## RL vs. MDP {#rl-vs-dot-mdp}

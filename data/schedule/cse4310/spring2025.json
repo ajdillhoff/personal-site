@@ -116,15 +116,36 @@
     },
     {
         "date": "February 14",
+        "topic": "CANCELLED",
+        "materials": []
+    },
+    {
+        "date": "February 17",
         "topic": "Image Segmentation",
         "materials": [
             {
                 "title": "Image Segmentation",
                 "url": "/notes/image_segmentation"
-            },
+            }
+        ]
+    },
+    {
+        "date": "February 19",
+        "topic": "Image Segmentation",
+        "materials": [
             {
                 "title": "Segmentation via Clustering",
                 "url": "/notes/segmentation_via_clustering"
+            }
+        ]
+    },
+    {
+        "date": "February 21",
+        "topic": "Optical Flow",
+        "materials": [
+            {
+                "title": "Optical Flow",
+                "url": "/notes/optical_flow"
             }
         ]
     }

@@ -3,6 +3,8 @@ title = "Markov Decision Processes"
 authors = ["Alex Dillhoff"]
 date = 2023-07-24T00:00:00-05:00
 draft = false
+sections = "Machine Learning"
+lastmod = 2025-02-18
 tags = ["reinforcement learning"]
 +++
 
@@ -190,3 +192,5 @@ Let \\(\pi\\) and \\(\pi'\\) be two deterministic policies where
 \\[
 q\_{\pi}(s, \pi'(s)) \geq v\_{\pi}(s),\quad \forall s.
 \\]
+
+We can reasonably conclude that, in this case, \\(\pi'\\) must be at least as good as \\(\pi\\).

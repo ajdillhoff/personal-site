@@ -122,5 +122,77 @@
                 "url": "/notes/gradient_boosting"
             }
         ]
+    },
+    {
+        "date": "February 18",
+        "topic": "Intro. to Deep Learning",
+        "materials": [
+            {
+                "title": "Deep Learning",
+                "url": "/notes/deep_learning"
+            },
+            {
+                "title": "Convolutional Neural Networks",
+                "url": "/notes/convolutional_neural_networks"
+            }
+        ]
+    },
+    {
+        "date": "February 20",
+        "topic": "Convolutional Neural Networks",
+        "materials": [
+            {
+                "title": "Convolutional Neural Networks",
+                "url": "/notes/convolutional_neural_networks"
+            },
+            {
+                "title": "Pytorch Tutorial",
+                "url": "https://pytorch.org/tutorials/beginner/deep_learning_60min_blitz.html"
+            }
+        ]
+    },
+    {
+        "date": "February 25",
+        "topic": "Optimization for Deep Learning",
+        "materials": [
+            {
+                "title": "Pytorch Lightning",
+                "url": "https://lightning.ai/docs/pytorch/stable/starter/introduction.html"
+            },
+            {
+                "title": "Optimization for Deep Learning",
+                "url": "/notes/optimization_for_deep_learning"
+            }
+        ]
+    },
+    {
+        "date": "February 27",
+        "topic": "Automatic Differentiation",
+        "materials": [
+            {
+                "title": "Automatic Differentiation",
+                "url": "https://arxiv.org/abs/1502.05767"
+            }
+        ]
+    },
+    {
+        "date": "March 4",
+        "topic": "Recurrent Neural Networks",
+        "materials": [
+            {
+                "title": "Recurrent Neural Networks",
+                "url": "/notes/recurrent_neural_networks"
+            }
+        ]
+    },
+    {
+        "date": "March 6",
+        "topic": "Transformers",
+        "materials": [
+            {
+                "title": "Transformers",
+                "url": "/notes/transformers"
+            }
+        ]
     }
 ]

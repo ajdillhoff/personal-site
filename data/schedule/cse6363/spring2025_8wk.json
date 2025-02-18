@@ -166,6 +166,14 @@
             {
                 "title": "Markov Decision Processes",
                 "url": "/notes/markov_decision_processes"
+            },
+            {
+                "title": "Reinforcement Learning Overview",
+                "url": "https://lilianweng.github.io/posts/2018-02-19-rl-overview/"
+            },
+            {
+                "title": "Chapters 3-6, 13",
+                "url": "http://incompleteideas.net/book/RLbook2020.pdf"
             }
         ]
     },
