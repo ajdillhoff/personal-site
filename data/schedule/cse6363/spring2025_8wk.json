@@ -172,15 +172,24 @@
                 "url": "https://lilianweng.github.io/posts/2018-02-19-rl-overview/"
             },
             {
-                "title": "Chapters 3-6, 13",
+                "title": "Chapters 3-6",
                 "url": "http://incompleteideas.net/book/RLbook2020.pdf"
             }
         ]
     },
     {
         "date": "February 24",
-        "topic": "Natural Language Processing",
-        "materials": []
+        "topic": "Policy Gradient Methods, Introduction to NLP",
+        "materials": [
+            {
+                "title": "Policy Gradient Methods",
+                "url": "/notes/policy_gradient_methods"
+            },
+            {
+                "title": "Chapter 13",
+                "url": "http://incompleteideas.net/book/RLbook2020.pdf"
+            }
+        ]
     },
     {
         "date": "February 26",
