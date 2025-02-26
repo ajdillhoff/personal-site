@@ -141,11 +141,25 @@
     },
     {
         "date": "February 21",
-        "topic": "Optical Flow",
+        "topic": "Machine Learning Basics",
         "materials": [
             {
-                "title": "Optical Flow",
-                "url": "/notes/optical_flow"
+                "title": "Linear Regression",
+                "url": "/notes/linear_regression"
+            },
+            {
+                "title": "Logistic Regression",
+                "url": "/notes/logistic_regression"
+            }
+        ]
+    },
+    {
+        "date": "February 24",
+        "topic": "Machine Learning Basics",
+        "materials": [
+            {
+                "title": "Logistic Regression",
+                "url": "/notes/logistic_regression"
             }
         ]
     }

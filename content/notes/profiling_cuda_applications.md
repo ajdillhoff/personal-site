@@ -4,6 +4,8 @@ authors = ["Alex Dillhoff"]
 date = 2024-01-15T14:48:00-06:00
 tags = ["gpgpu", "CUDA"]
 draft = false
+sections = "GPU Programming"
+lastmod = 2025-02-25
 +++
 
 <div class="ox-hugo-toc toc">

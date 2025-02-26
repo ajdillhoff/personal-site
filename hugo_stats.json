@@ -307,6 +307,7 @@
       "backwards-pass",
       "bag-of-visual-words",
       "banner",
+      "bart",
       "basic-i-o",
       "basic-implementation-in-python",
       "basic-operations",
@@ -315,6 +316,7 @@
       "bayes-rule",
       "bellman-equations",
       "bellman-ford",
+      "bert",
       "best-case",
       "best-case-analysis",
       "bias",
@@ -654,6 +656,7 @@
       "gaussian-class-conditional-densities",
       "gaussian-filters",
       "gaussian-formulation",
+      "general-language-understanding-evaluation--glue",
       "generalization",
       "generalization-to-out-of-training-sequence-lengths",
       "generate-a-profiling-report-for-your-kernel",
@@ -662,6 +665,7 @@
       "getting-started-with-nsight",
       "global-and-nonlocal-keywords",
       "googlenet",
+      "gpt3",
       "gpu-implementation",
       "gpu-programming-history",
       "gpu-speed-of-light",
@@ -973,6 +977,7 @@
       "polynomial-kernel",
       "pooling",
       "position-embeddings",
+      "pre-training",
       "predecessor",
       "prediction-task",
       "prefix-free-codes",
@@ -1019,6 +1024,7 @@
       "quests",
       "queues",
       "quick-facts",
+      "race--reading-comprehension",
       "race-conditions",
       "radial-basis-function-kernel",
       "radix-sort",
@@ -1118,6 +1124,7 @@
       "self-attention",
       "self-supervision",
       "semantic-errors",
+      "semantic-similarity-tasks",
       "sensitivity-to-outliers",
       "sentence-embeddings",
       "serializing-class-objects",
@@ -1157,6 +1164,7 @@
       "stochastic-gradient-descent",
       "stopping-growth",
       "storing-the-solutions",
+      "story-cloze-test",
       "stride",
       "strongly-connected-components",
       "structure-of-the-course",
@@ -1314,7 +1322,8 @@
       "yolov2-better-faster-and-stronger",
       "yolov3",
       "yolov4-and-beyond",
-      "you-only-look-once"
+      "you-only-look-once",
+      "zero-shot-behaviors"
     ]
   }
 }

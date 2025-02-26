@@ -106,7 +106,7 @@
     },
     {
         "date": "February 14",
-        "topic": "Recitation",
+        "topic": "Lab/Recitation",
         "materials": []
     },
     {
@@ -131,7 +131,22 @@
     },
     {
         "date": "February 21",
-        "topic": "Recitation",
+        "topic": "Lab/Recitation",
+        "materials": []
+    },
+    {
+        "date": "February 26",
+        "topic": "Profiling and Benchmarking",
+        "materials": [
+            {
+                "title": "Profiling CUDA Applications",
+                "url": "/notes/profiling_cuda_applications"
+            }
+        ]
+    },
+    {
+        "date": "February 28",
+        "topic": "Lab/Recitation",
         "materials": []
     }
 ]

@@ -138,13 +138,9 @@
         ]
     },
     {
-        "date": "February 25",
+        "date": "February 27",
         "topic": "Optimization for Deep Learning",
         "materials": [
-            {
-                "title": "Pytorch Lightning",
-                "url": "https://lightning.ai/docs/pytorch/stable/starter/introduction.html"
-            },
             {
                 "title": "Optimization for Deep Learning",
                 "url": "/notes/optimization_for_deep_learning"
@@ -152,7 +148,7 @@
         ]
     },
     {
-        "date": "February 27",
+        "date": "March 4",
         "topic": "Automatic Differentiation",
         "materials": [
             {
@@ -162,7 +158,7 @@
         ]
     },
     {
-        "date": "March 4",
+        "date": "March 6",
         "topic": "Recurrent Neural Networks",
         "materials": [
             {
@@ -172,7 +168,7 @@
         ]
     },
     {
-        "date": "March 6",
+        "date": "March 18",
         "topic": "Transformers",
         "materials": [
             {
