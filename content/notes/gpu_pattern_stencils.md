@@ -4,6 +4,8 @@ authors = ["Alex Dillhoff"]
 date = 2024-01-22T19:39:00-06:00
 tags = ["gpgpu", "computer science"]
 draft = false
+sections = "GPU Programming"
+lastmod = 2025-03-04
 +++
 
 <div class="ox-hugo-toc toc">
@@ -22,9 +24,6 @@ draft = false
 </div>
 <!--endtoc-->
 
--   Used in differential equations
--   Frequently use higher precision
--   Some similarity to convolutions
 
 
 ## Differential Equations {#differential-equations}
@@ -48,7 +47,7 @@ A **stencil** is a geometric pattern of weights applied at each point of a struc
 
 In code, this would look like:
 
-```cuda
+```c
 __global__ void finite_difference(float *f, float *df, float h) {
     int i = blockIdx.x * blockDim.x + threadIdx.x;
     df[i] = (f[i+1] - f[i-1]) / (2 * h);
@@ -72,7 +71,7 @@ A _stencil sweep_ is the process of applying the stencil to all points on the gr
 
 The code below presents a naive kernel for a stencil pattern using a 3D seven-point stencil.
 
-```cuda
+```c
 __global__ void stencil_kernel(float *in, float *out, unsigned int N) {
     unsigned int i = blockIdx.z * blockDim.z + threadIdx.z;
     unsigned int j = blockIdx.y * blockDim.y + threadIdx.y;
@@ -97,7 +96,7 @@ This example assumes the input and output are 3D grids. For this particular sten
 
 Just like with convolution, it is possible to use shared memory to improve the performance of a stencil. The code below shows a tiled stencil kernel that uses shared memory.
 
-```cuda
+```c
 __global__ void stencil_kernel(float *in, float *out, unsigned int N) {
     __shared__ float tile[IN_TILE_DIM][IN_TILE_DIM][IN_TILE_DIM];
     int i = blockIdx.z * OUT_TILE_DIM + threadIdx.z - 1;
@@ -155,7 +154,7 @@ Each thread performs more work in the \\(z\\) direction for a 3D seven-point ste
 
 The threads are launched to work with a 2D tile at a time, so the size of the block is now \\(T^2\\). This means we can use a larger value for \\(T\\). The compute to memory ratio is almost doubled under this scheme. Additionally, the amount of shared memory required is \\(3T^2\\) rather than \\(T^3\\).
 
-```cuda
+```c
 __global__ void stencil_kernel(float *in, float *out, unsigned int N) {
     int iStart = blockIdx.z * OUT_TILE_DIM;
     int j = blockIdx.y * OUT_TILE_DIM + threadIdx.y - 1;
@@ -205,7 +204,7 @@ In the coarsening solution presented above, each thread works with a single elem
 
 Since only the values in the \\(x-y\\) direction are required for shared memory, the amount of memory used is reduced by \\(\frac{1}{3}\\).
 
-```cuda
+```c
 __global__ void stencil_kernel(float *in, float *out, unsigned int N) {
     int iStart = blockIdx.z * OUT_TILE_DIM;
     int j = blockIdx.y * OUT_TILE_DIM + threadIdx.y - 1;
@@ -262,6 +261,7 @@ Stencils are a useful pattern for solving differential equations. They have some
 
 1.  How many registers per thread are required for a 3D seven-point stencil, 3D nine-point stencil, and 3D 27-point stencil?
 2.  How do convolutions relate to stencil patterns? Could you implement a stencil pattern using a convolution filter?
+3.  When implementing any stencil, how much does the kernel benefit from loading values on the same row from shared memory? If they weren't in shared memory, would they be more likely to be read together in a DRAM burst? Try to verify this in the profiler.
 
 ## References
 

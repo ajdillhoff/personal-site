@@ -4,6 +4,8 @@ authors = ["Alex Dillhoff"]
 date = 2024-01-29T17:22:00-06:00
 tags = ["gpgpu"]
 draft = false
+sections = "GPU Programming"
+lastmod = 2025-03-04
 +++
 
 <div class="ox-hugo-toc toc">
@@ -67,7 +69,7 @@ The CUDA API provides several atomic operations:
 
 These are all _intrinsic functions_, meaning they are processed in a special way by the compiler. Instead of acting like a function call that comes with the typical overhead from the stack, these are implemented as inline machine instructions. The CUDA kernel below uses `atomicAdd` to increment the histogram.
 
-```cuda
+```c
 __global__ void histogram_atomic(char *data, unsigned int length, unsigned int *hist) {
     int i = blockIdx.x * blockDim.x + threadIdx.x;
     if (i < length) {
@@ -94,7 +96,7 @@ The example above can be privatized by making a copy of the histogram for each t
 
 For example, if we have 256 threads per block and 26 bins, we can allocate a \\(26 \times 256\\) array of integers. Each thread block will have its own copy of the histogram. The kernel below demonstrates this.
 
-```cuda
+```c
 #define NUM_BINS 26
 __global__ void histogram_privatized(char *data, unsigned int length, unsigned int *hist) {
     int i = blockIdx.x * blockDim.x + threadIdx.x;
@@ -118,7 +120,7 @@ Each block is free to use its section of the histogram without contention. After
 
 Each block after index 0 will add its values to the global histogram, represented by the first block. Only a single thread per block will be accessing each bin, so the only contention is with other blocks. If the bins are small enough, shared memory can be used to store the private copies. Even though an atomic operation is still required, the latency for loading and storing is reduced by an order of magnitude. The shared kernel below demonstrates this.
 
-```cuda
+```c
 #define NUM_BINS 26
 __global__ void histogram_privatized(char *data, unsigned int length, unsigned int *hist) {
     __shared__ unsigned int hist_s[NUM_BINS];
@@ -158,7 +160,7 @@ Coarsening will reduce the overhead of privatization by reducing the number of p
 
 Each thread is assigned a contiguous range of elements to process. The kernel is a straightforward extension of the privatized kernel. This approach works better on a CPU, where there are only a small number of threads. This is due to the caching behavior of the CPU. With so many threads on a GPU, it is less likely that the data will be in the cache since so many threads are competing.
 
-```cuda
+```c
 #define NUM_BINS 26
 __global__ void histogram_privatized_cc(char *data, unsigned int length, unsigned int *hist) {
     __shared__ unsigned int hist_s[NUM_BINS];
@@ -191,7 +193,7 @@ __global__ void histogram_privatized_cc(char *data, unsigned int length, unsigne
 
 Contiguous partitioning allowed for contiguous access to values relative to each thread. However, the memory was not contiguous with respect to other threads. In terms of DRAM accesses, each individual read from memory was too far apart to take advantage of coalescing. With **interleaved partitioning**, the memory can be accessed in a single DRAM access since the memory is coalesced.
 
-```cuda
+```c
 #define NUM_BINS 26
 __global__ void histogram_privatized_ic(char *data, unsigned int length, unsigned int *hist) {
     __shared__ unsigned int hist_s[NUM_BINS];
@@ -226,7 +228,7 @@ In the code above, the main difference is the second `for` loop. The index `i` i
 
 It is not uncommon that the input data will have a skewed distribution. There may be sections of the input that are locally dense. This will lead to a large number of atomic operations within a small area. To reduce the number of atomic operations, the input can be aggregated into a larger update before being committed to the global histogram. Consider the code below.
 
-```cuda
+```c
 __global__ void histogram_aggregate(char *data, unsigned int length, unsigned int *histo) {
     // Initialize shared memory
     __shared__ unsigned int hist_s[NUM_BINS];
