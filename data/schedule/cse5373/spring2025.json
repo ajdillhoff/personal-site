@@ -148,5 +148,55 @@
         "date": "February 28",
         "topic": "Lab/Recitation",
         "materials": []
+    },
+    {
+        "date": "March 3",
+        "topic": "Stencil Pattern",
+        "materials": [
+            {
+                "title": "GPU Pattern: Stencils",
+                "url": "/notes/gpu_pattern_stencils"
+            }
+        ]
+    },
+    {
+        "date": "March 5",
+        "topic": "Parallel Histogram",
+        "materials": [
+            {
+                "title": "GPU Pattern: Parallel Histogram",
+                "url": "/notes/gpu_pattern_parallel_histogram"
+            }
+        ]
+    },
+    {
+        "date": "March 7",
+        "topic": "Lab/Recitation",
+        "materials": []
+    },
+    {
+        "date": "March 17",
+        "topic": "Parallel Scan",
+        "materials": [
+            {
+                "title": "GPU Pattern: Parallel Scan",
+                "url": "/notes/gpu_pattern_parallel_scan"
+            }
+        ]
+    },
+    {
+        "date": "March 19",
+        "topic": "Parallel Scan",
+        "materials": [
+            {
+                "title": "GPU Pattern: Parallel Scan",
+                "url": "/notes/gpu_pattern_parallel_scan"
+            }
+        ]
+    },
+    {
+        "date": "March 21",
+        "topic": "Lab/Recitation",
+        "materials": []
     }
 ]

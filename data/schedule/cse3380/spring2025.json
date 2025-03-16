@@ -53,5 +53,40 @@
                 "url": ""
             }
         ]
+    },
+    {
+        "date": "Week 7",
+        "topic": "Computer Graphics, Determinants and Volumes",
+        "materials": [
+            {
+                "title": "3.3 and 4.4",
+                "url": ""
+            }
+        ]
+    },
+    {
+        "date": "Week 8",
+        "topic": "Change of Basis",
+        "materials": [
+            {
+                "title": "4.7",
+                "url": ""
+            }
+        ]
+    },
+    {
+        "date": "Week 9",
+        "topic": "Spring Break",
+        "materials": [ ]
+    },
+    {
+        "date": "Week 10",
+        "topic": "Orthogonality, Gram-Schmidt, and QR Factorization",
+        "materials": [
+            {
+                "title": "6.1, 6.2, and 6.3",
+                "url": ""
+            }
+        ]
     }
 ]

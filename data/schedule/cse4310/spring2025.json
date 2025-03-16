@@ -202,5 +202,30 @@
         "date": "March 7",
         "topic": "Pytorch Lightning Tutorial",
         "materials": []
+    },
+    {
+        "date": "March 17",
+        "topic": "Optical Flow",
+        "materials": [
+            {
+                "title": "Optical Flow",
+                "url": "/notes/optical_flow"
+            }
+        ]
+    },
+    {
+        "date": "March 19",
+        "topic": "Tracking",
+        "materials": [
+            {
+                "title": "Tracking",
+                "url": "/notes/tracking"
+            }
+        ]
+    },
+    {
+        "date": "March 21",
+        "topic": "NO CLASS",
+        "materials": []
     }
 ]
