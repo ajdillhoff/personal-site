@@ -4,6 +4,8 @@ authors = ["Alex Dillhoff"]
 date = 2024-02-14T20:09:00-06:00
 tags = ["gpgpu"]
 draft = false
+sections = "GPU Programming"
+lastmod = 2024-03-16
 +++
 
 <div class="ox-hugo-toc toc">
@@ -64,7 +66,7 @@ Design reduction tree so that each thread has access to relevant inputs. The inp
 
 This is implemented in the following code:
 
-```cuda
+```c
 __global__ void Kogge_Stone_scan_kernel(float *X, float *Y, unsigned int N) {
         __shared__ float A[SECTION_SIZE];
         unsigned int i = blockIdx.x * blockDim.x + threadIdx.x;
@@ -139,7 +141,7 @@ The figure above shows the state of the algorithm before the reverse direction b
 
 The relevant reduction tree phase of Brent-Kung is implemented in CUDA C++ below.
 
-```cuda
+```c
 for (uint stride = 1; stride <= blockDim.x; stride *= 2) {
     __syncthreads();
     if ((threadIdx.x + 1) % (stride * 2) == 0) {
@@ -152,7 +154,7 @@ From the perspective of `threadIdx.x = 7`, the first iteration would add the val
 
 There is a lot of control divergence present in this code. Since fewer threads stay active as the loop goes on, it is better to organize the threads such that they are contiguous. We can do that with slightly more complicated indexing, so that contiguous threads use data from the active portions of the array.
 
-```cuda
+```c
 for (uint stride = 1; stride <= blockDim.x; stride *= 2) {
     __syncthreads();
     int index = (threadIdx.x + 1) * 2 * stride - 1;
@@ -169,7 +171,7 @@ Thread 0 maps to index, thread 1 maps to index 3, thread 2 to index 5, and so on
 
 The reverse half of the algorithm is implemented in CUDA C++ below.
 
-```cuda
+```c
 for (uint stride = blockDim.x / 4; stride > 0; stride /= 2) {
     __syncthreads();
     int index = (threadIdx.x + 1) * 2 * stride - 1;
@@ -190,7 +192,7 @@ The reduction tree of the first half of the algorithm require \\(n - 1\\) operat
 
 The full code is given below.
 
-```cuda
+```c
 __global__ void Brent_Kung_scan_kernel(float *X, float *Y, uint N) {
     __shared__ float A[SECTION_SIZE];
     unsigned int i = 2 * blockIdx.x * blockDim.x + threadIdx.x;
@@ -268,7 +270,7 @@ After each scan block has computed the scan for its partition, the last elements
 
 The first kernel essentially implements one of the previously discussed parallel scan kernels. The only difference is that the accumulation array is passed so that the blocks can write their output element values.
 
-```cuda
+```c
 __syncthreads();
 if (threadIdx.x == blockDim.x - 1) {
     accumulation[blockIdx.x] = A[threadIdx.x];
@@ -283,7 +285,7 @@ For step 2, we need to run a parallel scan kernel like Kogge-Stone or Brent-Kung
 
 The final kernel takes the accumulated values and updates the original array so that all the elements have their correct scan value.
 
-```cuda
+```c
 uint i = blockIdx.x * blockDim.x + threadIdx.x;
 output[i] += accumulation[blockIdx.x - 1];
 ```
@@ -299,7 +301,7 @@ To be clear, the first phase runs completely in parallel, and the second phase i
 
 For this to work, there needs to be a form of synchronization between blocks. The CUDA API does not provide grid-wide synchronization, so **how can we accomplish this**? One solution is to use a lock to effectively halt a thread until the value is ready to be read (<a href="#citeproc_bib_item_2">Yan, Long, and Zhang 2013</a>). The code below shows how this can be implemented.
 
-```cuda
+```c
 __shared__ float previous_sum;
 if (threadIdx.x == 0) {
     // Wait for previous flag
@@ -329,7 +331,7 @@ This issue isn't production ready just yet. Depending on how the blocks are sche
 
 In this approach, the block index assignment is not dependent on `blockIdx.x`. Instead it is assigned dynamically as blocks are processed.
 
-```cuda
+```c
 __shared__ uint bid_s;
 if (threadIdx.x == 0) {
     bid_s = atomicAdd(&block_index, 1);

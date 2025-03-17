@@ -158,22 +158,22 @@
         ]
     },
     {
-        "date": "March 6",
-        "topic": "Recurrent Neural Networks",
+        "date": "March 18",
+        "topic": "Clustering",
         "materials": [
             {
-                "title": "Recurrent Neural Networks",
-                "url": "/notes/recurrent_neural_networks"
+                "title": "Clustering",
+                "url": "/notes/clustering"
             }
         ]
     },
     {
-        "date": "March 18",
-        "topic": "Transformers",
+        "date": "March 20",
+        "topic": "Principal Component Analysis",
         "materials": [
             {
-                "title": "Transformers",
-                "url": "/notes/transformers"
+                "title": "Chapter 12.1",
+                "url": "https://www.microsoft.com/en-us/research/wp-content/uploads/2006/01/Bishop-Pattern-Recognition-and-Machine-Learning-2006.pdf"
             }
         ]
     }
