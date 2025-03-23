@@ -81,10 +81,20 @@
     },
     {
         "date": "Week 10",
-        "topic": "Orthogonality, Gram-Schmidt, and QR Factorization",
+        "topic": "Orthogonality and Gram-Schmidt",
         "materials": [
             {
-                "title": "6.1, 6.2, and 6.3",
+                "title": "6.1 and 6.2",
+                "url": ""
+            }
+        ]
+    },
+    {
+        "date": "Week 11",
+        "topic": "QR Factorization, Exam 2",
+        "materials": [
+            {
+                "title": "6.3",
                 "url": ""
             }
         ]

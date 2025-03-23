@@ -5,6 +5,7 @@ date = 2022-03-06T00:00:00-06:00
 tags = ["computer vision"]
 draft = false
 lastmod = 2024-06-24
+sections = "Computer Vision"
 +++
 
 <div class="ox-hugo-toc toc">
@@ -65,7 +66,7 @@ This can be used to estimate the apparent depth between objects in a scene.
 
 ## Computing Optical Flow {#computing-optical-flow}
 
-A popular assumption for optical flow, as discussed in (<a href="#citeproc_bib_item_2">Horn and Schunck 1980</a>), is that of **brightness constancy**. A local feature has the same image intensity in one frame as it does in the subsequent frame.
+A popular assumption for optical flow, as discussed in (NO_ITEM_DATA:horn_determining_1980), is that of **brightness constancy**. A local feature has the same image intensity in one frame as it does in the subsequent frame.
 
 \\[
 I(x + u, y + v, t + 1) = I(x, y, t)
@@ -76,16 +77,16 @@ I(x + u, y + v, t + 1) = I(x, y, t)
 
 Consider a small window in an image. As the subject in the image moves, the window will only capture the motion in the direction of the gradient. This is known as the **aperture problem**.
 
-{{< figure src="/ox-hugo/2024-06-24_19-36-14_screenshot.png" caption="<span class=\"figure-number\">Figure 3: </span>The aperture problem (<a href=\"#citeproc_bib_item_4\">Murakami 2004</a>)." >}}
+{{< figure src="/ox-hugo/2024-06-24_19-36-14_screenshot.png" caption="<span class=\"figure-number\">Figure 3: </span>The aperture problem (NO_ITEM_DATA:murakami_aperture_2004)." >}}
 
 The problem is that only one direction of motion can be established, but there are many possible directions of motion. Mathematically, the system is underconstrained because there are two unknowns (\\(u\\) and \\(v\\)) for each pixel.
 
 
 ### Local Constancy and Smoothness {#local-constancy-and-smoothness}
 
-One way to address the aperture problem is to assume that the motion is constant within a local neighborhood (<a href="#citeproc_bib_item_3">Lucas and Kanade, n.d.</a>). Given a window of size \\(n \times n\\), we have \\(n^2\\) equations for each pixel. This is a more constrained system and can be solved using the normal equations.
+One way to address the aperture problem is to assume that the motion is constant within a local neighborhood (NO_ITEM_DATA:lucas_iterative_nodate). Given a window of size \\(n \times n\\), we have \\(n^2\\) equations for each pixel. This is a more constrained system and can be solved using the normal equations.
 
-An additional assumption is that the motion is smooth across the image. This is known as the **smoothness assumption**. The energy function is then modified to include a term that penalizes the difference in motion between neighboring pixels (<a href="#citeproc_bib_item_2">Horn and Schunck 1980</a>).
+An additional assumption is that the motion is smooth across the image. This is known as the **smoothness assumption**. The energy function is then modified to include a term that penalizes the difference in motion between neighboring pixels (NO_ITEM_DATA:horn_determining_1980).
 
 Given these two constraints, we can formulate an objective function. First, the objective function assuming brightness constancy is given by
 
@@ -133,14 +134,14 @@ Then, we have 25 equations per pixel.
 Since this is a system of linear equations, it could be computed directly using the normal equations.
 
 However, Horn and Schunck did not have very fast computers in 1981.
-So, they introduced an iterative solution (<a href="#citeproc_bib_item_2">Horn and Schunck 1980</a>).
+So, they introduced an iterative solution (NO_ITEM_DATA:horn_determining_1980).
 
 
 ## Assumptions of Small Motion {#assumptions-of-small-motion}
 
 One of the core assumptions in early formulations of optical flow is that motion is very small (&lt;1 pixel).
 In reality, some objects may move over 100 pixels within a single frame.
-A simple solution to this problem was proposed by Bergen et al. in 1992 (<a href="#citeproc_bib_item_1">Bergen et al., n.d.</a>).
+A simple solution to this problem was proposed by Bergen et al. in 1992 (NO_ITEM_DATA:bergen_hierarchical_nodate).
 By creating an image pyramid over several resolutions, the assumption of small motion at each scale is still reasonable.
 
 {{< figure src="/ox-hugo/2022-03-06_19-37-48_screenshot.png" caption="<span class=\"figure-number\">Figure 4: </span>Hierarchical motion estimation (Bergen et al.)" >}}
@@ -164,8 +165,8 @@ The refined parameters are then sent to the next scale layer.
 ## References
 
 <style>.csl-entry{text-indent: -1.5em; margin-left: 1.5em;}</style><div class="csl-bib-body">
-  <div class="csl-entry"><a id="citeproc_bib_item_1"></a>Bergen, James R, P Anandan, Keith J Hanna, and Rajesh Hingorani. n.d. “Hierarchical Model-Based Motion Estimation,” 16.</div>
-  <div class="csl-entry"><a id="citeproc_bib_item_2"></a>Horn, Berthold K. P., and Brian G. Schunck. 1980. “Determining Optical Flow.” <a href="https://dspace.mit.edu/bitstream/handle/1721.1/6337/%EE%80%80AIM%EE%80%81-572.pdf?sequence=2">https://dspace.mit.edu/bitstream/handle/1721.1/6337/%EE%80%80AIM%EE%80%81-572.pdf?sequence=2</a>.</div>
-  <div class="csl-entry"><a id="citeproc_bib_item_3"></a>Lucas, Bruce D, and Takeo Kanade. n.d. “An Iterative Image Registration Technique with an Application to Stereo Vision,” 10.</div>
-  <div class="csl-entry"><a id="citeproc_bib_item_4"></a>Murakami, Ikuya. 2004. “The aperture problem in egocentric motion,” 174–77. <a href="https://doi.org/https://doi-org.ezproxy.uta.edu/10.1016/j.tins.2004.01.009">https://doi.org/https://doi-org.ezproxy.uta.edu/10.1016/j.tins.2004.01.009</a>.</div>
+  <div class="csl-entry">NO_ITEM_DATA:horn_determining_1980</div>
+  <div class="csl-entry">NO_ITEM_DATA:murakami_aperture_2004</div>
+  <div class="csl-entry">NO_ITEM_DATA:lucas_iterative_nodate</div>
+  <div class="csl-entry">NO_ITEM_DATA:bergen_hierarchical_nodate</div>
 </div>

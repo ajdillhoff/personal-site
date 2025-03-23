@@ -198,5 +198,30 @@
         "date": "March 21",
         "topic": "Lab/Recitation",
         "materials": []
+    },
+    {
+        "date": "March 24",
+        "topic": "General Reductions",
+        "materials": [
+            {
+                "title": "GPU Pattern: Reduction",
+                "url": "/notes/gpu_pattern_reduction"
+            }
+        ]
+    },
+    {
+        "date": "March 26",
+        "topic": "Merge",
+        "materials": [
+            {
+                "title": "GPU Pattern: Merge",
+                "url": "/notes/gpu_pattern_merge"
+            }
+        ]
+    },
+    {
+        "date": "March 28",
+        "topic": "Lab/Recitation",
+        "materials": []
     }
 ]

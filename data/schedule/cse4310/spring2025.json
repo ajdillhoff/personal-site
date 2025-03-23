@@ -205,6 +205,31 @@
     },
     {
         "date": "March 17",
+        "topic": "Object Detection",
+        "materials": [
+            {
+                "title": "Object Detection",
+                "url": "/notes/object_detection"
+            }
+        ]
+    },
+    {
+        "date": "March 19",
+        "topic": "Object Detection",
+        "materials": [
+            {
+                "title": "Object Detection",
+                "url": "/notes/object_detection"
+            }
+        ]
+    },
+    {
+        "date": "March 21",
+        "topic": "NO CLASS",
+        "materials": []
+    },
+    {
+        "date": "March 24",
         "topic": "Optical Flow",
         "materials": [
             {
@@ -214,7 +239,7 @@
         ]
     },
     {
-        "date": "March 19",
+        "date": "March 26",
         "topic": "Tracking",
         "materials": [
             {
@@ -222,10 +247,5 @@
                 "url": "/notes/tracking"
             }
         ]
-    },
-    {
-        "date": "March 21",
-        "topic": "NO CLASS",
-        "materials": []
     }
 ]
