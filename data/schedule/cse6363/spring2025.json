@@ -176,5 +176,29 @@
                 "url": "https://www.microsoft.com/en-us/research/wp-content/uploads/2006/01/Bishop-Pattern-Recognition-and-Machine-Learning-2006.pdf"
             }
         ]
+    },
+    {
+        "date": "March 25",
+        "topic": "Segmentation by Clustering, GANs",
+        "materials": [
+            {
+                "title": "Segmentation via Clustering",
+                "url": "/notes/segmentation_via_clustering"
+            },
+            {
+                "title": "Generative Adversarial Networks",
+                "url": "https://arxiv.org/abs/1406.2661"
+            }
+        ]
+    },
+    {
+        "date": "March 27",
+        "topic": "Markov Decision Processes",
+        "materials": [
+            {
+                "title": "Markov Decision Processes",
+                "url": "/notes/markov_decision_processes"
+            }
+        ]
     }
 ]

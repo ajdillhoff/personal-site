@@ -4,6 +4,8 @@ authors = ["Alex Dillhoff"]
 date = 2024-02-05T15:47:00-06:00
 tags = ["gpgpu"]
 draft = false
+sections = "GPU Programming"
+lastmod = 2025-03-23
 +++
 
 <div class="ox-hugo-toc toc">
@@ -22,7 +24,7 @@ draft = false
 </div>
 <!--endtoc-->
 
-The following notes follow Chapter 10 of _Programming Massively Parallel Processors_ (Hwu, Kirk, and El Hajj 2022).
+The following notes follow Chapter 10 of _Programming Massively Parallel Processors_ (<a href="#citeproc_bib_item_1">Hwu, Kirk, and El Hajj 2022</a>).
 
 
 ## Introduction {#introduction}
@@ -53,7 +55,7 @@ Reduction trees reveal the logarithmic nature of parallel reductions. Just like 
 
 As mentioned above, reduction requires communication between threads. Since only the threads within a single block can communicate, we will focus on a block-level reduction. For now, each block can work with a total of 2048 input values based on the limitation of 1024 threads per block.
 
-```cuda
+```c
 __global__ void sumReduceKernel(float *input, float *output) {
     unsigned int i = 2 * threadIdx.x;
 
@@ -82,7 +84,7 @@ You can see that the kernel is simple, but it is also inefficient. There is a gr
 
 As we just saw, the key to optimizing a reduction kernel is to minimize control divergence and make sure as many threads stay active as possible. A warp of 32 threads would consume the execution resources even if half of them are inactive. As each stage of the reduction tree is completed, the amount of wasted resources increases. Depending on the input size, entire warps could be launched and then immediately become inactive.
 
-The number of execution resources consumes is proportional to the number of active warps across all iterations. We can compute the number of resources consumed as follows:
+The number of execution resources consumed is proportional to the number of active warps across all iterations. We can compute the number of resources consumed as follows:
 
 \\[
 (\frac{5N}{64} + \frac{N}{128} + \frac{N}{256} + \cdots + 1) \* 32
@@ -99,7 +101,7 @@ A simple rearrangement of where the active results are stored can improve the ef
 
 {{< figure src="/ox-hugo/2024-03-03_21-28-40_screenshot.png" caption="<span class=\"figure-number\">Figure 3: </span>Optimized reduction kernel execution (Source: NVIDIA DLI)." >}}
 
-```cuda
+```c
 __global__ void sumReduceKernel(float *input, float *output) {
     unsigned int i = threadIdx.x;
 
@@ -138,7 +140,7 @@ The convergent kernel from the last section takes advantage of memory coalescing
 
 As we saw with tiling in [GPU Performance Basics]({{< relref "gpu_performance_basics.md" >}}), we can reduce the number of global memory requests by using shared memory. Threads write their results to global memory, which is read again in the next iteration. By keeping the intermediate results in shared memory, we can reduce the number of global memory requests. If implemented correctly, only the original input values will need to be read from global memory.
 
-```cuda
+```c
 __global__ void sumReduceSharedKernel(float *input, float *output) {
     __shared__ float input_s[BLOCK_DIM];
     unsigned int i = threadIdx.x;
@@ -166,7 +168,7 @@ This approach not only requires fewer global memory requests, but the original i
 
 One major assumption that has been made in each of these kernels is that they are running on a single block. Thread synchronization is critical to the success of the reduction. If we want to reduce a larger number of input across multiple blocks, the kernel should allow for independent execution. This is achieved by segmenting the input and performing a reduction on each segment. The final reduction is then performed on the results of the segment reductions.
 
-```cuda
+```c
 __global__ void sumReduceHierarchicalKernel(float *input, float *output) {
     __shared__ float input_s[BLOCK_DIM];
     unsigned int segment = 2 * blockDim.x * blockIdx.x;
@@ -196,7 +198,7 @@ Thread coarsening was first analyzed in the context of matrix multiplication in 
 
 Successive iterations increase the amount of inactive warps. For reduction, thread coarsening can be applied by increasing the number of elements that each one processes. If the time to perform the arithmetic is much faster than the time to load the data, then thread coarsening can be beneficial. We could further analyze our program to determine the optimal coarsening factor.
 
-```cuda
+```c
 __global__ coarsenedSumReductionKernel(float *input, float *output) {
     __shared__ float input_s[BLOCK_DIM];
     uint segment = COARSE_FACTOR * 2 * blockDim.x * blockIdx.x;
@@ -223,3 +225,9 @@ __global__ coarsenedSumReductionKernel(float *input, float *output) {
 ```
 
 In the coarsened version, less thread communication is required since the first several steps are computed in a single thread.
+
+## References
+
+<style>.csl-entry{text-indent: -1.5em; margin-left: 1.5em;}</style><div class="csl-bib-body">
+  <div class="csl-entry"><a id="citeproc_bib_item_1"></a>Hwu, Wen-mei W., David B. Kirk, and Izzat El Hajj. 2022. <i>Programming Massively Parallel Processors: A Hands-on Approach</i>. Fourth. Morgan Kaufmann.</div>
+</div>
