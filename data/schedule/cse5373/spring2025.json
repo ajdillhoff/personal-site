@@ -211,6 +211,21 @@
     },
     {
         "date": "March 26",
+        "topic": "General Reductions",
+        "materials": [
+            {
+                "title": "GPU Pattern: Reduction",
+                "url": "/notes/gpu_pattern_reduction"
+            }
+        ]
+    },
+    {
+        "date": "March 28",
+        "topic": "Lab/Recitation",
+        "materials": []
+    },
+    {
+        "date": "March 31",
         "topic": "Merge",
         "materials": [
             {
@@ -220,7 +235,17 @@
         ]
     },
     {
-        "date": "March 28",
+        "date": "April 2",
+        "topic": "Merge",
+        "materials": [
+            {
+                "title": "GPU Pattern: Merge",
+                "url": "/notes/gpu_pattern_merge"
+            }
+        ]
+    },
+    {
+        "date": "April 4",
         "topic": "Lab/Recitation",
         "materials": []
     }

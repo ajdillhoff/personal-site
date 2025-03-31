@@ -4,7 +4,7 @@ authors = ["Alex Dillhoff"]
 date = 2022-03-07T00:00:00-06:00
 tags = ["computer vision"]
 draft = false
-lastmod = 2024-02-26
+lastmod = 2025-03-26
 +++
 
 <div class="ox-hugo-toc toc">
@@ -212,7 +212,7 @@ To write the second equation in a similar way, the authors introduce two additio
 
 \begin{align\*}
 Z(\mathbf{x}) &= \mathbf{g}\mathbf{g}^T\\\\
-\mathbf{x}(\mathbf{x}) &= \big[\mathbf{I}\_{t-1}(\mathbf{x}) - \mathbf{I}\_t(\mathbf{x})\big]\mathbf{g}.
+\mathbf{c}(\mathbf{x}) &= \big[\mathbf{I}\_{t-1}(\mathbf{x}) - \mathbf{I}\_t(\mathbf{x})\big]\mathbf{g}.
 \end{align\*}
 
 Then,
