@@ -4,7 +4,8 @@ authors = ["Alex Dillhoff"]
 date = 2022-03-11T00:00:00-06:00
 tags = ["machine learning"]
 draft = false
-lastmod = 2024-07-10
+lastmod = 2025-04-01
+sections = "Computer Vision"
 +++
 
 <div class="ox-hugo-toc toc">

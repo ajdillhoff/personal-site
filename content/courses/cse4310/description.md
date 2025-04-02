@@ -24,8 +24,8 @@ This is the course page for CSE 4310 - Fundamentals of Computer Vision. Here you
 #### Instructor Office Hours
 | Days    | Time       | Location |
 | ------- | ---------- | -------- |
-| MoWeFri | 12PM - 1PM | ERB 125  |
-| TuTh    | 1PM - 2PM  | ERB 125  |
+| MoWeFri | 12PM - 1PM | ERB 556A |
+| TuTh    | 1PM - 2PM  | ERB 556A |
 
 #### Teaching Assistants
 

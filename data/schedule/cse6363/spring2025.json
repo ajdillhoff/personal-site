@@ -200,5 +200,29 @@
                 "url": "/notes/markov_decision_processes"
             }
         ]
+    },
+    {
+        "date": "April 1",
+        "topic": "Reinforcement Learning",
+        "materials": [
+            {
+                "title": "Reinforcement Learning Overview",
+                "url": "https://lilianweng.github.io/posts/2018-02-19-rl-overview/"
+            },
+            {
+                "title": "Chapters 3-6",
+                "url": "http://incompleteideas.net/book/RLbook2020.pdf"
+            }
+        ]
+    },
+    {
+        "date": "April 3",
+        "topic": "Policy Gradient Methods",
+        "materials": [
+            {
+                "title": "Policy Gradient Methods",
+                "url": "/notes/policy_gradient_methods"
+            }
+        ]
     }
 ]
