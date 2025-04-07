@@ -256,5 +256,25 @@
                 "url": "/notes/policy_gradient_methods"
             }
         ]
+    },
+    {
+        "date": "April 8",
+        "topic": "Natural Language Processing",
+        "materials": [
+            {
+                "title": "Natural Language Processing",
+                "url": "/notes/natural_language_processing"
+            }
+        ]
+    },
+    {
+        "date": "April 10",
+        "topic": "Large Language Models",
+        "materials": [
+            {
+                "title": "Pretraining LLMs",
+                "url": "/notes/pretraining_large_language_models"
+            }
+        ]
     }
 ]
