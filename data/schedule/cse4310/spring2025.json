@@ -270,11 +270,45 @@
     },
     {
         "date": "April 4",
-        "topic": "Camera Calibration",
+        "topic": "Instance Segmentation",
+        "materials": [
+            {
+                "title": "Instance Segmentation",
+                "url": "/notes/instance_segmentation"
+            }
+        ]
+    },
+    {
+        "date": "April 7",
+        "topic": "Camera Calibration, Stereo Vision",
         "materials": [
             {
                 "title": "Camera Models",
                 "url": "/notes/camera_models"
+            },
+            {
+                "title": "Stereo Vision",
+                "url": "/notes/stereo_vision"
+            }
+        ]
+    },
+    {
+        "date": "April 9",
+        "topic": "Recurrent Neural Networks",
+        "materials": [
+            {
+                "title": "Recurrent Neural Networks",
+                "url": "/notes/recurrent_neural_networks"
+            }
+        ]
+    },
+    {
+        "date": "April 11",
+        "topic": "Transformers",
+        "materials": [
+            {
+                "title": "Transformers",
+                "url": "/notes/transformers"
             }
         ]
     }

@@ -4,6 +4,8 @@ authors = ["Alex Dillhoff"]
 date = 2024-03-30T10:36:00-05:00
 tags = ["gpgpu"]
 draft = false
+sections = "GPU Programming"
+lastmod = 2025-04-06
 +++
 
 <div class="ox-hugo-toc toc">
@@ -46,7 +48,7 @@ This format stores non-zero elements in a 1D array of values. It also requires t
 
 ### Kernel Implementation {#kernel-implementation}
 
-```cuda
+```c
 __global__ void spmv_coo_kernel(COOMatrix cooMatrix, float *x, float *y) {
     int i = blockIdx.x * blockDim.x + threadIdx.x;
     if (i < cooMatrix.numNonzeros) {
@@ -79,7 +81,7 @@ The key idea of this format is that each thread is responsible for all nonzeros 
 
 ### Kernel Implementation {#kernel-implementation}
 
-```cuda
+```c
 __global__ void spmv_csr_kernel(CSRMatrix csrMatrix, float *x, float *y) {
     int row = blockIdx.x * blockDim.x + threadIdx.x;
     if (row < csrMatrix.numRows) {
@@ -117,7 +119,7 @@ ELL fixes the non-coalesced memory accesses of CSR via data padding and transpos
 
 ### Kernel Implementation {#kernel-implementation}
 
-```cuda
+```c
 __global__ void spmv_ell_kernel(ELLMatrix ellMatrix, float *x, float *y) {
     int row = blockIdx.x * blockDim.x + threadIdx.x;
     if (row < ellMatrix.numRows) {

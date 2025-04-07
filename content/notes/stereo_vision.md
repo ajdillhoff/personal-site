@@ -4,7 +4,8 @@ authors = ["Alex Dillhoff"]
 date = 2022-03-23T00:00:00-05:00
 tags = ["algorithms", "computer science"]
 draft = false
-lastmod = 2024-07-10
+lastmod = 2025-04-06
+sections = "Computer Vision"
 +++
 
 <div class="ox-hugo-toc toc">
@@ -93,12 +94,27 @@ d\_1 \hat{\mathbf{x}}\_1 = R(d\_0 \hat{\mathbf{x}}\_0) + \mathbf{t},
 where \\(R\\) is a rotation matrix and \\(\mathbf{t}\\) is an offset vector.
 These are the parameters that are solved from stereo calibration.
 
+
+### Essential Matrix {#essential-matrix}
+
+Given the definitions and constraints above, we can now discuss the **essential matrix**, which contains the rotation and translation parameters that map the point in camera 1 with the corresponding point in camera 2. The epipolar constraint is simplified in this case:
+
+\\[
+\hat{\mathbf{x}}\_0 \cdot (\mathbf{t} \times \hat{\mathbf{x}}\_0) = 0.
+\\]
+
+With this constraint, we can set up the equation to solve for the rotation and translation parameters. Ultimately, we are attempting to solve the following equation:
+
+\\[
+\hat{\mathbf{x}}\_1 = R \hat{\mathbf{x}}\_0 + \mathbf{t}.
+\\]
+
 Since the vectors \\(\hat{\mathbf{x}}\_0\\), \\(\hat{\mathbf{x}}\_1\\), and \\(\mathbf{t}\\) are coplanar, the plane can be represented by a normal vector.
 That is, the vector that is orthogonal to all points in the plane.
 Such a vector can be calculated by taking the cross product of both sides of the above equation with \\(\mathbf{t}\\):
 
 \\[
-d\_1 [\mathbf{t}]\_{\times} \hat{\mathbf{x}}\_1 = d\_0 [\mathbf{t}]\_{\times} R \hat{\mathbf{x}}\_0,
+[\mathbf{t}]\_{\times} \hat{\mathbf{x}}\_1 = [\mathbf{t}]\_{\times} R \hat{\mathbf{x}}\_0 + [\mathbf{t}]\_{\times} \mathbf{t},
 \\]
 
 where
@@ -114,7 +130,7 @@ t\_z & 0 & -t\_x\\\\
 It is true that, since the normal vector is orthogonal to \\(\hat{\mathbf{x}}\_0\\), \\(\hat{\mathbf{x}}\_1\\), and \\(\mathbf{t}\\), taking the dot product of any of these vectors and the normal vector yields 0:
 
 \\[
-d\_1 \hat{\mathbf{x}}\_1^T [\mathbf{t}]\_{\times} \hat{\mathbf{x}}\_1 = d\_0 \hat{\mathbf{x}}\_1^T [\mathbf{t}]\_{\times} R \hat{\mathbf{x}}\_0 = 0.
+\hat{\mathbf{x}}\_1^T [\mathbf{t}]\_{\times} \hat{\mathbf{x}}\_1 = \hat{\mathbf{x}}\_1^T [\mathbf{t}]\_{\times} R \hat{\mathbf{x}}\_0 = 0.
 \\]
 
 We have now established the epipolar constraint in terms of the rotation matrix \\(R\\) and translation \\(\mathbf{t}\\).
@@ -128,11 +144,13 @@ This constraint is more compactly written as
 where
 
 \\[
-E = [\mathbf{t}\_{\times}]R.
+E = [\mathbf{t}]\_{\times}R.
 \\]
 
 \\(E\\) is called the **essential matrix** which relates the projected points between the two cameras.
-Once we have the essential matrix, we can compute \\(\mathbf{t}\\) and \\(R\\).
+Once we have the essential matrix, we can compute \\([\mathbf{t}]\_{\times}\\) and \\(R\\).
+
+The decomposition of \\(E\\) into \\([\mathbf{t}]\_{\times}\\) and \\(R\\) can be found using singular value decomposition (SVD). See Hartley and Zisserman (9.6.1) for more details.
 
 
 ## Calibration with Known Intrinsic Parameters and World Points {#calibration-with-known-intrinsic-parameters-and-world-points}

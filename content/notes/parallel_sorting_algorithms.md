@@ -4,6 +4,8 @@ authors = ["Alex Dillhoff"]
 date = 2024-03-31T10:50:00-05:00
 tags = ["gpgpu"]
 draft = false
+sections = "GPU Programming"
+lastmod = 2025-04-06
 +++
 
 <div class="ox-hugo-toc toc">
@@ -44,7 +46,7 @@ The calculation for the 1 bit hinges on the fact that all keys mapping to 0 must
 \text{output index} = \text{input size} - \text{number of ones total} + \text{number of 1s that come before it}
 \\]
 
-```cuda
+```c
 __global__ void radix_sort_iter(unsigned int *input, unsigned int *output,
                                 unsigned int *bits, unsigned int N, unsigned int iter) {
     unsigned int idx = blockIdx.x * blockDim.x + threadIdx.x;
@@ -100,4 +102,4 @@ TODO: Show visualization similar to 13.6
 
 ## Choosing a different Radix value {#choosing-a-different-radix-value}
 
-Picking a larger radix value will reduce the number of iterations required to sort the array.
+Picking a larger radix value will reduce the number of iterations required to sort the array. In the previous example with 4-bit keys, we can split them up with a radix value of 2 bits. This will require 2 iterations to sort the array. Instead of 2 buckets for 0 or 1, we will have 4 buckets for 00, 01, 10, and 11. All keys with 00 will come before 01, and so on.

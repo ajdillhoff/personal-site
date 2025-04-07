@@ -248,5 +248,34 @@
         "date": "April 4",
         "topic": "Lab/Recitation",
         "materials": []
+    },
+    {
+        "date": "April 7",
+        "topic": "Merge, Parallel Sorting Algorithms",
+        "materials": [
+            {
+                "title": "GPU Pattern: Merge",
+                "url": "/notes/gpu_pattern_merge"
+            },
+            {
+                "title": "Parallel Sorting Algorithms",
+                "url": "/notes/parallel_sorting_algorithms"
+            }
+        ]
+    },
+    {
+        "date": "April 9",
+        "topic": "Sparse Matrix Multiplication",
+        "materials": [
+            {
+                "title": "Sparse Matrix Multiplication",
+                "url": "/notes/sparse_matrix_computation"
+            }
+        ]
+    },
+    {
+        "date": "April 11",
+        "topic": "Lab/Recitation",
+        "materials": []
     }
 ]

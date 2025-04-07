@@ -582,7 +582,7 @@ In the paper, \\(\mathbf{H} = \mathbf{A}[\mathbf{R}\quad \mathbf{t}]\\), where
 
 ### Estimating the Homography {#estimating-the-homography}
 
-If we have an image of the model plan, we can estimate \\(\mathbf{H}\\) using maximum-likelihood estimation as follows.
+If we have an image of the model plane, we can estimate \\(\mathbf{H}\\) using maximum-likelihood estimation as follows.
 Assume that \\(\mathbf{m}\_i\\) is affected by Gaussian noise with zero mean and covariance \\(\mathbf{\Lambda}\_{\mathbf{m}\_i}\\).
 The objective is then to minimize
 

@@ -101,10 +101,20 @@
     },
     {
         "date": "Week 12",
-        "topic": "Least-Squares Solutions, Eigenvectors and Eigenvalues",
+        "topic": "Least-Squares Solutions, Image Stitching and RANSAC",
         "materials": [
             {
-                "title": "5.1, 6.5, and 6.6",
+                "title": "6.5, and 6.6",
+                "url": ""
+            }
+        ]
+    },
+    {
+        "date": "Week 13",
+        "topic": "Eigenvalues and Eigenvectors",
+        "materials": [
+            {
+                "title": "5.1",
                 "url": ""
             }
         ]
