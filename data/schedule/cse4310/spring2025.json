@@ -311,5 +311,59 @@
                 "url": "/notes/transformers"
             }
         ]
+    },
+    {
+        "date": "April 14",
+        "topic": "Transformers",
+        "materials": [
+            {
+                "title": "Transformers",
+                "url": "/notes/transformers"
+            }
+        ]
+    },
+    {
+        "date": "April 16",
+        "topic": "Transformers, Vision Transformers",
+        "materials": [
+            {
+                "title": "Transformers",
+                "url": "/notes/transformers"
+            },
+            {
+                "title": "Vision Transformer",
+                "url": "/notes/transformers_for_computer_vision"
+            }
+        ]
+    },
+    {
+        "date": "April 18",
+        "topic": "Vision Transformers",
+        "materials": [
+            {
+                "title": "Vision Transformer",
+                "url": "/notes/transformers_for_computer_vision"
+            }
+        ]
+    },
+    {
+        "date": "April 21",
+        "topic": "Special Topics, Wrap Up",
+        "materials": []
+    },
+    {
+        "date": "April 23",
+        "topic": "Project Presentations",
+        "materials": []
+    },
+    {
+        "date": "April 25",
+        "topic": "Project Presentations",
+        "materials": []
+    },
+    {
+        "date": "April 28",
+        "topic": "Project Presentations",
+        "materials": []
     }
 ]

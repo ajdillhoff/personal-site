@@ -265,6 +265,35 @@
     },
     {
         "date": "April 9",
+        "topic": "Merge",
+        "materials": [
+            {
+                "title": "GPU Pattern: Merge",
+                "url": "/notes/gpu_pattern_merge"
+            }
+        ]
+    },
+    {
+        "date": "April 11",
+        "topic": "Lab/Recitation",
+        "materials": []
+    },
+    {
+        "date": "April 14",
+        "topic": "Parallel Sorting Algorithms, Sparse Matrix Multiplication",
+        "materials": [
+            {
+                "title": "Parallel Sorting Algorithms",
+                "url": "/notes/parallel_sorting_algorithms"
+            },
+            {
+                "title": "Sparse Matrix Multiplication",
+                "url": "/notes/sparse_matrix_computation"
+            }
+        ]
+    },
+    {
+        "date": "April 16",
         "topic": "Sparse Matrix Multiplication",
         "materials": [
             {
@@ -274,8 +303,38 @@
         ]
     },
     {
-        "date": "April 11",
-        "topic": "Lab/Recitation",
+        "date": "April 18",
+        "topic": "Parallel Graph Traversal",
+        "materials": [
+            {
+                "title": "Parallel Graph Traversal",
+                "url": "/notes/parallel_graph_traversal"
+            }
+        ]
+    },
+    {
+        "date": "April 21",
+        "topic": "Parallel Graph Traversal",
+        "materials": [
+            {
+                "title": "Parallel Graph Traversal",
+                "url": "/notes/parallel_graph_traversal"
+            }
+        ]
+    },
+    {
+        "date": "April 23",
+        "topic": "Project Presentations",
+        "materials": []
+    },
+    {
+        "date": "April 25",
+        "topic": "Project Presentations",
+        "materials": []
+    },
+    {
+        "date": "April 28",
+        "topic": "Project Presentations",
         "materials": []
     }
 ]

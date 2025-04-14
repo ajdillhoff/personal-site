@@ -104,7 +104,7 @@
         "topic": "Least-Squares Solutions, Image Stitching and RANSAC",
         "materials": [
             {
-                "title": "6.5, and 6.6",
+                "title": "6.5 and 6.6",
                 "url": ""
             }
         ]
@@ -118,5 +118,30 @@
                 "url": ""
             }
         ]
+    },
+    {
+        "date": "Week 14",
+        "topic": "Diagonalization, Singular Value Decomposition",
+        "materials": [
+            {
+                "title": "5.3, 7.1, and 7.4",
+                "url": ""
+            }
+        ]
+    },
+    {
+        "date": "Week 15",
+        "topic": "Prinicpal Component Analysis",
+        "materials": [
+            {
+                "title": "PCA",
+                "url": "/notes/principal_component_analysis"
+            }
+        ]
+    },
+    {
+        "date": "Week 16",
+        "topic": "Exam 3 Review",
+        "materials": []
     }
 ]

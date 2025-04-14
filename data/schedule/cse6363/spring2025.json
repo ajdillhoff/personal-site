@@ -243,5 +243,30 @@
         "date": "April 10",
         "topic": "Recitation Day",
         "materials": []
+    },
+    {
+        "date": "April 15",
+        "topic": "LLM Post-Training, RAG",
+        "materials": [
+            {
+                "title": "Using RAG to Talk to Your Data",
+                "url": "/blog/using-rag-to-talk-to-your-data"
+            }
+        ]
+    },
+    {
+        "date": "April 17",
+        "topic": "VAE, Diffusion Models",
+        "materials": []
+    },
+    {
+        "date": "April 22",
+        "topic": "Project Presentations",
+        "materials": []
+    },
+    {
+        "date": "April 24",
+        "topic": "Project Presentations",
+        "materials": []
     }
 ]
