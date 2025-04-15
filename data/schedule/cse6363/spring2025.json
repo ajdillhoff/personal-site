@@ -249,6 +249,10 @@
         "topic": "LLM Post-Training, RAG",
         "materials": [
             {
+                "title": "Fine-tuning LLMs",
+                "url": "/notes/fine_tuning_llms"
+            },
+            {
                 "title": "Using RAG to Talk to Your Data",
                 "url": "/blog/using-rag-to-talk-to-your-data"
             }
