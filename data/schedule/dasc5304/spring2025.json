@@ -292,8 +292,13 @@
     },
     {
         "date": "April 17",
-        "topic": "VAE, Diffusion Models",
-        "materials": []
+        "topic": "Vision Transformers, Pose Estimation",
+        "materials": [
+            {
+                "title": "Transformers for Computer Vision",
+                "url": "/notes/transfomers_for_computer_vision"
+            }
+        ]
     },
     {
         "date": "April 22",
@@ -303,6 +308,11 @@
     {
         "date": "April 24",
         "topic": "Project Presentations",
+        "materials": []
+    },
+    {
+        "date": "April 29",
+        "topic": "VAE, Diffusion Models",
         "materials": []
     }
 ]
