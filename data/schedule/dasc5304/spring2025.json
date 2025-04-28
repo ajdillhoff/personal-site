@@ -157,11 +157,15 @@
     },
     {
         "date": "February 27",
-        "topic": "Optimization for Deep Learning",
+        "topic": "Optimization for Deep Learning, Object Detection",
         "materials": [
             {
                 "title": "Optimization for Deep Learning",
                 "url": "/notes/optimization_for_deep_learning"
+            },
+            {
+                "title": "Object Detection",
+                "url": "/notes/object_detection"
             }
         ]
     },
@@ -312,7 +316,12 @@
     },
     {
         "date": "April 29",
-        "topic": "VAE, Diffusion Models",
-        "materials": []
+        "topic": "Instance Segmentation",
+        "materials": [
+            {
+                "title": "Instance Segmentation",
+                "url": "/notes/instance_segmentation"
+            }
+        ]
     }
 ]
