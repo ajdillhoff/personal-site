@@ -2,7 +2,7 @@
 title: Course Materials
 linktitle: Course Materials
 toc: true
-date: "2025-05-28T00:00:00+01:00"
+date: "2024-08-19T00:00:00+01:00"
 draft: false
 # menu:
 #     cse6363:

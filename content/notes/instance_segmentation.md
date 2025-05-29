@@ -4,7 +4,7 @@ authors = ["Alex Dillhoff"]
 date = 2022-04-18T00:00:00-05:00
 tags = ["computer vision", "machine learning"]
 draft = false
-lastmod = 2024-07-29
+lastmod = 2025-04-29
 sections = "Computer Vision"
 +++
 
@@ -28,6 +28,8 @@ sections = "Computer Vision"
 
 
 ## Introduction {#introduction}
+
+Instance segmentation is the task of assigning a label to pixels based on which class they belong to. In a supervised setting, the results are more focused given that the domain objects is well defined. Remember that in [Image Segmentation]({{< relref "image_segmentation.md" >}}), the pixels were grouped under a general critera such as proximity or color.
 
 
 ## Mask R-CNN (<a href="#citeproc_bib_item_4">He et al. 2018</a>) {#mask-r-cnn}

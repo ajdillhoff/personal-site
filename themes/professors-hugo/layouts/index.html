@@ -245,37 +245,127 @@
   <!-- Resume Section End  -->
 
   <!-- Courses Section Start  -->
-  {{ if .Params.courses.enable }}
-    {{ $button := .Params.courses.button }}
-    {{ with site.GetPage "/courses" }}
-      <section id="courses" class="section">
-        <div class="container">
-          <div class="row">
-            <div class="col-xxl-11 mx-auto">
-              <div class="section-title" data-aos="fadeIn">
-                <h2 class="h3">{{ .Params.title | markdownify }}</h2>
-              </div>
+   {{ with .Params.courses }}
+  {{ if .enable }}
+    <section id="courses" class="section">
+      <div class="container">
+        <div class="row">
+          <div class="col-xxl-11 mx-auto">
+            <div class="section-title" data-aos="fadeIn">
+              {{ $coursesPage := site.GetPage "/courses" }}
+              <h2 class="h3">{{ $coursesPage.Params.title | default "Courses" | markdownify }}</h2>
+            </div>
 
-              <div class="courses align-items-start overflow-hidden">
-                {{ range .Pages.Reverse }}
-                  {{ .Render "course-card" }}
+            <div class="courses align-items-start overflow-hidden">
+              {{ $archiveSectionPage := site.GetPage "courses/archive" }}
+              {{ $mainCoursesPage := site.GetPage "courses" }}
+              {{ $activeCoursePages := slice }}
+
+              {{ range where (where site.Pages "Section" "courses") ".File.BaseFileName" "_index" }}
+                {{ $isRelevant := true }}
+                {{ if eq . $mainCoursesPage }}
+                  {{ $isRelevant = false }}
                 {{ end }}
-              </div>
+                {{ if $archiveSectionPage }}
+                  {{ if or (eq . $archiveSectionPage) (.IsDescendant $archiveSectionPage) }}
+                    {{ $isRelevant = false }}
+                  {{ end }}
+                {{ end }}
+                {{ if $isRelevant }}
+                  {{ $activeCoursePages = $activeCoursePages | append . }}
+                {{ end }}
+              {{ end }}
 
-              {{ with $button }}
-                <div class="text-center mt-5" data-aos="fade-up">
-                  <a href="{{ .link }}" class="btn btn-primary"
-                    >{{ .label | markdownify }}<i
-                      class="fa-solid fa-angle-right ms-2"></i
-                  ></a>
-                </div>
+              {{/* Sort active courses by title, then take the first 3 (or however many you want) */}}
+              {{ range (sort $activeCoursePages ".Title" | first 3) }} 
+                {{ .Render "course-card" }}
+              {{ end }}
+            </div>
+
+            <div class="text-center mt-5" data-aos="fade-up">
+              {{ with .button }}
+                {{ if .enable }}
+                  <a href="{{ .link | relURL }}" class="btn btn-primary">
+                    {{ .label | markdownify }}<i class="fa-solid fa-angle-right ms-2"></i>
+                  </a>
+                {{ end }}
+              {{ end }}
+              {{ with .archive_button }}
+                {{ if .enable }}
+                  <a href="{{ .link | relURL }}" class="btn btn-outline-primary ms-3">
+                    {{ .label | markdownify }}<i class="fa-solid fa-archive ms-2"></i>
+                  </a>
+                {{ end }}
               {{ end }}
             </div>
           </div>
         </div>
-      </section>
-    {{ end }}
+      </div>
+    </section>
   {{ end }}
+{{ end }}
+  <!-- {{ with .Params.courses }}
+  {{ if .enable }}
+    <section id="courses" class="section">
+      <div class="container">
+        <div class="row">
+          <div class="col-xxl-11 mx-auto">
+            <div class="section-title" data-aos="fadeIn">
+              {{ $coursesPage := site.GetPage "/courses" }}
+              <h2 class="h3">{{ $coursesPage.Params.title | default "Courses" | markdownify }}</h2>
+            </div>
+
+            <div class="courses align-items-start overflow-hidden">
+              {{ $archiveSectionPage := site.GetPage "courses/archive" }}
+              {{ $mainCoursesPage := site.GetPage "courses" }} {{/* To exclude /courses/_index.md itself */}}
+              {{ $activeCoursePages := slice }}
+
+              {{ range where (where site.Pages "Section" "courses") ".File.BaseFileName" "_index" }}
+                {{ $isRelevant := true }}
+                {{/* Exclude the main /courses/_index.md page */}}
+                {{ if eq . $mainCoursesPage }}
+                  {{ $isRelevant = false }}
+                {{ end }}
+
+                {{/* Exclude the /courses/archive/_index.md page and its descendants */}}
+                {{ if $archiveSectionPage }}
+                  {{ if or (eq . $archiveSectionPage) (.IsDescendant $archiveSectionPage) }}
+                    {{ $isRelevant = false }}
+                  {{ end }}
+                {{ end }}
+
+                {{ if $isRelevant }}
+                  {{ $activeCoursePages = $activeCoursePages | append . }}
+                {{ end }}
+              {{ end }}
+
+              {{ range ($activeCoursePages.ByDate.Reverse | first 3) }} {{/* Example: Show first 3 active courses */}}
+                {{ .Render "course-card" }}
+              {{ end }}
+            </div>
+
+            <div class="text-center mt-5" data-aos="fade-up">
+              {{ with .button }}
+                {{ if .enable }}
+                  <a href="{{ .link | relURL }}" class="btn btn-primary">
+                    {{ .label | markdownify }}<i class="fa-solid fa-angle-right ms-2"></i>
+                  </a>
+                {{ end }}
+              {{ end }}
+              {{ with .archive_button }}
+                {{ if .enable }}
+                  <a href="{{ .link | relURL }}" class="btn btn-outline-primary ms-3">
+                    {{ .label | markdownify }}<i class="fa-solid fa-archive ms-2"></i>
+                  </a>
+                {{ end }}
+              {{ end }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  {{ end }}
+{{ end }} -->
   <!-- Courses Section End  -->
 
   <!-- Blog Section Start  -->

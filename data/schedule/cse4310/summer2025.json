@@ -1,0 +1,21 @@
+[
+    {
+        "date": "June 3",
+        "topic": "Course Introduction, Python Review",
+        "materials": []
+    },
+    {
+        "date": "June 5",
+        "topic": "Color, Sampling and Aliasing",
+        "materials": [
+            {
+                "title": "Light and Color",
+                "url": "/notes/color"
+            },
+            {
+                "title": "Sampling and Aliasing",
+                "url": "/notes/sampling"
+            }
+        ]
+    }
+]

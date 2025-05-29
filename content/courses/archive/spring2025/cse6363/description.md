@@ -6,8 +6,8 @@ weight: 1
 
 # Page metadata.
 title: Description
-date: "2025-05-28T00:00:00Z"
-lastmod: "2025-05-28T00:00:00Z"
+date: "2024-08-19T00:00:00Z"
+lastmod: "2024-08-19T00:00:00Z"
 draft: false  # Is this a draft? true/false
 
 # Add menu entry to sidebar.
@@ -23,16 +23,17 @@ This is the course page for CSE 6363 - Machine Learning in Spring 2025. Here you
 
 #### Instructor Office Hours
 
-| Days | Time       | Location |
-| ---- | ---------- | -------- |
-| MoWe | 1PM - 2PM  | ERB 556A |
-| TuTh | 3PM - 4PM  | ERB 556A |
-| Fri  | 9AM - 10AM | Teams    |
+| Days    | Time       | Location |
+| ------- | ---------- | -------- |
+| MoWeFri | 12PM - 1PM | ERB 556A |
+| TuTh    | 1PM - 2PM  | ERB 556A |
 
 #### Teaching Assistant
 
-- Mengliang Zhang (mxz3935 (at) mavs (dot) uta (dot) edu)
+- Usha Chintha (uxc5333 (at) mavs (dot) uta (dot) edu)
 
 ##### Office Hours
 
-**TBD**
+| Days   | Time      | Location |
+| ------ | --------- | -------- |
+| Mo-Fri | 4PM - 5PM | Teams    |

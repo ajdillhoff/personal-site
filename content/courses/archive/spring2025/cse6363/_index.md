@@ -3,6 +3,6 @@ title: "CSE 6363 - Machine Learning"
 description: "Graduate-level machine learning topics covering the foundations up to modern publications."
 draft: false
 type: course-detail
-term: Summer 2025
-lastmod: 2025-05-29T00:00:00Z
+term: Spring 2025
+lastmod: 2025-01-14T00:00:00Z
 ---

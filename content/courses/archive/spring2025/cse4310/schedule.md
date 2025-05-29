@@ -1,7 +1,7 @@
 ---
 title: Schedule
 linktitle: Schedule
-date: "2025-05-28T00:00:00+01:00"
+date: "2023-08-15T00:00:00+01:00"
 draft: false
 # menu:
 #     cse4310-spring2024:
@@ -14,4 +14,4 @@ weight: 3
 
 This schedule is tentative and may change.
 
-{{< json-table path="schedule/cse4310/summer2025" >}}
+{{< json-table path="schedule/cse4310/spring2025" >}}

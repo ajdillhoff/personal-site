@@ -1,0 +1,26 @@
+[
+    {
+        "date": "June 2",
+        "topic": "Course Introduction, Background, Finite Automata",
+        "materials": [
+            {
+                "title": "Chapter 0",
+                "url": ""
+            },
+            {
+                "title": "1.1",
+                "url": ""
+            }
+        ]
+    },
+    {
+        "date": "June 4",
+        "topic": "Regular Operations and Closure",
+        "materials": [
+            {
+                "title": "1.1",
+                "url": ""
+            }
+        ]
+    }
+]

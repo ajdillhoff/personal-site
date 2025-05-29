@@ -17,7 +17,11 @@
         <td>
           <ul>
             {{ range .materials }}
-              <li><a href="{{ .url }}">{{ .title }}</a></li>
+              {{ if .url }}
+                <li><a href="{{ .url }}">{{ .title }}</a></li>
+              {{ else }}
+                <li>{{ .title }}</li>
+              {{ end }}
             {{ end }}
           </ul>
         </td>

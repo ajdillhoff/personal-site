@@ -103,11 +103,15 @@ education:
       Aliquam tincidunt malesuada tortor vitae iaculis. In eu turpis risus quis. Quisque fringilla mollis risus eu pulvinar.
 
 # courses
-courses: 
+courses:
   enable: true
-  button:
+  button: # This might be your "All Courses" or "Current Courses" button
     link: "courses/"
-    label: "Current Courses"
+    label: "All Courses"
+  archive_button: # New button for the archive
+    enable: true
+    link: "courses/archive/"
+    label: "Archived Courses"
 
 # blogs
 blogs: 

@@ -1,0 +1,72 @@
+{{ define "main" }}
+<section class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-xxl-11 mx-auto">
+        <div class="mb-5 pb-2">
+          <h2 class="h3"><span class="text-primary pe-3 small">//</span>{{ .Title | title }}</h2>
+          <p class="lead">{{ .Description | markdownify }}</p>
+        </div>
+
+        {{ $archivePage := . }} {{/* This refers to content/courses/archive/_index.md */}}
+        
+        {{/* 1. Collect all _index.md files that are descendants of the archive page */}}
+        {{ $collectedArchivedPages := slice }}
+        {{ range where (where $.Site.Pages "Section" "courses") ".File.BaseFileName" "_index" }}
+          {{ if .IsDescendant $archivePage }}
+            {{ $collectedArchivedPages = $collectedArchivedPages | append . }}
+          {{ end }}
+        {{ end }}
+        
+        {{/* Sort the collected archived courses by Title */}}
+        {{ $archivedCoursePages := sort $collectedArchivedPages ".Title" }}
+
+        {{/* 2. Collect unique terms from these archived courses */}}
+        {{ $termsList := slice }}
+        {{ range $archivedCoursePages }}
+          {{ with .Params.term }}
+            {{ $termsList = $termsList | append . }}
+          {{ end }}
+        {{ end }}
+        {{ $uniqueTerms := $termsList | uniq | sort }}
+
+        {{/* 3. Display courses grouped by term */}}
+        {{ if not $uniqueTerms }}
+          <p>There are currently no archived courses with a 'term' specified to display.</p>
+        {{ else }}
+          {{ range $uniqueTerms }}
+            {{ $currentTerm := . }}
+            <div class="mb-5">
+              <h3 class="h4 mb-4"><span class="text-primary pe-3">//</span>{{ $currentTerm }}</h3>
+              <div class="courses align-items-start overflow-hidden">
+                {{ range $archivedCoursePages }}
+                  {{ if eq .Params.term $currentTerm }}
+                    <div class="course-item mb-4">
+                      <div class="card bg-dark rounded-3">
+                        {{ if .Params.image }}
+                        <a href="{{ .RelPermalink | urlize }}" class="overflow-hidden p-3">
+                          {{ partial "image.html" (dict "Src" .Params.image "Alt" .Params.title "Class" `rounded-2`) }}
+                        </a>
+                        {{ end }}
+                        <div class="card-body pb-4">
+                          <div class="px-2">
+                            <h3 class="h5 card-title fw-medium text-capitalize">
+                              <a class="text-white" href="{{ .RelPermalink }}">{{ .Params.title | markdownify }}</a>
+                            </h3>
+                            <p class="card-text mb-3">{{ .Params.description }}</p>
+                            <a class="card-btn text-primary" href="{{ .RelPermalink | urlize }}">More<i class="fa-solid fa-arrow-right-long ms-2"></i></a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  {{ end }}
+                {{ end }}
+              </div>
+            </div>
+          {{ end }}
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}
