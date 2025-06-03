@@ -35,4 +35,6 @@ This is the course page for CSE 4310 - Fundamentals of Computer Vision. Here you
 
 ##### Office Hours
 
-**TBD**
+| Days  | Time       | Location |
+| ----- | ---------- | -------- |
+| Mo-We | 8AM - 10AM | Teams    |
