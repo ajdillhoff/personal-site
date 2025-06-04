@@ -35,4 +35,6 @@ This is the course page for CSE 3315 - Theory of Computation in Summer 2025. Her
 
 ##### Office Hours
 
-**TBD**
+| Days | Time      | Location                  |
+| ---- | --------- | ------------------------- |
+| TuTh | 4PM - 6PM | ERB 309 (Teams Preferred) |

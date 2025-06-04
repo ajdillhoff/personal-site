@@ -4,5 +4,5 @@ description: "Graduate-level machine learning topics covering the foundations up
 draft: false
 type: course-detail
 term: Summer 2025
-lastmod: 2025-05-29T00:00:00Z
+lastmod: 2025-06-04T00:00:00Z
 ---

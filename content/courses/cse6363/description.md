@@ -35,4 +35,8 @@ This is the course page for CSE 6363 - Machine Learning in Spring 2025. Here you
 
 ##### Office Hours
 
-**TBD**
+**Please contact Mengliang via email or Teams to schedule an appointment.**
+
+| Days | Time      | Location |
+| ---- | --------- | -------- |
+| Thu  | 2PM - 6PM | SEIR 428 |
