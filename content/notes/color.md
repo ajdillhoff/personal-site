@@ -5,6 +5,7 @@ date = 2022-01-22T00:00:00-06:00
 tags = ["computer vision"]
 draft = false
 sections = "Computer Vision"
+lastmod = 2025-06-05
 +++
 
 <div class="ox-hugo-toc toc">
@@ -96,6 +97,8 @@ p\_k = \int\_{\Lambda} \sigma\_k(\lambda)E(\lambda)d\lambda
 
 
 ## Color Matching {#color-matching}
+
+**WATCH:** [Color Vision 2: Color Matching](https://www.youtube.com/watch?v=82ItpxqPP4I)
 
 The theory that the visible colors are visible from the three primaries is called **trichomatic theory**. Trichromacy has been measured and observed.
 
