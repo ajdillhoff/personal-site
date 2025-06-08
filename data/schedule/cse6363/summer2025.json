@@ -22,5 +22,33 @@
                 "url": "/notes/logistic_regression"
             }
         ]
+    },
+    {
+        "date": "June 9",
+        "topic": "Review of Probability Theory, Linear Discriminant Analysis",
+        "materials": [
+            {
+                "title": "Probability Theory",
+                "url": "/notes/probability_theory"
+            },
+            {
+                "title": "LDA",
+                "url": "/notes/linear_discriminant_analysis"
+            }
+        ]
+    },
+    {
+        "date": "June 11",
+        "topic": "Naive Bayes, Kernels, HW2 Out",
+        "materials": [
+            {
+                "title": "Naive Bayes",
+                "url": "/notes/naive_bayes"
+            },
+            {
+                "title": "Kernels",
+                "url": "/notes/kernels"
+            }
+        ]
     }
 ]
