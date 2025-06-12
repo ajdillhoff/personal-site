@@ -4,7 +4,7 @@ authors = ["Alex Dillhoff"]
 date = 2022-01-22T00:00:00-06:00
 tags = ["computer vision"]
 draft = false
-lastmod = 2025-01-21
+lastmod = 2025-06-12
 sections = "Computer Vision"
 +++
 
@@ -87,7 +87,9 @@ SSD is defined as
 f(x, y) = \sum\_{(u, v) \in W}\big(I(x + u, y + v) - I(u, v)\big)^2.
 \\]
 
-This difference was previously used to evaluate discrete steps. Harris et al. note this as a limitation and instead aim to evaluate all possible _small_ shifts about the origin of the shift. This is accomplished through analytic expansion of the term \\(I(x + u, y + v)\\).
+[This Stack Exchange answer](https://dsp.stackexchange.com/a/3339/61589) provides an excellent visualization of what SSD is achieving here.
+
+This difference was previously used to evaluate discrete steps. Harris et al. note this as a limitation and instead aim to evaluate all possible _small_ shifts about the origin of the shift. Another issue with evaluating SSD as above is efficiency. Iterating and shifting a window over each pixel is extremely inefficient. Through analytic expansion of the term \\(I(x + u, y + v)\\), we can approximate all possible small shifts around the origin **efficiently**.
 
 Through Taylor expansion, this can be approximated as
 
