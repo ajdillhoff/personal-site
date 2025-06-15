@@ -4,7 +4,7 @@ authors = ["Alex Dillhoff"]
 date = 2022-01-22T00:00:00-06:00
 tags = ["computer vision"]
 draft = false
-lastmod = 2024-01-28
+lastmod = 2025-06-14
 sections = "Computer Vision"
 +++
 
@@ -12,8 +12,7 @@ sections = "Computer Vision"
 
 <div class="heading">Table of Contents</div>
 
-- [Introduction](#introduction)
-- [Difference of Gaussians](#difference-of-gaussians)
+- [Scale-Space Extrema](#scale-space-extrema)
 - [Keypoint Localization](#keypoint-localization)
 - [Orientation Assignment](#orientation-assignment)
 - [Descriptor Formation](#descriptor-formation)
@@ -21,21 +20,17 @@ sections = "Computer Vision"
 </div>
 <!--endtoc-->
 
+The goal is to detect features that are robust to varying conditions like scale, rotation, and translation. SIFT focuses first on detection of scale-space extrema. A robust feature is one that is invariant to scale change. If this feature appears consistently as the scale space is changed, it will ultimately be selected.
 
 
-## Introduction {#introduction}
+## Scale-Space Extrema {#scale-space-extrema}
 
-<https://www.cs.ubc.ca/~lowe/papers/ijcv04.pdf>
+Detecting features that are robust to changes in scale is arguably the most important property of this work. As discussed in [Image Features]({{< relref "image_features.md" >}}), features across multiple scales can be detected by using the Laplacian of Gaussian. In Lowe's paper, extrema are detected more efficiently by approximating this function.
 
-General approach to computing SIFT features:
-
-1.  Scale-space Extrema Detection
-2.  Keypoint localization
-3.  Orientation Assignment
-4.  Generate keypoint descriptors
+Scale space in this context is defined as \\(L(x, y, \sigma) = G(x, y, \sigma) \* I(x, y)\\), where \\(G\\) is a Gaussian kernel. Extrema in scale-space indicate locations with in the image with a large gradient magnitude. In other words, edges, corners, and other texture rich features.
 
 
-## Difference of Gaussians {#difference-of-gaussians}
+### Difference of Gaussians {#difference-of-gaussians}
 
 This same technique for detecting interesting points in a scale-invariant way can be approximated by taking the **Difference of Gaussians**. Consider the figure below.
 
@@ -54,13 +49,21 @@ Therefore, the difference \\(D(I\_{\sigma\_1}, I\_{\sigma\_2})\\) will be higher
 
 {{< figure src="/ox-hugo/2022-02-13_20-41-50_screenshot.png" caption="<span class=\"figure-number\">Figure 3: </span>Difference of Gaussian between the original image blurred with \\(\sigma = 0.5\\) and \\(\sigma=1.5\\)." >}}
 
+{{< notice "info" "Theoretical Justification for DoG" >}}
+Based on previous work by Lindeberg, it was shown that scale-normalization of the Laplacian of Gaussian with a factor of $\sigma^2$ is required for scale invariance. Further, the difference of Gaussian across a constant factor of $\sigma$ is approximately equal to the scale-normalized Laplacian of Gaussian:
+
+$$
+G(x, y, k\sigma) - G(x, y, \sigma) \approx (k - 1)\sigma^2 \nabla^2 G.
+$$
+{{< /notice >}}
+
 When building SIFT features, the extremum are selected by comparing 3 DoG images.
 These are selected by evaluating each pixel to 26 of its neighbors in the current scale space and neighboring DoG spaces as visualized below.
 
 {{< figure src="/ox-hugo/2022-02-13_18-50-20_screenshot.png" caption="<span class=\"figure-number\">Figure 4: </span>Finding extrema of pixel (i, j) in a neighborhood of 26 values (<a href=\"#citeproc_bib_item_2\">Lowe 2004</a>)." >}}
 
 To build the DoG pyramid, the authors propose that images are separated by a constant factor \\(k\\) in scale space.
-Each octave of scale space is divided such that the scalespace doubles every \\(s\\) samples.
+Each octave of scale space is divided such that the scale-space doubles every \\(s\\) samples.
 
 Starting with \\(\sigma = 0.5\\), if we choose \\(s=3\\) then the fourth sample will be at \\(\sigma = 1\\), the seventh at \\(\sigma=2\\), and so on.
 To make sure the DoG images cover the full range of an octave, \\(s + 3\\) images need to be created per octave.
@@ -68,11 +71,20 @@ To make sure the DoG images cover the full range of an octave, \\(s + 3\\) image
 **Why \\(s + 3\\)?**
 
 Each octave should evaluate local extrema for \\(s\\) scales.
-To evaluate this for scale \\(\sigma\_s\\), we need the DoG for scales \\(\sigma\_{s-1}\\) and \\(\sigma\_{s+1}\\).
+To evaluate this for scale \\(\sigma\_s\\), we need DoG images for scales \\(\sigma\_{s-1}\\), \\(\sigma\_{s}\\), and \\(\sigma\_{s+1}\\).
 This would require 4 Gaussians images to compute.
 The figure below represents the stack for \\(s=2\\).
 
 {{< figure src="/ox-hugo/2022-02-10_17-35-51_screenshot.png" caption="<span class=\"figure-number\">Figure 5: </span>DOG figure (<a href=\"#citeproc_bib_item_2\">Lowe 2004</a>)." >}}
+
+{{< notice "tip" "Example with $s=3" >}}
+If $s=3$, then $k=2^{\frac{1}{3}} \approx 1.26$.<br>
+Starting with $\sigma_0 = 1$, the subsequent values are $[\sigma_0, \sigma_1, \sigma_2, \sigma_3, \sigma_4, \sigma_5] = [1, k, k^2, k^3, k^4, k^5]$.<br>
+Note that $\sigma$ is doubled at $k^3$, corresponding to the image that is 2 below the top of the stack (as stated by Lowe).<br><br>
+**If we only want a doubling of $\sigma$, why are we computing $k^4 \approx 2.51$ and $k^5 \approx 3.17$?**
+<br>
+The extrema detection requires 3 DoG images. Therefore, the detection at $D(x, y, \sigma^3)$ (doubling) also requires the DoG above and below it. To generate those 3 images we need $\sigma_2, \sigma_3, \sigma_4,$ and $\sigma_5$.
+{{< /notice >}}
 
 **How is the value of \\(s\\) determined?**
 

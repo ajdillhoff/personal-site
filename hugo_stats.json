@@ -1113,6 +1113,7 @@
       "scale-adaptive-roi-assignment",
       "scale-invariance",
       "scale-space",
+      "scale-space-extrema",
       "scaled-dot-product-attention",
       "scaling",
       "scaling-stencil-size-vs-dot-convolution-filter-size",

@@ -45,5 +45,28 @@
                 "url": "/notes/scale_invariant_feature_transforms"
             }
         ]
+    },
+    {
+        "date": "June 17",
+        "topic": "Scale-Invariant Feature Transform, Template Matching, Bag of Words",
+        "materials": [
+            {
+                "title": "SIFT",
+                "url": "/notes/scale_invariant_feature_transforms"
+            },
+            {
+                "title": "Template Matching",
+                "url": "https://github.com/ajdillhoff/CSE4310/blob/main/feature_matching.ipynb"
+            },
+            {
+                "title": "Bag of Visual Words",
+                "url": "/notes/bag_of_visual_words"
+            }
+        ]
+    },
+    {
+        "date": "June 19",
+        "topic": "Juneteenth Holiday",
+        "materials": []
     }
 ]

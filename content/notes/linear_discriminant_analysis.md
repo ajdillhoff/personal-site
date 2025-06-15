@@ -3,7 +3,7 @@ title = "Linear Discriminant Analysis"
 authors = ["Alex Dillhoff"]
 date = 2022-01-22T00:00:00-06:00
 draft = false
-lastmod = 2024-01-30
+lastmod = 2025-06-14
 sections = "Machine Learning"
 +++
 
