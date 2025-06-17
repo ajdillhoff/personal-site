@@ -77,7 +77,7 @@ The figure below represents the stack for \\(s=2\\).
 
 {{< figure src="/ox-hugo/2022-02-10_17-35-51_screenshot.png" caption="<span class=\"figure-number\">Figure 5: </span>DOG figure (<a href=\"#citeproc_bib_item_2\">Lowe 2004</a>)." >}}
 
-{{< notice "tip" "Example with $s=3" >}}
+{{< notice "tip" "Example with $s=3$" >}}
 If $s=3$, then $k=2^{\frac{1}{3}} \approx 1.26$.<br>
 Starting with $\sigma_0 = 1$, the subsequent values are $[\sigma_0, \sigma_1, \sigma_2, \sigma_3, \sigma_4, \sigma_5] = [1, k, k^2, k^3, k^4, k^5]$.<br>
 Note that $\sigma$ is doubled at $k^3$, corresponding to the image that is 2 below the top of the stack (as stated by Lowe).<br><br>
