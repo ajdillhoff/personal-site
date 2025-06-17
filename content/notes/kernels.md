@@ -4,7 +4,7 @@ authors = ["Alex Dillhoff"]
 date = 2022-01-22T00:00:00-06:00
 tags = ["machine learning"]
 draft = false
-lastmod = 2024-02-01
+lastmod = 2025-06-17
 sections = "Machine Learning"
 +++
 
@@ -22,7 +22,7 @@ sections = "Machine Learning"
 </div>
 <!--endtoc-->
 
-Slides for these notes can be found [here.](/teaching/cse6363/lectures/kernels.pdf)
+Slides for these notes can be found [here.](/teaching/cse6363/lectures/kernels.pdf) Check out [MLST's episode](https://www.youtube.com/watch?v=y_RjsDHl5Y4) on Kernels.
 
 
 ## Introduction {#introduction}

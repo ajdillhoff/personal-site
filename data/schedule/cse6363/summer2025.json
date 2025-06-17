@@ -63,11 +63,15 @@
     },
     {
         "date": "June 18",
-        "topic": "Support Vector Machine",
+        "topic": "Support Vector Machine, Neural Networks",
         "materials": [
             {
                 "title": "Sequential Minimal Optimization",
                 "url": "https://www.microsoft.com/en-us/research/publication/sequential-minimal-optimization-a-fast-algorithm-for-training-support-vector-machines/"
+            },
+            {
+                "title": "Neural Networks",
+                "url": "/notes/neural_networks"
             }
         ]
     }
