@@ -61,6 +61,10 @@
             {
                 "title": "Bag of Visual Words",
                 "url": "/notes/bag_of_visual_words"
+            },
+            {
+                "title": "RANSAC",
+                "url": "/notes/random_sample_consensus"
             }
         ]
     },
@@ -68,5 +72,37 @@
         "date": "June 19",
         "topic": "Juneteenth Holiday",
         "materials": []
+    },
+    {
+        "date": "June 24",
+        "topic": "Hough Transform, Image Segmentation",
+        "materials": [
+            {
+                "title": "Hough Transform",
+                "url": "/notes/hough_transform"
+            },
+            {
+                "title": "Image Segmentation",
+                "url": "/notes/image_segmentation"
+            },
+            {
+                "title": "Segmentation via Clustering",
+                "url": "/notes/segmentation_via_clustering"
+            }
+        ]
+    },
+    {
+        "date": "June 26",
+        "topic": "Segmentation by Clustering, Optical Flow",
+        "materials": [
+            {
+                "title": "Segmentation via Clustering",
+                "url": "/notes/segmentation_via_clustering"
+            },
+            {
+                "title": "Optical Flow",
+                "url": "/notes/optical_flow"
+            }
+        ]
     }
 ]

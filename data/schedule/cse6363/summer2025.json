@@ -74,5 +74,29 @@
                 "url": "/notes/neural_networks"
             }
         ]
+    },
+    {
+        "date": "June 23",
+        "topic": "Backpropagation, Bias-Variance Tradeoff",
+        "materials": [
+            {
+                "title": "Neural Networks",
+                "url": "/notes/neural_networks"
+            },
+            {
+                "title": "Bias-Variance Tradeoff",
+                "url": "/notes/bias_and_variance"
+            }
+        ]
+    },
+    {
+        "date": "June 25",
+        "topic": "Decision Trees",
+        "materials": [
+            {
+                "title": "Decision Trees",
+                "url": "/notes/decision_trees"
+            }
+        ]
     }
 ]

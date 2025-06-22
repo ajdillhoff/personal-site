@@ -51,6 +51,21 @@
     },
     {
         "date": "June 18",
+        "topic": "Pumping Lemma",
+        "materials": [
+            {
+                "title": "1.4",
+                "url": ""
+            }
+        ]
+    },
+    {
+        "date": "June 23",
+        "topic": "Exam 1",
+        "materials": []
+    },
+    {
+        "date": "June 25",
         "topic": "State Minimization, Countability",
         "materials": [
             {
