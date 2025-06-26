@@ -4,7 +4,7 @@ authors = ["Alex Dillhoff"]
 date = 2025-02-16T00:00:00-06:00
 tags = ["computer vision"]
 draft = false
-lastmod = 2025-02-16
+lastmod = 2025-06-24
 sections = "Machine Learning"
 +++
 
@@ -52,7 +52,7 @@ That's it! K-Means is a simple algorithm that can be implemented in a few lines 
 J = \sum\_{n=1}^N ||x\_n - \mu\_{z\_n}||^2
 \\]
 
-This measure is evaluating points against the cluster they are assigned to. You should be able to convince yourself that, as the number of clusters increases, the distortion decreases. When decided when to converge, you can monitor the change in distortion from one iteration to the next. If the change is less than some threshold, the loop will stop.
+This measure is evaluating points against the cluster they are assigned to. You should be able to convince yourself that, as the number of clusters increases, the distortion decreases. When deciding when to converge, you can monitor the change in distortion from one iteration to the next. If the change is less than some threshold, the loop will stop.
 
 
 ### Inference {#inference}
