@@ -98,5 +98,33 @@
                 "url": "/notes/decision_trees"
             }
         ]
+    },
+    {
+        "date": "June 30",
+        "topic": "Boosting",
+        "materials": [
+            {
+                "title": "Boosting",
+                "url": "/notes/boosting"
+            },
+            {
+                "title": "Gradient Boosting",
+                "url": "/notes/gradient_boosting"
+            }
+        ]
+    },
+    {
+        "date": "July 2",
+        "topic": "Deep Learning",
+        "materials": [
+            {
+                "title": "Deep Learning",
+                "url": "/notes/deep_learning"
+            },
+            {
+                "title": "Convolutional Neural Networks",
+                "url": "/notes/convolutional_neural_networks"
+            }
+        ]
     }
 ]

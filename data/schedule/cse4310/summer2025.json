@@ -104,5 +104,29 @@
                 "url": "/notes/optical_flow"
             }
         ]
+    },
+    {
+        "date": "July 1",
+        "topic": "Tracking",
+        "materials": [
+            {
+                "title": "Tracking",
+                "url": "/notes/tracking"
+            }
+        ]
+    },
+    {
+        "date": "July 3",
+        "topic": "Camera Calibration, Stereo Vision",
+        "materials": [
+            {
+                "title": "Camera Models",
+                "url": "/notes/camera_models"
+            },
+            {
+                "title": "Stereo Vision",
+                "url": "/notes/stereo_vision"
+            }
+        ]
     }
 ]

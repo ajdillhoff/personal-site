@@ -73,5 +73,25 @@
                 "url": ""
             }
         ]
+    },
+    {
+        "date": "June 30",
+        "topic": "Context-Free Grammars and Ambiguity",
+        "materials": [
+            {
+                "title": "2.1",
+                "url": ""
+            }
+        ]
+    },
+    {
+        "date": "July 2",
+        "topic": "Chomsky Normal Form, CFL Pumping Lemma",
+        "materials": [
+            {
+                "title": "2.1, 2.2",
+                "url": ""
+            }
+        ]
     }
 ]
