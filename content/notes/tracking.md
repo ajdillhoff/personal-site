@@ -4,7 +4,8 @@ authors = ["Alex Dillhoff"]
 date = 2022-03-07T00:00:00-06:00
 tags = ["computer vision"]
 draft = false
-lastmod = 2025-03-26
+lastmod = 2025-07-01
+sections = "Computer Vision"
 +++
 
 <div class="ox-hugo-toc toc">
@@ -389,10 +390,10 @@ We can model the observations and state using normal distributions.
 The measurements themselves can be modeled as
 
 \\[
-\mathbf{y}\_k \sim \mathcal{N}(\mathcal{B}\_k \mathbf{x}\_k, \Sigma\_k),
+\mathbf{y}\_i \sim \mathcal{N}(\mathcal{B}\_i \mathbf{x}\_i, \Sigma\_i),
 \\]
 
-where \\(k\\) is the current step.
+where \\(i\\) is the current step.
 
 In other words, our model does not know the true position and velocity of objects at all times. If this were the case, tracking would be a trivial pursuit. This uncertainty is captured using Gaussian distributions. This is a reasonable assumption to make in many cases. It becomes more complex if we think about acceleration, but we could always model that as well.
 
@@ -425,26 +426,26 @@ The corresponding covariance matrix is \\(\mathbf{x}\mathbf{x}^T\\).
 **How do we predict the position and velocity of the next time step?**
 
 \begin{align\*}
-\mathbf{p}\_k &= \mathbf{p}\_{k-1} + \Delta t \mathbf{v}\_{k-1}\\\\
-\mathbf{v}\_k &= \mathbf{v}\_{k-1}
+\mathbf{p}\_i &= \mathbf{p}\_{i-1} + \Delta t \mathbf{v}\_{i-1}\\\\
+\mathbf{v}\_i &= \mathbf{v}\_{i-1}
 \end{align\*}
 
 This is making a simple, yet surprisingly effective, assumption that the velocity is constant.
 We can write this as a matrix vector product:
 
 \\[
-\mathbf{x}\_k = \begin{bmatrix}
+\mathbf{x}\_i = \begin{bmatrix}
 1 & 0 & \Delta t & 0\\\\
 0 & 1 & 0 & \Delta t\\\\
 0 & 0 & 1 & 0\\\\
 0 & 0 & 0 & 1
 \end{bmatrix}
-\mathbf{x}\_{k-1}
+\mathbf{x}\_{i-1}
 \\]
 
-Compactly, the prediction for step \\(t\\) is \\(\bar{\mathbf{x}}\_k^- = \mathcal{D}\_i \bar{\mathbf{x}}\_{k-1}^+\\).
+Compactly, the prediction for step \\(t\\) is \\(\bar{\mathbf{x}}\_i^- = \mathcal{D}\_i \bar{\mathbf{x}}\_{i-1}^+\\).
 
-Since we updated every point \\(\mathbf{x}\_{k-1}\\), we also need to make a prediction about the covariance matrix.
+Since we updated every point \\(\mathbf{x}\_{i-1}\\), we also need to make a prediction about the covariance matrix.
 This is also achieved by multiplying every point by \\(\mathcal{D}\_i\\)
 
 \\[
@@ -464,7 +465,7 @@ We can simplify this and assume constant acceleration, then \\(\mathbf{a}\_i = \
 The resulting update equation for \\(\mathbf{x}\_k\\) becomes
 
 \\[
-\mathbf{x}\_k = \begin{bmatrix}
+\mathbf{x}\_i = \begin{bmatrix}
 1 & 0 & \Delta t & 0 & \frac{1}{2}\Delta t^2 \mathbf{a} & 0\\\\
 0 & 1 & 0 & \Delta t & 0 & \frac{1}{2}\Delta t^2 \mathbf{a}\\\\
 0 & 0 & 1 & 0 & \Delta t & 0\\\\
@@ -472,34 +473,34 @@ The resulting update equation for \\(\mathbf{x}\_k\\) becomes
 0 & 0 & 0 & 0 & 1 & 0\\\\
 0 & 0 & 0 & 0 & 0 & 1\\\\
 \end{bmatrix}
-\mathbf{x}\_{k-1}
+\mathbf{x}\_{i-1}
 \\]
 
 However, if something like acceleration is a known **control** factor in our system, then it does not need to be part of the state.
 In this case, we could separate the update vector into
 
 \\[
-\mathbf{x}\_k = \mathcal{D}\_i\mathbf{x}\_{k-1} + B\_k \mathbf{u}\_{k},
+\mathbf{x}\_i = \mathcal{D}\_i\mathbf{x}\_{i-1} + B\_i \mathbf{u}\_{i},
 \\]
 
-where \\(B\_k\\) is the **control matrix** and \\(\mathbf{u}\_k\\) is the **control vector**.
+where \\(B\_i\\) is the **control matrix** and \\(\mathbf{u}\_i\\) is the **control vector**.
 
 One last consideration is that of uncertainty due to factors outside of our system.
 This can also be modeled using a Gaussian with zero mean and covariance \\(\Sigma\_d\\):
 
 \\[
-\xi\_k \sim \mathcal{N}(\mathbf{0}, \Sigma\_d).
+\xi\_i \sim \mathcal{N}(\mathbf{0}, \Sigma\_{d\_i}).
 \\]
 
 With this added noise, the prediction step becomes
 
 \begin{align\*}
-\bar{\mathbf{x}}\_k^- &= \mathcal{D}\_k\bar{\mathbf{x}}\_{k-1}^+ + B\_k \mathbf{u}\_k\\\\
-\Sigma\_k^- &= \mathcal{D}\_k \Sigma\_{k-1}^+\mathcal{D}\_k^T + \xi\_k.
+\bar{\mathbf{x}}\_i^- &= \mathcal{D}\_i\bar{\mathbf{x}}\_{i-1}^+ + B\_i \mathbf{u}\_i\\\\
+\Sigma\_i^- &= \mathcal{D}\_i \Sigma\_{i-1}^+\mathcal{D}\_i^T + \xi\_i.
 \end{align\*}
 
-In words, \\(\bar{\mathbf{x}}\_k^-\\) is the prediction of our current state based on the previous best estimate with an added correction term based on known factors (acceleration).
-\\(\Sigma\_k^-\\) is the updated uncertainty based on the old uncertainty with added Gaussian noise to reflect unknown factors.
+In words, \\(\bar{\mathbf{x}}\_i^-\\) is the prediction of our current state based on the previous best estimate with an added correction term based on known factors (acceleration).
+\\(\Sigma\_i^-\\) is the updated uncertainty based on the old uncertainty with added Gaussian noise to reflect unknown factors.
 
 
 ### Making Corrections {#making-corrections}
@@ -525,38 +526,38 @@ This is achieved by multiplying the Gaussians together.
 Solving for \\(\bar{\mathbf{x}}\_i^+\\) and \\(\Sigma\_i^+\\) yields
 
 \begin{align\*}
-\bar{\mathbf{x}}\_i^+ &= \bar{\mathbf{x}}\_i^- + \mathcal{K}\_i(\mathbf{y}\_i - \bar{\mathbf{x}}\_i^-)\\\\
-\Sigma\_i^+ &= \Sigma\_i^- - \mathcal{K}\_i \Sigma\_i^-,
+\bar{\mathbf{x}}\_i^+ &= \bar{\mathbf{x}}\_i^- + \mathcal{K}\_i(\mathbf{y}\_i - \mathcal{M}\_i \bar{\mathbf{x}}\_i^-)\\\\
+\Sigma\_i^+ &= \Sigma\_i^- - \mathcal{K}\_i \mathcal{M}\_i \Sigma\_i^-,
 \end{align\*}
 
 where
 
 \\[
-\mathcal{K}\_i = \Sigma\_i^-(\Sigma\_i^- + \Sigma\_{m\_i})^{-1}.
+\mathcal{K}\_i = \Sigma\_i^- \mathcal{M}\_i^T(\mathcal{M}\_i \Sigma\_i^- \mathcal{M}\_i^T + \Sigma\_{m\_i})^{-1}.
 \\]
 
 \\(\mathcal{K}\_i\\) is called the **Kalman gain**.
 
-**Let's combine the prediction and correction steps**
+**Let's summarize the prediction and correction steps**
 
 We have a state distribution with mean and variance
 
 \begin{align\*}
-\bar{\mathbf{x}}\_k^- &= \mathcal{D}\_k\bar{\mathbf{x}}\_{k-1}^+ + B\_k \mathbf{u}\_k\\\\
-\Sigma\_k^- &= \mathcal{D}\_k \Sigma\_{k-1}^+\mathcal{D}\_k^T + \xi\_k
+\bar{\mathbf{x}}\_i^- &= \mathcal{D}\_i\bar{\mathbf{x}}\_{i-1}^+ + B\_i \mathbf{u}\_i\\\\
+\Sigma\_i^- &= \mathcal{D}\_i \Sigma\_{i-1}^+\mathcal{D}\_i^T + \xi\_i
 \end{align\*}
 
-as well as an observation distribution with mean and variance \\(\mathbf{y}\_k\\) and \\(\Sigma\_{m\_k}\\).
+as well as an observation distribution with mean and variance \\(\mathbf{y}\_i\\) and \\(\Sigma\_{m\_i}\\).
 
-Plugging these into the update equations yield
+The predictions are then refined by the observations via the following equations.
 
 \begin{align\*}
-\bar{\mathbf{x}}\_i^+ &= \mathcal{D}\_k\bar{\mathbf{x}}\_{k-1}^+ + \mathcal{K}\_i(\mathbf{y}\_i - \mathcal{D}\_k\bar{\mathbf{x}}\_{k-1}^+)\\\\
-\Sigma\_i^+ &= \mathcal{D}\_k \Sigma\_{k-1}^+\mathcal{D}\_k^T - \mathcal{K}\_i \mathcal{D}\_k \Sigma\_{k-1}^+\mathcal{D}\_k^T,
+\bar{\mathbf{x}}\_i^+ &= \bar{\mathbf{x}}\_i^- + \mathcal{K}\_i(\mathbf{y}\_i - \mathcal{M}\_i \bar{\mathbf{x}}\_i^-)\\\\
+\Sigma\_i^+ &= \Sigma\_i^- - \mathcal{K}\_i \mathcal{M}\_i \Sigma\_i^-,
 \end{align\*}
 
 where
 
 \\[
-\mathcal{K}\_i = \mathcal{D}\_k \Sigma\_{k-1}^+\mathcal{D}\_k^T(\mathcal{D}\_k \Sigma\_{k-1}^+\mathcal{D}\_k^T + \Sigma\_{m\_i})^{-1}.
+\mathcal{K}\_i = \Sigma\_i^- \mathcal{M}\_i^T(\mathcal{M}\_i \Sigma\_i^- \mathcal{M}\_i^T + \Sigma\_{m\_i})^{-1}.
 \\]
