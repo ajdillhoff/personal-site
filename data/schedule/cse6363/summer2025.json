@@ -126,5 +126,20 @@
                 "url": "/notes/convolutional_neural_networks"
             }
         ]
+    },
+    {
+        "date": "July 7",
+        "topic": "CANCELLED",
+        "materials": []
+    },
+    {
+        "date": "July 9",
+        "topic": "Convolutional Neural Networks, PyTorch Tutorial",
+        "materials": [
+            {
+                "title": "Convolutional Neural Networks",
+                "url": "/notes/convolutional_neural_networks"
+            }
+        ]
     }
 ]

@@ -89,7 +89,27 @@
         "topic": "Chomsky Normal Form, CFL Pumping Lemma",
         "materials": [
             {
-                "title": "2.1, 2.2",
+                "title": "2.1, 2.3",
+                "url": ""
+            }
+        ]
+    },
+    {
+        "date": "July 7",
+        "topic": "CFL Pumping Lemma Examples, Pushdown Automata",
+        "materials": [
+            {
+                "title": "2.2, 2.3",
+                "url": ""
+            }
+        ]
+    },
+    {
+        "date": "July 9",
+        "topic": "Turing Machines",
+        "materials": [
+            {
+                "title": "3.1",
                 "url": ""
             }
         ]

@@ -128,5 +128,29 @@
                 "url": "/notes/logistic_regression"
             }
         ]
+    },
+    {
+        "date": "July 8",
+        "topic": "Neural Networks",
+        "materials": [
+            {
+                "title": "Neural Networks",
+                "url": "/notes/neural_networks"
+            }
+        ]
+    },
+    {
+        "date": "July 10",
+        "topic": "Intro. to Deep Learning",
+        "materials": [
+            {
+                "title": "Deep Learning",
+                "url": "/notes/deep_learning"
+            },
+            {
+                "title": "Convolutional Neural Networks",
+                "url": "/notes/convolutional_neural_networks"
+            }
+        ]
     }
 ]
