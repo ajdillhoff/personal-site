@@ -113,5 +113,20 @@
                 "url": ""
             }
         ]
+    },
+    {
+        "date": "July 14",
+        "topic": "Turing Machine Variants",
+        "materials": [
+            {
+                "title": "3.2",
+                "url": ""
+            }
+        ]
+    },
+    {
+        "date": "July 16",
+        "topic": "Exam 2",
+        "materials": []
     }
 ]

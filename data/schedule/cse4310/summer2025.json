@@ -152,5 +152,15 @@
                 "url": "/notes/convolutional_neural_networks"
             }
         ]
+    },
+    {
+        "date": "July 10",
+        "topic": "PyTorch Lightning Tutorial, Camera Models",
+        "materials": [
+            {
+                "title": "Camera Models",
+                "url": "/notes/camera_models"
+            }
+        ]
     }
 ]

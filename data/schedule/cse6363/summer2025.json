@@ -141,5 +141,29 @@
                 "url": "/notes/convolutional_neural_networks"
             }
         ]
+    },
+    {
+        "date": "July 14",
+        "topic": "PyTorch Lightning, Optimization for Deep learning",
+        "materials": [
+            {
+                "title": "Optimization for Deep learning",
+                "url": "/notes/optimization_for_deep_learning"
+            }
+        ]
+    },
+    {
+        "date": "July 16",
+        "topic": "Attention Mechanism, Transformers",
+        "materials": [
+            {
+                "title": "Recurrent Neural Networks",
+                "url": "/notes/recurrent_neural_networks"
+            },
+            {
+                "title": "Transformers",
+                "url": "/notes/transformers"
+            }
+        ]
     }
 ]
