@@ -154,12 +154,26 @@
         ]
     },
     {
-        "date": "July 10",
+        "date": "July 15",
         "topic": "PyTorch Lightning Tutorial, Camera Models",
         "materials": [
             {
                 "title": "Camera Models",
                 "url": "/notes/camera_models"
+            }
+        ]
+    },
+    {
+        "date": "July 17",
+        "topic": "Camera Calibration, Stereo Vision",
+        "materials": [
+            {
+                "title": "Camera Models",
+                "url": "/notes/camera_models"
+            },
+            {
+                "title": "Stereo Vision",
+                "url": "/notes/stereo_vision"
             }
         ]
     }
