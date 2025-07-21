@@ -176,5 +176,29 @@
                 "url": "/notes/stereo_vision"
             }
         ]
+    },
+    {
+        "date": "July 22",
+        "topic": "Object Detection and Instance Segmentation",
+        "materials": [
+            {
+                "title": "Object Detection",
+                "url": "/notes/object_detection"
+            },
+            {
+                "title": "Instance Segmentation",
+                "url": "/notes/instance_segmentation"
+            }
+        ]
+    },
+    {
+        "date": "July 24",
+        "topic": "Recurrent Neural Networks and Transformers",
+        "materials": [
+            {
+                "title": "Transformers",
+                "url": "/notes/transformers"
+            }
+        ]
     }
 ]

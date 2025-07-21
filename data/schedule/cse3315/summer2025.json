@@ -116,10 +116,10 @@
     },
     {
         "date": "July 14",
-        "topic": "Turing Machine Variants",
+        "topic": "Turing Machines",
         "materials": [
             {
-                "title": "3.2",
+                "title": "3.1",
                 "url": ""
             }
         ]
@@ -128,5 +128,25 @@
         "date": "July 16",
         "topic": "Exam 2",
         "materials": []
+    },
+    {
+        "date": "July 21",
+        "topic": "Turing Machine Variants, Decidable Languages",
+        "materials": [
+            {
+                "title": "3.2, 3.3, 4.1, 4.2",
+                "url": ""
+            }
+        ]
+    },
+    {
+        "date": "July 23",
+        "topic": "Decidable Languages, Halting Problem",
+        "materials": [
+            {
+                "title": "3.3, 4.1, 4.2, 7.1",
+                "url": ""
+            }
+        ]
     }
 ]

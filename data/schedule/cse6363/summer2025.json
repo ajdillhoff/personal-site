@@ -165,5 +165,29 @@
                 "url": "/notes/transformers"
             }
         ]
+    },
+    {
+        "date": "July 21",
+        "topic": "Markov Decision Processes",
+        "materials": [
+            {
+                "title": "Markov Decision Processes",
+                "url": "/notes/markov_decision_processes"
+            }
+        ]
+    },
+    {
+        "date": "July 23",
+        "topic": "Reinforcement Learning",
+        "materials": [
+            {
+                "title": "Reinforcement Learning",
+                "url": "/notes/reinforcement_learning"
+            },
+            {
+                "title": "Policy Gradient Methods",
+                "url": "/notes/policy_gradient_methods"
+            }
+        ]
     }
 ]
