@@ -200,5 +200,25 @@
                 "url": "/notes/transformers"
             }
         ]
+    },
+    {
+        "date": "July 29",
+        "topic": "Generative Adversarial Networks and Vision Transformers",
+        "materials": [
+            {
+                "title": "Vision Transformers",
+                "url": "/notes/transfomers_for_computer_vision"
+            }
+        ]
+    },
+    {
+        "date": "July 31",
+        "topic": "Special Topics",
+        "materials": []
+    },
+    {
+        "date": "August 5",
+        "topic": "Project Presentations",
+        "materials": []
     }
 ]

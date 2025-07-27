@@ -189,5 +189,43 @@
                 "url": "/notes/policy_gradient_methods"
             }
         ]
+    },
+    {
+        "date": "July 28",
+        "topic": "Automatic Differentiation, Unsupervised Learning",
+        "materials": []
+    },
+    {
+        "date": "July 30",
+        "topic": "Self-Supervised Learning, Large Language Models",
+        "materials": [
+            {
+                "title": "Natural Language Processing",
+                "url": "/notes/natural_language_processing"
+            },
+            {
+                "title": "Pretraining LLMs",
+                "url": "/notes/pretraining_large_language_models"
+            }
+        ]
+    },
+    {
+        "date": "August 4",
+        "topic": "LLM Post-Training, RAG, and Tools",
+        "materials": [
+            {
+                "title": "Fine-tuning LLMs",
+                "url": "/notes/fine_tuning_llms"
+            },
+            {
+                "title": "Using RAG to Talk to Your Data",
+                "url": "/blog/using-rag-to-talk-to-your-data"
+            }
+        ]
+    },
+    {
+        "date": "August 6",
+        "topic": "Project Presentations",
+        "materials": []
     }
 ]
