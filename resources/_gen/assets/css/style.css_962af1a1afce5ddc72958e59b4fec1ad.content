@@ -20402,18 +20402,12 @@ footer .copyright-info {
     color: #fff !important; }
 
 .courses {
-  -moz-column-count: 2;
-       column-count: 2;
-  -moz-column-gap: 1.5rem;
-       column-gap: 1.5rem; }
-  @media (max-width: 991px) {
-    .courses {
-      -moz-column-count: 2;
-           column-count: 2; } }
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem; }
   @media (max-width: 767px) {
     .courses {
-      -moz-column-count: 1;
-           column-count: 1; } }
+      grid-template-columns: 1fr; } }
 .meta-link:hover {
   color: #18b0a2 !important;
   text-decoration: underline !important; }

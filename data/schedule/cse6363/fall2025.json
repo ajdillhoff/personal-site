@@ -1,0 +1,31 @@
+[
+    {
+        "date": "August 18",
+        "topic": "Course Introduction",
+        "materials": []
+    },
+    {
+        "date": "August 20",
+        "topic": "Supervised Learning",
+        "materials": [
+            {
+                "title": "Linear Regression",
+                "url": "/notes/linear_regression"
+            },
+            {
+                "title": "Regularization",
+                "url": "/notes/regularization"
+            }
+        ]
+    },
+    {
+        "date": "August 22",
+        "topic": "Classification",
+        "materials": [
+            {
+                "title": "Logistic Regression",
+                "url": "/notes/logistic_regression"
+            }
+        ]
+    }
+]

@@ -5,13 +5,11 @@
 // Courses Section
 // -----------------------
 .courses {
-  column-count: 2;
-  column-gap: 1.5rem;
-  @include desktop {
-    column-count: 2;
-  }
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
   @include tablet {
-    column-count: 1;
+    grid-template-columns: 1fr;
   }
 }
 

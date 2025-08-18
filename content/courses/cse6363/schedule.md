@@ -2,7 +2,7 @@
 title: Schedule
 linktitle: Schedule
 toc: false
-date: "2025-05-28T00:00:00+01:00"
+date: "2024-08-19T00:00:00+01:00"
 draft: false
 # menu:
 #     cse6363:
@@ -15,4 +15,4 @@ weight: 3
 
 This schedule is tentative and may change.
 
-{{< json-table path="schedule/cse6363/summer2025" >}}
+{{< json-table path="schedule/cse6363/fall2025" >}}

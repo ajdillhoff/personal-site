@@ -276,8 +276,8 @@
                 {{ end }}
               {{ end }}
 
-              {{/* Sort active courses by title, then take the first 3 (or however many you want) */}}
-              {{ range (sort $activeCoursePages ".Title" | first 3) }} 
+              {{/* Sort active courses by title, then show all courses */}}
+              {{ range (sort $activeCoursePages ".Title") }} 
                 {{ .Render "course-card" }}
               {{ end }}
             </div>

@@ -24,12 +24,24 @@
         
         {{/* Sort courses by title */}}
         {{ $sortedCourseIndexPages := sort $courseIndexPages ".Title" }}
-        {{ $paginator := .Paginate $sortedCourseIndexPages }}
 
-        {{ if gt (len $paginator.Pages) 0 }}
+        <div style="background: yellow; padding: 10px; margin: 10px 0; border: 2px solid red;">
+          <h3>DEBUG INFO:</h3>
+          <p><strong>Total courses found: {{ len $sortedCourseIndexPages }}</strong></p>
+          <ul>
+            {{ range $sortedCourseIndexPages }}
+              <li>{{ .Title }} ({{ .RelPermalink }})</li>
+            {{ end }}
+          </ul>
+        </div>
+
+        {{ if gt (len $sortedCourseIndexPages) 0 }}
         <div class="courses align-items-start overflow-hidden">
-          {{ range $paginator.Pages }}
+          {{ range $sortedCourseIndexPages }}
             <div class="course-item mb-4">
+              <div style="background: lightblue; padding: 5px; margin: 5px 0;">
+                <small><strong>Rendering:</strong> {{ .Title }}</small>
+              </div>
               {{ .Render "course-card" }}
             </div>
           {{ end }}
@@ -37,7 +49,6 @@
         {{ else }}
         <p>There are currently no courses to display in this section.</p>
         {{ end }}
-        {{ partial "components/custom-pagination.html" . }}
       </div>
     </div>
   </div>

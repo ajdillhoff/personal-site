@@ -1,0 +1,34 @@
+[
+    {
+        "date": "August 18",
+        "topic": "Course Introduction, Supervised Learning",
+        "materials": [
+            {
+                "title": "Linear Regression",
+                "url": "/notes/linear_regression"
+            },
+            {
+                "title": "Logistic Regression",
+                "url": "/notes/logistic_regression"
+            }
+        ]
+    },
+    {
+        "date": "August 20",
+        "topic": "Regularization, Probability Theory, and Linear Discriminant Analysis",
+        "materials": [
+            {
+                "title": "Regularization",
+                "url": "/notes/regularization"
+            },
+            {
+                "title": "Probability Theory",
+                "url": "/notes/probability_theory"
+            },
+            {
+                "title": "Linear Discriminant Analysis",
+                "url": "/notes/linear_discriminant_analysis"
+            }
+        ]
+    }
+]
