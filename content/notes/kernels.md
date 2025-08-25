@@ -4,7 +4,7 @@ authors = ["Alex Dillhoff"]
 date = 2022-01-22T00:00:00-06:00
 tags = ["machine learning"]
 draft = false
-lastmod = 2025-06-17
+lastmod = 2025-08-25
 sections = "Machine Learning"
 +++
 
@@ -316,6 +316,6 @@ Substituting the RBF kernel into the Taylor series expansion yields
 \exp\Big(-\frac{\\|\mathbf{x}-\mathbf{x'}\\|^2}{2\sigma^2}\Big) = \sum\_{n=0}^\infty \frac{\Big(-\frac{\\|\mathbf{x}-\mathbf{x'}\\|^2}{2\sigma^2}\Big)^n}{n!}.
 \\]
 
-This expansion can be viewed as an infnite sum of polynomial terms. A more formal proof of this result can be found [here.](https://pages.cs.wisc.edu/~matthewb/pages/notes/pdf/svms/RBFKernel.pdf)
+This expansion can be viewed as an infinite sum of polynomial terms. A more formal proof of this result can be found [here.](https://pages.cs.wisc.edu/~matthewb/pages/notes/pdf/svms/RBFKernel.pdf)
 
 The benefit of this result is that it allows us to work in a high-dimensional space without explicitly transforming the input. This is especially useful when the input space is infinite-dimensional, such as with text data. It is also used to compare the similarity of documents without explicitly transforming the input into a high-dimensional space.
