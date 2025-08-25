@@ -19,12 +19,36 @@
         ]
     },
     {
-        "date": "August 22",
+        "date": "August 25",
         "topic": "Classification",
         "materials": [
             {
                 "title": "Logistic Regression",
                 "url": "/notes/logistic_regression"
+            }
+        ]
+    },
+    {
+        "date": "August 27",
+        "topic": "Multi-class Classification",
+        "materials": [
+            {
+                "title": "Logistic Regression",
+                "url": "/notes/logistic_regression"
+            },
+            {
+                "title": "Regularization",
+                "url": "/notes/regularization"
+            }
+        ]
+    },
+    {
+        "date": "August 29",
+        "topic": "Probability Theory Review",
+        "materials": [
+            {
+                "title": "Probability Theory",
+                "url": "/notes/probability_theory"
             }
         ]
     }

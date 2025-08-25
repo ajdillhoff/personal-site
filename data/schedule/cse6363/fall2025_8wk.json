@@ -30,5 +30,45 @@
                 "url": "/notes/linear_discriminant_analysis"
             }
         ]
+    },
+    {
+        "date": "August 25",
+        "topic": "Naive Bayes Classifier, Support Vector Machine",
+        "materials": [
+            {
+                "title": "Naive Bayes Classifier",
+                "url": "/notes/naive_bayes"
+            },
+            {
+                "title": "Kernels",
+                "url": "/notes/kernels"
+            },
+            {
+                "title": "Support Vector Machine",
+                "url": "/notes/support_vector_machine"
+            }
+        ]
+    },
+    {
+        "date": "August 27",
+        "topic": "Support Vector Machine, Neural Networks",
+        "materials": [
+            {
+                "title": "Support Vector Machine",
+                "url": "/notes/support_vector_machine"
+            },
+            {
+                "title": "Sequential Minimal Optimization",
+                "url": "/notes/support_vector_machine"
+            },
+            {
+                "title": "Perceptron",
+                "url": "/notes/perceptron"
+            },
+            {
+                "title": "Neural Networks",
+                "url": "/notes/neural_networks"
+            }
+        ]
     }
 ]

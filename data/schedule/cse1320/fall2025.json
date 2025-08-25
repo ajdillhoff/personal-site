@@ -6,7 +6,13 @@
             {
                 "title": "Introduction to C",
                 "url": "/teaching/cse1320/lectures/intro_to_c.pdf"
-            },
+            }
+        ]
+    },
+    {
+        "date": "Week 2",
+        "topic": "Course Introduction, CSE 1310 Review",
+        "materials": [
             {
                 "title": "Arrays",
                 "url": "/teaching/cse1320/lectures/arrays.pdf"
