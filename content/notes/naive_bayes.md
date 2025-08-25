@@ -4,7 +4,7 @@ authors = ["Alex Dillhoff"]
 date = 2022-01-22T00:00:00-06:00
 tags = ["machine learning"]
 draft = false
-lastmod = 2025-01-21
+lastmod = 2025-08-25
 sections = "Machine Learning"
 +++
 
@@ -101,13 +101,13 @@ Given parameters \\(\mathbf{\theta}\\), how can we classify a given data sample?
 Consider some data with discrete features having one of \\(K\\) states, then \\(x\_{dk} = \mathbb{1}(x\_d=k)\\). The class conditional density, in this case, follows a multinomial distribution:
 
 \\[
-p(y=c|\mathbf{x}, \mathbf{\theta}) = \prod\_{d=1}^D \prod\_{k=1}^K \theta\_{dck}^{x\_{dk}}.
+p(\mathbf{x} \vert y = c, \mathbf{\theta}) = \prod\_{d=1}^D \prod\_{k=1}^K \theta\_{dck}^{x\_{dk}}.
 \\]
 
 We can see a connection between naive Bayes and logistic regression when we evaluate the posterior over classes:
 
 \begin{align\*}
-p(y=c|\mathbf{x}, \mathbf{\theta}) &= \frac{p(y)p(\mathbf{x}|y, \mathbf{\theta})}{p(\mathbf{x})}\\\\
+p(y=c|\mathbf{x}, \mathbf{\theta}) &= \frac{p(y=c)p(\mathbf{x}|y=c, \mathbf{\theta})}{p(\mathbf{x})}\\\\
 &= \frac{\pi\_c \prod\_{d} \prod\_{k} \theta\_{dck}^{x\_{dk}}}{\sum\_{c'}\pi\_{c'}\prod\_{d}\prod\_{k}\theta\_{dc'k}^{x\_{dk}}} \\\\
 &= \frac{\exp[\log \pi\_c + \sum\_d \sum\_k x\_{dk}\log \theta\_{dck}]}{\sum\_{c'} \exp[\log \pi\_{c'} + \sum\_d \sum\_k x\_{dk} \log \theta\_{dc'k}]}.
 \end{align\*}
