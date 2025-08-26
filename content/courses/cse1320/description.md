@@ -30,7 +30,7 @@ This is the course page for CSE 1320 - Intermediate Programming in Fall 2025. He
 
 #### Teaching Assistant
 
-- Md. Sazid Reza (mxz5113 (at) mavs (dot) uta (dot) edu)
+- Md. Sazid Reza (mxr5113 (at) mavs (dot) uta (dot) edu)
 
 ##### Office Hours
 
