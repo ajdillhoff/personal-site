@@ -11,7 +11,7 @@
     },
     {
         "date": "Week 2",
-        "topic": "Course Introduction, CSE 1310 Review",
+        "topic": "CSE 1310 Review",
         "materials": [
             {
                 "title": "Arrays",
@@ -28,6 +28,28 @@
             {
                 "title": "Number Systems",
                 "url": "/teaching/cse1320/lectures/number_systems.pdf"
+            }
+        ]
+    },
+    {
+        "date": "Week 3",
+        "topic": "CSE 1310 Review, Pointers",
+        "materials": [
+            {
+                "title": "Arrays",
+                "url": "/teaching/cse1320/lectures/arrays.pdf"
+            },
+            {
+                "title": "File I/O",
+                "url": "/teaching/cse1320/lectures/file_io.pdf"
+            },
+            {
+                "title": "Number Systems",
+                "url": "/teaching/cse1320/lectures/number_systems.pdf"
+            },
+            {
+                "title": "Pointers",
+                "url": "/teaching/cse1320/lectures/pointers.pdf"
             }
         ]
     }

@@ -44,11 +44,39 @@
     },
     {
         "date": "August 29",
+        "topic": "Regularization",
+        "materials": [
+            {
+                "title": "Regularization",
+                "url": "/notes/regularization"
+            }
+        ]
+    },
+    {
+        "date": "September 3",
         "topic": "Probability Theory Review",
         "materials": [
             {
                 "title": "Probability Theory",
                 "url": "/notes/probability_theory"
+            },
+            {
+                "title": "Maximum Likelihood Estimation",
+                "url": "https://online.stat.psu.edu/stat415/lesson/1/1.2"
+            }
+        ]
+    },
+    {
+        "date": "September 5",
+        "topic": "Probabilistic Models",
+        "materials": [
+            {
+                "title": "Linear Discriminant Analysis",
+                "url": "/notes/linear_discriminant_analysis"
+            },
+            {
+                "title": "Naive Bayes Classifier",
+                "url": "/notes/naive_bayes"
             }
         ]
     }

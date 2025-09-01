@@ -70,5 +70,23 @@
                 "url": "/notes/neural_networks"
             }
         ]
+    },
+    {
+        "date": "September 3",
+        "topic": "Decision Trees, Boosting and Bagging",
+        "materials": [
+            {
+                "title": "Decision Trees",
+                "url": "/notes/decision_trees"
+            },
+            {
+                "title": "Boosting",
+                "url": "/notes/boosting"
+            },
+            {
+                "title": "Gradient Boosting",
+                "url": "/notes/gradient_boosting"
+            }
+        ]
     }
 ]
