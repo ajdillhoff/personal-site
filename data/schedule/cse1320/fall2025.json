@@ -33,7 +33,7 @@
     },
     {
         "date": "Week 3",
-        "topic": "CSE 1310 Review, Pointers",
+        "topic": "CSE 1310 Review",
         "materials": [
             {
                 "title": "Arrays",
@@ -46,7 +46,13 @@
             {
                 "title": "Number Systems",
                 "url": "/teaching/cse1320/lectures/number_systems.pdf"
-            },
+            }
+        ]
+    },
+    {
+        "date": "Week 4",
+        "topic": "Pointers",
+        "materials": [
             {
                 "title": "Pointers",
                 "url": "/teaching/cse1320/lectures/pointers.pdf"

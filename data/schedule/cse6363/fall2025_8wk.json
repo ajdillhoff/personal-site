@@ -88,5 +88,29 @@
                 "url": "/notes/gradient_boosting"
             }
         ]
+    },
+    {
+        "date": "September 8",
+        "topic": "Gradient Boosting, Deep Learning",
+        "materials": [
+            {
+                "title": "Gradient Boosting",
+                "url": "/notes/gradient_boosting"
+            },
+            {
+                "title": "Convolutional Neural Networks",
+                "url": "/notes/convolutional_neural_networks"
+            }
+        ]
+    },
+    {
+        "date": "September 10",
+        "topic": "CNNs for Object Detection, Python for Deep Learning",
+        "materials": [
+            {
+                "title": "CNNs for Object Detection",
+                "url": "/notes/object_detection"
+            }
+        ]
     }
 ]

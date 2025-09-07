@@ -79,5 +79,35 @@
                 "url": "/notes/naive_bayes"
             }
         ]
+    },
+    {
+        "date": "September 8",
+        "topic": "Kernels",
+        "materials": [
+            {
+                "title": "Kernels",
+                "url": "/notes/kernels"
+            }
+        ]
+    },
+    {
+        "date": "September 10",
+        "topic": "Support Vector Machine",
+        "materials": [
+            {
+                "title": "Support Vector Machine",
+                "url": "/notes/support_vector_machine"
+            }
+        ]
+    },
+    {
+        "date": "September 12",
+        "topic": "Support Vector Machine",
+        "materials": [
+            {
+                "title": "Support Vector Machine",
+                "url": "/notes/support_vector_machine"
+            }
+        ]
     }
 ]

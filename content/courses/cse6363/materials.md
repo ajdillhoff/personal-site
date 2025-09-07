@@ -21,6 +21,10 @@ weight: 2
 - Gareth James, Daniela Witten, Trevor Hastie, and Robert Tibshirani, [An Introduction to Statistical Learning](https://www.statlearning.com/), Springer, 2023.
 - Kevin Murphy, [Probabilistic Machine Learning: An Introduction](https://probml.github.io/pml-book/book1.html), MIT Press, 2022.
 
+#### Papers
+
+- [Class Papers (Zotero)](https://www.zotero.org/groups/6029389/cse__machine_learning/library)
+
 #### Resources
 
 - [Python Programming Language](https://www.python.org/)
