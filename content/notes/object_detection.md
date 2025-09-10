@@ -33,7 +33,8 @@ Object detection algorithms are evaluated using the mean of Average Precision (m
 
 Precision and recall are computed from the predictions and the ground truth. A sample and the model's prediction can either be positive or negative when it comes to classification. Either it belongs to a class or it does not. The table below summarizes the outcomes between the model's prediction and the true underlying class.
 
-![](/ox-hugo/2022-04-17_18-17-14_screenshot.png)
+{{< figure src="/ox-hugo/2022-04-17_18-17-14_screenshot.png" caption="<span class=\"figure-number\">Figure 1: </span>Confusion matrix (Source: Wikipedia)" >}}
+
 Object detection algorithms are evaluated using the mean of Average Precision (mAP) across all classes in the dataset.
 
 Precision and recall are computed from the predictions and the ground truth. A sample and the model's prediction can either be positive or negative when it comes to classification. Either it belongs to a class or it does not. The table below summarizes the outcomes between the model's prediction and the true underlying class.
@@ -133,6 +134,8 @@ Given an input image, a feature extracting CNN produces a feature map. For each 
 
 A **region proposal** is defined by a four-tuple \\((r, c, h, w)\\) defining the top-left corner \\((r, c)\\) and the height and width \\((h, w)\\) of the region. The RoI pooling layer divides the window into a \\(H \times W\\) grid of sub-windows, where \\(H\\) and \\(W\\) are hyperparameters. A max pooling operation is applied to each sub-window to produce a fixed-size output.
 
+For more details on exactly how RoI pooling is implemented, see Kemal Erdem's [excellent blogpost](https://erdem.pl/2020/02/understanding-region-of-interest-ro-i-pooling).
+
 
 #### Training {#training}
 
@@ -224,12 +227,12 @@ The remaining iterations were developed by other members of the community and in
 
 <style>.csl-entry{text-indent: -1.5em; margin-left: 1.5em;}</style><div class="csl-bib-body">
   <div class="csl-entry"><a id="citeproc_bib_item_1"></a>Girshick, Ross. 2015. “Fast R-CNN,” April. <a href="https://doi.org/10.48550/arXiv.1504.08083">https://doi.org/10.48550/arXiv.1504.08083</a>.</div>
-  <div class="csl-entry"><a id="citeproc_bib_item_2"></a>Girshick, Ross, Jeff Donahue, Trevor Darrell, and Jitendra Malik. 2014. “Rich Feature Hierarchies for Accurate Object Detection and Semantic Segmentation.” <i>Arxiv:1311.2524 [Cs]</i>, October. <a href="http://arxiv.org/abs/1311.2524">http://arxiv.org/abs/1311.2524</a>.</div>
-  <div class="csl-entry"><a id="citeproc_bib_item_3"></a>Redmon, Joseph, and Ali Farhadi. 2016. “YOLO9000: Better, Faster, Stronger.” <i>Arxiv:1612.08242 [Cs]</i>, December. <a href="http://arxiv.org/abs/1612.08242">http://arxiv.org/abs/1612.08242</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_2"></a>Girshick, Ross, Jeff Donahue, Trevor Darrell, and Jitendra Malik. 2014. “Rich Feature Hierarchies for Accurate Object Detection and Semantic Segmentation.” <i>Arxiv:1311.2524 [Cs]</i>, October.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_3"></a>Redmon, Joseph, and Ali Farhadi. 2016. “YOLO9000: Better, Faster, Stronger.” <i>Arxiv:1612.08242 [Cs]</i>, December.</div>
   <div class="csl-entry"><a id="citeproc_bib_item_4"></a>———. 2018. “YOLOv3: An Incremental Improvement,” 6.</div>
-  <div class="csl-entry"><a id="citeproc_bib_item_5"></a>Redmon, Joseph, Santosh Divvala, Ross Girshick, and Ali Farhadi. 2016. “You Only Look Once: Unified, Real-Time Object Detection.” <i>Arxiv:1506.02640 [Cs]</i>, May. <a href="http://arxiv.org/abs/1506.02640">http://arxiv.org/abs/1506.02640</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_5"></a>Redmon, Joseph, Santosh Divvala, Ross Girshick, and Ali Farhadi. 2016. “You Only Look Once: Unified, Real-Time Object Detection.” <i>Arxiv:1506.02640 [Cs]</i>, May.</div>
   <div class="csl-entry"><a id="citeproc_bib_item_6"></a>Ren, Shaoqing, Kaiming He, Ross Girshick, and Jian Sun. 2017. “Faster R-CNN: Towards Real-Time Object Detection with Region Proposal Networks.” <i>Ieee Transactions on Pattern Analysis and Machine Intelligence</i> 39 (6): 1137–49. <a href="https://doi.org/10.1109/TPAMI.2016.2577031">https://doi.org/10.1109/TPAMI.2016.2577031</a>.</div>
-  <div class="csl-entry"><a id="citeproc_bib_item_7"></a>Szeliski, Richard. 2021. <i>Computer Vision: Algorithms and Applications</i>. 2nd ed. <a href="http://szeliski.org/Book/2ndEdition.htm">http://szeliski.org/Book/2ndEdition.htm</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_7"></a>Szeliski, Richard. 2021. <i>Computer Vision: Algorithms and Applications</i>. 2nd ed.</div>
   <div class="csl-entry"><a id="citeproc_bib_item_8"></a>Terven, Juan, Diana-Margarita Córdova-Esparza, and Julio-Alejandro Romero-González. 2023. “A Comprehensive Review of YOLO Architectures in Computer Vision: From YOLOv1 to YOLOv8 and YOLO-NAS.” <i>Machine Learning and Knowledge Extraction</i> 5 (4): 1680–1716. <a href="https://doi.org/10.3390/make5040083">https://doi.org/10.3390/make5040083</a>.</div>
   <div class="csl-entry"><a id="citeproc_bib_item_9"></a>Uijlings, J. R. R., K. E. A. van de Sande, T. Gevers, and A. W. M. Smeulders. 2013. “Selective Search for Object Recognition.” <i>International Journal of Computer Vision</i> 104 (2): 154–71. <a href="https://doi.org/10.1007/s11263-013-0620-5">https://doi.org/10.1007/s11263-013-0620-5</a>.</div>
 </div>
