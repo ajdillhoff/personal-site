@@ -109,5 +109,35 @@
                 "url": "/notes/support_vector_machine"
             }
         ]
+    },
+    {
+        "date": "September 15",
+        "topic": "Neural Networks",
+        "materials": [
+            {
+                "title": "Neural Networks",
+                "url": "/notes/neural_networks"
+            }
+        ]
+    },
+    {
+        "date": "September 17",
+        "topic": "Bagging, Random Forests, and Adaboost",
+        "materials": [
+            {
+                "title": "Adaboost",
+                "url": "/notes/boosting"
+            }
+        ]
+    },
+    {
+        "date": "September 19",
+        "topic": "Gradient Boosting",
+        "materials": [
+            {
+                "title": "Gradient Boosting",
+                "url": "/notes/gradient_boosting"
+            }
+        ]
     }
 ]

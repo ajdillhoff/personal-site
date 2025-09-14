@@ -112,5 +112,29 @@
                 "url": "/notes/object_detection"
             }
         ]
+    },
+    {
+        "date": "September 15",
+        "topic": "Optimization for Deep Learning, Recurrent Neural Networks",
+        "materials": [
+            {
+                "title": "Optimization for Deep Learning",
+                "url": "/notes/optimization_for_deep_learning"
+            },
+            {
+                "title": "Recurrent Neural Networks",
+                "url": "/notes/recurrent_neural_networks"
+            }
+        ]
+    },
+    {
+        "date": "September 17",
+        "topic": "Transformers",
+        "materials": [
+            {
+                "title": "Transformers",
+                "url": "/notes/transformers"
+            }
+        ]
     }
 ]

@@ -58,5 +58,10 @@
                 "url": "/teaching/cse1320/lectures/pointers.pdf"
             }
         ]
+    },
+    {
+        "date": "Week 5",
+        "topic": "Exam 1",
+        "materials": []
     }
 ]
