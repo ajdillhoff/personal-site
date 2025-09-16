@@ -122,6 +122,10 @@
                 "url": "/notes/optimization_for_deep_learning"
             },
             {
+                "title": "Automatic Differentiation",
+                "url": "/notes/automatic_differentiation"
+            },
+            {
                 "title": "Recurrent Neural Networks",
                 "url": "/notes/recurrent_neural_networks"
             }
@@ -134,7 +138,80 @@
             {
                 "title": "Transformers",
                 "url": "/notes/transformers"
+            },
+            {
+                "title": "Transformers for Computer Vision",
+                "url": "/notes/transformers_for_computer_vision"
             }
         ]
+    },
+    {
+        "date": "September 22",
+        "topic": "Unsupervised Learning",
+        "materials": [
+            {
+                "title": "Clustering",
+                "url": "/notes/clustering"
+            },
+            {
+                "title": "Segmentation via Clustering",
+                "url": "/notes/segmentation_via_clustering"
+            },
+            {
+                "title": "Principal Component Analysis",
+                "url": "/notes/principal_component_analysis"
+            },
+            {
+                "title": "Generative Adversarial Networks",
+                "url": "https://arxiv.org/abs/1406.2661"
+            }
+        ]
+    },
+    {
+        "date": "September 24",
+        "topic": "Reinforcement Learning",
+        "materials": [
+            {
+                "title": "Markov Decision Processes",
+                "url": "/notes/markov_decision_processes"
+            },
+            {
+                "title": "Reinforcement Learning Overview",
+                "url": "https://lilianweng.github.io/posts/2018-02-19-rl-overview/"
+            },
+            {
+                "title": "Chapters 3-6",
+                "url": "http://incompleteideas.net/book/RLbook2020.pdf"
+            }
+        ]
+    },
+    {
+        "date": "September 29",
+        "topic": "Policy Gradient Methods, Introduction to NLP",
+        "materials": [
+            {
+                "title": "Policy Gradient Methods",
+                "url": "/notes/policy_gradient_methods"
+            },
+            {
+                "title": "Chapter 13",
+                "url": "http://incompleteideas.net/book/RLbook2020.pdf"
+            }
+        ]
+    },
+    {
+        "date": "October 1",
+        "topic": "Large Language Models",
+        "materials": []
+    },
+    {
+        "date": "October 6",
+        "topic": "Project Presentations",
+        "materials": []
+    },
+    {
+        "date": "October 8",
+        "topic": "Special Topics",
+        "materials": []
     }
 ]
