@@ -63,5 +63,19 @@
         "date": "Week 5",
         "topic": "Exam 1",
         "materials": []
+    },
+    {
+        "date": "Week 6",
+        "topic": "Pointers and Dynamic Memory Allocation",
+        "materials": [
+            {
+                "title": "Pointers",
+                "url": "/teaching/cse1320/lectures/pointers.pdf"
+            },
+            {
+                "title": "Dynamic Memory Allocation",
+                "url": "/teaching/cse1320/lectures/dynamic_memory_allocation.pdf"
+            }
+        ]
     }
 ]

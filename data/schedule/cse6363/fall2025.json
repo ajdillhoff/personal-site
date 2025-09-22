@@ -122,21 +122,51 @@
     },
     {
         "date": "September 17",
-        "topic": "Bagging, Random Forests, and Adaboost",
+        "topic": "Convolutions",
         "materials": [
             {
-                "title": "Adaboost",
-                "url": "/notes/boosting"
+                "title": "Convolutions",
+                "url": "/notes/gpu_pattern_convolution"
             }
         ]
     },
     {
         "date": "September 19",
-        "topic": "Gradient Boosting",
+        "topic": "Convolutional Neural Networks",
+        "materials": [
+            {
+                "title": "Convolutional Neural Networks",
+                "url": "/notes/convolutional_neural_networks"
+            }
+        ]
+    },
+    {
+        "date": "September 22",
+        "topic": "Convolutional Neural Networks",
+        "materials": [
+            {
+                "title": "Convolutional Neural Networks",
+                "url": "/notes/convolutional_neural_networks"
+            }
+        ]
+    },
+    {
+        "date": "September 24",
+        "topic": "Introduction to PyTorch",
         "materials": [
             {
                 "title": "Gradient Boosting",
                 "url": "/notes/gradient_boosting"
+            }
+        ]
+    },
+    {
+        "date": "September 26",
+        "topic": "Decision Trees",
+        "materials": [
+            {
+                "title": "Decision Trees",
+                "url": "/notes/decision_trees"
             }
         ]
     }

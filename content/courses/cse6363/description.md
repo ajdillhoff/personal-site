@@ -30,4 +30,4 @@ This is the course page for CSE 6363 - Machine Learning in Spring 2025. Here you
 
 #### Teaching Assistant
 
-TBD
+Roman Strukov (rxs6055@mavs.uta.edu)

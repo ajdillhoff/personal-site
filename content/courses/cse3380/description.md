@@ -30,4 +30,5 @@ This is the course page for CSE 3380 - Linear Algebra in Spring 2025. Here you'l
 
 #### Teaching Assistant
 
-TBD
+- Section 001: Hayden Lotspeich (hayden.lotspeich@mavs.uta.edu)
+- Section 002: Keshav Bansal (kxb5527@mavs.uta.edu)

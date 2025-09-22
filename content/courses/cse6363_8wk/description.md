@@ -30,4 +30,4 @@ This is the course page for CSE 6363 - Machine Learning (8-week) in Spring 2025.
 
 #### Teaching Assistant
 
-TBD
+Runbang Hu (rxh0841@mavs.uta.edu)
