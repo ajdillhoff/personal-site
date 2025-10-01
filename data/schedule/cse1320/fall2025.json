@@ -74,7 +74,17 @@
             },
             {
                 "title": "Dynamic Memory Allocation",
-                "url": "/teaching/cse1320/lectures/dynamic_memory_allocation.pdf"
+                "url": "/teaching/cse1320/lectures/dynamic_memory.pdf"
+            }
+        ]
+    },
+    {
+        "date": "Week 7",
+        "topic": "Stacks and Queues",
+        "materials": [
+            {
+                "title": "Stacks and Queues",
+                "url": "/teaching/cse1320/lectures/stacks_queues.pdf"
             }
         ]
     }

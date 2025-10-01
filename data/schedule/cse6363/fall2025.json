@@ -153,12 +153,7 @@
     {
         "date": "September 24",
         "topic": "Introduction to PyTorch",
-        "materials": [
-            {
-                "title": "Gradient Boosting",
-                "url": "/notes/gradient_boosting"
-            }
-        ]
+        "materials": []
     },
     {
         "date": "September 26",
@@ -167,6 +162,36 @@
             {
                 "title": "Decision Trees",
                 "url": "/notes/decision_trees"
+            }
+        ]
+    },
+    {
+        "date": "September 29",
+        "topic": "Decision Trees",
+        "materials": [
+            {
+                "title": "Decision Trees",
+                "url": "/notes/decision_trees"
+            }
+        ]
+    },
+    {
+        "date": "October 1",
+        "topic": "Adaboost",
+        "materials": [
+            {
+                "title": "Boosting",
+                "url": "/notes/boosting"
+            }
+        ]
+    },
+    {
+        "date": "October 3",
+        "topic": "Gradient Boosting",
+        "materials": [
+            {
+                "title": "Gradient Boosting",
+                "url": "/notes/gradient_boosting"
             }
         ]
     }

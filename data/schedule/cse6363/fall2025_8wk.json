@@ -202,7 +202,20 @@
     {
         "date": "October 1",
         "topic": "Large Language Models",
-        "materials": []
+        "materials": [
+            {
+                "title": "Pretraining LLMs",
+                "url": "/notes/pretraining_large_language_models"
+            },
+            {
+                "title": "Fine-tuning LLMs",
+                "url": "/notes/fine_tuning_llms"
+            },
+            {
+                "title": "Using RAG to Talk to Your Data",
+                "url": "/blog/using-rag-to-talk-to-your-data"
+            }
+        ]
     },
     {
         "date": "October 6",

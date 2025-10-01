@@ -5,6 +5,7 @@ date = 2025-02-18T00:00:00-06:00
 tags = ["reinforcement learning"]
 draft = false
 sections = "Machine Learning"
+lastmod = 2025-09-28
 +++
 
 <div class="ox-hugo-toc toc">
@@ -22,6 +23,8 @@ In lieu of a conscious agent with human intelligence, we can approximate the pol
 
 
 ## Policy Gradients {#policy-gradients}
+
+> On-policy methods are those that improve the policy that is used to make decision, where off-policy methods do not directly consider the policy used to drive the agent.
 
 Q-Learning is an _off-policy_ learning algorithm that directly estimates optimal action values in order to find optimal policies. That is, it does not update a policy table or function. Instead, it chooses the best action given the computed estimates of the action values. Given a state-action space that is too complex to be efficiently represented as a table, the function must be approximated. This can be done by taking the derivative of the cost fnction with respect to its objective function.
 
