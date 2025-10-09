@@ -194,5 +194,35 @@
                 "url": "/notes/gradient_boosting"
             }
         ]
+    },
+    {
+        "date": "October 6",
+        "topic": "Recurrent Neural Networks",
+        "materials": [
+            {
+                "title": "Recurrent Neural Networks",
+                "url": "/notes/recurrent_neural_networks"
+            }
+        ]
+    },
+    {
+        "date": "October 8",
+        "topic": "Transformers",
+        "materials": [
+            {
+                "title": "Transformers",
+                "url": "/notes/transformers"
+            }
+        ]
+    },
+    {
+        "date": "October 10",
+        "topic": "Transformers",
+        "materials": [
+            {
+                "title": "Transformers",
+                "url": "/notes/transformers"
+            }
+        ]
     }
 ]

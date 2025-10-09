@@ -63,5 +63,15 @@
                 "url": ""
             }
         ]
+    },
+    {
+        "date": "Week 8",
+        "topic": "Computer Graphics, Determinants and Volumes, Coordinate Systems",
+        "materials": [
+            {
+                "title": "3.3, 4.4, and 4.7",
+                "url": ""
+            }
+        ]
     }
 ]

@@ -87,5 +87,15 @@
                 "url": "/teaching/cse1320/lectures/stacks_queues.pdf"
             }
         ]
+    },
+    {
+        "date": "Week 8",
+        "topic": "Linked Lists",
+        "materials": [
+            {
+                "title": "Linked Lists",
+                "url": "/teaching/cse1320/lectures/linked_lists.pdf"
+            }
+        ]
     }
 ]
