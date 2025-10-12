@@ -97,5 +97,19 @@
                 "url": "/teaching/cse1320/lectures/linked_lists.pdf"
             }
         ]
+    },
+    {
+        "date": "Week 8",
+        "topic": "Bitwise Operations and Advanced File I/O",
+        "materials": [
+            {
+                "title": "Bitwise Operations",
+                "url": "/teaching/cse1320/lectures/bit_operations.pdf"
+            },
+            {
+                "title": "File I/O",
+                "url": "/teaching/cse1320/lectures/file_io.pdf"
+            }
+        ]
     }
 ]
