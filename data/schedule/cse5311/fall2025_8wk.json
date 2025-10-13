@@ -1,0 +1,30 @@
+[
+    {
+        "date": "October 13",
+        "topic": "Course Introduction, Algorithms, Growth of Functions, Computational Complexity",
+        "materials": [
+            {
+                "title": "Introduction to Algorithms",
+                "url": "/notes/introduction_to_complexity_analysis"
+            },
+            {
+                "title": "Complexity Analysis",
+                "url": "/notes/complexity_analysis"
+            }
+        ]
+    },
+    {
+        "date": "October 15",
+        "topic": "Divide and Conquer, Master Theorem",
+        "materials": [
+            {
+                "title": "Divide and Conquer",
+                "url": "/notes/divide_and_conquer_algorithms"
+            },
+            {
+                "title": "Master Theorem",
+                "url": "/notes/master_theorem"
+            }
+        ]
+    }
+]
