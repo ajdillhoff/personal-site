@@ -224,5 +224,30 @@
                 "url": "/notes/transformers"
             }
         ]
+    },
+    {
+        "date": "October 13",
+        "topic": "Unsupervised Learning - Clustering",
+        "materials": []
+    },
+    {
+        "date": "October 15",
+        "topic": "Principal Component Analysis",
+        "materials": [
+            {
+                "title": "Principal Component Analysis",
+                "url": "/notes/principal_component_analysis"
+            }
+        ]
+    },
+    {
+        "date": "October 17",
+        "topic": "Principal Component Analysis",
+        "materials": [
+            {
+                "title": "Principal Component Analysis",
+                "url": "/notes/principal_component_analysis"
+            }
+        ]
     }
 ]
