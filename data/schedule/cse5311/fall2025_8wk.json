@@ -15,7 +15,7 @@
     },
     {
         "date": "October 15",
-        "topic": "Divide and Conquer, Master Theorem",
+        "topic": "Divide and Conquer Algorithms",
         "materials": [
             {
                 "title": "Divide and Conquer",
@@ -24,6 +24,38 @@
             {
                 "title": "Master Theorem",
                 "url": "/notes/master_theorem"
+            }
+        ]
+    },
+    {
+        "date": "October 20",
+        "topic": "Master Theorem, Heapsort, and Quicksort",
+        "materials": [
+            {
+                "title": "Master Theorem",
+                "url": "/notes/master_theorem"
+            },
+            {
+                "title": "Heapsort",
+                "url": "/notes/heapsort"
+            },
+            {
+                "title": "Quicksort",
+                "url": "/notes/quicksort"
+            }
+        ]
+    },
+    {
+        "date": "October 22",
+        "topic": "Linear-Time Sorting Algorithms and Medians",
+        "materials": [
+            {
+                "title": "Sorting in Linear Time",
+                "url": "/notes/sorting_in_linear_time"
+            },
+            {
+                "title": "Medians and Order Statistics",
+                "url": "/notes/medians_and_order_statistics"
             }
         ]
     }
