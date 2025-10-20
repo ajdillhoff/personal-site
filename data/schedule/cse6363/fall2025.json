@@ -249,5 +249,30 @@
                 "url": "/notes/principal_component_analysis"
             }
         ]
+    },
+    {
+        "date": "October 20",
+        "topic": "Markov Decision Processes",
+        "materials": [
+            {
+                "title": "Markov Decision Processes",
+                "url": "/notes/markov_decision_processes"
+            }
+        ]
+    },
+    {
+        "date": "October 22",
+        "topic": "Reinforcement Learning",
+        "materials": [
+            {
+                "title": "Reinforcement Learning",
+                "url": "/notes/reinforcement_learning"
+            }
+        ]
+    },
+    {
+        "date": "October 24",
+        "topic": "Policy Gradient Methods",
+        "materials": []
     }
 ]

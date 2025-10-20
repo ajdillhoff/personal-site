@@ -99,7 +99,7 @@
         ]
     },
     {
-        "date": "Week 8",
+        "date": "Week 9",
         "topic": "Bitwise Operations and Advanced File I/O",
         "materials": [
             {
@@ -109,6 +109,20 @@
             {
                 "title": "File I/O",
                 "url": "/teaching/cse1320/lectures/file_io.pdf"
+            }
+        ]
+    },
+    {
+        "date": "Week 10",
+        "topic": "Advanced File I/O and Binary Trees",
+        "materials": [
+            {
+                "title": "File I/O",
+                "url": "/teaching/cse1320/lectures/file_io.pdf"
+            },
+            {
+                "title": "Binary Trees",
+                "url": "/teaching/cse1320/lectures/binary_trees.pdf"
             }
         ]
     }
