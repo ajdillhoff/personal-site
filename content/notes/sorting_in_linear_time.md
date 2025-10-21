@@ -4,6 +4,7 @@ authors = ["Alex Dillhoff"]
 date = 2024-03-11T17:10:00-05:00
 tags = ["computer science", "algorithms"]
 draft = false
+lastmod = 2025-10-21
 +++
 
 <div class="ox-hugo-toc toc">
@@ -21,6 +22,8 @@ draft = false
 <!--endtoc-->
 
 These are my personal notes for Chapter 8 of _Introduction to Algorithms_ (<a href="#citeproc_bib_item_1">Cormen et al. 2022</a>). Readers should reference the book for more details when necessary.
+
+The lecture slides for these notes are available [here.](/teaching/cse5311/lectures/sorting_in_linear_time.pdf)
 
 
 ## Introduction {#introduction}
@@ -294,5 +297,5 @@ This gives way to the fact that \\(E[T(n)] = \Theta(n) + \sum\_{i=0}^{n-1} O(2 -
 ## References
 
 <style>.csl-entry{text-indent: -1.5em; margin-left: 1.5em;}</style><div class="csl-bib-body">
-  <div class="csl-entry"><a id="citeproc_bib_item_1"></a>Cormen, Thomas H., Charles E. Leiserson, Ronald L. Rivest, and Clifford Stein. 2022. <i>Introduction to Algorithms</i>. 4th ed. MIT Press. <a href="http://mitpress.mit.edu/9780262046305/introduction-to-algorithms/">http://mitpress.mit.edu/9780262046305/introduction-to-algorithms/</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_1"></a>Cormen, Thomas H., Charles E. Leiserson, Ronald L. Rivest, and Clifford Stein. 2022. <i>Introduction to Algorithms</i>. 4th ed. MIT Press.</div>
 </div>

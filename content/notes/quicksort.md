@@ -4,7 +4,7 @@ authors = ["Alex Dillhoff"]
 date = 2024-02-25T17:24:00-06:00
 tags = ["algorithms", "computer science"]
 draft = false
-lastmod = 2024-10-27
+lastmod = 2025-10-21
 +++
 
 <div class="ox-hugo-toc toc">
@@ -18,6 +18,8 @@ lastmod = 2024-10-27
 
 </div>
 <!--endtoc-->
+
+The lecture slides for these notes are available [here.](/teaching/cse5311/lectures/quicksort.pdf)
 
 Quicksort is a popular sorting algorithm implemented in many language libraries that has a worst-case running time of \\(\Theta(n^2)\\). **Why would anyone choose this as the default sorting algorithm if one like mergesort has better worst-case performance?** As you will see, the devil is in the details. Quicksort is often faster in practice. It also has a small memory footprint and is easy to implement.
 
@@ -229,5 +231,5 @@ The addition of \\(2cn\\) is not enough to change our analysis from above. Thus,
 ## References
 
 <style>.csl-entry{text-indent: -1.5em; margin-left: 1.5em;}</style><div class="csl-bib-body">
-  <div class="csl-entry"><a id="citeproc_bib_item_1"></a>Cormen, Thomas H., Charles E. Leiserson, Ronald L. Rivest, and Clifford Stein. 2022. <i>Introduction to Algorithms</i>. 4th ed. MIT Press. <a href="http://mitpress.mit.edu/9780262046305/introduction-to-algorithms/">http://mitpress.mit.edu/9780262046305/introduction-to-algorithms/</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_1"></a>Cormen, Thomas H., Charles E. Leiserson, Ronald L. Rivest, and Clifford Stein. 2022. <i>Introduction to Algorithms</i>. 4th ed. MIT Press.</div>
 </div>

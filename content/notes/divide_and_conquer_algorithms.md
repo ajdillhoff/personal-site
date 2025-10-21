@@ -4,6 +4,7 @@ authors = ["Alex Dillhoff"]
 date = 2024-01-23T08:38:00-06:00
 tags = ["algorithms", "computer science"]
 draft = false
+lastmod = 2025-10-21
 +++
 
 <div class="ox-hugo-toc toc">
@@ -20,6 +21,7 @@ draft = false
 </div>
 <!--endtoc-->
 
+The lecture slides for these notes are available [here.](/teaching/cse5311/lectures/divide_and_conquer.pdf)
 
 
 ## Definition {#definition}
@@ -387,5 +389,5 @@ Pseudocode is available [here](https://en.wikipedia.org/wiki/Median_of_medians).
 ## References
 
 <style>.csl-entry{text-indent: -1.5em; margin-left: 1.5em;}</style><div class="csl-bib-body">
-  <div class="csl-entry"><a id="citeproc_bib_item_1"></a>Cormen, Thomas H., Charles E. Leiserson, Ronald L. Rivest, and Clifford Stein. 2022. <i>Introduction to Algorithms</i>. 4th ed. MIT Press. <a href="http://mitpress.mit.edu/9780262046305/introduction-to-algorithms/">http://mitpress.mit.edu/9780262046305/introduction-to-algorithms/</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_1"></a>Cormen, Thomas H., Charles E. Leiserson, Ronald L. Rivest, and Clifford Stein. 2022. <i>Introduction to Algorithms</i>. 4th ed. MIT Press.</div>
 </div>

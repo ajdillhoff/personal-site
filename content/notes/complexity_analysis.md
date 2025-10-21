@@ -4,7 +4,7 @@ authors = ["Alex Dillhoff"]
 date = 2023-09-25T00:00:00-05:00
 tags = ["computer science", "algorithms", "complexity analysis"]
 draft = false
-lastmod = 2024-10-13
+lastmod = 2025-10-21
 +++
 
 <div class="ox-hugo-toc toc">
@@ -18,6 +18,7 @@ lastmod = 2024-10-13
 </div>
 <!--endtoc-->
 
+The lecture slides for these notes are available [here.](/teaching/cse5311/lectures/complexity_analysis.pdf)
 
 
 ## The notation of complexity analysis {#the-notation-of-complexity-analysis}

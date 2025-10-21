@@ -4,6 +4,7 @@ authors = ["Alex Dillhoff"]
 date = 2024-02-04T17:49:00-06:00
 tags = ["computer science", "algorithms"]
 draft = false
+lastmod = 2025-10-21
 +++
 
 <div class="ox-hugo-toc toc">
@@ -18,6 +19,8 @@ draft = false
 </div>
 <!--endtoc-->
 
+The lecture slides for these notes are available [here.](/teaching/cse5311/lectures/master_theorem.pdf)
+
 In the study of [Divide and Conquer Algorithms]({{< relref "divide_and_conquer_algorithms.md" >}}), a recurrence tree can be used to determine the runtime complexity. These notes focus on the **master theorem**, a blueprint for solving any recurrence of the form
 
 \\[
@@ -31,7 +34,8 @@ T(n) = aT(n/b) + f(n).
 
 Each recurrence is solved in \\(T(n/b)\\) time, and \\(f(n)\\) would include the cost of dividing and recombining the problem. The full theorem as described in _Introduction to Algorithms_ is restated below (<a href="#citeproc_bib_item_1">Cormen et al. 2022</a>).
 
-****Master Theorem****
+
+### Master Theorem {#master-theorem}
 
 Let \\(a > 0\\) and \\(b > 1\\) be constants, and let \\(f(n)\\) be a driving function that is defined and nonnegative on all sufficiently large reals. Define the recurrence \\(T(n)\\) on \\(n \in \mathbb{N}\\) by
 
@@ -84,5 +88,5 @@ In this exercise from _Introduction to Algorithms_, we are asked to find the lar
 ## References
 
 <style>.csl-entry{text-indent: -1.5em; margin-left: 1.5em;}</style><div class="csl-bib-body">
-  <div class="csl-entry"><a id="citeproc_bib_item_1"></a>Cormen, Thomas H., Charles E. Leiserson, Ronald L. Rivest, and Clifford Stein. 2022. <i>Introduction to Algorithms</i>. 4th ed. MIT Press. <a href="http://mitpress.mit.edu/9780262046305/introduction-to-algorithms/">http://mitpress.mit.edu/9780262046305/introduction-to-algorithms/</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_1"></a>Cormen, Thomas H., Charles E. Leiserson, Ronald L. Rivest, and Clifford Stein. 2022. <i>Introduction to Algorithms</i>. 4th ed. MIT Press.</div>
 </div>

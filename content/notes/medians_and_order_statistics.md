@@ -4,6 +4,7 @@ authors = ["Alex Dillhoff"]
 date = 2024-03-12T13:17:00-05:00
 tags = ["computer science", "algorithms"]
 draft = false
+lastmod = 2025-10-21
 +++
 
 <div class="ox-hugo-toc toc">
@@ -13,10 +14,13 @@ draft = false
 - [Order Statistics](#order-statistics)
 - [Minimum and Maximum](#minimum-and-maximum)
 - [Selection in expected linear time](#selection-in-expected-linear-time)
+- [Worst-Case Linear Time](#worst-case-linear-time)
 - [Problems and Exercises](#problems-and-exercises)
 
 </div>
 <!--endtoc-->
+
+The lecture slides for these notes are available [here.](/teaching/cse5311/lectures/medians_and_order_statistics.pdf)
 
 We briefly touched on a median finding algorithm when discussing [Divide and Conquer Algorithms]({{< relref "divide_and_conquer_algorithms.md" >}}). This section will be a bit of a review, but the point is to touch on the topic of order statistics more generally.
 
@@ -62,9 +66,9 @@ def randomized_select(A, p, r, i):
 
 The first conditional checks if the array had only a single element, in which case it must be the value we are looking for. If not, the array is partitioned so that each element in \\(A[p:q-1]\\) is less than or equal to \\(A[q]\\) which is less than or equal to the elements in \\(A[q+1:r]\\). The line \\(k = q - p + 1\\) calculates the number of elements less than or equal to the pivot. If the index we are looking for is equal to this number, then we have found it and can return the value immediately.
 
-If the value was not yet found and \\(i < k\\), then \\(i\\) must be in the subarray \\(A[p:q-1]\\). Therefore, the function is recursively called on that subarray. Otherwise, the subarray \\(A[q+1:r]\\) is checked. An example from Cormen et al. is shown below (Cormen et al. 2022).
+If the value was not yet found and \\(i < k\\), then \\(i\\) must be in the subarray \\(A[p:q-1]\\). Therefore, the function is recursively called on that subarray. Otherwise, the subarray \\(A[q+1:r]\\) is checked. An example from Cormen et al. is shown below (<a href="#citeproc_bib_item_1">Cormen et al. 2022</a>).
 
-{{< figure src="/ox-hugo/2024-03-12_18-05-54_screenshot.png" caption="<span class=\"figure-number\">Figure 1: </span>Randomized select from (Cormen et al. 2022)." >}}
+{{< figure src="/ox-hugo/2024-03-12_18-05-54_screenshot.png" caption="<span class=\"figure-number\">Figure 1: </span>Randomized select from (<a href=\"#citeproc_bib_item_1\">Cormen et al. 2022</a>)." >}}
 
 **Explanation of figure** \\(A^{(0)}\\) shows that \\(A[5] = 14\\) was chosen as the pivot. The next row, \\(A^{(1)}\\), depicts the completed partitioning. Cormen et al. note that this is _not_ a helpful partitioning since less than \\(\frac{1}{4}\\) of the elements are ignored. A helpful partition is one that leaves at most \\(\frac{3}{4}\\) of the elements after the partitioning.
 
@@ -73,7 +77,7 @@ If the value was not yet found and \\(i < k\\), then \\(i\\) must be in the suba
 
 The worst-case running time of `randomized_select` is \\(O(n^2)\\) since we are partitioning \\(n\\) elements at \\(\Theta(n)\\) each. Since the pivot of `randomized_partition` is selected at random, we can expect a _good_ split at least every 2 times it is called. The proof for this is similar to the one made when analyzing [Quicksort]({{< relref "quicksort.md" >}}). Briefly, the expected number of times we must partition before we get a helpful split is 2, which only doubles the running time. The recurrence is still \\(T(n) = T(3n/4) + \Theta(n) = \Theta(n)\\).
 
-The first step to showing that the expected runtime of `randomized_select` is \\(\Theta(n)\\) is to show that a partitioning is helpful with probability at least \\(\frac{1}{2}\\) (Cormen et al. 2022). The rest of the proof requires further examination and comprehension.
+The first step to showing that the expected runtime of `randomized_select` is \\(\Theta(n)\\) is to show that a partitioning is helpful with probability at least \\(\frac{1}{2}\\) (<a href="#citeproc_bib_item_1">Cormen et al. 2022</a>). The rest of the proof requires further examination and comprehension.
 
 The proof presented by Cormen et al. begins with the following terms:
 
@@ -85,7 +89,7 @@ The proof presented by Cormen et al. begins with the following terms:
 
 There are certainly partitionings that are not helpful. These are depicted as subarrays within each generation of helpful partitionings. The figure below exemplifies this.
 
-{{< figure src="/ox-hugo/2024-03-13_10-12-23_screenshot.png" caption="<span class=\"figure-number\">Figure 2: </span>The sets within each generation of helpful partitionings are not helpful. From (Cormen et al. 2022)." >}}
+{{< figure src="/ox-hugo/2024-03-13_10-12-23_screenshot.png" caption="<span class=\"figure-number\">Figure 2: </span>The sets within each generation of helpful partitionings are not helpful. From (<a href=\"#citeproc_bib_item_1\">Cormen et al. 2022</a>)." >}}
 
 Given that the probability that a partitioning is helpful is at least \\(\frac{1}{2}\\), we know that \\(E[X\_k] \leq 2\\). With this, **an upper bound on the number of comparisons of partitioning is derived.** The total number of comparisons made when partitioning is less than
 
@@ -109,6 +113,25 @@ Using term 5 from above, the second line is derived. The third line leverages te
 The last line is the result of a geometric series. This concludes the proof that `randomized_partition` runs in expected linear time.
 
 
+## Worst-Case Linear Time {#worst-case-linear-time}
+
+Partition-around partitions the input _around_ a specific pivot. I assume this is meant to be the median.
+
+
+### Select Algorithm {#select-algorithm}
+
+Select returns the i-th smallest element.
+The first loop increments the left border index until the remaining number of elements is divisible by 5. This is so the array can be split into groups of 5 following the same process as the median of medians algorithm. This will also return \\(A[p]\\) if it happens to coincide with the element the user was looking for.
+
+The proof largely follows the same one laid out for the median of medians algorithm. After all, it is almost identical with the exception that the original algorithm discussed did not necessarily need to preprocess the input to be divisible by 5. This preprocessing step only takes \\(O(1)\\) time and is thus irrelevant.
+
+
 ## Problems and Exercises {#problems-and-exercises}
 
 1.  Show that the second largest of \\(n\\) elements can be found with \\(n + \lceil\log\_2 n\rceil - 2\\) comparisons in the worst case.
+
+## References
+
+<style>.csl-entry{text-indent: -1.5em; margin-left: 1.5em;}</style><div class="csl-bib-body">
+  <div class="csl-entry"><a id="citeproc_bib_item_1"></a>Cormen, Thomas H., Charles E. Leiserson, Ronald L. Rivest, and Clifford Stein. 2022. <i>Introduction to Algorithms</i>. 4th ed. MIT Press.</div>
+</div>
