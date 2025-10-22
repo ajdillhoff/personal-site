@@ -87,7 +87,6 @@ education:
       Aliquam tincidunt malesuada tortor vitae iaculis. In eu turpis risus quis. Quisque fringilla mollis risus eu pulvinar.
 
   - title: "MSc in Statistics"
-    description: ""
     institution: ""
     duration: "Jan 2019 - Dec 2020"
     icon: "fa-solid fa-person-chalkboard"
@@ -95,7 +94,6 @@ education:
       Aliquam tincidunt malesuada tortor vitae iaculis. In eu turpis risus quis. Quisque fringilla mollis risus eu pulvinar.
 
   - title: "BSc in Statistics"
-    description: ""
     institution: ""
     duration: "Jan 2019 - Dec 2020"
     icon: "fa-solid fa-graduation-cap"

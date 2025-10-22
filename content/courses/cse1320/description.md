@@ -1,7 +1,7 @@
 ---
 # Course title, summary, and position.
-title: "CSE 1320 - Intermediate Programming"
-description: "Covers more advanced programming concepts, including data structures, algorithms, and software design principles."
+linktitle: "CSE 1320 - Intermediate Programming"
+summary: "Covers more advanced programming concepts, including data structures, algorithms, and software design principles."
 weight: 1
 
 # Page metadata.

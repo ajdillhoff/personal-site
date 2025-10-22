@@ -4,7 +4,7 @@ authors = ["Alex Dillhoff"]
 date = 2024-03-12T13:17:00-05:00
 tags = ["computer science", "algorithms"]
 draft = false
-lastmod = 2025-10-21
+lastmod = 2025-10-22
 +++
 
 <div class="ox-hugo-toc toc">
@@ -96,7 +96,7 @@ Given that the probability that a partitioning is helpful is at least \\(\frac{1
 \begin{align\*}
 \sum\_{k=0}^{m-1} \sum\_{j=h\_k}^{h\_k + X\_k - 1} |A^{(j)}| &\leq \sum\_{k=0}^{m-1} \sum\_{j=h\_k}^{h\_k + X\_k - 1} |A^{(h\_k)}| \\\\
 &= \sum\_{k=0}^{m-1} X\_k|A^{(h\_k)}| \\\\
-&\leq \sum\_{k=0}^{m-1} \left(\frac{3}{4}\right)^k n\_0. \\\\
+&\leq \sum\_{k=0}^{m-1} X\_k \left(\frac{3}{4}\right)^k n\_0. \\\\
 \end{align\*}
 
 The first term on the first line represents the total number of comparisons across all sets. The first sum loops through the \\(m\\) helpful partitionings, and the inner loop sums the number of comparisons made for each unhelpful partitioning. It is bounded by the term on the right. **This is because \\(|A^{(j)}| \leq |A^{(h\_k)}|\\) if \\(A^{(j)}\\) is in the \\(k^{\text{th}}\\) generation of helpful partitionings (see term 4 above).**
