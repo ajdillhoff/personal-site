@@ -125,5 +125,23 @@
                 "url": "/teaching/cse1320/lectures/binary_trees.pdf"
             }
         ]
+    },
+    {
+        "date": "Week 11",
+        "topic": "Enumerated Types, Macros, Unions, and Exam 2",
+        "materials": [
+            {
+                "title": "Enumerated Types",
+                "url": "/teaching/cse1320/lectures/enums.pdf"
+            },
+            {
+                "title": "Macros",
+                "url": "/teaching/cse1320/lectures/macros.pdf"
+            },
+            {
+                "title": "Unions",
+                "url": "/teaching/cse1320/lectures/union_bitfields.pdf"
+            }
+        ]
     }
 ]

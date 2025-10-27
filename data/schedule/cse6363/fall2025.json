@@ -274,5 +274,25 @@
         "date": "October 24",
         "topic": "Policy Gradient Methods",
         "materials": []
+    },
+    {
+        "date": "October 27",
+        "topic": "Class Cancelled",
+        "materials": []
+    },
+    {
+        "date": "October 29",
+        "topic": "Deep Reinforcement Learning",
+        "materials": []
+    },
+    {
+        "date": "October 31",
+        "topic": "Object Detection",
+        "materials": [
+            {
+                "title": "Object Detection",
+                "url": "/notes/object_detection"
+            }
+        ]
     }
 ]

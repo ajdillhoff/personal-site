@@ -58,5 +58,37 @@
                 "url": "/notes/medians_and_order_statistics"
             }
         ]
+    },
+    {
+        "date": "October 27",
+        "topic": "Hash Maps, Binary Search Trees",
+        "materials": [
+            {
+                "title": "Hash Maps",
+                "url": "/notes/hash_tables"
+            },
+            {
+                "title": "Binary Search Trees",
+                "url": "/notes/binary_search_trees"
+            }
+        ]
+    },
+    {
+        "date": "October 29",
+        "topic": "Red-Black Trees, AVL Trees, and Dynamic Programming",
+        "materials": [
+            {
+                "title": "Red-Black Trees",
+                "url": "/notes/red_black_trees"
+            },
+            {
+                "title": "AVL Trees",
+                "url": "/notes/avl_trees"
+            },
+            {
+                "title": "Dynamic Programming",
+                "url": "/notes/dynamic_programming"
+            }
+        ]
     }
 ]
