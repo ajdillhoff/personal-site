@@ -4,7 +4,7 @@ authors = ["Alex Dillhoff"]
 date = 2024-03-14T10:40:00-05:00
 tags = ["computer science", "algorithms"]
 draft = false
-lastmod = 2024-11-03
+lastmod = 2025-10-27
 +++
 
 <div class="ox-hugo-toc toc">
@@ -19,6 +19,8 @@ lastmod = 2024-11-03
 
 </div>
 <!--endtoc-->
+
+The slides for these lectures notes can be found  [here](/teaching/cse5311/lectures/dynamic_programming.pdf).
 
 Dynamic programming is a technique for solving problems by breaking them down into simpler subproblems, very much like divide and conquer algorithms. One primary difference is that the subproblems are designed in such a way that they do not need to be recomputed.
 
@@ -439,5 +441,5 @@ Printing the solution starts with the last entry in the table \\(b\\). If the en
 ## References
 
 <style>.csl-entry{text-indent: -1.5em; margin-left: 1.5em;}</style><div class="csl-bib-body">
-  <div class="csl-entry"><a id="citeproc_bib_item_1"></a>Cormen, Thomas H., Charles E. Leiserson, Ronald L. Rivest, and Clifford Stein. 2022. <i>Introduction to Algorithms</i>. 4th ed. MIT Press. <a href="http://mitpress.mit.edu/9780262046305/introduction-to-algorithms/">http://mitpress.mit.edu/9780262046305/introduction-to-algorithms/</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_1"></a>Cormen, Thomas H., Charles E. Leiserson, Ronald L. Rivest, and Clifford Stein. 2022. <i>Introduction to Algorithms</i>. 4th ed. MIT Press.</div>
 </div>

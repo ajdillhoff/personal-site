@@ -4,6 +4,7 @@ authors = ["Alex Dillhoff"]
 date = 2023-10-15T00:00:00-05:00
 tags = ["computer science", "data structures"]
 draft = false
+lastmod = 2025-10-27
 +++
 
 <div class="ox-hugo-toc toc">
@@ -16,6 +17,8 @@ draft = false
 
 </div>
 <!--endtoc-->
+
+The slides for these lecture notes can be found [here](/teaching/cse5311/lectures/red_black_trees.pdf).
 
 Red-Black Trees are modified [Binary Search Trees]({{< relref "binary_search_trees.md" >}}) that maintain a balanced structure in order to guarantee that operations like search, insert, and delete run in \\(O(\log n)\\) time.
 

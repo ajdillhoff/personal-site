@@ -4,6 +4,7 @@ authors = ["Alex Dillhoff"]
 date = 2023-10-10T00:00:00-05:00
 tags = ["computer science", "data structures", "algorithms"]
 draft = false
+lastmod = 2025-10-27
 +++
 
 <div class="ox-hugo-toc toc">
@@ -16,6 +17,8 @@ draft = false
 
 </div>
 <!--endtoc-->
+
+The slides for these lecture notes are available [here](/teaching/cse5311/lectures/binary_trees.pdf).
 
 A $n$-ary tree is a graph-based data structure in which each node has up to \\(n\\) subnodes. It is supported by the following operations (not exclusive):
 
