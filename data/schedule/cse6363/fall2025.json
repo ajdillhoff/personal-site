@@ -294,5 +294,35 @@
                 "url": "/notes/object_detection"
             }
         ]
+    },
+    {
+        "date": "November 3",
+        "topic": "Instance Segmentation",
+        "materials": [
+            {
+                "title": "Instance Segmentation",
+                "url": "/notes/instance_segmentation"
+            }
+        ]
+    },
+    {
+        "date": "November 5",
+        "topic": "Automatic Differentiation",
+        "materials": [
+            {
+                "title": "Automatic Differentiation",
+                "url": "/notes/automatic_differentiation"
+            }
+        ]
+    },
+    {
+        "date": "November 7",
+        "topic": "Vision Transformers",
+        "materials": [
+            {
+                "title": "Vision Transformers",
+                "url": "/notes/transfomers_for_computer_vision"
+            }
+        ]
     }
 ]

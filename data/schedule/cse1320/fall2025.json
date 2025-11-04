@@ -128,6 +128,11 @@
     },
     {
         "date": "Week 11",
+        "topic": "Exam 2",
+        "materials": []
+    },
+    {
+        "date": "Week 12",
         "topic": "Enumerated Types, Macros, Unions, and Exam 2",
         "materials": [
             {
