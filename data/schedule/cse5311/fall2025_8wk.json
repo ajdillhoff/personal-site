@@ -105,5 +105,33 @@
                 "url": "/notes/dynamic_programming"
             }
         ]
+    },
+    {
+        "date": "November 10",
+        "topic": "Dynamic Programming Examples and Greedy Algorithms",
+        "materials": [
+            {
+                "title": "Dynamic Programming",
+                "url": "/notes/dynamic_programming"
+            },
+            {
+                "title": "Greedy Algorithms",
+                "url": "/notes/greedy_algorithms"
+            }
+        ]
+    },
+    {
+        "date": "November 12",
+        "topic": "Graph Algorithms and Topological Sort",
+        "materials": [
+            {
+                "title": "Introduction to Graph Theory",
+                "url": "/notes/introduction_to_graph_theory"
+            },
+            {
+                "title": "Topological Sort",
+                "url": "/notes/topological_sort"
+            }
+        ]
     }
 ]

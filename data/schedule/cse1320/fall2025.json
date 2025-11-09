@@ -148,5 +148,15 @@
                 "url": "/teaching/cse1320/lectures/union_bitfields.pdf"
             }
         ]
+    },
+    {
+        "date": "Week 13",
+        "topic": "Hash Maps",
+        "materials": [
+            {
+                "title": "Hash Maps",
+                "url": "/teaching/cse1320/lectures/hash_maps.pdf"
+            }
+        ]
     }
 ]

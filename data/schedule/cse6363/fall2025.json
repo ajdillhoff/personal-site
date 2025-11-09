@@ -324,5 +324,63 @@
                 "url": "/notes/transfomers_for_computer_vision"
             }
         ]
+    },
+    {
+        "date": "November 10",
+        "topic": "Transformer-based Detection and Segmentation",
+        "materials": [
+            {
+                "title": "Vision Transformers",
+                "url": "/notes/transfomers_for_computer_vision"
+            }
+        ]
+    },
+    {
+        "date": "November 12",
+        "topic": "Natural Language Processing, Large Language Models",
+        "materials": [
+            {
+                "title": "Natural Language Processing",
+                "url": "/notes/natural_language_processing"
+            },
+            {
+                "title": "Pretraining LLMs",
+                "url": "/notes/pretraining_large_language_models"
+            }
+        ]
+    },
+    {
+        "date": "November 14",
+        "topic": "LLM Post-Training, RAG",
+        "materials": [
+            {
+                "title": "Fine-tuning LLMs",
+                "url": "/notes/fine_tuning_llms"
+            },
+            {
+                "title": "Using RAG to Talk to Your Data",
+                "url": "/blog/using-rag-to-talk-to-your-data"
+            }
+        ]
+    },
+    {
+        "date": "November 17",
+        "topic": "Project Presentations",
+        "materials": []
+    },
+    {
+        "date": "November 19",
+        "topic": "Project Presentations",
+        "materials": []
+    },
+    {
+        "date": "November 21",
+        "topic": "Project Presentations",
+        "materials": []
+    },
+    {
+        "date": "November 24",
+        "topic": "Project Presentations",
+        "materials": []
     }
 ]

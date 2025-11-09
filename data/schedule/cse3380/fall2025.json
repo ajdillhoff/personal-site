@@ -108,5 +108,35 @@
         "date": "Week 12",
         "topic": "Exam 2",
         "materials": []
+    },
+    {
+        "date": "Week 13",
+        "topic": "Eigendecomposition and Diagonalization",
+        "materials": [
+            {
+                "title": "5.1 and 5.2",
+                "url": ""
+            }
+        ]
+    },
+    {
+        "date": "Week 14",
+        "topic": "Singular Value Decomposition, Principal Component Analysis",
+        "materials": [
+            {
+                "title": "7.1 and 7.4",
+                "url": ""
+            }
+        ]
+    },
+    {
+        "date": "Week 15",
+        "topic": "Thanksgiving Break",
+        "materials": []
+    },
+    {
+        "date": "Week 16",
+        "topic": "Final Exam Review",
+        "materials": []
     }
 ]
