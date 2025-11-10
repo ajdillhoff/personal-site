@@ -4,6 +4,7 @@ authors = ["Alex Dillhoff"]
 date = 2024-03-18T14:45:00-05:00
 tags = ["computer science", "algorithms"]
 draft = false
+lastmod = 2025-11-10
 +++
 
 <div class="ox-hugo-toc toc">
@@ -16,6 +17,8 @@ draft = false
 
 </div>
 <!--endtoc-->
+
+The slides for these notes can be found [here](/teaching/cse5311/lectures/greedy_algorithms.pdf).
 
 Greedy algorithms are a class of algorithms that yield _locally_ optimal solutions. In cases where the local optimum is also the global optimum, greedy algorithms are ideal. Even in cases where the global solution is more elusive, a local solution may be sufficient.
 
@@ -33,7 +36,7 @@ Sort activities by their finish time. **Objective:** Find the largest subset of 
 | \\(s\_i\\) | 1 | 2 | 4 | 1 | 5 | 8  | 9  | 11 | 13 |
 | \\(f\_i\\) | 3 | 5 | 7 | 8 | 9 | 10 | 11 | 14 | 16 |
 
-{{< figure src="/ox-hugo/2024-03-22_17-14-45_screenshot.png" caption="<span class=\"figure-number\">Figure 1: </span>Visualization of activities over time (Cormen et al. 2022)." >}}
+{{< figure src="/ox-hugo/2024-03-22_17-14-45_screenshot.png" caption="<span class=\"figure-number\">Figure 1: </span>Visualization of activities over time (<a href=\"#citeproc_bib_item_1\">Cormen et al. 2022</a>)." >}}
 
 **How many mutually compatible sets are there?**
 
@@ -134,7 +137,7 @@ This algorithm assumes that `f` is sorted in increasing order. The index `k` rep
 
 A run of this algorithm is visualized below.
 
-{{< figure src="/ox-hugo/2024-03-24_14-42-29_screenshot.png" caption="<span class=\"figure-number\">Figure 2: </span>Recursive activity selector example (Cormen et al. 2022)." >}}
+{{< figure src="/ox-hugo/2024-03-24_14-42-29_screenshot.png" caption="<span class=\"figure-number\">Figure 2: </span>Recursive activity selector example (<a href=\"#citeproc_bib_item_1\">Cormen et al. 2022</a>)." >}}
 
 
 #### Analysis {#analysis}
@@ -249,7 +252,7 @@ If we are able to sort each item by its value-to-weight ratio, then the greedy c
 
 This does not work for the \\(0-1\\) knapsack problem. Consider the problem visualized below.
 
-{{< figure src="/ox-hugo/2024-03-24_17-05-36_screenshot.png" caption="<span class=\"figure-number\">Figure 3: </span>Greedy solution to the \\(0-1\\) knapsack problem (Cormen et al. 2022)." >}}
+{{< figure src="/ox-hugo/2024-03-24_17-05-36_screenshot.png" caption="<span class=\"figure-number\">Figure 3: </span>Greedy solution to the \\(0-1\\) knapsack problem (<a href=\"#citeproc_bib_item_1\">Cormen et al. 2022</a>)." >}}
 
 In this problem, we have a knapsack whose total capacity is \\(W = 50\\). A table of the weights, values, and value-to-weight ratios is given below.
 
@@ -283,7 +286,7 @@ Before getting into the specifics of the algorithm, let's look at an example. Su
 -   Why isn't a code of 1 used?
 -   What about 2 bit encoding?
 
-The truth is that it depends on the document being compressed. The encoding is optimal consider the overall but length of the encoded file. Based on the above **fixed-length code**, the file size is 300,000 bits. The **variable-length code** reduces the file size to 224,000 bits.
+The truth is that it depends on the document being compressed. The encoding is optimal considering the overall but length of the encoded file. Based on the above **fixed-length code**, the file size is 300,000 bits. The **variable-length code** reduces the file size to 224,000 bits.
 
 **How many bits are needed to encode \\(n \geq 2\\) characters?**
 
@@ -302,9 +305,9 @@ This definition may start to clarify why a code of 1 is not used. If a code of 1
 
 One solution to this is to keep a table of all codewords and their corresponding characters. A more compact solution is to use a binary tree. Starting with the first bit in the encoded message, traverse the tree until a leaf node is reached. The character at the leaf node is the decoded character. The tree is known as a **Huffman tree**.
 
-An **full binary tree**, where each nonleaf node has two subnodes, is optimal for decoding. If the tree has this property then an optimal prefix-free code has \\(|C|\\) leaves and exactly \\(|C| - 1\\) internal nodes. The tree for the variable-length code is shown below.
+A **full binary tree**, where each nonleaf node has two subnodes, is optimal for decoding. If the tree has this property then an optimal prefix-free code has \\(|C|\\) leaves and exactly \\(|C| - 1\\) internal nodes. The tree for the variable-length code is shown below.
 
-{{< figure src="/ox-hugo/2024-03-26_09-07-14_screenshot.png" caption="<span class=\"figure-number\">Figure 4: </span>Huffman tree for the variable-length code (Cormen et al. 2022)." >}}
+{{< figure src="/ox-hugo/2024-03-26_09-07-14_screenshot.png" caption="<span class=\"figure-number\">Figure 4: </span>Huffman tree for the variable-length code (<a href=\"#citeproc_bib_item_1\">Cormen et al. 2022</a>)." >}}
 
 Given a character \\(c\\) with frequency \\(c.freq\\), let \\(d\_T( c)\\) denote the depth of character \\(c\\) in tree \\(T\\). The cost of the code in bits is given by
 
@@ -339,7 +342,7 @@ def huffman(C):
 
 The function above builds a Huffman tree from a set of characters \\(C\\). At each iteration, the two nodes with the smallest frequencies are extracted from the queue \\(Q\\) and are used to create a new node \\(z\\). This node represents the sum of the frequencies of the two nodes. The node is then inserted back into the queue so that it can be used in future iterations. The result is a Huffman tree.
 
-{{< figure src="/ox-hugo/2024-04-01_20-48-40_screenshot.png" caption="<span class=\"figure-number\">Figure 5: </span>Huffman tree for the data in the table above (Cormen et al. 2022)." >}}
+{{< figure src="/ox-hugo/2024-04-01_20-48-40_screenshot.png" caption="<span class=\"figure-number\">Figure 5: </span>Huffman tree for the data in the table above (<a href=\"#citeproc_bib_item_1\">Cormen et al. 2022</a>)." >}}
 
 
 #### Analysis {#analysis}
@@ -364,7 +367,7 @@ In the given optimal tree \\(T\\), leaves \\(a\\) and \\(b\\) are two siblings w
 
 Assume that \\(x \neq b\\). Swapping \\(a\\) and \\(x\\) produces tree \\(T'\\) does not increase the cost. Swapping \\(b\\) and \\(y\\) produces tree \\(T''\\) that also does not increase the cost. **This is the key argument: if swapping the lowest frequency characters with the deepest characters does not increase the cost, then the greedy choice is optimal.**
 
-{{< figure src="/ox-hugo/2024-04-02_10-40-38_screenshot.png" caption="<span class=\"figure-number\">Figure 6: </span>Creating \\(T'\\) and \\(T''\\) from \\(T\\) (Cormen et al. 2022)." >}}
+{{< figure src="/ox-hugo/2024-04-02_10-40-38_screenshot.png" caption="<span class=\"figure-number\">Figure 6: </span>Creating \\(T'\\) and \\(T''\\) from \\(T\\) (<a href=\"#citeproc_bib_item_1\">Cormen et al. 2022</a>)." >}}
 
 Next, we need to show that exchanging \\(a\\) and \\(x\\) does not increase the cost. The cost of the tree is given by
 
@@ -418,3 +421,9 @@ B(T''') &= B(T'') - x.freq - y.freq\\\\
 \end{align\*}
 
 \\(B(T''') < B(T')\\) is a contradiction because it was previously established that \\(T'\\) is an optimal tree for \\(C'\\). Therefore a suboptimal \\(T\\) is impossible if \\(T'\\) is optimal.
+
+## References
+
+<style>.csl-entry{text-indent: -1.5em; margin-left: 1.5em;}</style><div class="csl-bib-body">
+  <div class="csl-entry"><a id="citeproc_bib_item_1"></a>Cormen, Thomas H., Charles E. Leiserson, Ronald L. Rivest, and Clifford Stein. 2022. <i>Introduction to Algorithms</i>. 4th ed. MIT Press.</div>
+</div>
