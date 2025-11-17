@@ -158,5 +158,25 @@
                 "url": "/teaching/cse1320/lectures/hash_maps.pdf"
             }
         ]
+    },
+    {
+        "date": "Week 14",
+        "topic": "Hash Maps and Makefiles",
+        "materials": [
+            {
+                "title": "Hash Maps",
+                "url": "/teaching/cse1320/lectures/hash_maps.pdf"
+            }
+        ]
+    },
+    {
+        "date": "Week 15",
+        "topic": "Recitation",
+        "materials": []
+    },
+    {
+        "date": "Week 16",
+        "topic": "Exam 3 Review",
+        "materials": []
     }
 ]

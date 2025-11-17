@@ -4,6 +4,7 @@ authors = ["Alex Dillhoff"]
 date = 2023-10-21T00:00:00-05:00
 tags = ["computer science", "algorithms", "graphs", "minimum spanning trees"]
 draft = false
+lastmod = 2025-11-17
 +++
 
 <div class="ox-hugo-toc toc">
@@ -17,6 +18,8 @@ draft = false
 
 </div>
 <!--endtoc-->
+
+The slides accompanying these lectures notes can be found [here](/teaching/cse5311/lectures/minimum_spanning_trees.pdf).
 
 Minimum spanning trees are undirected graphs that connect all of the vertices such that there are no redundant edges and the total weight is minimized. They are useful for finding the shortest path between two points in a graph. Useful application of MSTs include
 
@@ -39,6 +42,15 @@ The minimum spanning tree of the above graph is show below. All of the redundant
 As described in _Introduction to Algorithms_ there are two greedy algorithms for finding the minimum spanning tree of a graph (<a href="#citeproc_bib_item_1">Cormen et al. 2022</a>). These notes will review both of these, but first let's look at a general algorithm for finding the minimum spanning tree of a graph.
 
 
+### Properties {#properties}
+
+A minimum spanning tree must satisfy the following properties.
+
+1.  It has \\(|V| - 1\\) edges.
+2.  It has no cycles.
+3.  It might not be unique.
+
+
 ## Finding the Minimum Spanning Tree {#finding-the-minimum-spanning-tree}
 
 The general algorithm for finding the minimum spanning tree of a graph grows a set of edges \\(T\\) from an empty set. At each step, the algorithm adds the edge with the smallest weight that does not create a cycle. The algorithm terminates when \\(T\\) is a complete tree.
@@ -52,13 +64,15 @@ while T is not a spaning tree
 
 Each edge \\(e\\) that is added must result in a tree that is a subset of the minimum spanning tree. The challenge of this algorithm is actually finding such an edge. How would we know such an edge if we saw it? We first need to define a few properties which will shine light on this.
 
+{{< figure src="/ox-hugo/2024-04-22_00-00-57_screenshot.png" caption="<span class=\"figure-number\">Figure 3: </span>A cut of a graph (<a href=\"#citeproc_bib_item_1\">Cormen et al. 2022</a>)." >}}
+
 A **cut** of a graph \\(G\\) is a partition of the vertices \\(V\\) into two disjoint sets \\(S\\) and \\(V - S\\). An edge \\(e\\) **crosses** the cut if one of its endpoints is in \\(S\\) and the other is in \\(V - S\\). If no edge in a given set \\(E\\) crosses the cut, then that cut **respects** \\(E\\). An edge that is the minimum weight edge that crosses a cut is called a **light edge**. With these definitions, we can now formally define how to find a **safe edge**, which is an edge that can be added to the current set of edges \\(T\\) without creating a cycle.
 
 ****Theorem 21.1 (<a href="#citeproc_bib_item_1">Cormen et al. 2022</a>)****
 
 Let \\(G = (V, E)\\) be a connected, undirected graph with a real-valued weight function \\(w\\) defined on \\(E\\). Let \\(A\\) be a subset of \\(E\\) that is included in some minimum spanning tree for \\(G\\), let \\((S, V - S)\\) be any cut of \\(G\\) that respects \\(A\\), and let \\(e\\) be a light edge crossing \\((S, V - S)\\). Then, edge \\(e\\) is safe for \\(A\\).
 
-{{< figure src="/ox-hugo/2023-10-22_13-10-51_screenshot.png" caption="<span class=\"figure-number\">Figure 3: </span>Visual proof of Theorem 21.1 (<a href=\"#citeproc_bib_item_1\">Cormen et al. 2022</a>)." >}}
+{{< figure src="/ox-hugo/2023-10-22_13-10-51_screenshot.png" caption="<span class=\"figure-number\">Figure 4: </span>Visual proof of Theorem 21.1 (<a href=\"#citeproc_bib_item_1\">Cormen et al. 2022</a>)." >}}
 
 ****Proof****
 
@@ -74,7 +88,7 @@ We can also view this in terms of **connected components**, which are subsets of
 
 The figure below shows a graph with two individual components. If the edge \\((u, v)\\) is a light edge, then it is safe to add it to the set of edges \\(T\\).
 
-{{< figure src="/ox-hugo/2023-10-22_15-39-37_connected_components.png" caption="<span class=\"figure-number\">Figure 4: </span>Two connected components from a graph (left). Adding a safe edge (right)." >}}
+{{< figure src="/ox-hugo/2023-10-22_15-39-37_connected_components.png" caption="<span class=\"figure-number\">Figure 5: </span>Two connected components from a graph (left). Adding a safe edge (right)." >}}
 
 
 ## Kruskal's Algorithm {#kruskal-s-algorithm}
@@ -139,5 +153,5 @@ Prim's algorithm uses a priority queue to keep track of the lightest edge that c
 ## References
 
 <style>.csl-entry{text-indent: -1.5em; margin-left: 1.5em;}</style><div class="csl-bib-body">
-  <div class="csl-entry"><a id="citeproc_bib_item_1"></a>Cormen, Thomas H., Charles E. Leiserson, Ronald L. Rivest, and Clifford Stein. 2022. <i>Introduction to Algorithms</i>. 4th ed. MIT Press. <a href="http://mitpress.mit.edu/9780262046305/introduction-to-algorithms/">http://mitpress.mit.edu/9780262046305/introduction-to-algorithms/</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_1"></a>Cormen, Thomas H., Charles E. Leiserson, Ronald L. Rivest, and Clifford Stein. 2022. <i>Introduction to Algorithms</i>. 4th ed. MIT Press.</div>
 </div>

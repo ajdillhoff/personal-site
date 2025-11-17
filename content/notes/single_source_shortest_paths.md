@@ -4,6 +4,7 @@ authors = ["Alex Dillhoff"]
 date = 2023-10-21T00:00:00-05:00
 tags = ["computer science", "algorithms", "graphs", "shortest path"]
 draft = false
+lastmod = 2025-11-17
 +++
 
 <div class="ox-hugo-toc toc">
@@ -17,6 +18,8 @@ draft = false
 
 </div>
 <!--endtoc-->
+
+The slides accompanying these lecture notes can be found [here](/teaching/cse5311/lectures/single_source_shortest_path.pdf).
 
 When you hear the term _shortest path_, you may think of the shortest physical distance between your current location and wherever it is you're going. Finding the most optimal route via GPS is one of the most widely used mobile applications. Physical paths are not the only types we may wish to find a shortest path for. Other examples include:
 
@@ -165,7 +168,7 @@ Using an adjacency list representation, the runtime of Bellman-Ford is \\(O(V^2 
 
 ### Example 22.1-1 {#example-22-dot-1-1}
 
-Run Bellman-Ford on the given path using \\(z\\) as the source. Then change the weight of \\((z, x)\\) to 4 and run it again with \\(s\\) as the source.
+Run Bellman-Ford on the given graph using \\(z\\) as the source. Then change the weight of \\((z, x)\\) to 4 and run it again with \\(s\\) as the source.
 
 {{< figure src="/ox-hugo/2024-04-22_11-13-14_screenshot.png" caption="<span class=\"figure-number\">Figure 2: </span>Figure 22.4 from (<a href=\"#citeproc_bib_item_1\">Cormen et al. 2022</a>)." >}}
 
@@ -229,5 +232,5 @@ See Chapter 22 of _Introduction to Algorithms_ for a detailed analysis of Dijkst
 ## References
 
 <style>.csl-entry{text-indent: -1.5em; margin-left: 1.5em;}</style><div class="csl-bib-body">
-  <div class="csl-entry"><a id="citeproc_bib_item_1"></a>Cormen, Thomas H., Charles E. Leiserson, Ronald L. Rivest, and Clifford Stein. 2022. <i>Introduction to Algorithms</i>. 4th ed. MIT Press. <a href="http://mitpress.mit.edu/9780262046305/introduction-to-algorithms/">http://mitpress.mit.edu/9780262046305/introduction-to-algorithms/</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_1"></a>Cormen, Thomas H., Charles E. Leiserson, Ronald L. Rivest, and Clifford Stein. 2022. <i>Introduction to Algorithms</i>. 4th ed. MIT Press.</div>
 </div>

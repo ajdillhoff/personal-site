@@ -4,6 +4,7 @@ authors = ["Alex Dillhoff"]
 date = 2024-04-20T11:32:00-05:00
 tags = ["algorithms", "computer science"]
 draft = false
+lastmod = 2025-11-17
 +++
 
 <div class="ox-hugo-toc toc">
@@ -16,6 +17,8 @@ draft = false
 
 </div>
 <!--endtoc-->
+
+The slides accompanying these notes can be found [here](/teaching/cse5311/lectures/all_pairs_shortest_path.pdf).
 
 TychoLink is a telecommunications company looking to optimize its network for the fastest and most efficient data transfer possible. The network consists of multiple routers, each connected by various types of links that differ in latency and bandwidth. The company wants to ensure that data packets can travel from any router to any other router in the network using the path that offers the best balance between low latency and high bandwidth. There are three objectives in total:
 
@@ -247,5 +250,5 @@ This algorithm has a running time of \\(\Theta(n^3)\\) while using simpler opera
 ## References
 
 <style>.csl-entry{text-indent: -1.5em; margin-left: 1.5em;}</style><div class="csl-bib-body">
-  <div class="csl-entry"><a id="citeproc_bib_item_1"></a>Cormen, Thomas H., Charles E. Leiserson, Ronald L. Rivest, and Clifford Stein. 2022. <i>Introduction to Algorithms</i>. 4th ed. MIT Press. <a href="http://mitpress.mit.edu/9780262046305/introduction-to-algorithms/">http://mitpress.mit.edu/9780262046305/introduction-to-algorithms/</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_1"></a>Cormen, Thomas H., Charles E. Leiserson, Ronald L. Rivest, and Clifford Stein. 2022. <i>Introduction to Algorithms</i>. 4th ed. MIT Press.</div>
 </div>

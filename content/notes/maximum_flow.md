@@ -4,6 +4,7 @@ authors = ["Alex Dillhoff"]
 date = 2024-04-12T18:51:00-05:00
 tags = ["algorithms", "computer science"]
 draft = false
+lastmod = 2025-11-17
 +++
 
 <div class="ox-hugo-toc toc">
@@ -16,6 +17,8 @@ draft = false
 
 </div>
 <!--endtoc-->
+
+The slides accompanying these notes can be found [here](/teaching/cse5311/lectures/maximum_flow.pdf).
 
 A flow network is a directed graph in which the edges begin at a node that produces the flow and the adjacent nodes are the ones that receive it. _Flow_ in this context could take on many meanings, such as the amount of water that can flow through a pipe, the amount of data that can be sent through a network, or the amount of traffic that can be sent through a road network. The goal of a flow network is to maximize the flow from the source to the sink.
 
@@ -244,5 +247,5 @@ The Edmonds-Karp algorithm is a specific implementation of Ford-Fulkerson that u
 ## References
 
 <style>.csl-entry{text-indent: -1.5em; margin-left: 1.5em;}</style><div class="csl-bib-body">
-  <div class="csl-entry"><a id="citeproc_bib_item_1"></a>Cormen, Thomas H., Charles E. Leiserson, Ronald L. Rivest, and Clifford Stein. 2022. <i>Introduction to Algorithms</i>. 4th ed. MIT Press. <a href="http://mitpress.mit.edu/9780262046305/introduction-to-algorithms/">http://mitpress.mit.edu/9780262046305/introduction-to-algorithms/</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_1"></a>Cormen, Thomas H., Charles E. Leiserson, Ronald L. Rivest, and Clifford Stein. 2022. <i>Introduction to Algorithms</i>. 4th ed. MIT Press.</div>
 </div>

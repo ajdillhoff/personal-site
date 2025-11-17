@@ -133,5 +133,33 @@
                 "url": "/notes/topological_sort"
             }
         ]
+    },
+    {
+        "date": "November 17",
+        "topic": "Minimum Spanning Trees, Single-Source Shortest Paths",
+        "materials": [
+            {
+                "title": "Minimum Spanning Trees",
+                "url": "/notes/minimum_spanning_trees"
+            },
+            {
+                "title": "Single-Source Shortest Paths",
+                "url": "/notes/single_source_shortest_paths"
+            }
+        ]
+    },
+    {
+        "date": "November 19",
+        "topic": "All-Pairs Shortest Paths, Maximum Flow",
+        "materials": [
+            {
+                "title": "All-Pairs Shortest Paths",
+                "url": "/notes/all_pairs_shortest_paths"
+            },
+            {
+                "title": "Maximum Flow",
+                "url": "/notes/maximum_flow"
+            }
+        ]
     }
 ]
