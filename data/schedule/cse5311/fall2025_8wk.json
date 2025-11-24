@@ -161,5 +161,31 @@
                 "url": "/notes/maximum_flow"
             }
         ]
+    },
+    {
+        "date": "November 24",
+        "topic": "Parallel Algorithms",
+        "materials": [
+            {
+                "title": "Heterogeneous Data Parallel Computing",
+                "url": "/notes/heterogeneous_data_parallel_computing"
+            },
+            {
+                "title": "Multidimensional Grids and Data",
+                "url": "/notes/multidimensional_grids_and_data"
+            },
+            {
+                "title": "Sparse Matrix Multiplication",
+                "url": "/notes/sparse_matrix_computation"
+            },
+            {
+                "title": "GPU Pattern: Merge",
+                "url": "/notes/gpu_pattern_merge"
+            },
+            {
+                "title": "Parallel Graph Traversal",
+                "url": "/notes/parallel_graph_traversal"
+            }
+        ]
     }
 ]
