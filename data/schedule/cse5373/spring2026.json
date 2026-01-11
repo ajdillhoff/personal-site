@@ -1,0 +1,27 @@
+[
+    {
+        "date": "January 12",
+        "topic": "Course Introduction",
+        "materials": [
+            {
+                "title": "Intro. to GPGPU Programming",
+                "url": "/notes/introduction_to_gpgpu_programming"
+            }
+        ]
+    },
+    {
+        "date": "January 14",
+        "topic": "Heterogeneous Data Parallel Computing",
+        "materials": [
+            {
+                "title": "Heterogeneous Data Parallel Computing",
+                "url": "/notes/heterogeneous_data_parallel_computing"
+            }
+        ]
+    },
+    {
+        "date": "January 16",
+        "topic": "Environment Setup Day",
+        "materials": []
+    }
+]
