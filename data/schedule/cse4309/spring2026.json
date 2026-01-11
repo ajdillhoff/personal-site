@@ -1,0 +1,21 @@
+[
+    {
+        "date": "January 12",
+        "topic": "Course Introduction",
+        "materials": []
+    },
+    {
+        "date": "January 14",
+        "topic": "Supervised Learning",
+        "materials": [
+            {
+                "title": "Linear Regression",
+                "url": "/notes/linear_regression"
+            },
+            {
+                "title": "Regularization",
+                "url": "/notes/regularization"
+            }
+        ]
+    }
+]
