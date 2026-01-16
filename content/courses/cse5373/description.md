@@ -24,3 +24,7 @@ This is the course page for CSE 4373/5373 - General Purpose GPU Programming in S
 #### Teaching Assistant
 
 Keshav Bansal (kxb5527@mavs.uta.edu)
+
+**Office Hours**
+
+Monday and Tuesday 10AM - 12PM on Teams or in ERB 504
