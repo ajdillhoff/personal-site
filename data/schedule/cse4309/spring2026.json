@@ -17,5 +17,19 @@
                 "url": "/notes/regularization"
             }
         ]
+    },
+    {
+        "date": "January 21",
+        "topic": "Supervised Learning",
+        "materials": [
+            {
+                "title": "Regularization",
+                "url": "/notes/regularization"
+            },
+            {
+                "title": "Logistic Regression",
+                "url": "/notes/logistic_regression"
+            }
+        ]
     }
 ]

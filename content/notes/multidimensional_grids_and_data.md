@@ -22,6 +22,7 @@ sections = "GPU Programming"
 </div>
 <!--endtoc-->
 
+Lectures slides for these notes can be found [here.](/teaching/cse5373/lectures/multidimensional_grids_and_data.pdf)
 
 
 ## Summary {#summary}

@@ -23,5 +23,25 @@
                 "url": "/notes/sampling"
             }
         ]
+    },
+    {
+        "date": "January 21",
+        "topic": "Linear Filters",
+        "materials": [
+            {
+                "title": "Linear Filters",
+                "url": "/notes/linear_filters"
+            }
+        ]
+    },
+    {
+        "date": "January 23",
+        "topic": "Interest Points",
+        "materials": [
+            {
+                "title": "Interest Points",
+                "url": "/notes/image_features"
+            }
+        ]
     }
 ]

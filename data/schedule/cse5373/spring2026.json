@@ -23,5 +23,20 @@
         "date": "January 16",
         "topic": "Environment Setup Day",
         "materials": []
+    },
+    {
+        "date": "January 21",
+        "topic": "Multidimensional Grids and Data",
+        "materials": [
+            {
+                "title": "Multidimensional Grids and Data",
+                "url": "/notes/multidimensional_grids_and_data"
+            }
+        ]
+    },
+    {
+        "date": "January 23",
+        "topic": "Lab/Recitation",
+        "materials": []
     }
 ]

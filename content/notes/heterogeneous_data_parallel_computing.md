@@ -20,6 +20,8 @@ sections = "GPU Programming"
 </div>
 <!--endtoc-->
 
+Slides for these notes can be found [here.](/teaching/cse5373/lectures/heterogeneous_parallel_computing.pdf)
+
 {{< notice "info" "Terms & Concepts" >}}
 - Task Parallelism vs. Data Parallelism
 - kernels
@@ -55,7 +57,7 @@ At first glance, the execution flow of a CUDA program appears sequential; you la
 
 ## Example: Vector Addition {#example-vector-addition}
 
-Hwu et al. refer to vector addition as the "Hello World" of GPU programming (<a href="#citeproc_bib_item_1">Hwu, Kirk, and El Hajj 2022</a>). It is a simple problem that can be described as _embarrassingly parallel_. Vector addition is a simple operation. Given two vectors of the same length, \\(\mathbf{x}\\) and \\(\mathbf{y}\\), the vector addition operation is defined as:
+Hwu et al. refer to vector addition as the "Hello World" of GPU programming (NO_ITEM_DATA:hwu_programming_2022). It is a simple problem that can be described as _embarrassingly parallel_. Vector addition is a simple operation. Given two vectors of the same length, \\(\mathbf{x}\\) and \\(\mathbf{y}\\), the vector addition operation is defined as:
 
 \\[
 \mathbf{z}\_i = \mathbf{x}\_i + \mathbf{y}\_i \quad \forall i \in \\{1, \ldots, n\\}
@@ -214,5 +216,5 @@ Don't overthink the C/C++ distinction. The main point is that you can use C++ fe
 ## References
 
 <style>.csl-entry{text-indent: -1.5em; margin-left: 1.5em;}</style><div class="csl-bib-body">
-  <div class="csl-entry"><a id="citeproc_bib_item_1"></a>Hwu, Wen-mei W., David B. Kirk, and Izzat El Hajj. 2022. <i>Programming Massively Parallel Processors: A Hands-on Approach</i>. Fourth. Morgan Kaufmann.</div>
+  <div class="csl-entry">NO_ITEM_DATA:hwu_programming_2022</div>
 </div>
