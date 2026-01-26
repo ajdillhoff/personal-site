@@ -31,5 +31,33 @@
                 "url": "/notes/logistic_regression"
             }
         ]
+    },
+    {
+        "date": "January 26",
+        "topic": "Probability Theory Review",
+        "materials": [
+            {
+                "title": "Probability Theory",
+                "url": "/notes/probability_theory"
+            },
+            {
+                "title": "Maximum Likelihood Estimation",
+                "url": "https://online.stat.psu.edu/stat415/lesson/1/1.2"
+            }
+        ]
+    },
+    {
+        "date": "January 28",
+        "topic": "Probabilistic Models",
+        "materials": [
+            {
+                "title": "Linear Discriminant Analysis",
+                "url": "/notes/linear_discriminant_analysis"
+            },
+            {
+                "title": "Naive Bayes Classifier",
+                "url": "/notes/naive_bayes"
+            }
+        ]
     }
 ]

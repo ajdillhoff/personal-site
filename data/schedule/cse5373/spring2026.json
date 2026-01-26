@@ -38,5 +38,30 @@
         "date": "January 23",
         "topic": "Lab/Recitation",
         "materials": []
+    },
+    {
+        "date": "January 26",
+        "topic": "Multidimensional Grids and Data",
+        "materials": [
+            {
+                "title": "Multidimensional Grids and Data",
+                "url": "/notes/multidimensional_grids_and_data"
+            }
+        ]
+    },
+    {
+        "date": "January 28",
+        "topic": "CUDA Compute Architecture",
+        "materials": [
+            {
+                "title": "CUDA Architecture",
+                "url": "/notes/cuda_architecture"
+            }
+        ]
+    },
+    {
+        "date": "January 30",
+        "topic": "Lab/Recitation",
+        "materials": []
     }
 ]

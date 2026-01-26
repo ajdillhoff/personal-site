@@ -43,5 +43,35 @@
                 "url": "/notes/image_features"
             }
         ]
+    },
+    {
+        "date": "January 26",
+        "topic": "Canny Edge Detection",
+        "materials": [
+            {
+                "title": "Interest Points",
+                "url": "/notes/image_features"
+            }
+        ]
+    },
+    {
+        "date": "January 28",
+        "topic": "Image Features",
+        "materials": [
+            {
+                "title": "Image Features",
+                "url": "/notes/image_features"
+            }
+        ]
+    },
+    {
+        "date": "January 30",
+        "topic": "Image Features",
+        "materials": [
+            {
+                "title": "Image Features",
+                "url": "/notes/image_features"
+            }
+        ]
     }
 ]
