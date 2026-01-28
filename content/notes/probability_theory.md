@@ -4,7 +4,7 @@ authors = ["Alex Dillhoff"]
 date = 2022-01-22T00:00:00-06:00
 tags = ["machine learning"]
 draft = false
-lastmod = 2024-01-30
+lastmod = 2026-01-27
 sections = "Machine Learning"
 +++
 
@@ -24,7 +24,7 @@ sections = "Machine Learning"
 </div>
 <!--endtoc-->
 
-Slides for these notes are available [here.](/teaching/cse6363/lectures/probability.pdf)
+Slides for these notes are available [here.](/teaching/cse6363/lectures/probability.pdf) Additional slides on Gaussian distributions are [here.](/teaching/cse6363/lectures/gaussian.pdf)
 
 
 ## Introduction {#introduction}

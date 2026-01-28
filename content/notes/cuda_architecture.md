@@ -5,7 +5,7 @@ date = 2024-01-08T20:49:00-06:00
 tags = ["gpgpu", "computer science"]
 draft = false
 sections = "GPU Programming"
-lastmod = 2025-01-26
+lastmod = 2026-01-27
 +++
 
 <div class="ox-hugo-toc toc">
@@ -25,6 +25,7 @@ lastmod = 2025-01-26
 </div>
 <!--endtoc-->
 
+The slides accompanying these lecture notes can be found [here.](/teaching/cse5373/lectures/cuda_architecture.pdf)
 
 
 ## Architecture {#architecture}
@@ -120,7 +121,7 @@ There is a limit on the number of warps that an SM can support. In general, we w
 
 {{< figure src="/ox-hugo/2024-01-11_11-44-01_screenshot.png" caption="<span class=\"figure-number\">Figure 4: </span>GH100 Full GPU with 144 SMs ([NVIDIA](https://resources.nvidia.com/en-us-tensor-core))." >}}
 
-The H100 architecture shares the same limitations in compute capability as the A100, so this example will follow the book closely (Hwu, Kirk, and El Hajj 2022). The H100 supports 32 threads per warp, 64 warps per SM, 32 blocks per SM, and 2048 threads per SM. Depending on the block size chosen, the number of blocks per SM will differ. For example, a block size of 256 threads means that there are 2048 / 256 = 8 blocks per SM. This block size would maximize occupancy since the architecture supports more than 8 blocks per SM. Also, the number of threads per block is less than the limit of 1024.
+The H100 architecture shares the same limitations in compute capability as the A100, so this example will follow the book closely (NO_ITEM_DATA:hwu_programming_2022). The H100 supports 32 threads per warp, 64 warps per SM, 32 blocks per SM, and 2048 threads per SM. Depending on the block size chosen, the number of blocks per SM will differ. For example, a block size of 256 threads means that there are 2048 / 256 = 8 blocks per SM. This block size would maximize occupancy since the architecture supports more than 8 blocks per SM. Also, the number of threads per block is less than the limit of 1024.
 
 What if we chose 32 threads per block? Then there would be 2048 / 32 = 64 blocks per SM. However, the device only supports 32 blocks per SM. With only 32 blocks allocated with 32 threads per block, a total of 1024 threads would be utilized. The occupancy in this case is 1024 / 2048 = 50%.
 
