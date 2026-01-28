@@ -5,7 +5,7 @@ date = 2024-01-11T15:07:00-06:00
 tags = ["gpgpu", "computer science"]
 draft = false
 sections = "GPU Programming"
-lastmod = 2025-02-02
+lastmod = 2026-01-28
 +++
 
 <div class="ox-hugo-toc toc">
@@ -25,6 +25,7 @@ lastmod = 2025-02-02
 </div>
 <!--endtoc-->
 
+The slides accompanying these lecture notes can be found [here.](/teaching/cse5373/lectures/memory_architecture.pdf)
 
 
 ## Introduction {#introduction}
@@ -48,7 +49,7 @@ This line consists of a floating-point multiplication, floating-point addition, 
 
 With this definition, we get a clearer picture on how to improve the performance of our code. If our kernel relies on too many memory accesses, then the computational intensity will be low. This means that the GPU will be spending more time waiting for data to be transferred than actually performing computations. The goal is to increase the computational intensity as much as possible.
 
-To put this in perspective, the H100 SXM5 has 3TB/s of memory bandwidth. This global memory bandwidth limits the kernel to 3000 \* 0.25 = 750 GFLOP/s. The peak performance of the H100 is 66.9 TFLOPS. If the specialized Tensor cores are utilized, the peak performance is 494.7 TFLOPS. That means that are kernel is only using 0.15% of the peak performance of the GPU. This program is certainly **memory bound**. Our theoretical limit to computational intensity is the peak performance of the GPU. Programs that achieve this peak are called **compute bound**.
+To put this in perspective, the H100 SXM5 has 3TB/s of memory bandwidth. This global memory bandwidth limits the kernel to 3000 \* 0.25 = 750 GFLOP/s. The peak performance of the H100 is 66.9 TFLOPS. If the specialized Tensor cores are utilized, the peak performance is 494.7 TFLOPS. That means that our kernel is only using 0.15% of the peak performance of the GPU. This program is certainly **memory bound**. Our theoretical limit to computational intensity is the peak performance of the GPU. Programs that achieve this peak are called **compute bound**.
 
 Based on the tools we have discussed so far, it is not clear how we can optimize this kernel. The only way to improve the computational intensity is to reduce the number of memory accesses. Modern GPUs have more than just global memory. The next section will explore the different types of memory available on the GPU.
 
@@ -93,7 +94,7 @@ The kernels we have seen so far have used a _global memory access pattern_. In t
 
 {{< figure src="/ox-hugo/2024-01-13_10-16-40_screenshot.png" caption="<span class=\"figure-number\">Figure 2: </span>Tiling pattern (source: NVIDIA DLI)." >}}
 
-The tool itself is quite simple in concept, but the challenge will be identifying when the tool can be properly applied. Consider matrix multiplication. The naive kernel we explored previously uses each thread to compute one value of the output matrix. This kernel uses a global memory access pattern, and we can identify that many of the computations require the same input. They key to introducing tiling for matrix multiplication will be identifying which data use reused.
+The tool itself is quite simple in concept, but the challenge will be identifying when the tool can be properly applied. Consider matrix multiplication. The naive kernel we explored previously uses each thread to compute one value of the output matrix. This kernel uses a global memory access pattern, and we can identify that many of the computations require the same input. They key to introducing tiling for matrix multiplication will be identifying which data are reused.
 
 {{< figure src="/ox-hugo/2024-01-13_10-28-30_screenshot.png" caption="<span class=\"figure-number\">Figure 3: </span>Memory accesses for matrix multiplication (source: NVIDIA DLI)." >}}
 

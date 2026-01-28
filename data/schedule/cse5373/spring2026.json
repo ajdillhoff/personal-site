@@ -56,6 +56,10 @@
             {
                 "title": "CUDA Architecture",
                 "url": "/notes/cuda_architecture"
+            },
+            {
+                "title": "Memory in CUDA",
+                "url": "/notes/cuda_memory_architecture"
             }
         ]
     },
