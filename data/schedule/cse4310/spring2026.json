@@ -73,5 +73,35 @@
                 "url": "/notes/image_features"
             }
         ]
+    },
+    {
+        "date": "February 2",
+        "topic": "Bag of Visual Words and Feature Matching",
+        "materials": [
+            {
+                "title": "Bag of Visual Words",
+                "url": "/notes/bag_of_visual_words"
+            }
+        ]
+    },
+    {
+        "date": "February 4",
+        "topic": "RANSAC",
+        "materials": [
+            {
+                "title": "RANSAC",
+                "url": "/notes/random_sample_consensus"
+            }
+        ]
+    },
+    {
+        "date": "February 6",
+        "topic": "Hough Transforms",
+        "materials": [
+            {
+                "title": "Hough Transforms",
+                "url": "/notes/hough_transform"
+            }
+        ]
     }
 ]

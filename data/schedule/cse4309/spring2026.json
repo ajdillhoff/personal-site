@@ -59,5 +59,29 @@
                 "url": "/notes/naive_bayes"
             }
         ]
+    },
+    {
+        "date": "February 2",
+        "topic": "Kernels and Support Vector Machine",
+        "materials": [
+            {
+                "title": "Kernel Methods",
+                "url": "/notes/kernels"
+            },
+            {
+                "title": "Support Vector Machine",
+                "url": "/notes/support_vector_machine"
+            }
+        ]
+    },
+    {
+        "date": "February 4",
+        "topic": "Support Vector Machine",
+        "materials": [
+            {
+                "title": "Support Vector Machine",
+                "url": "/notes/support_vector_machine"
+            }
+        ]
     }
 ]

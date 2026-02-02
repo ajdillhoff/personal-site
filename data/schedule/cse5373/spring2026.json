@@ -67,5 +67,30 @@
         "date": "January 30",
         "topic": "Lab/Recitation",
         "materials": []
+    },
+    {
+        "date": "February 2",
+        "topic": "Tiling and Shared Memory",
+        "materials": [
+            {
+                "title": "Memory Architecture",
+                "url": "/notes/cuda_memory_architecture"
+            }
+        ]
+    },
+    {
+        "date": "February 4",
+        "topic": "GPU Performance Basics",
+        "materials": [
+            {
+                "title": "GPU Performance Basics",
+                "url": "/notes/gpu_performance_basics"
+            }
+        ]
+    },
+    {
+        "date": "February 6",
+        "topic": "Lab/Recitation",
+        "materials": []
     }
 ]
