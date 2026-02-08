@@ -83,5 +83,29 @@
                 "url": "/notes/support_vector_machine"
             }
         ]
+    },
+    {
+        "date": "February 6",
+        "topic": "Sequential Minimal Optimization",
+        "materials": [
+            {
+                "title": "Sequential Minimal Optimization",
+                "url": "/notes/sequential_minimal_optimization"
+            }
+        ]
+    },
+    {
+        "date": "February 8",
+        "topic": "Perceptron and Neural Networks",
+        "materials": [
+            {
+                "title": "Perceptron",
+                "url": "/notes/perceptron"
+            },
+            {
+                "title": "Neural Networks",
+                "url": "/notes/neural_networks"
+            }
+        ]
     }
 ]

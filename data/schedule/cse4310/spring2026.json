@@ -86,6 +86,16 @@
     },
     {
         "date": "February 4",
+        "topic": "CANCELLED",
+        "materials": []
+    },
+    {
+        "date": "February 6",
+        "topic": "Quiz 1",
+        "materials": []
+    },
+    {
+        "date": "February 9",
         "topic": "RANSAC",
         "materials": [
             {
@@ -95,12 +105,22 @@
         ]
     },
     {
-        "date": "February 6",
+        "date": "February 11",
         "topic": "Hough Transforms",
         "materials": [
             {
                 "title": "Hough Transforms",
                 "url": "/notes/hough_transform"
+            }
+        ]
+    },
+    {
+        "date": "February 13",
+        "topic": "Image Segmentation",
+        "materials": [
+            {
+                "title": "Image Segmentation",
+                "url": "/notes/image_segmentation"
             }
         ]
     }

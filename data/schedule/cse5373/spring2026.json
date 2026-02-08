@@ -80,6 +80,16 @@
     },
     {
         "date": "February 4",
+        "topic": "CANCELLED",
+        "materials": []
+    },
+    {
+        "date": "February 6",
+        "topic": "Quiz 1",
+        "materials": []
+    },
+    {
+        "date": "February 9",
         "topic": "GPU Performance Basics",
         "materials": [
             {
@@ -89,7 +99,17 @@
         ]
     },
     {
-        "date": "February 6",
+        "date": "February 11",
+        "topic": "GPU Performance Basics",
+        "materials": [
+            {
+                "title": "GPU Performance Basics",
+                "url": "/notes/gpu_performance_basics"
+            }
+        ]
+    },
+    {
+        "date": "February 13",
         "topic": "Lab/Recitation",
         "materials": []
     }
