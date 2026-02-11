@@ -4,6 +4,7 @@ authors = ["Alex Dillhoff"]
 date = 2024-01-14T13:31:00-06:00
 tags = ["gpgpu", "computer science"]
 draft = false
+lastmod = 2026-02-11
 +++
 
 <div class="ox-hugo-toc toc">
@@ -19,6 +20,8 @@ draft = false
 
 </div>
 <!--endtoc-->
+
+[Click here](/teaching/cse5373/lectures/gpu_performance_basics.pdf) for slides accompanying these lecture notes.
 
 These notes are on "Chapter 6: Performance Considerations" from the book _Programming Massively Parallel Processors_ (<a href="#citeproc_bib_item_1">Hwu, Kirk, and El Hajj 2022</a>).
 
@@ -51,6 +54,8 @@ DRAMS have _banks_ and _channels_. A controller has a bus that connects banks to
 {{< figure src="/ox-hugo/2024-01-14_17-19-55_screenshot.png" caption="<span class=\"figure-number\">Figure 3: </span>Single versus Multi-bank burst timings (<a href=\"#citeproc_bib_item_1\">Hwu, Kirk, and El Hajj 2022</a>)." >}}
 
 It is possible that the controller will initiate a request to a bank that is already busy. This is called a _bank conflict_. The controller will have to wait for the bank to finish its current request before it can service the new request. The more banks that are available, the less likely it is that a bank conflict will occur.
+
+In CUDA, memory is coalesced at the warp level as 32-byte memory transactions. The warp controller can see the addresses requested by the warp and maps them into the 32-byte transaction ([NVIDIA Blog](https://developer.nvidia.com/blog/unlock-gpu-performance-global-memory-access-in-cuda/)).
 
 
 ### Example: Matrix Multiplication {#example-matrix-multiplication}
