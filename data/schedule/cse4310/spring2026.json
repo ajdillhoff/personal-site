@@ -123,5 +123,35 @@
                 "url": "/notes/image_segmentation"
             }
         ]
+    },
+    {
+        "date": "February 16",
+        "topic": "Segmentation by Clustering",
+        "materials": [
+            {
+                "title": "Segmentation via Clustering",
+                "url": "/notes/segmentation_via_clustering"
+            }
+        ]
+    },
+    {
+        "date": "February 18",
+        "topic": "Machine Learning Basics",
+        "materials": [
+            {
+                "title": "Linear Regression",
+                "url": "/notes/linear_regression"
+            }
+        ]
+    },
+    {
+        "date": "February 20",
+        "topic": "Machine Learning Basics",
+        "materials": [
+            {
+                "title": "Logistic Regression",
+                "url": "/notes/logistic_regression"
+            }
+        ]
     }
 ]

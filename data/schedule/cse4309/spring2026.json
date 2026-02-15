@@ -86,13 +86,8 @@
     },
     {
         "date": "February 9",
-        "topic": "Sequential Minimal Optimization",
-        "materials": [
-            {
-                "title": "Sequential Minimal Optimization",
-                "url": "/notes/sequential_minimal_optimization"
-            }
-        ]
+        "topic": "CANCELLED",
+        "materials": []
     },
     {
         "date": "February 11",
@@ -105,6 +100,26 @@
             {
                 "title": "Neural Networks",
                 "url": "/notes/neural_networks"
+            }
+        ]
+    },
+    {
+        "date": "February 16",
+        "topic": "Decision Trees",
+        "materials": [
+            {
+                "title": "Decision Trees",
+                "url": "/notes/decision_trees"
+            }
+        ]
+    },
+    {
+        "date": "February 18",
+        "topic": "Bagging, Random Forests, and Adaboost",
+        "materials": [
+            {
+                "title": "Adaboost",
+                "url": "/notes/boosting"
             }
         ]
     }
