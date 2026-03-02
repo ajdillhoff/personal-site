@@ -153,5 +153,55 @@
                 "url": "/notes/logistic_regression"
             }
         ]
+    },
+    {
+        "date": "February 23",
+        "topic": "Machine Learning Basics",
+        "materials": [
+            {
+                "title": "Logistic Regression",
+                "url": "/notes/logistic_regression"
+            }
+        ]
+    },
+    {
+        "date": "February 25",
+        "topic": "Neural Networks",
+        "materials": [
+            {
+                "title": "Neural Networks",
+                "url": "/notes/neural_networks"
+            }
+        ]
+    },
+    {
+        "date": "February 27",
+        "topic": "Convolutional Neural Networks",
+        "materials": [
+            {
+                "title": "Convolutional Neural Networks",
+                "url": "/notes/convolutional_neural_networks"
+            }
+        ]
+    },
+    {
+        "date": "March 2",
+        "topic": "Convolutional Neural Networks",
+        "materials": [
+            {
+                "title": "Convolutional Neural Networks",
+                "url": "/notes/convolutional_neural_networks"
+            }
+        ]
+    },
+    {
+        "date": "March 4",
+        "topic": "PyTorch Tutorial",
+        "materials": []
+    },
+    {
+        "date": "March 6",
+        "topic": "Pytorch Lightning Tutorial",
+        "materials": []
     }
 ]

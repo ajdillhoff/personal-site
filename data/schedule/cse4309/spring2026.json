@@ -122,5 +122,43 @@
                 "url": "/notes/boosting"
             }
         ]
+    },
+    {
+        "date": "February 23",
+        "topic": "Perceptron and Neural Networks",
+        "materials": [
+            {
+                "title": "Perceptron",
+                "url": "/notes/perceptron"
+            },
+            {
+                "title": "Neural Networks",
+                "url": "/notes/neural_networks"
+            }
+        ]
+    },
+    {
+        "date": "February 25",
+        "topic": "Intro. to Deep Learning",
+        "materials": [
+            {
+                "title": "Deep Learning",
+                "url": "/notes/deep_learning"
+            },
+            {
+                "title": "Convolutional Neural Networks",
+                "url": "/notes/convolutional_neural_networks"
+            }
+        ]
+    },
+    {
+        "date": "March 2",
+        "topic": "PyTorch Lightning Workshop",
+        "materials": [
+            {
+                "title": "Pytorch Tutorial",
+                "url": "https://pytorch.org/tutorials/beginner/deep_learning_60min_blitz.html"
+            }
+        ]
     }
 ]

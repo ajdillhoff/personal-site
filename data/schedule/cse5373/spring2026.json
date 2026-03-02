@@ -137,5 +137,55 @@
         "date": "February 20",
         "topic": "Lab/Recitation",
         "materials": []
+    },
+    {
+        "date": "February 23",
+        "topic": "Profiling and Benchmarking",
+        "materials": [
+            {
+                "title": "Profiling CUDA Applications",
+                "url": "/notes/profiling_cuda_applications"
+            }
+        ]
+    },
+    {
+        "date": "February 25",
+        "topic": "Profiling and Benchmarking",
+        "materials": [
+            {
+                "title": "Profiling CUDA Applications",
+                "url": "/notes/profiling_cuda_applications"
+            }
+        ]
+    },
+    {
+        "date": "February 27",
+        "topic": "Case Study: Improving Matrix Multiplication",
+        "materials": []
+    },
+    {
+        "date": "March 2",
+        "topic": "Stencil Pattern",
+        "materials": [
+            {
+                "title": "GPU Pattern: Stencils",
+                "url": "/notes/gpu_pattern_stencils"
+            }
+        ]
+    },
+    {
+        "date": "March 4",
+        "topic": "Parallel Histogram",
+        "materials": [
+            {
+                "title": "GPU Pattern: Parallel Histogram",
+                "url": "/notes/gpu_pattern_parallel_histogram"
+            }
+        ]
+    },
+    {
+        "date": "March 6",
+        "topic": "Lab/Recitation",
+        "materials": []
     }
 ]
