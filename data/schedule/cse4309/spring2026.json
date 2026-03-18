@@ -160,5 +160,34 @@
                 "url": "https://pytorch.org/tutorials/beginner/deep_learning_60min_blitz.html"
             }
         ]
+    },
+    {
+        "date": "March 4",
+        "topic": "Automatic Differentiation, Optimization for Deep Learning",
+        "materials": [
+            {
+                "title": "Automatic Differentiation",
+                "url": "https://arxiv.org/abs/1502.05767"
+            },
+            {
+                "title": "Optimization for Deep Learning",
+                "url": "/notes/optimization_for_deep_learning"
+            }
+        ]
+    },
+    {
+        "date": "March 16",
+        "topic": "Cancelled",
+        "materials": []
+    },
+    {
+        "date": "March 20",
+        "topic": "Principal Component Analysis",
+        "materials": [
+            {
+                "title": "Chapter 12.1",
+                "url": "https://www.microsoft.com/en-us/research/wp-content/uploads/2006/01/Bishop-Pattern-Recognition-and-Machine-Learning-2006.pdf"
+            }
+        ]
     }
 ]

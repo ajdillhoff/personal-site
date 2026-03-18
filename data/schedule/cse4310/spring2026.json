@@ -203,5 +203,30 @@
         "date": "March 6",
         "topic": "Pytorch Lightning Tutorial",
         "materials": []
+    },
+    {
+        "date": "March 16",
+        "topic": "CANCELLED",
+        "materials": []
+    },
+    {
+        "date": "March 18",
+        "topic": "Object Detection",
+        "materials": [
+            {
+                "title": "Object Detection",
+                "url": "/notes/object_detection"
+            }
+        ]
+    },
+    {
+        "date": "March 20",
+        "topic": "Object Detection",
+        "materials": [
+            {
+                "title": "Object Detection",
+                "url": "/notes/object_detection"
+            }
+        ]
     }
 ]

@@ -187,5 +187,25 @@
         "date": "March 6",
         "topic": "Lab/Recitation",
         "materials": []
+    },
+    {
+        "date": "March 16",
+        "topic": "CANCELLED",
+        "materials": []
+    },
+    {
+        "date": "March 18",
+        "topic": "Parallel Scan",
+        "materials": [
+            {
+                "title": "GPU Pattern: Parallel Scan",
+                "url": "/notes/gpu_pattern_parallel_scan"
+            }
+        ]
+    },
+    {
+        "date": "March 20",
+        "topic": "Lab/Recitation",
+        "materials": []
     }
 ]
