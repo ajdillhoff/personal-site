@@ -207,5 +207,30 @@
         "date": "March 20",
         "topic": "Lab/Recitation",
         "materials": []
+    },
+    {
+        "date": "March 23",
+        "topic": "Parallel Scan",
+        "materials": [
+            {
+                "title": "GPU Pattern: Parallel Scan",
+                "url": "/notes/gpu_pattern_parallel_scan"
+            }
+        ]
+    },
+    {
+        "date": "March 25",
+        "topic": "General Reductions",
+        "materials": [
+            {
+                "title": "GPU Pattern: Reduction",
+                "url": "/notes/gpu_pattern_reduction"
+            }
+        ]
+    },
+    {
+        "date": "March 27",
+        "topic": "Lab/Recitation",
+        "materials": []
     }
 ]

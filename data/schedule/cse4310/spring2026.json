@@ -15,7 +15,7 @@
         ]
     },
     {
-        "date": "January 15",
+        "date": "January 16",
         "topic": "Sampling and Aliasing",
         "materials": [
             {
@@ -226,6 +226,41 @@
             {
                 "title": "Object Detection",
                 "url": "/notes/object_detection"
+            }
+        ]
+    },
+    {
+        "date": "March 23",
+        "topic": "Optical Flow",
+        "materials": [
+            {
+                "title": "Optical Flow",
+                "url": "/notes/optical_flow"
+            }
+        ]
+    },
+    {
+        "date": "March 25",
+        "topic": "Tracking",
+        "materials": [
+            {
+                "title": "Tracking",
+                "url": "/notes/tracking"
+            }
+        ]
+    },
+    {
+        "date": "March 27",
+        "topic": "Quiz 3",
+        "materials": []
+    },
+    {
+        "date": "March 30",
+        "topic": "Kalman Filter",
+        "materials": [
+            {
+                "title": "Tracking",
+                "url": "/notes/tracking"
             }
         ]
     }

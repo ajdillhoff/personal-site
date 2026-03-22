@@ -189,5 +189,107 @@
                 "url": "https://www.microsoft.com/en-us/research/wp-content/uploads/2006/01/Bishop-Pattern-Recognition-and-Machine-Learning-2006.pdf"
             }
         ]
+    },
+    {
+        "date": "March 23",
+        "topic": "Clustering",
+        "materials": [
+            {
+                "title": "Clustering",
+                "url": "/notes/clustering"
+            }
+        ]
+    },
+    {
+        "date": "March 25",
+        "topic": "Markov Decision Processes",
+        "materials": [
+            {
+                "title": "Markov Decision Processes",
+                "url": "/notes/markov_decision_processes"
+            }
+        ]
+    },
+    {
+        "date": "March 30",
+        "topic": "Reinforcement Learning",
+        "materials": [
+            {
+                "title": "Reinforcement Learning Overview",
+                "url": "https://lilianweng.github.io/posts/2018-02-19-rl-overview/"
+            },
+            {
+                "title": "Chapters 3-6",
+                "url": "http://incompleteideas.net/book/RLbook2020.pdf"
+            }
+        ]
+    },
+    {
+        "date": "April 1",
+        "topic": "Policy Gradient Methods",
+        "materials": [
+            {
+                "title": "Policy Gradient Methods",
+                "url": "/notes/policy_gradient_methods"
+            }
+        ]
+    },
+    {
+        "date": "April 6",
+        "topic": "Natural Language Processing, Large Language Models",
+        "materials": [
+            {
+                "title": "Natural Language Processing",
+                "url": "/notes/natural_language_processing"
+            },
+            {
+                "title": "Pretraining LLMs",
+                "url": "/notes/pretraining_large_language_models"
+            }
+        ]
+    },
+    {
+        "date": "April 8",
+        "topic": "LLM Post-Training, RAG",
+        "materials": [
+            {
+                "title": "Fine-tuning LLMs",
+                "url": "/notes/fine_tuning_llms"
+            },
+            {
+                "title": "Using RAG to Talk to Your Data",
+                "url": "/blog/using-rag-to-talk-to-your-data"
+            }
+        ]
+    },
+    {
+        "date": "April 13",
+        "topic": "Vision Transformers, Pose Estimation",
+        "materials": [
+            {
+                "title": "Transformers for Computer Vision",
+                "url": "/notes/transfomers_for_computer_vision"
+            }
+        ]
+    },
+    {
+        "date": "April 15",
+        "topic": "Self-Supervised Learning",
+        "materials": []
+    },
+    {
+        "date": "April 20",
+        "topic": "Project Presentations",
+        "materials": []
+    },
+    {
+        "date": "April 22",
+        "topic": "Project Presentations",
+        "materials": []
+    },
+    {
+        "date": "April 27",
+        "topic": "Project Presentations",
+        "materials": []
     }
 ]
