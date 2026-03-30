@@ -232,5 +232,30 @@
         "date": "March 27",
         "topic": "Lab/Recitation",
         "materials": []
+    },
+    {
+        "date": "March 30",
+        "topic": "Merge",
+        "materials": [
+            {
+                "title": "GPU Pattern: Merge",
+                "url": "/notes/gpu_pattern_merge"
+            }
+        ]
+    },
+    {
+        "date": "April 1",
+        "topic": "Merge",
+        "materials": [
+            {
+                "title": "GPU Pattern: Merge",
+                "url": "/notes/gpu_pattern_merge"
+            }
+        ]
+    },
+    {
+        "date": "April 3",
+        "topic": "Lab/Recitation",
+        "materials": []
     }
 ]

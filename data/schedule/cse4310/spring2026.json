@@ -263,5 +263,29 @@
                 "url": "/notes/tracking"
             }
         ]
+    },
+    {
+        "date": "April 1",
+        "topic": "Camera Models",
+        "materials": [
+            {
+                "title": "Camera Models",
+                "url": "/notes/camera_models"
+            }
+        ]
+    },
+    {
+        "date": "April 3",
+        "topic": "Camera Calibration, Stereo Vision",
+        "materials": [
+            {
+                "title": "Camera Models",
+                "url": "/notes/camera_models"
+            },
+            {
+                "title": "Stereo Vision",
+                "url": "/notes/stereo_vision"
+            }
+        ]
     }
 ]
