@@ -260,6 +260,16 @@
     },
     {
         "date": "April 6",
+        "topic": "Parallel Sorting Algorithms",
+        "materials": [
+            {
+                "title": "Parallel Sorting Algorithms",
+                "url": "/notes/parallel_sorting_algorithms"
+            }
+        ]
+    },
+    {
+        "date": "April 8",
         "topic": "Parallel Sorting Algorithms, Sparse Matrix Multiplication",
         "materials": [
             {
@@ -273,27 +283,17 @@
         ]
     },
     {
-        "date": "April 8",
-        "topic": "Sparse Matrix Multiplication",
-        "materials": [
-            {
-                "title": "Sparse Matrix Multiplication",
-                "url": "/notes/sparse_matrix_computation"
-            }
-        ]
-    },
-    {
         "date": "April 10",
         "topic": "Lab/Recitation",
         "materials": []
     },
     {
         "date": "April 13",
-        "topic": "Parallel Graph Traversal",
+        "topic": "Sparse Matrix Multiplication",
         "materials": [
             {
-                "title": "Parallel Graph Traversal",
-                "url": "/notes/parallel_graph_traversal"
+                "title": "Sparse Matrix Multiplication",
+                "url": "/notes/sparse_matrix_computation"
             }
         ]
     },
@@ -314,8 +314,13 @@
     },
     {
         "date": "April 20",
-        "topic": "Special Topic",
-        "materials": []
+        "topic": "Parallel Graph Traversal",
+        "materials": [
+            {
+                "title": "Parallel Graph Traversal",
+                "url": "/notes/parallel_graph_traversal"
+            }
+        ]
     },
     {
         "date": "April 22",
