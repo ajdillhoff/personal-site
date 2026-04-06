@@ -257,5 +257,79 @@
         "date": "April 3",
         "topic": "Lab/Recitation",
         "materials": []
+    },
+    {
+        "date": "April 6",
+        "topic": "Parallel Sorting Algorithms, Sparse Matrix Multiplication",
+        "materials": [
+            {
+                "title": "Parallel Sorting Algorithms",
+                "url": "/notes/parallel_sorting_algorithms"
+            },
+            {
+                "title": "Sparse Matrix Multiplication",
+                "url": "/notes/sparse_matrix_computation"
+            }
+        ]
+    },
+    {
+        "date": "April 8",
+        "topic": "Sparse Matrix Multiplication",
+        "materials": [
+            {
+                "title": "Sparse Matrix Multiplication",
+                "url": "/notes/sparse_matrix_computation"
+            }
+        ]
+    },
+    {
+        "date": "April 10",
+        "topic": "Lab/Recitation",
+        "materials": []
+    },
+    {
+        "date": "April 13",
+        "topic": "Parallel Graph Traversal",
+        "materials": [
+            {
+                "title": "Parallel Graph Traversal",
+                "url": "/notes/parallel_graph_traversal"
+            }
+        ]
+    },
+    {
+        "date": "April 15",
+        "topic": "Parallel Graph Traversal",
+        "materials": [
+            {
+                "title": "Parallel Graph Traversal",
+                "url": "/notes/parallel_graph_traversal"
+            }
+        ]
+    },
+    {
+        "date": "April 17",
+        "topic": "Lab/Recitation",
+        "materials": []
+    },
+    {
+        "date": "April 20",
+        "topic": "Special Topic",
+        "materials": []
+    },
+    {
+        "date": "April 22",
+        "topic": "Project Presentations",
+        "materials": []
+    },
+    {
+        "date": "April 24",
+        "topic": "Project Presentations",
+        "materials": []
+    },
+    {
+        "date": "April 27",
+        "topic": "Project Presentations",
+        "materials": []
     }
 ]

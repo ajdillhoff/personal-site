@@ -276,6 +276,16 @@
     },
     {
         "date": "April 3",
+        "topic": "Camera Calibration",
+        "materials": [
+            {
+                "title": "Camera Models",
+                "url": "/notes/camera_models"
+            }
+        ]
+    },
+    {
+        "date": "April 6",
         "topic": "Camera Calibration, Stereo Vision",
         "materials": [
             {
@@ -287,5 +297,79 @@
                 "url": "/notes/stereo_vision"
             }
         ]
+    },
+    {
+        "date": "April 8",
+        "topic": "Instance Segmentation",
+        "materials": [
+            {
+                "title": "Instance Segmentation",
+                "url": "/notes/instance_segmentation"
+            }
+        ]
+    },
+    {
+        "date": "April 10",
+        "topic": "Recurrent Neural Networks",
+        "materials": [
+            {
+                "title": "Recurrent Neural Networks",
+                "url": "/notes/recurrent_neural_networks"
+            }
+        ]
+    },
+    {
+        "date": "April 13",
+        "topic": "Transformers",
+        "materials": [
+            {
+                "title": "Transformers",
+                "url": "/notes/transformers"
+            }
+        ]
+    },
+    {
+        "date": "April 15",
+        "topic": "Transformers, Vision Transformers",
+        "materials": [
+            {
+                "title": "Transformers",
+                "url": "/notes/transformers"
+            },
+            {
+                "title": "Vision Transformer",
+                "url": "/notes/transfomers_for_computer_vision"
+            }
+        ]
+    },
+    {
+        "date": "April 17",
+        "topic": "Vision Transformers",
+        "materials": [
+            {
+                "title": "Vision Transformer",
+                "url": "/notes/transfomers_for_computer_vision"
+            }
+        ]
+    },
+    {
+        "date": "April 20",
+        "topic": "Pose Estimation",
+        "materials": []
+    },
+    {
+        "date": "April 22",
+        "topic": "Project Presentations",
+        "materials": []
+    },
+    {
+        "date": "April 24",
+        "topic": "Project Presentations",
+        "materials": []
+    },
+    {
+        "date": "April 27",
+        "topic": "Project Presentations",
+        "materials": []
     }
 ]
