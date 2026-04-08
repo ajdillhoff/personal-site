@@ -289,11 +289,11 @@
     },
     {
         "date": "April 13",
-        "topic": "Sparse Matrix Multiplication",
+        "topic": "Parallel Graph Traversal",
         "materials": [
             {
-                "title": "Sparse Matrix Multiplication",
-                "url": "/notes/sparse_matrix_computation"
+                "title": "Parallel Graph Traversal",
+                "url": "/notes/parallel_graph_traversal"
             }
         ]
     },
@@ -314,13 +314,8 @@
     },
     {
         "date": "April 20",
-        "topic": "Parallel Graph Traversal",
-        "materials": [
-            {
-                "title": "Parallel Graph Traversal",
-                "url": "/notes/parallel_graph_traversal"
-            }
-        ]
+        "topic": "Special Topic",
+        "materials": []
     },
     {
         "date": "April 22",

@@ -236,36 +236,36 @@
     },
     {
         "date": "April 6",
-        "topic": "Natural Language Processing, Large Language Models",
+        "topic": "Natural Language Processing",
         "materials": [
             {
                 "title": "Natural Language Processing",
                 "url": "/notes/natural_language_processing"
             },
-            {
-                "title": "Pretraining LLMs",
-                "url": "/notes/pretraining_large_language_models"
-            }
         ]
     },
     {
         "date": "April 8",
-        "topic": "LLM Post-Training, RAG",
+        "topic": "Large Language Models",
         "materials": [
+            {
+                "title": "Pretraining LLMs",
+                "url": "/notes/pretraining_large_language_models"
+            },
             {
                 "title": "Fine-tuning LLMs",
                 "url": "/notes/fine_tuning_llms"
-            },
-            {
-                "title": "Using RAG to Talk to Your Data",
-                "url": "/blog/using-rag-to-talk-to-your-data"
             }
         ]
     },
     {
         "date": "April 13",
-        "topic": "Vision Transformers, Pose Estimation",
+        "topic": "RAG, Vision Transformers, Pose Estimation",
         "materials": [
+            {
+                "title": "Using RAG to Talk to Your Data",
+                "url": "/blog/using-rag-to-talk-to-your-data"
+            },
             {
                 "title": "Transformers for Computer Vision",
                 "url": "/notes/transfomers_for_computer_vision"
