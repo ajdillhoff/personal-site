@@ -320,16 +320,6 @@
     },
     {
         "date": "April 13",
-        "topic": "Transformers",
-        "materials": [
-            {
-                "title": "Transformers",
-                "url": "/notes/transformers"
-            }
-        ]
-    },
-    {
-        "date": "April 15",
         "topic": "Transformers, Vision Transformers",
         "materials": [
             {
@@ -343,7 +333,7 @@
         ]
     },
     {
-        "date": "April 17",
+        "date": "April 15",
         "topic": "Vision Transformers",
         "materials": [
             {
@@ -353,8 +343,13 @@
         ]
     },
     {
-        "date": "April 20",
+        "date": "April 17",
         "topic": "Pose Estimation",
+        "materials": []
+    },
+    {
+        "date": "April 20",
+        "topic": "Special Topic",
         "materials": []
     },
     {
